@@ -6,6 +6,7 @@ metadata:
   description: "Lightweight, privacy-first note-taking: quick markdown memos with tags, search and a clean timeline."
 release:
   revision: "1"
+  minHarbor: "0.28.2"
 deployment:
   compose: compose.yaml
   multiInstance: true
