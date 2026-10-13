@@ -1,0 +1,88 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: ntfy
+  name: "ntfy"
+  description: "Your own push-notification server. Scripts, servers and other apps send a message with one HTTP request, and it pops up on your phone (the ntfy app for Android and iOS) or in your browser."
+release:
+  revision: "1"
+  minHarbor: "0.30.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    app: application
+endpoints:
+  web:
+    service: app
+    containerPort: 80
+    scheme: http
+    exposure: direct
+    # Browser notifications need a secure context; the phone apps and the HTTP API work over plain http too.
+    browserContext: secure
+health:
+  endpoint: web
+  path: /v1/health
+  expectedStatus: [200]
+  timeoutSeconds: 5
+  deadlineSeconds: 120
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Sign in as admin with the password Harbor showed after the install, and keep that login for yourself: it, and every access token made from it, can also add, remove and change users. Give scripts and phones their own users with limited rights (this app's README, More people and scripts, has the commands) and make their tokens while signed in as them (Account, Access tokens). Topics are private: phones need a login or a token (in the ntfy app, Settings, Manage users). On an iPhone, add the server with exactly ntfy's main address (README, iPhones)."
+# ntfy has no sign-up page here and no web page for users, so Harbor generates the admin password and the
+# after-start hook creates the account with ntfy's own admin tool. `ntfy user add` reads NTFY_PASSWORD and
+# NTFY_AUTH_FILE from the container's environment; --ignore-exists leaves an existing admin (and a password
+# changed in the web app) alone, so the hook is safe on every start.
+provisionedCredentials:
+  service: app
+  passwordEnv: NTFY_PASSWORD
+  username: admin
+  label: "ntfy admin login"
+  note: "Sign in to ntfy as admin with this password. You can change it under Account in the web app."
+hooks:
+  afterStart:
+    service: app
+    timeoutSeconds: 30
+    command: [ntfy, user, add, --ignore-exists, --role=admin, admin]
+# iPhones only wake for pushes Apple delivers, so a self-hosted ntfy can ask an upstream server (ntfy.sh) to
+# send the phone a "poll" ping for every message. ntfy leaves that off, and so does Harbor until the operator
+# types the relay's address: otherwise nothing leaves this machine. Both values can be changed or cleared later
+# on the app page (Values you provided); an empty one leaves its variable unset (ntfy's default: no relay).
+secrets:
+  - id: ios-relay
+    source: operator
+    prompt: "For instant iPhone notifications, type https://ntfy.sh (it relays a wake-up ping, never the message). Leave empty to keep everything on this machine."
+    optional: true
+    retention: retain
+    bindings:
+      - {service: app, environment: NTFY_UPSTREAM_BASE_URL}
+  - id: ios-relay-token
+    source: operator
+    prompt: "Access token of an ntfy.sh account with a higher daily limit, only if the relay passes the 250 messages a day ntfy.sh allows for free. Usually empty."
+    optional: true
+    retention: retain
+    bindings:
+      - {service: app, environment: NTFY_UPSTREAM_ACCESS_TOKEN}
+storage:
+  - id: data
+    composeVolume: data
+    purpose: "Accounts and access tokens, recent messages (12 hours) and attachments (3 hours)"
+    retention: retain
+# Attachment links and the iOS relay (it hashes base-url + topic, and the iPhone must have typed exactly that
+# address) use the main address picked at install.
+configuration:
+  - {service: app, environment: NTFY_BASE_URL, endpoint: web, format: origin}
+presentation:
+  tagline: "Push notifications to your phone, from anything"
+  sizeHint: "About 100 MB, plus recent messages and attachments"
+  category: automation
+  icon: icon.png
+  gallery:
+    - shot-1.png
+    - shot-2.png
+  developer: "Philipp C. Heckel and ntfy contributors"
+  website: https://ntfy.sh
+  source: https://github.com/binwiederhier/ntfy
+  releaseNotes: "ntfy v2.30.0. Harbor creates the admin login; sign-ups are off and every topic is private until you hand out a login or token. Nothing leaves this machine unless you turn on the ntfy.sh relay for instant iPhone notifications (at install, or later under Values you provided); the relay never sees the message text."

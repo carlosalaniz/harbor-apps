@@ -1,0 +1,20 @@
+services:
+  app:
+    image: syncthing/syncthing@sha256:4d0281bdcb4ed9baf503d251d0544ddd856f49fce3f114056257ae172b7fb670 # tag: 2.1.6
+    environment:
+      # The image's entrypoint starts as root, takes the top of /var/syncthing for this user and runs
+      # Syncthing as it, so synced files are written as uid/gid 1000. The image already listens on
+      # 0.0.0.0:8384 (STGUIADDRESS) and keeps its settings in /var/syncthing/config (STHOMEDIR).
+      PUID: "1000"
+      PGID: "1000"
+    volumes:
+      - {type: volume, source: data, target: /var/syncthing}
+    # The image checks itself once a minute; check sooner so the install does not wait a minute for it
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "-m", "2", "-o", "/dev/null", "http://127.0.0.1:8384/rest/noauth/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+volumes:
+  data: {}

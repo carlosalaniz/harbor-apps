@@ -1,0 +1,57 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: kavita
+  name: "Kavita"
+  description: "Reading server for your manga, comics and ebooks: read in the browser, keep progress per person, and sync with e-readers over OPDS and KOReader."
+release:
+  revision: "1"
+  # presentation.source needs Harbor 0.30.0 (decision 164).
+  minHarbor: "0.30.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    web: application
+endpoints:
+  web:
+    service: web
+    containerPort: 5000
+    scheme: http
+    exposure: direct
+    # The EPUB reader's Copy (selected text) uses the clipboard API, which plain-http LAN origins lack.
+    browserContext: secure
+health:
+  endpoint: web
+  # Anonymous and answers before the first account exists (Kavita's HealthController).
+  path: /api/health
+  expectedStatus: [200]
+  timeoutSeconds: 5
+  # The container has no Docker healthcheck (compose.yaml): this probe alone waits out upgrade migrations.
+  deadlineSeconds: 600
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Open Kavita and create the first account; it becomes the admin. Add a library under Settings → Server → Libraries for each kind of book in your folder (it is /library inside Kavita, e.g. /library/Manga), then set Settings → Server → General → Host Name to this app's main address so OPDS and invite links point at it. Kavita sends anonymous usage statistics daily by default; turn off Allow Anonymous Usage Collection on that same General page if you do not want that."
+storage:
+  - id: config
+    composeVolume: config
+    purpose: "Database, settings, covers, bookmarks and logs"
+    retention: retain
+  # Kavita has no upload: books only arrive through this folder, so it is required. Kavita runs as root
+  # and only reads its libraries (covers and bookmarks go to config), so the folder is mounted read-only.
+  - id: library
+    composeVolume: library
+    purpose: "Your manga, comics and books"
+    retention: retain
+    external: {hint: "The folder with your manga, comics and books, for example /mnt/books. Mounted read-only at /library; each subfolder can become a library.", required: true, readOnly: true}
+presentation:
+  tagline: "Read your manga, comics and ebooks anywhere"
+  sizeHint: "About 700 MB, plus a cover cache that grows with your library"
+  category: media
+  icon: icon.svg
+  developer: "Kavita contributors"
+  website: https://www.kavitareader.com
+  source: https://github.com/Kareadita/Kavita
+  releaseNotes: "Kavita 0.9.1. Your book folder is mounted read-only. Kavita is told to trust Harbor's own proxies, so the links it builds (OPDS, EPUB pictures and styles) should follow the address you opened, the secure LAN address included."

@@ -1,0 +1,244 @@
+# Smoke-test the apps a pull request adds or changes, on a real Docker host, with Harbor's own engine (Harbor
+# decision 175: `pnpm catalog:smoke`, the same check the update bot runs). An existing app is installed at main's
+# revision first and updated to the branch's (data kept, no rollback); every app then gets a fresh install.
+#
+# Three jobs:
+#   changed  read-only: which apps under apps/ differ from main (at most 10), with the latest Harbor release.
+#   smoke    read-only, one job per app: pull the images by digest (retries), `catalog:smoke --record`; the result
+#            leaves as an artifact: a patch of apps/<id>/release.json (the qualification) and the smoke summary.
+#   record   the only job that may write: no Harbor checkout, no install, no package code; only git and jq. For a
+#            branch of this repository (never a fork), applies each passed app's qualification patch (it may only
+#            touch apps/<id>/release.json) to the branch and pushes it, then dispatches ci.yml on the branch (pushes
+#            made with GITHUB_TOKEN start no workflows). A failure leaves the branch as it is and fails the run.
+# Never put ${{ }} of package text inside a run: script; pass values through env and quote them.
+name: qualify
+on:
+  pull_request:
+    paths:
+      - 'apps/**'
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: App ids to smoke-test, comma-separated (empty = the apps that differ from main)
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: qualify-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  HARBOR_REPO: carlosalaniz/harbor
+
+jobs:
+  changed:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      sha: ${{ steps.latest.outputs.sha }}
+      matrix: ${{ steps.ids.outputs.matrix }}
+      count: ${{ steps.ids.outputs.count }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Latest Harbor release
+        id: latest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          release=$(gh api "repos/$HARBOR_REPO/releases/latest")
+          tag=$(jq -r .tag_name <<<"$release")
+          [[ "$tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "::error::latest Harbor release is $tag"; exit 1; }
+          sha=$(gh api "repos/$HARBOR_REPO/commits/$tag" --jq .sha)
+          [[ "$sha" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::cannot resolve $tag"; exit 1; }
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - name: Apps that differ from main
+        id: ids
+        env:
+          IDS: ${{ inputs.ids }}
+        run: |
+          base=$(git merge-base origin/main HEAD)
+          if [[ -n "$IDS" ]]; then
+            [[ "$IDS" =~ ^[a-z][a-z0-9-]*(,[a-z][a-z0-9-]*)*$ ]] || { echo "::error::ids must be app ids separated by commas"; exit 1; }
+            tr ',' '\n' <<<"$IDS" > ids.txt
+          else
+            git diff --name-only "$base" HEAD -- apps/ | awk -F/ 'NF >= 3 { print $2 }' | sort -u > ids.txt
+          fi
+          # only apps the branch's index lists (a removed app has nothing to test)
+          jq -r '.packages | keys[]' apps/index.json | grep -xFf ids.txt | grep -E '^[a-z][a-z0-9-]{0,62}$' | head -10 > picked.txt || true
+          echo "::notice::smoke-testing: $(paste -sd' ' picked.txt)"
+          echo "count=$(wc -l < picked.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
+          echo "matrix=$(jq -Rnc --arg base "$base" '{include: [inputs | select(length > 0) | {id: ., base: $base}]}' < picked.txt)" >> "$GITHUB_OUTPUT"
+
+  smoke:
+    needs: changed
+    if: needs.changed.outputs.count != '0'
+    name: smoke ${{ matrix.id }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    permissions:
+      contents: read
+      packages: read # read-only: pull from ghcr.io as this workflow (anonymous pulls get throttled)
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix: ${{ fromJSON(needs.changed.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: carlosalaniz/harbor
+          ref: ${{ needs.changed.outputs.sha }}
+          path: .harbor
+          persist-credentials: false
+      - name: Make room for the images
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /usr/local/share/boost || true
+          docker image prune -af > /dev/null || true
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: .harbor/package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .harbor/package.json
+          cache: pnpm
+          cache-dependency-path: .harbor/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+        working-directory: .harbor
+      - name: main's revision of the app, if it has one
+        env:
+          ID: ${{ matrix.id }}
+          BASE: ${{ matrix.base }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/base"
+          if git cat-file -e "$BASE:apps/$ID/manifest.yaml" 2>/dev/null; then
+            git archive "$BASE" apps | tar -x -C "$RUNNER_TEMP/base"
+            echo "BASE_ARG=--base $RUNNER_TEMP/base/apps" >> "$GITHUB_ENV"
+          else
+            echo "BASE_ARG=" >> "$GITHUB_ENV"
+          fi
+      - name: Docker Compose as a Harbor box has it
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Harbor boxes install docker-compose-plugin from Docker's apt repository (the current release); the runner
+          # image ships an older one (2.38.2 refused `up --wait` on a service whose healthcheck is disabled; 5.6.0 accepts it)
+          tag=$(gh api repos/docker/compose/releases/latest --jq .tag_name)
+          [[ "$tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "::error::unexpected docker/compose release tag $tag"; exit 1; }
+          base="https://github.com/docker/compose/releases/download/$tag"
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/docker-compose" "$base/docker-compose-linux-x86_64"
+          want=$(curl -fsSL --retry 3 "$base/docker-compose-linux-x86_64.sha256" | awk '{print $1}')
+          have=$(sha256sum "$RUNNER_TEMP/docker-compose" | awk '{print $1}')
+          [[ "$want" =~ ^[0-9a-f]{64}$ && "$want" == "$have" ]] || { echo "::error::docker-compose $tag checksum mismatch"; exit 1; }
+          mkdir -p "$HOME/.docker/cli-plugins"
+          install -m 0755 "$RUNNER_TEMP/docker-compose" "$HOME/.docker/cli-plugins/docker-compose"
+          docker compose version
+      - name: Pull the images first
+        env:
+          ID: ${{ matrix.id }}
+          GH_TOKEN: ${{ github.token }}
+          ACTOR: ${{ github.actor }}
+        run: |
+          printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$ACTOR" --password-stdin > /dev/null 2>&1 || echo "::warning::ghcr.io login failed; pulling anonymously"
+          files=("apps/$ID/release.json")
+          [[ -f "$RUNNER_TEMP/base/apps/$ID/release.json" ]] && files+=("$RUNNER_TEMP/base/apps/$ID/release.json")
+          jq -r '.images[].reference' "${files[@]}" | sort -u | while read -r ref; do
+            [[ "$ref" =~ ^[a-z0-9./_-]+@sha256:[0-9a-f]{64}$ ]] || { echo "::error::unexpected image reference $ref"; exit 1; }
+            for i in 1 2 3 4 5; do
+              docker pull -q --platform linux/amd64 "$ref" > /dev/null && break
+              (( i == 5 )) && { echo "::warning::could not pull $ref; the smoke test tries again"; break; }
+              sleep $(( i * 15 ))
+            done
+          done
+          docker logout ghcr.io > /dev/null 2>&1 || true
+      - name: Smoke test on this runner's Docker
+        id: smoke
+        working-directory: .harbor
+        env:
+          ID: ${{ matrix.id }}
+        run: |
+          set +e
+          # shellcheck disable=SC2086 # BASE_ARG is empty or "--base <dir>"
+          pnpm -s catalog:smoke --docker-socket /var/run/docker.sock --catalog "$GITHUB_WORKSPACE/apps" $BASE_ARG "$ID" --out "$RUNNER_TEMP/smoke.json" --record
+          code=$?
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          [[ -f "$RUNNER_TEMP/smoke.json" ]] && jq -r '.phases[] | "\(.name): \(if .ok then "ok" else "FAILED" end): \(.message)"' "$RUNNER_TEMP/smoke.json"
+          exit "$code"
+      - name: Package the qualification
+        if: always()
+        env:
+          ID: ${{ matrix.id }}
+          CODE: ${{ steps.smoke.outputs.code }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/out"
+          git diff --binary -- "apps/$ID/release.json" > "$RUNNER_TEMP/out/qualification.patch"
+          [[ -f "$RUNNER_TEMP/smoke.json" ]] && cp "$RUNNER_TEMP/smoke.json" "$RUNNER_TEMP/out/smoke.json"
+          jq -n --arg id "$ID" --arg passed "$([[ "$CODE" == "0" ]] && echo true || echo false)" '{id: $id, passed: ($passed == "true")}' > "$RUNNER_TEMP/out/meta.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qualify-${{ matrix.id }}
+          path: ${{ runner.temp }}/out/
+          retention-days: 14
+
+  record:
+    needs: [changed, smoke]
+    # a branch of this repository only: a fork's pull request gets the smoke results, never a push
+    if: always() && needs.changed.outputs.count != '0' && (github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: write
+    env:
+      GH_REPO: ${{ github.repository }}
+      BRANCH: ${{ github.head_ref || github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: qualify-*
+          path: ${{ runner.temp }}/results
+      - name: Record passed qualifications on the branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [[ "$BRANCH" != "main" ]] || { echo "::error::qualify never pushes to main"; exit 1; }
+          git config user.name "harbor-apps qualify"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          recorded=0
+          failed=0
+          for dir in "$RUNNER_TEMP"/results/qualify-*; do
+            meta="$dir/meta.json"
+            jq -e '(.id | test("^[a-z][a-z0-9-]{0,62}$")) and (.passed | type == "boolean")' "$meta" > /dev/null 2>&1 || { echo "::error::$dir: bad summary"; failed=1; continue; }
+            id=$(jq -r .id "$meta")
+            if [[ "$(jq -r .passed "$meta")" != "true" ]]; then echo "::error::$id did not pass its smoke test"; failed=1; continue; fi
+            patch="$dir/qualification.patch"
+            [[ -s "$patch" ]] || { echo "::notice::$id: nothing to record"; continue; }
+            if git apply --numstat "$patch" | awk '{print $3}' | grep -vqxF "apps/$id/release.json" || grep -qE 'mode (120000|160000)' "$patch"; then
+              echo "::error::$id: the qualification patch touches more than apps/$id/release.json; refused"
+              failed=1
+              continue
+            fi
+            git apply --index "$patch" && git commit -q -m "Qualify $id: smoke test passed on a GitHub runner (Harbor's engine, real Docker)" && recorded=$((recorded + 1))
+          done
+          if (( recorded > 0 )); then
+            git push -q origin "HEAD:$BRANCH"
+            gh workflow run ci.yml --ref "$BRANCH"
+            echo "::notice::recorded $recorded qualification(s) on $BRANCH; ci.yml dispatched"
+          fi
+          exit "$failed"

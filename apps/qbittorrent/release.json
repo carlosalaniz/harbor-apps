@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "qbittorrent",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "fd756936756b86ea199855c3d967f05d28f2a1465e67a2bee1010437506a6e9d"
+    },
+    "compose.yaml": {
+      "sha256": "55e067cdaa04749e06d4841a3aefef67753615d3edefc27c9cb8d8ba56005b35"
+    },
+    "README.md": {
+      "sha256": "b2fbe0f50e4a881d4dd1d881f5b92a53cf043f6f5d4d967fe388db859efd4954"
+    }
+  },
+  "images": {
+    "server": {
+      "reference": "linuxserver/qbittorrent@sha256:97333cc1ccf903e0bbcd8eb67e3332e4970e9c1ecabe145e499e9c0847ebcaed",
+      "repository": "linuxserver/qbittorrent",
+      "tag": "5.2.4",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:07bf154bd7d0d2450d4c4f9c2e7ca1d61566a4963b7aeb44475497935dec14f3",
+      "appVersion": "5.2.4",
+      "imageCreated": "2026-10-11T13:43:13Z",
+      "source": "https://hub.docker.com/r/linuxserver/qbittorrent"
+    }
+  },
+  "qualification": {
+    "status": "passed",
+    "date": "2026-10-13",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.0",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "server": "5.2.4"
+    },
+    "notes": [
+      "Digest of server resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; linuxserver/qbittorrent:5.2.4); image config: ExposedPorts 6881/tcp,6881/udp,8080/tcp, Volumes /config, User root.",
+      "Smoke run 2026-10-13T22:46:50.754Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 3 s, still healthy 60 s later."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "251e6c085f437744f715a78b01f44737d883f57ec7ba210a98f9b107fd5e2421"
+    }
+  }
+}

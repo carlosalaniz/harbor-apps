@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "syncthing",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "e08e457ec1fef84d97a6feec8d38b29e674d2ad54a91a2329de4dc945310a6fb"
+    },
+    "compose.yaml": {
+      "sha256": "10d997cadf321b9e2701eb15172208149a3c0bea25d75d64132a3eae41f13c40"
+    },
+    "README.md": {
+      "sha256": "c27d50e9299a620661426f14ffbfc76b11ec472cbb1c62e7079dca99be27b7af"
+    }
+  },
+  "images": {
+    "app": {
+      "reference": "syncthing/syncthing@sha256:4d0281bdcb4ed9baf503d251d0544ddd856f49fce3f114056257ae172b7fb670",
+      "repository": "syncthing/syncthing",
+      "tag": "2.1.6",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:92e9a8bf559062b955ab45c7a60bc33d0b97ebdb1e5e86959b40714b482f740a",
+      "appVersion": "2.1.6",
+      "imageCreated": "2026-10-06T06:02:15Z",
+      "source": "https://hub.docker.com/r/syncthing/syncthing"
+    }
+  },
+  "qualification": {
+    "status": "passed",
+    "date": "2026-10-13",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.0",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "app": "2.1.6"
+    },
+    "notes": [
+      "Digest of app resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; syncthing/syncthing:2.1.6); image config: ExposedPorts 21027/udp,22000/tcp,22000/udp,8384/tcp, Volumes /var/syncthing, User root.",
+      "Smoke run 2026-10-13T22:47:32.587Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 7 s, still healthy 60 s later."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "c39ec9dac5fc594585b638d83652ce2b9e4f57c4bc18542da69d01ebbd81555c"
+    }
+  }
+}

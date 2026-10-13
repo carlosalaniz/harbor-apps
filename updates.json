@@ -6,8 +6,28 @@
   },
   "apps": {
     "immich": {
-      "hold": ["database"],
+      "hold": [
+        "database"
+      ],
       "note": "Immich names the exact Postgres (VectorChord) image each release needs in its own docker-compose.yml; move it by hand with the release notes open."
+    },
+    "karakeep": {
+      "hold": [
+        "meilisearch"
+      ],
+      "note": "Karakeep names the Meilisearch version it supports in its own docker/docker-compose.yml; move it by hand when that file does. The package sets MEILI_EXPERIMENTAL_DUMPLESS_UPGRADE: a newer Meilisearch upgrades the index in place and an older one can no longer open it, so a rolled-back update leaves Meilisearch unable to start until its volume is emptied and Karakeep reindexes. Chrome majors arrive as pull requests: the smoke run only checks that DevTools answers."
+    },
+    "qbittorrent": {
+      "note": "The after-start hook depends on the linuxserver layout (/run/service/svc-qbittorrent, /config/qBittorrent/qBittorrent.conf, python3, curl) and on WebUI\\HostHeaderValidation and WebUI\\Password_PBKDF2. It checks its own result and stops qBittorrent when it fails, so a move that breaks it fails the smoke test; read the [Harbor after-start hook] line in the container log first."
+    },
+    "romm": {
+      "match": {
+        "romm": "^5\\.4\\."
+      },
+      "note": "RomM minors can carry long one-way migrations (5.4.0: 15-20 min on big libraries), longer than Harbor 600 s readiness ceiling; a rollback mid-migration leaves a half-migrated database. Move minors by hand after reading the release notes."
+    },
+    "kavita": {
+      "note": "compose.yaml passes [-c, script] to the image ENTRYPOINT [/bin/bash], which then execs /entrypoint.sh, to write appsettings.Production.json (KnownProxies). Before merging a move, check the release Dockerfile still has ENTRYPOINT /bin/bash and /entrypoint.sh; otherwise the script is silently skipped and EPUB pictures break on the secure LAN address, while the smoke still passes."
     }
   }
 }

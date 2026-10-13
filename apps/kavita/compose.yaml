@@ -1,0 +1,38 @@
+services:
+  web:
+    image: ghcr.io/kareadita/kavita@sha256:31181a32f0dda73cae68721867028a7253d57881b58bea5754cd9e578e75421a # tag: 0.9.1
+    # The image's ENTRYPOINT is bash and its CMD /entrypoint.sh; this command runs one step first. If upstream
+    # ever changes that ENTRYPOINT, these arguments are silently ignored (see updates.json note for kavita).
+    # Harbor's proxies (the secure LAN relay, tailscale serve, Caddy) reach Kavita from this network's
+    # gateway, and the secure LAN relay hands the real host only in X-Forwarded-Host. Kavita believes
+    # forwarded headers only from loopback or its KnownProxies, and builds EPUB image/style links and the
+    # OPDS URL from the host it sees, so the gateway is listed in config/appsettings.Production.json:
+    # an override file ASP.NET reads at start and Kavita never writes (its own settings stay in
+    # appsettings.json). The gateway comes from the default route in /proc/net/route (little-endian
+    # hex); the file is rewritten on every start, so it follows a re-created network.
+    command:
+      - -c
+      - |
+        gw=$(awk '$2 == "00000000" && $3 != "00000000" { print $3; exit }' /proc/net/route)
+        case "$gw" in
+          [0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f])
+            ip=$(printf '%d.%d.%d.%d' "0x${gw:6:2}" "0x${gw:4:2}" "0x${gw:2:2}" "0x${gw:0:2}")
+            printf '{\n  "KnownProxies": ["%s"]\n}\n' "$ip" > /kavita/config/appsettings.Production.json
+            echo "Harbor: trusting forwarded headers from the network gateway $ip" ;;
+          *)
+            printf '{}\n' > /kavita/config/appsettings.Production.json
+            echo "Harbor: no default gateway found; forwarded headers trusted from loopback only" ;;
+        esac
+        exec /entrypoint.sh
+    # Kavita backs up its database and runs every migration before it listens on 5000. On a large library
+    # an upgrade can take minutes, longer than Harbor's `compose up --wait` window (about 175 s, which a
+    # long start_period cannot stretch), and a missed window rolls the update back mid-migration. So the
+    # image's own check is off and the manifest's health probe of /api/health (up to 600 s) decides.
+    healthcheck:
+      disable: true
+    volumes:
+      - {type: volume, source: config, target: /kavita/config}
+      - {type: volume, source: library, target: /library}
+volumes:
+  config: {}
+  library: {}
