@@ -1,0 +1,27 @@
+services:
+  comfyui:
+    image: yanwk/comfyui-boot@sha256:3886d7bfc722fee3176130357c56ec861e9c5211b227f8342e1e79a321bd05f2 # tag: cu130-slim-v2-20261014
+    # The image's own start script copies the ComfyUI bundled in the image into /root/ComfyUI and starts it with
+    # ComfyUI-Manager. /root/ComfyUI itself is not a volume, so an update brings the new ComfyUI; only its folders
+    # below are kept. ComfyUI stops at start when CUDA has no card, so without one (no NVIDIA card, its container
+    # toolkit missing, or a driver older than 580) this runs it on the CPU instead, as Harbor's review says.
+    command:
+      - bash
+      - -c
+      - "python3.13 -c 'import sys, torch; sys.exit(0 if torch.cuda.is_available() else 1)' || export CLI_ARGS=--cpu; exec bash /runner-scripts/entrypoint.sh"
+    volumes:
+      - {type: volume, source: models, target: /root/ComfyUI/models}
+      - {type: volume, source: output, target: /root/ComfyUI/output}
+      - {type: volume, source: input, target: /root/ComfyUI/input}
+      - {type: volume, source: user, target: /root/ComfyUI/user}
+      - {type: volume, source: custom-nodes, target: /root/ComfyUI/custom_nodes}
+      - {type: volume, source: python, target: /root/.local}
+      - {type: volume, source: cache, target: /root/.cache}
+volumes:
+  models: {}
+  output: {}
+  input: {}
+  user: {}
+  custom-nodes: {}
+  python: {}
+  cache: {}

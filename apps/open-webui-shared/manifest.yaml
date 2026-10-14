@@ -5,7 +5,7 @@ metadata:
   name: "Open WebUI for Ollama"
   description: "Private ChatGPT-style assistant for the separate Ollama app: chat with the models every AI app on this machine shares, or connect your own API keys."
 release:
-  revision: "1"
+  revision: "2"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -53,6 +53,16 @@ links:
       endpoint: web
     bindings:
       - {service: web, environment: OLLAMA_BASE_URL, format: url}
+  - id: comfyui
+    purpose: "ComfyUI, to make images in chats"
+    provider:
+      packages: [comfyui]
+      endpoint: web
+    # Optional: Open WebUI reads COMFYUI_BASE_URL only at its first start (it keeps its settings in its own database
+    # after that), so a link chosen later joins the network but the address is typed in Admin Panel, Settings, Images.
+    optional: true
+    bindings:
+      - {service: web, environment: COMFYUI_BASE_URL, format: url}
 configuration:
   - {service: web, environment: WEBUI_URL, endpoint: web, format: origin}
 presentation:
@@ -65,4 +75,4 @@ presentation:
     - shot-2.jpg
   developer: "Open WebUI contributors"
   website: https://openwebui.com
-  releaseNotes: "Open WebUI v0.12.0 without a model server of its own: it uses the Ollama app, so models are downloaded once and shared with your other AI apps. Telemetry off."
+  releaseNotes: "Open WebUI v0.12.0 without a model server of its own: it uses the Ollama app, so models are downloaded once and shared with your other AI apps. Optional link to ComfyUI to make images in chats. Telemetry off."

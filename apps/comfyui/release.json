@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "comfyui",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "7109a5181bd7e776b49e4aede7183e867bcea8cc3d9cf86a71fcf840f7acaf4c"
+    },
+    "compose.yaml": {
+      "sha256": "9d4dbee29d7fbf98b084330c9bcae59e5ed5d55d7d437a586a1edce9c14bd018"
+    },
+    "README.md": {
+      "sha256": "c3afef518e12584f725a9264d12cec0a6f1dcc8dc48f9adec4e11e08a957a593"
+    }
+  },
+  "images": {
+    "comfyui": {
+      "reference": "yanwk/comfyui-boot@sha256:3886d7bfc722fee3176130357c56ec861e9c5211b227f8342e1e79a321bd05f2",
+      "repository": "yanwk/comfyui-boot",
+      "tag": "cu130-slim-v2-20261014",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:6b93aa7f3b238bbf98a5f654ac6ab6f704f54079189d6f281deb72095d9f1c11",
+      "appVersion": "cu130-slim-v2-20261014",
+      "imageCreated": "2026-10-14T03:01:02Z",
+      "source": "https://hub.docker.com/r/yanwk/comfyui-boot"
+    }
+  },
+  "qualification": {
+    "status": "pending",
+    "date": "2026-10-14",
+    "notes": [
+      "Digest of comfyui resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; yanwk/comfyui-boot:cu130-slim-v2-20261014); image config: ExposedPorts 8188/tcp, Volumes none, User root."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "6c0ab65a9d5cee327e7c59f1c0e9b6b27579387befb354f23a9c383ebb8d318a"
+    }
+  }
+}

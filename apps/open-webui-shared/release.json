@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "package": {
     "id": "open-webui-shared",
-    "revision": "1"
+    "revision": "2"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "a45c1c4cc29cc95b3a021182fa42cb599f56d3e021d6d9f8b00ba795a82e959b"
+      "sha256": "f9ce588d80c6434d078c66b25e2d34287f33fecb59cc763afbbbfbdadd67fb95"
     },
     "compose.yaml": {
-      "sha256": "059e29f6cbef79d3bb2ac271657af31badab3815d7fbcc930f32d0f463558516"
+      "sha256": "b67e480a596d23c5a7f2aec71293fd1118f1070991967b0ef42ede835b4a79c0"
     },
     "README.md": {
-      "sha256": "9f87f516af1380de069ff6e7b678e6a66cef53beb61d5c1412be21eb3a1ea10d"
+      "sha256": "846c6bf4a368f6050b6146c9c6e4e7216f59f97d7ecca154b61b0819b0fa1021"
     }
   },
   "images": {

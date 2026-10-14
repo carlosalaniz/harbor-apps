@@ -1,0 +1,74 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: comfyui
+  name: ComfyUI
+  description: Make images with Stable Diffusion, FLUX and other open models on this machine's graphics card, in a node editor or from Open WebUI.
+release:
+  revision: "1"
+  version: 0.40.0
+  # gpu permission (decision 179)
+  minHarbor: "0.34.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    comfyui: application
+endpoints:
+  web:
+    service: comfyui
+    containerPort: 8188
+    scheme: http
+    exposure: direct
+    browserContext: ordinary
+# The graphics card when Harbor finds a usable one; otherwise ComfyUI runs on the CPU (very slow).
+permissions:
+  comfyui: [gpu]
+health:
+  endpoint: web
+  path: /system_stats
+  expectedStatus: [200]
+  timeoutSeconds: 5
+  deadlineSeconds: 300
+ui:
+  primaryEndpoint: web
+# No `setup:` on purpose: ComfyUI has no accounts, and Harbor reads `setup` as "has its own login" (it would then
+# publish a public domain without basic-auth protection by default). First steps are in the README.
+storage:
+  - id: models
+    composeVolume: models
+    purpose: "Downloaded models (checkpoints, LoRAs, VAEs and more)"
+    retention: retain
+    external: {hint: "Models are large (2 to 25 GB each); a folder on a big disk is a good idea."}
+  - id: output
+    composeVolume: output
+    purpose: "Images and videos you made"
+    retention: retain
+  - id: input
+    composeVolume: input
+    purpose: "Images you uploaded"
+    retention: retain
+  - id: user
+    composeVolume: user
+    purpose: "Saved workflows and settings"
+    retention: retain
+  - id: custom-nodes
+    composeVolume: custom-nodes
+    purpose: "Custom nodes installed with the Manager"
+    retention: retain
+  - id: python
+    composeVolume: python
+    purpose: "Python packages the custom nodes need"
+    retention: retain
+  - id: cache
+    composeVolume: cache
+    purpose: "Download cache (Hugging Face and torch hub models)"
+    retention: retain
+presentation:
+  icon: icon.svg
+  tagline: "Make images with open models on your own graphics card"
+  sizeHint: "About 17 GB (a 5 GB download), plus each model you download (2 to 25 GB)"
+  category: ai
+  developer: "Comfy Org (image by YanWenKun)"
+  website: https://www.comfy.org/
+  releaseNotes: "ComfyUI 0.40.0 with ComfyUI-Manager, on the graphics card when Harbor finds one (NVIDIA needs driver 580 or newer and its container toolkit; otherwise it runs on the CPU). Open WebUI can link to it to make images in chats."

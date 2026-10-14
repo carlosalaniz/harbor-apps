@@ -9,6 +9,12 @@ services:
       SCARF_NO_ANALYTICS: "true"
       DO_NOT_TRACK: "true"
       ANONYMIZED_TELEMETRY: "false"
+      # Image generation defaults, read once at Open WebUI's first start (it keeps them in its database after that):
+      # the node map of Open WebUI's own ComfyUI workflow (6 prompt, 4 model, 5 size, 3 steps and seed), which it
+      # ships empty, and an SDXL-sized picture. Image generation stays off until it is turned on under Images.
+      COMFYUI_WORKFLOW_NODES: '[{"type":"prompt","key":"text","node_ids":["6"]},{"type":"model","key":"ckpt_name","node_ids":["4"]},{"type":"width","key":"width","node_ids":["5"]},{"type":"height","key":"height","node_ids":["5"]},{"type":"steps","key":"steps","node_ids":["3"]},{"type":"seed","key":"seed","node_ids":["3"]}]'
+      IMAGE_SIZE: "1024x1024"
+      IMAGE_STEPS: "25"
     volumes:
       - {type: volume, source: data, target: /app/backend/data}
 volumes:

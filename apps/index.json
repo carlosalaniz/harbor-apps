@@ -77,6 +77,10 @@
       "revision": "2",
       "dir": "chatpad-ai"
     },
+    "comfyui": {
+      "revision": "1",
+      "dir": "comfyui"
+    },
     "convertx": {
       "revision": "2",
       "dir": "convertx"
@@ -334,11 +338,11 @@
       "dir": "omnitools"
     },
     "open-webui": {
-      "revision": "4",
+      "revision": "5",
       "dir": "open-webui"
     },
     "open-webui-shared": {
-      "revision": "1",
+      "revision": "2",
       "dir": "open-webui-shared"
     },
     "opencode": {

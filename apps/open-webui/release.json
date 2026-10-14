@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "package": {
     "id": "open-webui",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "75a2bdb0d07810d6f17b0393629e940bd0c61749127221b1eeea649d4dcff8f2"
+      "sha256": "1c17c749ca80f43579a5ae4f0f0ac1f5d44ab07699cbb39d0272f33dd574924a"
     },
     "compose.yaml": {
-      "sha256": "4bbbeef0bd5e66fb25a02f7d28fc209b762e6f0806f59362dd7088927f534229"
+      "sha256": "e728d932de7a767c0831c5665277750d48888f358cf45090da555ba3fee2e8d6"
     },
     "README.md": {
-      "sha256": "2a601f1263674e2920366f4f73a6d15b4611841605229e509c8c3edc4f2d46c9"
+      "sha256": "7ec6286d321ca5b6e7ac837e246e3f97d7e356634ec8c1c6d15692ab1a47f8e2"
     }
   },
   "images": {
@@ -41,10 +41,10 @@
     "status": "pending",
     "date": "2026-10-14",
     "notes": [
-      "Digest of ollama resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; ollama/ollama:0.34.4); image config: ExposedPorts 11434/tcp, Volumes none, User root.",
-      "Digest of web resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; ghcr.io/open-webui/open-webui:v0.12.0); image config: ExposedPorts 8080/tcp, Volumes none, User 0:0.",
       "Revision 3 was passed (2026-10-13) on Docker 28.0.4.",
-      "Revision 4 (Harbor 0.34.0): gpu permission for the bundled ollama service, and OLLAMA_IGPU_ENABLE=1 on it so Ollama uses integrated Intel/AMD graphics (Vulkan) instead of dropping them; otherwise compose.yaml is unchanged from revision 3. Not yet run on a real Harbor host."
+      "Revision 4 (Harbor 0.34.0): gpu permission for the bundled ollama service, and OLLAMA_IGPU_ENABLE=1 on it so Ollama uses integrated Intel/AMD graphics (Vulkan) instead of dropping them; otherwise compose.yaml is unchanged from revision 3. Not yet run on a real Harbor host.",
+      "Digest of ollama resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; ollama/ollama@sha256:8262851b2846b87c649eddf3e76beb270c52f4d1bc94559f47efde16b0841551); image config: ExposedPorts 11434/tcp, Volumes none, User root.",
+      "Digest of web resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; ghcr.io/open-webui/open-webui@sha256:1565038903151ced924b5a3226f73f40f16963df4b910441f6391f10144afdaa); image config: ExposedPorts 8080/tcp, Volumes none, User 0:0."
     ]
   },
   "assets": {

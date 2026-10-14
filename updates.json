@@ -5,8 +5,16 @@
     "minAgeDays": 2
   },
   "apps": {
+    "comfyui": {
+      "match": {
+        "comfyui": "^cu130-slim-v2-[0-9]{8}$"
+      },
+      "note": "yanwk/comfyui-boot publishes a dated tag per build (cu130-slim-v2-YYYYMMDD); the floating cu130-slim-v2 and the other CUDA lines are not followed. A new CUDA line (and its minimum driver) is a hand-made revision. The image tag carries no ComfyUI version, so an automatic update shows the tag as the version; set release.version to the ComfyUI version from the log (ComfyUI version: x.y.z) when convenient."
+    },
     "immich": {
-      "hold": ["database"],
+      "hold": [
+        "database"
+      ],
       "note": "Immich names the exact Postgres (VectorChord) image each release needs in its own docker-compose.yml; move it by hand with the release notes open."
     }
   }
