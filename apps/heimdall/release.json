@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "heimdall",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "28c33abaa7a58bcc6d79dbde79db25ae568e5608d809afb13ec9eed7b5c692e1"
+      "sha256": "7e487db55afbf88212507ce7c5e4afcf409b14d31d2eb2866e4233897ac92bb4"
     },
     "compose.yaml": {
-      "sha256": "d9ad2d38a1b27e86415f3703cf6b799d429c13aa71dd0037e472663399ba763a"
+      "sha256": "eb76ac8e28366c648d08c11f8a8d98dc115f0363a5836898817fbc5bfaf3bf2c"
     },
     "README.md": {
       "sha256": "6317b4fa0c27c8065727e4ed0ed1ccbcc25ce14261efc5f32ea42429473bc5fa"
@@ -17,13 +17,13 @@
   },
   "images": {
     "server": {
-      "reference": "linuxserver/heimdall@sha256:287e48152967820922969ced1e990949063679d84c11ce988726c4195b52a47f",
+      "reference": "linuxserver/heimdall@sha256:134636c92aa9fd47291f63adb6dc71b7c4e3abdde69e382abbf4a51461f9908a",
       "repository": "linuxserver/heimdall",
       "tag": "2.8.3",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:42cbfd2806bc67d731664d4c30b29e428d411200dfa28b19b251a28ec3f8b9a0",
+      "platformDigest": "sha256:d0732e66502837541d34970fc902809ad57865625a92ffe1c52543ab9578abd2",
       "appVersion": "2.8.3",
-      "imageCreated": "2026-09-05T16:16:13Z",
+      "imageCreated": "2026-10-21T20:29:49Z",
       "source": "https://hub.docker.com/r/linuxserver/heimdall"
     }
   },
@@ -39,9 +39,9 @@
     },
     "notes": [
       "Drafted by scripts/umbrel-import.mjs from the Umbrel package heimdall (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "Digest of server resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; linuxserver/heimdall@sha256:287e48152967820922969ced1e990949063679d84c11ce988726c4195b52a47f); image config: ExposedPorts 443/tcp,80/tcp, Volumes /config, User root.",
       "Live catalog run catalog-2026-10-12T18-22-00-harbor-q11: passed (healthy after 47s; page title \"Heimdall\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1.",
+      "Digest of server resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; linuxserver/heimdall:2.8.3); image config: ExposedPorts 443/tcp,80/tcp, Volumes /config, User root."
     ]
   },
   "assets": {

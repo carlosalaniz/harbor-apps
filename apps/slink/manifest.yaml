@@ -5,8 +5,8 @@ metadata:
   name: Slink
   description: Self-hosted image hosting and sharing platform with private links, collections, S3/SMB storage, OIDC SSO and ShareX support.
 release:
-  revision: "3"
-  version: "1.14.2"
+  revision: "4"
+  version: "1.14.3"
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "wavelog",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "69655665f26f73878489ed09f19f7215899401d77797dd0242490ae5ddba5993"
+      "sha256": "f4bc4e05a595cf98e29c08f50845e9a0e84176313541e910574562fdf83c4336"
     },
     "compose.yaml": {
-      "sha256": "55f332dc40dfff39d7689f48c563813729e5e964f4d64c96dada96e6e633d69a"
+      "sha256": "ee1f9b01aa399946b920d9800c7d2277ae435b9b90e9f0611b747f8c1eff4c23"
     },
     "README.md": {
       "sha256": "0c81a2538d34ed081ccfda80dc29f42a59e31af03d7e35232429e0bae8eacbe1"
@@ -17,13 +17,13 @@
   },
   "images": {
     "app": {
-      "reference": "ghcr.io/wavelog/wavelog@sha256:72bbf0c1af4f1caa8115d32c2aab49e308a597721a01d98ed6b4281be4668ebd",
+      "reference": "ghcr.io/wavelog/wavelog@sha256:6d02c84188a6d4a87c641cc13b2c69de971ae3d3dc6657b9d15617230dc8cac0",
       "repository": "ghcr.io/wavelog/wavelog",
       "tag": "3.2.4",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:3223bf63ba4c967861e2d4c225a5771d737eb69e3d8107249b154cb441b64e31",
+      "platformDigest": "sha256:16cb900a18fb46ddfdc9d60c5ab5006f326dc17593985bf3e93fdec6de70aba4",
       "appVersion": "3.2.4",
-      "imageCreated": "2026-10-13T16:28:20Z",
+      "imageCreated": "2026-10-21T19:06:55Z",
       "source": "https://ghcr.io/wavelog/wavelog"
     },
     "wavelog-db": {
@@ -49,9 +49,9 @@
       "wavelog-db": "11.4"
     },
     "notes": [
-      "Digest of app resolved 2026-10-18 via registry API (scripts/catalog-pin.mjs; ghcr.io/wavelog/wavelog:3.2.4); image config: ExposedPorts 80/tcp, Volumes none, User root.",
-      "Digest of wavelog-db resolved 2026-10-18 via registry API (scripts/catalog-pin.mjs; mariadb:11.4); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
-      "Smoke run 2026-10-18T05:34:58.623Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (3.2.3) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
+      "Smoke run 2026-10-18T05:34:58.623Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (3.2.3) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later.",
+      "Digest of app resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/wavelog/wavelog:3.2.4); image config: ExposedPorts 80/tcp, Volumes none, User root.",
+      "Digest of wavelog-db resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; mariadb@sha256:250e1609e93c0e6aecf64bfbab2d84d5e89d2481540fe77447ff6c855c3b1873); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root."
     ]
   },
   "assets": {

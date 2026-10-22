@@ -5,7 +5,7 @@ metadata:
   name: "FreshRSS"
   description: "Fast, self-hosted RSS and Atom feed reader with a clean web interface and mobile apps via its API."
 release:
-  revision: "3"
+  revision: "4"
 deployment:
   compose: compose.yaml
   multiInstance: true

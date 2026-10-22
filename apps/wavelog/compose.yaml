@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/wavelog/wavelog@sha256:72bbf0c1af4f1caa8115d32c2aab49e308a597721a01d98ed6b4281be4668ebd # tag: 3.2.4
+    image: ghcr.io/wavelog/wavelog@sha256:6d02c84188a6d4a87c641cc13b2c69de971ae3d3dc6657b9d15617230dc8cac0 # tag: 3.2.4
     environment:
       CI_ENV: docker
     volumes:

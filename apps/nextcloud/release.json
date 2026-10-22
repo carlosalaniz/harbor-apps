@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "nextcloud",
-    "revision": "5"
+    "revision": "6"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "95df1c915f7f0e94834f15aca29d51d7578c184b7249a4f0576f1ff70e84f9c5"
+      "sha256": "4d2732c2a1b6964d4204056eecad0a3138b63548b9f9e70c55895a95dd807949"
     },
     "compose.yaml": {
-      "sha256": "00aecb49aecd7e0c6fef589a2548b135b489cb02ed722ce208c609d8620a1deb"
+      "sha256": "a3d8fb3345eb7284394f9b317f344321956effd26ac659b117c56eee83a31a98"
     },
     "README.md": {
       "sha256": "db4570ec4613f20860f01a33d228e8039cf30bb7083a3a91e8f59580c2e07daf"
@@ -37,13 +37,13 @@
       "source": "https://hub.docker.com/_/redis"
     },
     "app": {
-      "reference": "nextcloud@sha256:de4ad938938636f2f616b07cfac5f355a82f44edb88acd297d6931fa5d39bac7",
+      "reference": "nextcloud@sha256:5cd0788a5c7e0374256939dd86fefa34160ae03730cb28246d16939eacfd4c08",
       "repository": "nextcloud",
-      "tag": "34.0.4-apache",
+      "tag": "34.0.5-apache",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:cad02be5a67f5e10ce0f15d39a4939fe9b7873f64b33346d0a52eec5af529d30",
-      "appVersion": "34.0.4-apache",
-      "imageCreated": "2026-09-11T23:21:36Z",
+      "platformDigest": "sha256:82285b28c116c0dd13b2641ec9425830ebfb6c22abf6583810dab3efa3fc25ec",
+      "appVersion": "34.0.5-apache",
+      "imageCreated": "2026-10-21T18:01:40Z",
       "source": "https://hub.docker.com/_/nextcloud"
     }
   },
@@ -52,7 +52,10 @@
     "date": "2026-10-03",
     "notes": [
       "Revision 4 (hook re-activates Nextcloud Office for the current main address) and revision 3 (decision 117: hook sets up a never-installed Nextcloud) await a live qualification run; revision 1 passed in catalog-2026-09-15T00-13-13.",
-      "Revision 5 adds screenshots only (shot-1.jpg, shot-2.jpg, shot-3.jpg, presentation.gallery); compose.yaml is byte-identical to the qualified revision 4."
+      "Revision 5 adds screenshots only (shot-1.jpg, shot-2.jpg, shot-3.jpg, presentation.gallery); compose.yaml is byte-identical to the qualified revision 4.",
+      "Digest of db resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; postgres@sha256:67f41722b7a8cbdb868a44a4995c846eddfdc2973bccb291ce937dce88ad5675); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of redis resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; redis@sha256:becdda6c7f4b3fb42e42fd7f120bbf5c54c4caaaf16f26da24e4563d2c1f0576); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Digest of app resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; nextcloud:34.0.5-apache); image config: ExposedPorts 80/tcp, Volumes /var/www/html, User root."
     ]
   },
   "assets": {

@@ -5,8 +5,8 @@ metadata:
   name: LibreSpeed
   description: Self-hosted Speed Test for HTML5 and more. Easy setup, examples, configurable, mobile friendly. Supports PHP, Node, Multiple servers, and more
 release:
-  revision: "2"
-  version: 6.3.0
+  revision: "3"
+  version: 6.3.1
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml

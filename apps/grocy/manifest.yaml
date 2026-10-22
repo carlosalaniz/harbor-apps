@@ -9,7 +9,7 @@ defaultCredentials:
   password: admin
   note: Change it after the first login.
 release:
-  revision: "2"
+  revision: "3"
   version: 4.7.1
 deployment:
   compose: compose.yaml

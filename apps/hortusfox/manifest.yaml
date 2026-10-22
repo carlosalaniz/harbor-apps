@@ -9,8 +9,8 @@ provisionedCredentials:
   passwordEnv: APP_ADMIN_PASSWORD
   username: umbrel@umbrel.local
 release:
-  revision: "4"
-  version: "6.3"
+  revision: "5"
+  version: "6.4"
 deployment:
   compose: compose.yaml
   multiInstance: true

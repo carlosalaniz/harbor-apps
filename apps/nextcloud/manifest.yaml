@@ -5,7 +5,7 @@ metadata:
   name: "Nextcloud"
   description: "Files, calendar, contacts and office documents on your own machine. Sync clients for every platform; Nextcloud Office included via the recommended apps."
 release:
-  revision: "5"
+  revision: "6"
 deployment:
   compose: compose.yaml
   multiInstance: true

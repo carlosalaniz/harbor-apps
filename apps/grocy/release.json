@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "grocy",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "8d7890a5c51a7ed90d793a2117d5b0d98bb9a3d852d4774f19e69c564423607f"
+      "sha256": "126f8d8eb1934400f2395610873d48c65d957a2a61e4caa58e25f5097f682f9b"
     },
     "compose.yaml": {
-      "sha256": "2d48e15caf9e60af343d6e7447b41cfa9541ac4f2e5fbe073de2924ca120eab7"
+      "sha256": "be07a32e6dc6473cb5bb0f12bb3411b2ec8d8c28ba8b5f417b70d6141b0461ca"
     },
     "README.md": {
       "sha256": "44411a14452517cdf3964bed2e835f9e001cdd964a815f4829a9153b2d4e5d66"
@@ -17,13 +17,13 @@
   },
   "images": {
     "server": {
-      "reference": "linuxserver/grocy@sha256:e45d96ef40cce8f39ad96f1b32c151ddb7a2527c68899ee5637978a5bb2dfc3c",
+      "reference": "linuxserver/grocy@sha256:d63bffe9afb2ef1a23fa7ce0749cdaeba9c169fb644b16eed270884a1b2f4ac9",
       "repository": "linuxserver/grocy",
       "tag": "4.7.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:d618bdb10eef88c691b8aa20d254d045c4f2091e705bb7736fe7fb5010c87f19",
+      "platformDigest": "sha256:04b76def84197b214369d3c373df25b012477e25ac656a1b94d5d254d3597b6c",
       "appVersion": "4.7.1",
-      "imageCreated": "2026-09-04T18:25:29Z",
+      "imageCreated": "2026-10-21T20:44:51Z",
       "source": "https://hub.docker.com/r/linuxserver/grocy"
     }
   },
@@ -40,9 +40,9 @@
     "notes": [
       "Drafted by scripts/umbrel-import.mjs from the Umbrel package grocy (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
       "dropped host hooks (pre-start): they only prepare Umbrel bind folders",
-      "Digest of server resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; linuxserver/grocy@sha256:e45d96ef40cce8f39ad96f1b32c151ddb7a2527c68899ee5637978a5bb2dfc3c); image config: ExposedPorts 443/tcp,80/tcp, Volumes /config, User root.",
       "Live catalog run catalog-2026-10-12T18-21-35-harbor-q09: passed (healthy after 36s; page title \"Login | Grocy\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1.",
+      "Digest of server resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; linuxserver/grocy:4.7.1); image config: ExposedPorts 443/tcp,80/tcp, Volumes /config, User root."
     ]
   },
   "assets": {

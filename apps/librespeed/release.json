@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "librespeed",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "86182e08586fc50d3dbcefcbceb1cda70e3e094a76cda86da5495d792a7c0d54"
+      "sha256": "8f0fd77b456fa9a4e855212fcd1a1857e1092c7bdde79f7b7bd1ece052bc789b"
     },
     "compose.yaml": {
-      "sha256": "3fcae197c84062351942a567e0996222957aa60726440d4d4b6e9866414c8554"
+      "sha256": "787bca48f2e6e53f7dfdf7c9abd40e2cad7345ca43c4c5c02894df3a5cc7d0b8"
     },
     "README.md": {
       "sha256": "67e8bedf80d73a3f3f7f1bdcfa4dc7656199514d06c545ec9806c8cc00e53740"
@@ -17,13 +17,13 @@
   },
   "images": {
     "server": {
-      "reference": "ghcr.io/librespeed/speedtest@sha256:af011d4fb5709c6e2b2f381925a6c290d53ce2ed35fa8860e7d33e20690d5065",
+      "reference": "ghcr.io/librespeed/speedtest@sha256:bc34bf69b6c102b23ab81b6e77beb7cce321fb0d3be33ec6e80edef3e9dd8bab",
       "repository": "ghcr.io/librespeed/speedtest",
-      "tag": "6.3.0",
+      "tag": "6.3.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:410f89306b793f5187d5ee4657fd50a09837e2c8e8c1e276575507a4e8a13e8f",
-      "appVersion": "6.3.0",
-      "imageCreated": "2026-09-12T11:05:17Z",
+      "platformDigest": "sha256:c7ac7092ccbf793e9ed613818c501ad6052161c18a16a3fbaa9d5b765002a65d",
+      "appVersion": "6.3.1",
+      "imageCreated": "2026-10-21T22:08:03Z",
       "source": "https://ghcr.io/librespeed/speedtest"
     }
   },
@@ -41,9 +41,9 @@
       "Drafted by scripts/umbrel-import.mjs from the Umbrel package librespeed (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
       "dropped host hooks (post-update): they only prepare Umbrel bind folders",
       "service server: the image's own healthcheck switched off (nothing waits for it; Umbrel never acts on it)",
-      "Digest of server resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/librespeed/speedtest@sha256:af011d4fb5709c6e2b2f381925a6c290d53ce2ed35fa8860e7d33e20690d5065); image config: ExposedPorts 80/tcp,8080/tcp, Volumes none, User root.",
       "Live catalog run catalog-2026-10-12T18-21-35-harbor-q08: passed (healthy after 37s; page title \"LibreSpeed\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1.",
+      "Digest of server resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/librespeed/speedtest:6.3.1); image config: ExposedPorts 80/tcp,8080/tcp, Volumes none, User root."
     ]
   },
   "assets": {
