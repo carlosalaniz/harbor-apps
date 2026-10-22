@@ -166,7 +166,7 @@
       "dir": "ghost"
     },
     "gitea-mirror": {
-      "revision": "4",
+      "revision": "5",
       "dir": "gitea-mirror"
     },
     "grafana": {
