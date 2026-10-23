@@ -28,10 +28,17 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "web": "0.13.0-r2-nginx"
+    },
     "notes": [
-      "Revision 3: Baïkal 0.13.0 (PHP 8.5.12, patched against PHP2Shell CVE-2026-109618/109619). Not yet smoke-tested."
+      "Smoke run 2026-10-23T20:00:22.006Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.11.1) healthy after 4 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {
