@@ -39,10 +39,10 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-13",
+    "date": "2026-10-23",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "romm": "5.4.0",
@@ -51,7 +51,7 @@
     "notes": [
       "Digest of romm resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; rommapp/romm:5.4.0); image config: ExposedPorts 6379/tcp,8080/tcp, Volumes /redis-data,/romm, User root.",
       "Digest of db resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; mariadb:11.8.9); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
-      "Smoke run 2026-10-13T22:47:33.737Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 49 s, still healthy 60 s later."
+      "Smoke run 2026-10-23T19:30:35.811Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 42 s, still healthy 60 s later."
     ]
   },
   "assets": {
