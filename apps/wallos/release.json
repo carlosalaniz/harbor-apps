@@ -32,7 +32,8 @@
     "date": "2026-10-23",
     "notes": [
       "Revision 4: Wallos 5.10.1 (PHP 8.3.36, patched against PHP2Shell CVE-2026-109618/109619). Not yet smoke-tested.",
-      "Health path /health.php (answers without opening the database): probing / in the first second created an empty wallos.db, and a fresh install then restarted in a loop at migration 000013."
+      "Health path /health.php (answers without opening the database): probing / in the first second created an empty wallos.db, and a fresh install then restarted in a loop at migration 000013.",
+      "2026-10-23: fresh-install smoke of this revision passed on Docker Desktop (pnpm catalog:smoke, healthy after 4 s, still healthy 60 s later). The GitHub runner smoke cannot run the upgrade path yet: it installs main's revision 3 first, and that revision crash-looped on the same race there (4 restarts). The next update after this one runs on a fixed base."
     ]
   },
   "assets": {
