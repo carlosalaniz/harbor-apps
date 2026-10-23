@@ -5,7 +5,7 @@ metadata:
   name: "Immich"
   description: "High-performance photo and video backup for your phone, with search, faces, maps and sharing. Your own Google Photos."
 release:
-  revision: "4"
+  revision: "5"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -64,4 +64,4 @@ presentation:
     - shot-2.jpg
   developer: "Immich (FUTO)"
   website: https://immich.app
-  releaseNotes: "Immich v3.3.3 server and machine learning with the upstream PostgreSQL (VectorChord) and Valkey images."
+  releaseNotes: "Immich v3.3.4 server and machine learning with the upstream PostgreSQL (VectorChord) and Valkey images."
