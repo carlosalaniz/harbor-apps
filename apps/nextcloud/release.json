@@ -49,13 +49,9 @@
   },
   "qualification": {
     "status": "pending",
-    "date": "2026-10-03",
+    "date": "2026-10-23",
     "notes": [
-      "Revision 4 (hook re-activates Nextcloud Office for the current main address) and revision 3 (decision 117: hook sets up a never-installed Nextcloud) await a live qualification run; revision 1 passed in catalog-2026-09-15T00-13-13.",
-      "Revision 5 adds screenshots only (shot-1.jpg, shot-2.jpg, shot-3.jpg, presentation.gallery); compose.yaml is byte-identical to the qualified revision 4.",
-      "Digest of db resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; postgres@sha256:67f41722b7a8cbdb868a44a4995c846eddfdc2973bccb291ce937dce88ad5675); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of redis resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; redis@sha256:becdda6c7f4b3fb42e42fd7f120bbf5c54c4caaaf16f26da24e4563d2c1f0576); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
-      "Digest of app resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; nextcloud:34.0.5-apache); image config: ExposedPorts 80/tcp, Volumes /var/www/html, User root."
+      "Revision 6: re-pinned to an image with PHP patched against PHP2Shell (CVE-2026-109618/109619; PHP 8.5.12, 8.4.27, 8.3.36). Not yet smoke-tested."
     ]
   },
   "assets": {

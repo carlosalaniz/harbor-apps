@@ -28,18 +28,10 @@
     }
   },
   "qualification": {
-    "status": "passed",
-    "date": "2026-10-21",
-    "node": "v24.21.0",
-    "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
-    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
-    "appVersions": {
-      "web": "1.14.2"
-    },
+    "status": "pending",
+    "date": "2026-10-23",
     "notes": [
-      "Smoke run 2026-10-21T05:36:29.606Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.14.1) healthy after 8 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 9 s, still healthy 60 s later; fresh install of revision 3 healthy after 8 s, still healthy 60 s later.",
-      "Digest of web resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; anirdev/slink:v1.14.3); image config: ExposedPorts 3000/tcp, Volumes /data, User root."
+      "Revision 4: re-pinned to an image with PHP patched against PHP2Shell (CVE-2026-109618/109619; PHP 8.5.12, 8.4.27, 8.3.36). Not yet smoke-tested."
     ]
   },
   "assets": {

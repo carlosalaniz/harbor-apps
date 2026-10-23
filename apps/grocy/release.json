@@ -28,21 +28,10 @@
     }
   },
   "qualification": {
-    "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
-    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
-    "appVersions": {
-      "server": "4.7.1"
-    },
+    "status": "pending",
+    "date": "2026-10-23",
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package grocy (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "dropped host hooks (pre-start): they only prepare Umbrel bind folders",
-      "Live catalog run catalog-2026-10-12T18-21-35-harbor-q09: passed (healthy after 36s; page title \"Login | Grocy\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1.",
-      "Digest of server resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; linuxserver/grocy:4.7.1); image config: ExposedPorts 443/tcp,80/tcp, Volumes /config, User root."
+      "Revision 3: re-pinned to an image with PHP patched against PHP2Shell (CVE-2026-109618/109619; PHP 8.5.12, 8.4.27, 8.3.36). Not yet smoke-tested."
     ]
   },
   "assets": {

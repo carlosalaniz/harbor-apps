@@ -38,20 +38,10 @@
     }
   },
   "qualification": {
-    "status": "passed",
-    "date": "2026-10-19",
-    "node": "v24.21.0",
-    "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
-    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
-    "appVersions": {
-      "app": "6.3",
-      "db": "11.8.9"
-    },
+    "status": "pending",
+    "date": "2026-10-23",
     "notes": [
-      "Smoke run 2026-10-19T05:37:50.677Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (6.3) healthy after 8 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 11 s, still healthy 60 s later; fresh install of revision 4 healthy after 7 s, still healthy 60 s later.",
-      "Digest of app resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/danielbrendel/hortusfox-web:v6.4); image config: ExposedPorts 80/tcp, Volumes /var/www/html/app/logs,/var/www/html/app/migrations,/var/www/html/public/attachments,/var/www/html/public/backup,/var/www/html/public/img,/var/www/html/public/themes, User root.",
-      "Digest of db resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; mariadb@sha256:f16d7a344413e519dff518f27bdb221388f84b0d274c97c4fb5f2cb0dc1b34fa); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root."
+      "Revision 5: re-pinned to an image with PHP patched against PHP2Shell (CVE-2026-109618/109619; PHP 8.5.12, 8.4.27, 8.3.36). Not yet smoke-tested."
     ]
   },
   "assets": {
