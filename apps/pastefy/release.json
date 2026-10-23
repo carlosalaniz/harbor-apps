@@ -38,10 +38,18 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "db": "11.4.5",
+      "app": "7.1.6"
+    },
     "notes": [
-      "Revision 3: the app waits for its database to answer over TCP (healthcheck + depends_on service_healthy) instead of crashing once on first start. Not yet smoke-tested."
+      "Smoke run 2026-10-23T20:06:34.938Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (7.1.6-patch.1) healthy after 13 s (app restarted 1 time(s) before that), still healthy 60 s later; updated to revision 3 without a rollback, healthy after 11 s, still healthy 60 s later; fresh install of revision 3 healthy after 9 s, still healthy 60 s later."
     ]
   },
   "assets": {
