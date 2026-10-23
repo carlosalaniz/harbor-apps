@@ -5,8 +5,8 @@ metadata:
   name: Papra
   description: The minimalistic document archiving platform.
 release:
-  revision: "2"
-  version: 26.6.2-patch.1
+  revision: "3"
+  version: "26.7.0-patch.1"
 deployment:
   compose: compose.yaml
   multiInstance: true

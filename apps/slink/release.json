@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "slink",
-    "revision": "2"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "715d64719563b8603f7706752224679198304c49fee5028b9f63b304ce68a7e9"
+      "sha256": "28712ff5c9f213d9879175721e6f0958b8bb6cb64760a2271070b95c91054d06"
     },
     "compose.yaml": {
-      "sha256": "6093da246c6f64ee73018a4d6947f0e03ed0a4bbc93ffaa53fd334450d3434ae"
+      "sha256": "b2c4676a5c7a5442b9ae42f39815a5831d197d45e0d5091b63a77cef30cd01f5"
     },
     "README.md": {
       "sha256": "808e73f8d6f426cd4fc5a6885ebd72e6f1c2e08514cf482560ce617fe77436f1"
@@ -17,33 +17,28 @@
   },
   "images": {
     "web": {
-      "reference": "anirdev/slink@sha256:73b0f66bd474be47ee1e1f7be00e0aa55116cb3981a01f920c066ef38a9b9e46",
+      "reference": "anirdev/slink@sha256:dd2af33782a4bf16b1445c74c8354593a0a810585ae4a65cf6a0263edab10835",
       "repository": "anirdev/slink",
-      "tag": "v1.14.1",
+      "tag": "v1.14.3",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:912d27af89bcbb0c9d2aed73ad3fd77cffa042f3013cee71fc96a7b037811e3e",
-      "appVersion": "1.14.1",
-      "imageCreated": "2026-10-11T16:41:50Z",
+      "platformDigest": "sha256:ebec8781e81ea3a5fc24d9490480519a66997311147308b5a1754aac672f1aa2",
+      "appVersion": "1.14.3",
+      "imageCreated": "2026-10-21T18:50:03Z",
       "source": "https://hub.docker.com/r/anirdev/slink"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.14.1"
+      "web": "1.14.3"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package slink (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service web: the image's own healthcheck switched off (nothing waits for it; Umbrel never acts on it)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; anirdev/slink@sha256:73b0f66bd474be47ee1e1f7be00e0aa55116cb3981a01f920c066ef38a9b9e46); image config: ExposedPorts 3000/tcp, Volumes /data, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-35-harbor-q08: passed (healthy after 52s; page title \"Explore Gallery | Slink\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Smoke run 2026-10-23T19:18:39.716Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.14.2) healthy after 8 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 9 s, still healthy 60 s later; fresh install of revision 4 healthy after 8 s, still healthy 60 s later."
     ]
   },
   "assets": {

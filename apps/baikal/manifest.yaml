@@ -5,8 +5,8 @@ metadata:
   name: Baikal
   description: Baïkal is a Calendar+Contacts server
 release:
-  revision: "2"
-  version: 0.11.1
+  revision: "3"
+  version: 0.13.0
 deployment:
   compose: compose.yaml
   multiInstance: true

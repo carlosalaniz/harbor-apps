@@ -5,8 +5,8 @@ metadata:
   name: Ollama
   description: Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.
 release:
-  revision: "3"
-  version: 0.40.3
+  revision: "4"
+  version: "0.40.6"
   # gpu permission (decision 179) and settings (decision 180)
   minHarbor: "0.34.0"
 deployment:
@@ -109,4 +109,4 @@ presentation:
   website: https://ollama.com/
   source: https://github.com/ollama/ollama
   sizeHint: "About 2 GB, plus each model you download (1 to 40 GB)"
-  releaseNotes: "Ollama 0.40.3, now on the graphics card when Harbor finds one (NVIDIA needs its container toolkit; otherwise it runs on the CPU as before). Its server settings (context length, keep-alive, parallel requests, models loaded at once, flash attention, memory precision) can be changed on the app page. Other AI apps can link to it, so models are downloaded once."
+  releaseNotes: "Ollama 0.40.6, now on the graphics card when Harbor finds one (NVIDIA needs its container toolkit; otherwise it runs on the CPU as before). Its server settings (context length, keep-alive, parallel requests, models loaded at once, flash attention, memory precision) can be changed on the app page. Other AI apps can link to it, so models are downloaded once."

@@ -5,8 +5,8 @@ metadata:
   name: Element
   description: A glossy Matrix collaboration client for the web.
 release:
-  revision: "2"
-  version: 1.12.30
+  revision: "4"
+  version: "1.12.32"
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "blinko",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "977dacf052911c8aaf80d9b32b5a1b9c86b02870f780dbe4a8b6d882ee065f5d"
+      "sha256": "fc545e523a0bed0bc3052ac97d86486e9e753dae6fc606e0a8f440ff88206860"
     },
     "compose.yaml": {
-      "sha256": "e9660e1539cddfe72a502666e89caa6d61ef078d0b61d104c7eb2d7444cbed78"
+      "sha256": "957ee4f8ea46567947347ba91680faf1c8c12cb4a2bbf65199c11b681b6fa730"
     },
     "README.md": {
       "sha256": "c0578c64cb5918e875ae358497befc9c2c652a6a49ef4cdd7406d45660e04e86"
@@ -17,13 +17,13 @@
   },
   "images": {
     "db": {
-      "reference": "postgres@sha256:6e3358e46e34dae6c184f48fd06fe1b3dbf958ad5b83480031907e52b9ec2a7d",
+      "reference": "postgres@sha256:2d2b8998d31037bf721cfdf764d76ba74171b4fab3431b7f72c27c56ddbdf9e3",
       "repository": "postgres",
-      "tag": "17.3",
+      "tag": "17.11",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:ab5bae474176425d786b2b901a00304b485678c44ff091f9080bb8b758b53297",
-      "appVersion": "17.3",
-      "imageCreated": "2025-02-13T19:01:08Z",
+      "platformDigest": "sha256:3cec7eb015ba8adb28139fa5c83b8489cdf0e666e53dfdf20f598ae0cc8739e3",
+      "appVersion": "17.11",
+      "imageCreated": "2026-10-06T01:33:02Z",
       "source": "https://hub.docker.com/_/postgres"
     },
     "app": {
@@ -39,24 +39,19 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
+    "date": "2026-10-16",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "db": "17.3",
+      "db": "17.11",
       "app": "1.8.8"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package blinko (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service db: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service app: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service app: healthcheck switched off (nothing waits for it; Umbrel never acts on it)",
-      "Digest of db resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; postgres@sha256:6e3358e46e34dae6c184f48fd06fe1b3dbf958ad5b83480031907e52b9ec2a7d); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of app resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; blinkospace/blinko@sha256:31c3bc9f4fc00c82328c098c0c1120fe7fe43152a9f3cbc04b0303c32a2e60d3); image config: ExposedPorts 1111/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-36-harbor-q07: passed (healthy after 70s; page title \"Blinko\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of db resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; postgres:17.11); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of app resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; blinkospace/blinko:1.8.8); image config: ExposedPorts 1111/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-16T05:42:08.747Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.8.8-patch.1) healthy after 16 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 16 s, still healthy 60 s later; fresh install of revision 3 healthy after 16 s, still healthy 60 s later."
     ]
   },
   "assets": {

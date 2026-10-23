@@ -1,0 +1,132 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: plane
+  name: Plane
+  description: Open-source project management for tasks, sprints, docs and triage, an alternative to Jira, Linear and Asana.
+release:
+  revision: "3"
+  version: 1.4.2
+  minHarbor: "0.30.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    proxy: application
+    web: application
+    space: application
+    admin: application
+    live: application
+    api: application
+    worker: application
+    beat-worker: application
+    plane-db: infrastructure
+    plane-redis: infrastructure
+    plane-mq: infrastructure
+    plane-minio: infrastructure
+endpoints:
+  web:
+    service: proxy
+    containerPort: 80
+    scheme: http
+    exposure: direct
+    browserContext: ordinary
+health:
+  endpoint: web
+  path: /
+  expectedStatus: [200, 301, 302, 303, 307, 308]
+  timeoutSeconds: 10
+  # the first start runs every database migration before the API answers
+  deadlineSeconds: 600
+ui:
+  primaryEndpoint: web
+storage:
+  - id: pgdata
+    composeVolume: pgdata
+    purpose: Database (projects, issues, pages, accounts)
+    retention: retain
+  - id: uploads
+    composeVolume: uploads
+    purpose: Uploaded files and attachments (MinIO)
+    retention: retain
+  - id: rabbitmq-data
+    composeVolume: rabbitmq-data
+    purpose: Background task queue (RabbitMQ)
+    retention: retain
+secrets:
+  - id: secret-key
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: api, environment: SECRET_KEY}
+      - {service: worker, environment: SECRET_KEY}
+      - {service: beat-worker, environment: SECRET_KEY}
+  - id: live-secret
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: live, environment: LIVE_SERVER_SECRET_KEY}
+      - {service: api, environment: LIVE_SERVER_SECRET_KEY}
+      - {service: worker, environment: LIVE_SERVER_SECRET_KEY}
+      - {service: beat-worker, environment: LIVE_SERVER_SECRET_KEY}
+  - id: db-password
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: plane-db, environment: POSTGRES_PASSWORD}
+      - {service: api, environment: DATABASE_URL, template: "postgresql://plane:{{value}}@plane-db:5432/plane"}
+      - {service: worker, environment: DATABASE_URL, template: "postgresql://plane:{{value}}@plane-db:5432/plane"}
+      - {service: beat-worker, environment: DATABASE_URL, template: "postgresql://plane:{{value}}@plane-db:5432/plane"}
+  - id: mq-password
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: plane-mq, environment: RABBITMQ_DEFAULT_PASS}
+      - {service: api, environment: AMQP_URL, template: "amqp://plane:{{value}}@plane-mq:5672/plane"}
+      - {service: worker, environment: AMQP_URL, template: "amqp://plane:{{value}}@plane-mq:5672/plane"}
+      - {service: beat-worker, environment: AMQP_URL, template: "amqp://plane:{{value}}@plane-mq:5672/plane"}
+  - id: storage-access-key
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: plane-minio, environment: MINIO_ROOT_USER}
+      - {service: api, environment: AWS_ACCESS_KEY_ID}
+      - {service: worker, environment: AWS_ACCESS_KEY_ID}
+      - {service: beat-worker, environment: AWS_ACCESS_KEY_ID}
+  - id: storage-secret-key
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: plane-minio, environment: MINIO_ROOT_PASSWORD}
+      - {service: api, environment: AWS_SECRET_ACCESS_KEY}
+      - {service: worker, environment: AWS_SECRET_ACCESS_KEY}
+      - {service: beat-worker, environment: AWS_SECRET_ACCESS_KEY}
+# WEB_URL is the main address: Plane builds the links in its emails from it and redirects there after signing in.
+# The proxy (compose.yaml) turns those redirects into paths, so Plane works at every address Harbor gives it.
+configuration:
+  - {service: proxy, environment: WEB_URL, endpoint: web, format: origin}
+  - {service: api, environment: WEB_URL, endpoint: web, format: origin}
+  - {service: api, environment: CORS_ALLOWED_ORIGINS, endpoint: web, format: origin}
+  - {service: worker, environment: WEB_URL, endpoint: web, format: origin}
+  - {service: worker, environment: CORS_ALLOWED_ORIGINS, endpoint: web, format: origin}
+  - {service: beat-worker, environment: WEB_URL, endpoint: web, format: origin}
+  - {service: beat-worker, environment: CORS_ALLOWED_ORIGINS, endpoint: web, format: origin}
+setup:
+  endpoint: web
+  instructions: Open Plane at its main address and choose Get started to set up the instance in God mode (/god-mode/), where you create the instance administrator. Then sign in and create your first workspace. Email (SMTP) is set up in God mode too.
+presentation:
+  tagline: Projects, sprints and docs for teams
+  category: productivity
+  icon: icon.svg
+  gallery: [shot-1.jpg, shot-2.jpg]
+  developer: Plane Software, Inc.
+  website: https://plane.so/
+  source: https://github.com/makeplane/plane
+  sizeHint: About 2.5 GB of images and 2 GB of memory, plus your files
+  releaseNotes: Plane now works at every address Harbor gives it (localhost, the home network, the secure home-network address, Tailscale, a domain), not only the main one; signing in keeps you where you are. Uploads work at the secure home-network address too.

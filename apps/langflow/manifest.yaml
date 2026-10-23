@@ -5,8 +5,8 @@ metadata:
   name: Langflow
   description: Langflow is a powerful tool for building and deploying AI-powered agents and workflows.
 release:
-  revision: "3"
-  version: 1.12.5
+  revision: "5"
+  version: "1.12.7"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -63,4 +63,4 @@ presentation:
   category: ai
   developer: Langflow
   website: https://www.langflow.org/
-  releaseNotes: "Langflow 1.12.5. Can link to the Ollama app for local models (optional): choose Ollama as the provider in a Language Model or Embedding Model component."
+  releaseNotes: "Langflow 1.12.7. Can link to the Ollama app for local models (optional): choose Ollama as the provider in a Language Model or Embedding Model component."

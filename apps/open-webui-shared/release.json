@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "open-webui-shared",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "f9ce588d80c6434d078c66b25e2d34287f33fecb59cc763afbbbfbdadd67fb95"
+      "sha256": "78f71d6c34c15a9db6697562760cf7b9e791c7dc30ce310ba843efc18db534a7"
     },
     "compose.yaml": {
-      "sha256": "b67e480a596d23c5a7f2aec71293fd1118f1070991967b0ef42ede835b4a79c0"
+      "sha256": "dc7ab6cab457dc7445efae923d80adee30378d02f6411f361ce2b56e2354677a"
     },
     "README.md": {
       "sha256": "846c6bf4a368f6050b6146c9c6e4e7216f59f97d7ecca154b61b0819b0fa1021"
@@ -17,22 +17,21 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/open-webui/open-webui@sha256:1565038903151ced924b5a3226f73f40f16963df4b910441f6391f10144afdaa",
+      "reference": "ghcr.io/open-webui/open-webui@sha256:a537bbe1e6b428820f52ed4a029d7fff97062e24d5cf32c365fba36fd0542def",
       "repository": "ghcr.io/open-webui/open-webui",
-      "tag": "v0.12.0",
+      "tag": "v0.12.3",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:208e824dd445548da7bd655a5e24718bf88112a7f60a807b5adb09096f2fd10b",
-      "appVersion": "0.12.0",
-      "imageCreated": "2026-10-10T21:21:10Z",
+      "platformDigest": "sha256:ef11a68f38457d831e23168486858c25b9d9c4399094c9e72c0d4d8767ac09de",
+      "appVersion": "0.12.3",
+      "imageCreated": "2026-10-16T11:50:41Z",
       "source": "https://ghcr.io/open-webui/open-webui"
     }
   },
   "qualification": {
     "status": "pending",
-    "date": "2026-10-14",
+    "date": "2026-10-23",
     "notes": [
-      "New app: Open WebUI without its bundled Ollama, linked to the Ollama app (optional link). Same web image as open-webui revision 4. Not yet run on a real Harbor host.",
-      "Digest of web resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; ghcr.io/open-webui/open-webui@sha256:1565038903151ced924b5a3226f73f40f16963df4b910441f6391f10144afdaa); image config: ExposedPorts 8080/tcp, Volumes none, User 0:0."
+      "Revision 3: the optional comfyui link (decision 182, live-checked on harbor-old 2026-10-14 against 0.12.0) on top of main's Open WebUI v0.12.3; images unchanged from main. The smoke test cannot set up links, so this stays pending until a linked install is checked."
     ]
   },
   "assets": {

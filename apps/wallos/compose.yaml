@@ -1,6 +1,6 @@
 services:
   server:
-    image: bellamy/wallos@sha256:0006879778f31a962a3873f7682514b92a3c7665dcbc4764fcc241ad968eaccd # tag: 5.8.3
+    image: bellamy/wallos@sha256:b12fc3f6456fa4879346d27f13c96011a1dce8d5285ef31fcec9323f2bac9854 # tag: 5.10.1
     environment:
       TZ: Etc/UTC
       PUID: "1000"

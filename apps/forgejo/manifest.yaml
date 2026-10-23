@@ -5,7 +5,7 @@ metadata:
   name: "Forgejo"
   description: "Lightweight, self-hosted Git forge with issues, pull requests, wikis and CI hooks. Community fork of Gitea."
 release:
-  revision: "2"
+  revision: "3"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -44,4 +44,4 @@ presentation:
   icon: icon.svg
   developer: "Forgejo (Codeberg e.V.)"
   website: https://forgejo.org
-  releaseNotes: "Forgejo 16.0.5 with SQLite; HTTPS clone only (SSH disabled in this profile)."
+  releaseNotes: "Forgejo 16.0.6 with SQLite; HTTPS clone only (SSH disabled in this profile)."

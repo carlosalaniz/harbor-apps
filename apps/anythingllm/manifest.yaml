@@ -5,7 +5,7 @@ metadata:
   name: "AnythingLLM"
   description: "All-in-one AI workspace: chat with your documents, build agents and connect any model provider, including a local Ollama."
 release:
-  revision: "2"
+  revision: "3"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -71,4 +71,4 @@ presentation:
   icon: icon.png
   developer: "Mintplex Labs"
   website: https://anythingllm.com
-  releaseNotes: "AnythingLLM 1.16.1; telemetry disabled. Uses its built-in LanceDB vector store. Can link to the Ollama app for local models (optional)."
+  releaseNotes: "AnythingLLM 1.18.0; telemetry disabled. Uses its built-in LanceDB vector store. Can link to the Ollama app for local models (optional)."

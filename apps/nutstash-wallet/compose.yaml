@@ -1,3 +1,3 @@
 services:
   web:
-    image: ghcr.io/gandlafbtc/nutstash-wallet@sha256:8a585c4a6545e68e9a1c8fcf2a0a15ef401ad040accf925234451fe1b838d180 # tag: 0.1.10
+    image: ghcr.io/gandlafbtc/nutstash-wallet@sha256:6694139731ccd120ab2b90073eaa7c28ea9286355b4dce9cd5764872b762ca06 # tag: 0.1.12

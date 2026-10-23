@@ -5,8 +5,8 @@ metadata:
   name: ErsatzTV Legacy
   description: Open-source platform that transforms your personal media library into live, custom TV channels.
 release:
-  revision: "2"
-  version: 26.11.1
+  revision: "3"
+  version: "26.11.3"
 deployment:
   compose: compose.yaml
   multiInstance: true

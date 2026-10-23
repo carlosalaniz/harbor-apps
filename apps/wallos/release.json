@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "wallos",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "ee48c0272fb2ba00b520de6132ba454f424b20c4e37f194af8463daa79416f3c"
+      "sha256": "585ddd6b49bb4419382011afb2ff51e3f5c8d832e06c8463af51445145c7f5b6"
     },
     "compose.yaml": {
-      "sha256": "e715608b4c88c38116706c31ce768ee62c6446f8275cbca1f22c16f5b01e2b4f"
+      "sha256": "76d78bf2c6dae0ce4355cd2456336e5ab989d2fabe1404b47220d188ea355739"
     },
     "README.md": {
       "sha256": "2c33e972b683e27ae266c92e2bd297984fd1a50069f79b49c42fba581c852fa3"
@@ -17,34 +17,23 @@
   },
   "images": {
     "server": {
-      "reference": "bellamy/wallos@sha256:0006879778f31a962a3873f7682514b92a3c7665dcbc4764fcc241ad968eaccd",
+      "reference": "bellamy/wallos@sha256:b12fc3f6456fa4879346d27f13c96011a1dce8d5285ef31fcec9323f2bac9854",
       "repository": "bellamy/wallos",
-      "tag": "5.8.3",
+      "tag": "5.10.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:5cc6cf4ac1dbee35b2b91885bad75f6dabd9488218f313872ca0b0a09d635678",
-      "appVersion": "5.8.3",
-      "imageCreated": "2026-10-01T16:36:23Z",
+      "platformDigest": "sha256:6e4fdc304fd073e13d38a12850d2688c061e7851b3410b30a5fd9adc10748478",
+      "appVersion": "5.10.1",
+      "imageCreated": "2026-10-21T17:29:02Z",
       "source": "https://hub.docker.com/r/bellamy/wallos"
     }
   },
   "qualification": {
-    "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
-    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
-    "appVersions": {
-      "server": "5.8.3"
-    },
+    "status": "pending",
+    "date": "2026-10-23",
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package wallos (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service server: stop_grace_period 1m dropped (Docker's default applies)",
-      "service server: the image's own healthcheck switched off (nothing waits for it; Umbrel never acts on it)",
-      "Digest of server resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; bellamy/wallos@sha256:0006879778f31a962a3873f7682514b92a3c7665dcbc4764fcc241ad968eaccd); image config: ExposedPorts 80/tcp,9000/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-22-harbor-q13: passed (healthy after 40s; page title \"Wallos - Subscription Tracker\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1.",
-      "Revision 3 adds screenshots only (shot-1.jpg, shot-2.jpg, shot-3.jpg, shot-4.jpg, presentation.gallery); compose.yaml is byte-identical to the qualified revision 2."
+      "Revision 4: Wallos 5.10.1 (PHP 8.3.36, patched against PHP2Shell CVE-2026-109618/109619). Not yet smoke-tested.",
+      "Health path /health.php (answers without opening the database): probing / in the first second created an empty wallos.db, and a fresh install then restarted in a loop at migration 000013.",
+      "2026-10-23: fresh-install smoke of this revision passed on Docker Desktop (pnpm catalog:smoke, healthy after 4 s, still healthy 60 s later). The GitHub runner smoke cannot run the upgrade path yet: it installs main's revision 3 first, and that revision crash-looped on the same race there (4 restarts). The next update after this one runs on a fixed base."
     ]
   },
   "assets": {

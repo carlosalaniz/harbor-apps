@@ -3,9 +3,9 @@ kind: Application
 metadata:
   id: snapdrop
   name: Snapdrop
-  description: The easiest way to share files between devices
+  description: "The easiest way to share files between devices. No longer maintained and not patched against PHP2Shell: keep it off public addresses."
 release:
-  revision: "2"
+  revision: "3"
   version: b8b78cc2-patch.1
 deployment:
   compose: compose.yaml

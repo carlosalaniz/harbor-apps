@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "forgejo",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "f4f64aba0a619958d803bd3a39309ff4b499ccf4ae4497c8504614e1a1408da3"
+      "sha256": "c49a1c4ae185ba6c643ffa7ac600bb13dff29fd3ae008c6475ce78acb0e17ea9"
     },
     "compose.yaml": {
-      "sha256": "baf5ab47e6e91c58542d882124e885306dd27e023d642b7a39a4c1b9117ae336"
+      "sha256": "1c9242cc801328164aa172b60c2be5841ca8f916404c74a7f7b1159e9d1a6c0f"
     },
     "README.md": {
       "sha256": "4fb816b7fa568b6b2c43d1b3a0ea7f7280b101d6e4f373a80fd8239a3f694b7a"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "codeberg.org/forgejo/forgejo@sha256:cf5f5ae6acf2ababca0ee3d255705b83a47f35b25e07fc931d694d60664053fe",
+      "reference": "codeberg.org/forgejo/forgejo@sha256:e2c34a699543ca8a00217ee9ab2bea5feedc98bd6d0ea95ec287d3b7ae1355c6",
       "repository": "codeberg.org/forgejo/forgejo",
-      "tag": "16.0.5",
+      "tag": "16.0.6",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:523de0217475297d05786d7551c1c1d6b5c8b90d6fee7189e88a234260ec0e74",
-      "appVersion": "16.0.5",
-      "imageCreated": "2026-09-17T13:58:45Z",
+      "platformDigest": "sha256:399e23d193f079b9402d883b504770cacfd1b1099dd49bc44819f663c5f413e3",
+      "appVersion": "16.0.6",
+      "imageCreated": "2026-10-12T09:44:48Z",
       "source": "https://codeberg.org/forgejo/forgejo"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-14",
+    "date": "2026-10-15",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "16.0.5"
+      "web": "16.0.6"
     },
     "notes": [
-      "Digest of web resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; codeberg.org/forgejo/forgejo:16.0.5); image config: ExposedPorts 22/tcp,3000/tcp, Volumes /data, User root.",
-      "Smoke run 2026-10-14T05:40:37.966Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (16.0.4) healthy after 5 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 6 s, still healthy 60 s later; fresh install of revision 2 healthy after 3 s, still healthy 60 s later."
+      "Digest of web resolved 2026-10-15 via registry API (scripts/catalog-pin.mjs; codeberg.org/forgejo/forgejo:16.0.6); image config: ExposedPorts 22/tcp,3000/tcp, Volumes /data, User root.",
+      "Smoke run 2026-10-15T05:36:47.285Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (16.0.5) healthy after 3 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {

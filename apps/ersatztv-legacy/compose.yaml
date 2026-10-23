@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/ersatztv/legacy@sha256:51882de2022420da21654ceeed2cda50af418e5ad165d050bc393e99a06d02ca # tag: v26.11.1
+    image: ghcr.io/ersatztv/legacy@sha256:cb0383fdb22050bdaff19e94974e86151d289e56355ca77cde8f15c3b49895d7 # tag: v26.11.3
     volumes:
       - {type: volume, source: config, target: "/config"}
       - {type: volume, source: transcode, target: "/transcode"}

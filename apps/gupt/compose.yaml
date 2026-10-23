@@ -1,3 +1,3 @@
 services:
   web:
-    image: ghcr.io/besoeasy/gupt@sha256:45da18ce6f99dff0b386e168b2be35bbca4496ddc4619a4db5c2ff4d7e968636 # tag: 5.0.33
+    image: ghcr.io/besoeasy/gupt@sha256:549b3554048c14c24a2fd726a0b2e3f396c8e66b543fd8858df95987dae2341d # tag: 5.1.5

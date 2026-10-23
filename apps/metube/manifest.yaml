@@ -5,8 +5,8 @@ metadata:
   name: MeTube
   description: Self-hosted video downloader for YouTube and other sites (web UI for yt-dlp)
 release:
-  revision: "2"
-  version: 2026.10.09
+  revision: "4"
+  version: "2026.10.20"
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml

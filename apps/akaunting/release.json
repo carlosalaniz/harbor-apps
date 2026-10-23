@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "package": {
     "id": "akaunting",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "ccc3f0268521922475f653a11673c98744d904db24e13d12e0aa9fa4196223ba"
+      "sha256": "f2f81a229557c2c021ae5a0d268c65663762340ced455352a3792f762a04572f"
     },
     "compose.yaml": {
       "sha256": "1d8e1f86f555e4e2fb02bd6917e727f06e0d07ed12748c1b3a58cc1e8648daf9"
     },
     "README.md": {
-      "sha256": "90ddc01c78f81dcae83565cf509b96a0c724113c1b3c8a76c1526d7fbe63e1a5"
+      "sha256": "f4f2fe4ef922c1e31fe057ff9387cad7a2bc60ad42783169eda6488d2e78dd0d"
     }
   },
   "images": {
@@ -39,10 +39,10 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-14",
+    "date": "2026-10-23",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "app": "3.1.21",
@@ -51,7 +51,7 @@
     "notes": [
       "Digest of app resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; akaunting/akaunting:3.1.21); image config: ExposedPorts 80/tcp, Volumes none, User root.",
       "Digest of db resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; mariadb:11.8.9); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
-      "Smoke run 2026-10-14T05:37:05.039Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (3.1.21) healthy after 28 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 25 s, still healthy 60 s later; fresh install of revision 3 healthy after 22 s, still healthy 60 s later."
+      "Smoke run 2026-10-23T19:58:48.233Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (3.1.21) healthy after 20 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 23 s, still healthy 60 s later; fresh install of revision 4 healthy after 20 s, still healthy 60 s later."
     ]
   },
   "assets": {

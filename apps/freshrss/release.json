@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "freshrss",
-    "revision": "2"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "dd78010d3b632a6ecda21692584bdef6ae62eeb6d21a71810b62f8f104e6c48e"
+      "sha256": "d6e71c17218d0da657c150d99bcdf7bd16011d2b119dc03be4162a1b2a947450"
     },
     "compose.yaml": {
-      "sha256": "dc2630dd21fa264dc4952e7f5f00c46242348646f7b03570f60bcaef37aebb05"
+      "sha256": "082b7b4ef4ec181eadfa8f494b293e65b64d8d320b9bafe7ed177ddb2dbbb998"
     },
     "README.md": {
       "sha256": "b4d5c18b83fa4bf28918bdef1dbb07db754ebdea22c925b3aa36196128beb5fb"
@@ -17,29 +17,28 @@
   },
   "images": {
     "web": {
-      "reference": "freshrss/freshrss@sha256:48b63b9bc3d042a1301c32971b01af8841c7f059b452589c5bf77f475ba44c61",
+      "reference": "freshrss/freshrss@sha256:af44385229541bee24aa9148d0ff8f3b40e095373c63a2c0f74e09a27d3c59df",
       "repository": "freshrss/freshrss",
-      "tag": "1.30.1",
+      "tag": "1.30.4",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:b0dd8a83392471cb97bd66e93afc426d114ecf5027228eeec7c34c9964ab957e",
-      "appVersion": "1.30.1",
-      "imageCreated": "2026-10-05T20:19:27Z",
+      "platformDigest": "sha256:a003730e81c89abf86c3ca9c8b263c818804734b574469d59586234364f425b0",
+      "appVersion": "1.30.4",
+      "imageCreated": "2026-10-21T20:46:47Z",
       "source": "https://hub.docker.com/r/freshrss/freshrss"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-14",
+    "date": "2026-10-23",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.30.1"
+      "web": "1.30.4"
     },
     "notes": [
-      "Digest of web resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; freshrss/freshrss:1.30.1); image config: ExposedPorts 80/tcp, Volumes none, User root.",
-      "Smoke run 2026-10-14T05:35:47.933Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (1.30.0) healthy after 1 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 2 healthy after 1 s, still healthy 60 s later."
+      "Smoke run 2026-10-23T19:12:48.638Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.30.2) healthy after 2 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 4 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {

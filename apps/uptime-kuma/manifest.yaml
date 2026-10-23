@@ -5,7 +5,7 @@ metadata:
   name: "Uptime Kuma"
   description: "Self-hosted monitoring: watch websites, ports and services and get notified when they go down."
 release:
-  revision: "2"
+  revision: "3"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -44,4 +44,4 @@ presentation:
     - shot-2.jpg
   developer: "Louis Lam"
   website: https://uptime.kuma.pet
-  releaseNotes: "Uptime Kuma 2.5.4."
+  releaseNotes: "Uptime Kuma 2.5.6."

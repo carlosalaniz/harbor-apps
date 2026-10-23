@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "anythingllm",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "2ede007a8daf987ec56d1cc4f1b025f8905b3e234d4a58a9e9564159eec0f413"
+      "sha256": "62dfb52dd747b52b33b0fb311879e052fe42056707d924cceb127e2fc3ce0675"
     },
     "compose.yaml": {
-      "sha256": "e6b84682cfc391b20cba7efa4cf54dfab1822dcc42b8083170895218d40d0bcb"
+      "sha256": "4e3219bf4015297576be5ad87df0b1b6c16aa437de99e76d7728984f24b44351"
     },
     "README.md": {
       "sha256": "1a6176eadd737902332c8a47de445f0dfd2f19dabca13eb31e8c0c6ee4dad89d"
@@ -17,23 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "mintplexlabs/anythingllm@sha256:05617e7bece7fd6eddc4f5b4176cd87fff74d7da88d988a6109b95481cce122c",
+      "reference": "mintplexlabs/anythingllm@sha256:5461782e7db41318a516925949a8f8366e258dd576411fca7961fe77dff054cc",
       "repository": "mintplexlabs/anythingllm",
-      "tag": "1.16.1",
+      "tag": "1.18.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:b7b570b8bfc0bd2a64097439524a38542784eea03522db9d30256f5e711f52fc",
-      "appVersion": "1.16.1",
-      "imageCreated": "2026-08-27T16:32:21Z",
+      "platformDigest": "sha256:a41f36526df988b69672cab15436facdc6f69c4ef782373af0a428e24668b1a5",
+      "appVersion": "1.18.0",
+      "imageCreated": "2026-10-12T22:52:09Z",
       "source": "https://hub.docker.com/r/mintplexlabs/anythingllm"
     }
   },
   "qualification": {
-    "status": "pending",
-    "date": "2026-10-14",
+    "status": "passed",
+    "date": "2026-10-16",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.0",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "web": "1.18.0"
+    },
     "notes": [
-      "Digest of web resolved 2026-09-14 via registry API (scripts/catalog-pin.mjs; mintplexlabs/anythingllm:1.16.1); image config: ExposedPorts none, Volumes none, User anythingllm.",
-      "Revision 1 was passed (2026-09-15) on Docker 29.8.0.",
-      "Revision 2: optional ollama link (OLLAMA_BASE_PATH); compose.yaml is byte-identical to revision 1, so an install without a provider renders as before. Not yet run on a real Harbor host."
+      "Digest of web resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; mintplexlabs/anythingllm:1.18.0); image config: ExposedPorts none, Volumes none, User anythingllm.",
+      "Smoke run 2026-10-16T05:36:27.781Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.16.1) healthy after 6 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 21 s, still healthy 60 s later; fresh install of revision 3 healthy after 6 s, still healthy 60 s later."
     ]
   },
   "assets": {

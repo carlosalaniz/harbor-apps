@@ -5,8 +5,8 @@ metadata:
   name: Wallos
   description: "Wallos: Open-source, self-hostable personal subscription tracker. Visualize your recurring expenses, manage your budget, and save money."
 release:
-  revision: "3"
-  version: 5.8.3
+  revision: "4"
+  version: 5.10.1
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml
@@ -22,8 +22,11 @@ endpoints:
     browserContext: ordinary
 health:
   endpoint: web
-  path: /
-  expectedStatus: [200, 301, 302, 303, 307, 308, 401]
+  # /health.php answers without opening the database: a request to / in the first second (before startup.sh
+  # runs createdatabase.php) makes connect.php create an empty wallos.db, and every start after that dies in a
+  # migration (found by the smoke test, 2026-10-23)
+  path: /health.php
+  expectedStatus: [200]
   timeoutSeconds: 5
   deadlineSeconds: 300
 ui:

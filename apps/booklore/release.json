@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "booklore",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "0a8aa218e9f7bcddc6c58f169a31e6a7dacdaa32f41523b8a851bcd46d884de5"
+      "sha256": "ba879b38680d6197c6ff65fd56881235ad00e746c767644a7c41bdc175638021"
     },
     "compose.yaml": {
-      "sha256": "8996084d7456cd9ec99f1575fe0886ea517d25c91bb8d1e60d627154698e6760"
+      "sha256": "3c530b63aca518bd66b8e9d3abff1a799a99573e02dddacddf3cd948b93f0b53"
     },
     "README.md": {
       "sha256": "f59168dde3729726f020e8bf151b648abb3eb6e26d8af3bf9479be560b456fbc"
@@ -27,35 +27,31 @@
       "source": "https://ghcr.io/booklore-app/booklore"
     },
     "db": {
-      "reference": "mariadb@sha256:b30cc65b57a11a2e791ad5c06284e599fe9f1bf3fe9081a88d85bcf36389be4a",
+      "reference": "mariadb@sha256:2bdff1534a7e569fecaf4b10b66ad0d410806e382d9db29ba305448addda97c4",
       "repository": "mariadb",
-      "tag": "12.0.2",
+      "tag": "12.3.3",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:f85578448fc01b193932701c22c6fefcc161f575949c8520d5dce5033d4356d3",
-      "appVersion": "12.0.2",
-      "imageCreated": "2025-08-08T08:15:27Z",
+      "platformDigest": "sha256:aed2b5ccc6356b54dda3b461e01584b420e549bb958cdfbf717ac22d75a84602",
+      "appVersion": "12.3.3",
+      "imageCreated": "2026-10-02T01:31:00Z",
       "source": "https://hub.docker.com/_/mariadb"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
+    "date": "2026-10-16",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "web": "2.4.0",
-      "db": "12.0.2"
+      "db": "12.3.3"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package booklore (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "dropped host hooks (pre-start): they only prepare Umbrel bind folders",
-      "service db: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/booklore-app/booklore@sha256:f92dae443c38098bf8348742465f6f3b17b619cb8f0e5c2cf195dcdfbb88eaeb); image config: ExposedPorts 6060/tcp, Volumes none, User root.",
-      "Digest of db resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; mariadb@sha256:b30cc65b57a11a2e791ad5c06284e599fe9f1bf3fe9081a88d85bcf36389be4a); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-35-harbor-q08: passed (healthy after 89s; page title \"BookLore\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/booklore-app/booklore:v2.4.0); image config: ExposedPorts 6060/tcp, Volumes none, User root.",
+      "Digest of db resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; mariadb:12.3.3); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
+      "Smoke run 2026-10-16T05:42:10.543Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2.4.0) healthy after 17 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 14 s, still healthy 60 s later; fresh install of revision 3 healthy after 15 s, still healthy 60 s later."
     ]
   },
   "assets": {

@@ -6,6 +6,11 @@ services:
       MYSQL_DATABASE: pastefy
       MYSQL_USER: pastefy
       MYSQL_PASSWORD: tyooe
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 5s
+      timeout: 5s
+      retries: 30
     volumes:
       - {type: volume, source: db, target: "/var/lib/mysql"}
   app:
@@ -20,6 +25,6 @@ services:
       DATABASE_PORT: "3306"
     depends_on:
       db:
-        condition: service_started
+        condition: service_healthy
 volumes:
   db: {}

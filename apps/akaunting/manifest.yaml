@@ -3,13 +3,13 @@ kind: Application
 metadata:
   id: akaunting
   name: Akaunting
-  description: Online Accounting Software
+  description: "Online Accounting Software. Not patched against PHP2Shell yet: keep it off public addresses."
 provisionedCredentials:
   service: app
   passwordEnv: ADMIN_PASSWORD
   username: umbrel@umbrel.local
 release:
-  revision: "3"
+  revision: "4"
   version: 3.1.21
 deployment:
   compose: compose.yaml

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "ollama",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "a793f054f810527a0e1fa6304f484372396e670414db93c922103df3d503f4a1"
+      "sha256": "6202cb8011d778deeb9250c0a6f577548349879245310d2e14d56d4fd5f55da3"
     },
     "compose.yaml": {
-      "sha256": "25db33eb640acd2800976ca7e5a3bc5948c5495d54d0189b38d8bebc26b23581"
+      "sha256": "e270f8fa1270277669fa0f33ff87b77a21bb54cbda4267659fd7cb33c64c248a"
     },
     "README.md": {
       "sha256": "b63c27547ec63e7b809eb1694f46868d87738c61040d407f2316f3d792caddac"
@@ -17,23 +17,29 @@
   },
   "images": {
     "ollama": {
-      "reference": "ollama/ollama@sha256:adca95a12c2b386a8f9a995e7fa0600e187e3323b5e5522f5a6c3b1ec73eff99",
+      "reference": "ollama/ollama@sha256:265409e1d931028a8f7d5a32bcbafddd7bffbc6cc629d77efe9560adf692a5e7",
       "repository": "ollama/ollama",
-      "tag": "0.40.3",
+      "tag": "0.40.6",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:44833c52df2a164cc1238a96ce100123c8e54082b85c5e235a9cb5a7adc55f27",
-      "appVersion": "0.40.3",
-      "imageCreated": "2026-10-11T04:08:01Z",
+      "platformDigest": "sha256:40c61dbf5091e0b4cc46f406f912fb061cfeca51208f0f7173c87c3b5f795c95",
+      "appVersion": "0.40.6",
+      "imageCreated": "2026-10-17T00:46:34Z",
       "source": "https://hub.docker.com/r/ollama/ollama"
     }
   },
   "qualification": {
-    "status": "pending",
-    "date": "2026-10-14",
+    "status": "passed",
+    "date": "2026-10-20",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.0",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "ollama": "0.40.6"
+    },
     "notes": [
-      "Digest of ollama resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ollama/ollama@sha256:adca95a12c2b386a8f9a995e7fa0600e187e3323b5e5522f5a6c3b1ec73eff99); image config: ExposedPorts 11434/tcp, Volumes none, User root.",
-      "Revision 2 was passed (2026-10-12) on Docker 29.9.0.",
-      "Revision 3 (Harbor 0.34.0): gpu permission, six server settings (OLLAMA_CONTEXT_LENGTH moved from compose.yaml into the context-length setting, same default 8192), OLLAMA_VULKAN dropped (Ollama's default), models volume hint. Not yet run on a real Harbor host."
+      "Digest of ollama resolved 2026-10-20 via registry API (scripts/catalog-pin.mjs; ollama/ollama:0.40.6); image config: ExposedPorts 11434/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-20T05:43:52.852Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (0.40.3) healthy after 1 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 4 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {

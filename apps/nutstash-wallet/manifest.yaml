@@ -5,8 +5,8 @@ metadata:
   name: Nutstash Wallet
   description: Cashu Wallet with multi-mint and send-to-nostr-key functionality
 release:
-  revision: "2"
-  version: 0.1.10
+  revision: "3"
+  version: "0.1.12"
 deployment:
   compose: compose.yaml
   multiInstance: true

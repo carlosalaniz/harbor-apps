@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "packages": {
     "actual": {
-      "revision": "2",
+      "revision": "3",
       "dir": "actual"
     },
     "akaunting": {
-      "revision": "3",
+      "revision": "4",
       "dir": "akaunting"
     },
     "anythingllm": {
-      "revision": "2",
+      "revision": "3",
       "dir": "anythingllm"
     },
     "audiobookshelf": {
-      "revision": "2",
+      "revision": "3",
       "dir": "audiobookshelf"
     },
     "autobrr": {
@@ -22,7 +22,7 @@
       "dir": "autobrr"
     },
     "baikal": {
-      "revision": "2",
+      "revision": "3",
       "dir": "baikal"
     },
     "bark-wallet": {
@@ -34,7 +34,7 @@
       "dir": "bazarr"
     },
     "bentopdf": {
-      "revision": "1",
+      "revision": "2",
       "dir": "bentopdf"
     },
     "bitaxe-sentry": {
@@ -46,11 +46,11 @@
       "dir": "bitwatch"
     },
     "blinko": {
-      "revision": "2",
+      "revision": "3",
       "dir": "blinko"
     },
     "booklore": {
-      "revision": "2",
+      "revision": "3",
       "dir": "booklore"
     },
     "btctracker": {
@@ -66,7 +66,7 @@
       "dir": "cashu-me"
     },
     "changedetection-io": {
-      "revision": "2",
+      "revision": "3",
       "dir": "changedetection-io"
     },
     "chatbot-ui": {
@@ -90,15 +90,15 @@
       "dir": "databag"
     },
     "docmost": {
-      "revision": "3",
+      "revision": "4",
       "dir": "docmost"
     },
     "docuseal": {
-      "revision": "2",
+      "revision": "4",
       "dir": "docuseal"
     },
     "downtify": {
-      "revision": "2",
+      "revision": "4",
       "dir": "downtify"
     },
     "dropgate-server": {
@@ -114,7 +114,7 @@
       "dir": "duplicati"
     },
     "element": {
-      "revision": "2",
+      "revision": "4",
       "dir": "element"
     },
     "emby": {
@@ -126,11 +126,11 @@
       "dir": "enclosed"
     },
     "ersatztv-legacy": {
-      "revision": "2",
+      "revision": "3",
       "dir": "ersatztv-legacy"
     },
     "etherpad": {
-      "revision": "2",
+      "revision": "3",
       "dir": "etherpad"
     },
     "excalidraw": {
@@ -154,7 +154,7 @@
       "dir": "foldergram"
     },
     "forgejo": {
-      "revision": "2",
+      "revision": "3",
       "dir": "forgejo"
     },
     "fossflow": {
@@ -162,31 +162,31 @@
       "dir": "fossflow"
     },
     "freshrss": {
-      "revision": "2",
+      "revision": "4",
       "dir": "freshrss"
     },
     "ghost": {
-      "revision": "2",
+      "revision": "3",
       "dir": "ghost"
     },
     "gitea-mirror": {
-      "revision": "2",
+      "revision": "5",
       "dir": "gitea-mirror"
     },
     "grafana": {
-      "revision": "2",
+      "revision": "3",
       "dir": "grafana"
     },
     "grocy": {
-      "revision": "2",
+      "revision": "3",
       "dir": "grocy"
     },
     "gupt": {
-      "revision": "2",
+      "revision": "3",
       "dir": "gupt"
     },
     "heimdall": {
-      "revision": "2",
+      "revision": "3",
       "dir": "heimdall"
     },
     "hermes-agent": {
@@ -194,7 +194,7 @@
       "dir": "hermes-agent"
     },
     "homarr": {
-      "revision": "3",
+      "revision": "4",
       "dir": "homarr"
     },
     "homebox": {
@@ -202,15 +202,15 @@
       "dir": "homebox"
     },
     "hortusfox": {
-      "revision": "2",
+      "revision": "5",
       "dir": "hortusfox"
     },
     "immich": {
-      "revision": "3",
+      "revision": "5",
       "dir": "immich"
     },
     "influxdb": {
-      "revision": "3",
+      "revision": "4",
       "dir": "influxdb"
     },
     "influxdb2": {
@@ -222,7 +222,7 @@
       "dir": "invio"
     },
     "jackett": {
-      "revision": "2",
+      "revision": "8",
       "dir": "jackett"
     },
     "jellyfin": {
@@ -238,7 +238,7 @@
       "dir": "kiwix"
     },
     "langflow": {
-      "revision": "3",
+      "revision": "5",
       "dir": "langflow"
     },
     "leafwiki": {
@@ -250,11 +250,11 @@
       "dir": "libreoffice"
     },
     "librephotos": {
-      "revision": "2",
+      "revision": "3",
       "dir": "librephotos"
     },
     "librespeed": {
-      "revision": "2",
+      "revision": "3",
       "dir": "librespeed"
     },
     "llama-gpt": {
@@ -266,11 +266,11 @@
       "dir": "localai"
     },
     "lubelogger": {
-      "revision": "2",
+      "revision": "3",
       "dir": "lubelogger"
     },
     "mealie": {
-      "revision": "2",
+      "revision": "4",
       "dir": "mealie"
     },
     "memos": {
@@ -278,7 +278,7 @@
       "dir": "memos"
     },
     "metube": {
-      "revision": "2",
+      "revision": "4",
       "dir": "metube"
     },
     "morphos": {
@@ -298,11 +298,11 @@
       "dir": "myspeed"
     },
     "n8n": {
-      "revision": "2",
+      "revision": "5",
       "dir": "n8n"
     },
     "navidrome": {
-      "revision": "2",
+      "revision": "3",
       "dir": "navidrome"
     },
     "networkingtoolbox": {
@@ -310,7 +310,7 @@
       "dir": "networkingtoolbox"
     },
     "nextcloud": {
-      "revision": "5",
+      "revision": "6",
       "dir": "nextcloud"
     },
     "nitter": {
@@ -326,11 +326,11 @@
       "dir": "notediscovery"
     },
     "nutstash-wallet": {
-      "revision": "2",
+      "revision": "3",
       "dir": "nutstash-wallet"
     },
     "ollama": {
-      "revision": "3",
+      "revision": "4",
       "dir": "ollama"
     },
     "omnitools": {
@@ -338,11 +338,11 @@
       "dir": "omnitools"
     },
     "open-webui": {
-      "revision": "5",
+      "revision": "6",
       "dir": "open-webui"
     },
     "open-webui-shared": {
-      "revision": "2",
+      "revision": "3",
       "dir": "open-webui-shared"
     },
     "opencode": {
@@ -362,7 +362,7 @@
       "dir": "paperless"
     },
     "papra": {
-      "revision": "2",
+      "revision": "3",
       "dir": "papra"
     },
     "passky-client": {
@@ -370,11 +370,11 @@
       "dir": "passky-client"
     },
     "passky-server": {
-      "revision": "2",
+      "revision": "3",
       "dir": "passky-server"
     },
     "pastefy": {
-      "revision": "2",
+      "revision": "3",
       "dir": "pastefy"
     },
     "pearcircle-seeder": {
@@ -396,6 +396,10 @@
     "pingvin-share": {
       "revision": "2",
       "dir": "pingvin-share"
+    },
+    "plane": {
+      "revision": "3",
+      "dir": "plane"
     },
     "pyload-ng": {
       "revision": "2",
@@ -426,11 +430,11 @@
       "dir": "skybro"
     },
     "slink": {
-      "revision": "2",
+      "revision": "4",
       "dir": "slink"
     },
     "snapdrop": {
-      "revision": "2",
+      "revision": "3",
       "dir": "snapdrop"
     },
     "snort": {
@@ -450,7 +454,7 @@
       "dir": "stash"
     },
     "stirling-pdf": {
-      "revision": "3",
+      "revision": "4",
       "dir": "stirling-pdf"
     },
     "strix": {
@@ -498,7 +502,7 @@
       "dir": "trip"
     },
     "uptime-kuma": {
-      "revision": "2",
+      "revision": "3",
       "dir": "uptime-kuma"
     },
     "valorgrid": {
@@ -506,7 +510,7 @@
       "dir": "valorgrid"
     },
     "vaultwarden": {
-      "revision": "1",
+      "revision": "2",
       "dir": "vaultwarden"
     },
     "vert": {
@@ -514,15 +518,15 @@
       "dir": "vert"
     },
     "wallos": {
-      "revision": "3",
+      "revision": "4",
       "dir": "wallos"
     },
     "wavelog": {
-      "revision": "2",
+      "revision": "4",
       "dir": "wavelog"
     },
     "webcheck": {
-      "revision": "2",
+      "revision": "7",
       "dir": "webcheck"
     },
     "whoogle-search": {
@@ -530,7 +534,7 @@
       "dir": "whoogle-search"
     },
     "wikijs": {
-      "revision": "2",
+      "revision": "3",
       "dir": "wikijs"
     },
     "wingfit": {
@@ -538,7 +542,7 @@
       "dir": "wingfit"
     },
     "wireguard": {
-      "revision": "2",
+      "revision": "3",
       "dir": "wireguard"
     },
     "wizarr": {
@@ -546,7 +550,7 @@
       "dir": "wizarr"
     },
     "wordpress": {
-      "revision": "2",
+      "revision": "3",
       "dir": "wordpress"
     },
     "yamtrack": {

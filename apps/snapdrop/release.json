@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "package": {
     "id": "snapdrop",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "05a9fa0354e0625720d5aa97e7d5d11a9069d986c032b6de94336e15be2fc851"
+      "sha256": "74ac7596f5f9f18d3691ca371d4c7225dfa1754506e8d496f7c573fb572fea68"
     },
     "compose.yaml": {
       "sha256": "643458cc93bece0ad38400b5192008fcdd1cb829e0057dab79fd32fb35ee343e"
     },
     "README.md": {
-      "sha256": "4e4357dad8e2c23c6ca38837f502e08962bf5f5b03a37c373353f80fce49f79b"
+      "sha256": "a18b73da0ff35d7bf982d2a7e606064a4f4ea58ac2c4f2437f56c9265e4f1ff1"
     }
   },
   "images": {
@@ -29,19 +29,17 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "server": "ersion-b8b78cc2"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package snapdrop (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
       "Digest of server resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; linuxserver/snapdrop@sha256:3e0af233372e6ae7ac711397d40cbe2797cefe13220d65e5e284a64252cc0c2c); image config: ExposedPorts 443/tcp,80/tcp, Volumes /config, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-35-harbor-q09: passed (healthy after 32s; page title \"Snapdrop\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Smoke run 2026-10-23T20:04:50.709Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (b8b78cc2-patch.1) healthy after 1 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {

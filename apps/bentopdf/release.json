@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "bentopdf",
-    "revision": "1"
+    "revision": "2"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "20460cca3c520727af5d7c671cfade7c8cad07cb3ef6fb8f1f5684366ec49306"
+      "sha256": "e4bf0e775165123a3da0799d72c1d8061494fc3cbf67ca871a2c959a3c48a706"
     },
     "compose.yaml": {
-      "sha256": "12a1aa7755b2cc96962d935f5d956883676bca659d0035f6ec0b865571fb6de4"
+      "sha256": "11b72c6b5c78c1ca029ef5247424c1989a213d34288a7537a083ad3cfd4f8fa2"
     },
     "README.md": {
       "sha256": "05598a69f4eeb010d2ede042084ed2b8a38866ce680ce4284a59fb847f4a518d"
@@ -17,32 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/alam00000/bentopdf-simple@sha256:3d62b8f8eece5fe947026ac3925ff08fda245b3d6ba2c3916b94da91e0010c74",
+      "reference": "ghcr.io/alam00000/bentopdf-simple@sha256:b5227a308e796d2bd00d2eb6da9d7296093107a8be7efef38a006d06506dc3c0",
       "repository": "ghcr.io/alam00000/bentopdf-simple",
-      "tag": "v2.8.8",
+      "tag": "v2.8.10",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:598efc25622c92e59e6e4557fbdbd5ce34e1f77b74a557eed7eb9ab4bc70a436",
-      "appVersion": "2.8.8",
-      "imageCreated": "2026-08-29T09:22:37Z",
-      "source": "https://github.com/alam00000/bentopdf"
+      "platformDigest": "sha256:c1981c9462e8cb9d6ffe6a4e8dd89336c3bee5459f8a603cfafda55f2958789a",
+      "appVersion": "2.8.10",
+      "imageCreated": "2026-10-19T10:08:24Z",
+      "source": "https://ghcr.io/alam00000/bentopdf-simple"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-09-15",
-    "node": "v24.12.0",
-    "dockerEngine": "29.8.0",
-    "dockerCompose": "5.5.1",
-    "hostOs": "Ubuntu 24.04.4 LTS x86_64",
+    "date": "2026-10-22",
+    "node": "v24.22.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "2.8.8"
+      "web": "2.8.10"
     },
     "notes": [
-      "Digest resolved 2026-09-14 via registry API (scripts/registry.mjs digest ghcr.io/alam00000/bentopdf-simple:v2.8.8).",
-      "Image config: ExposedPorts 8080/tcp, User nginx, no declared volumes.",
-      "Live run vm-2026-09-14T18-40-00: passed",
-      "Fresh Ubuntu 24.04 x86-64 DigitalOcean droplet; A01-A16 all passed; browser demos recorded in the run directory",
-      "Live catalog run catalog-2026-09-15T00-13-13: passed (healthy after 30s; page title \"BentoPDF - PDF Tools\"; health 200)"
+      "Digest of web resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/alam00000/bentopdf-simple:v2.8.10); image config: ExposedPorts 8080/tcp, Volumes none, User nginx.",
+      "Smoke run 2026-10-22T05:36:55.202Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (2.8.8) healthy after 2 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 2 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {

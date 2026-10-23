@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "etherpad",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "bbae87bc0a20813e7853ef5a29b6dcfdce3fb303856a1c3c20c20a0cb309059b"
+      "sha256": "e599ca19472b24cb6b211fb9cd0a410511a01b6c504665c6072875ffd961501f"
     },
     "compose.yaml": {
-      "sha256": "3fcc408545c5755948a7480c6952b1849e213433f2d3b2d6546ba06ef11be2a2"
+      "sha256": "5528f9d9e2300ec5c28fd1e6ded2abd953cf35a68203943f7f7c69564aa4412b"
     },
     "README.md": {
       "sha256": "28e6189b1d623facf73bc068d7cf23637ca78408d0189a77fd5e91627ef77418"
@@ -39,25 +39,17 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "app": "3.3.8",
       "postgres": "15-alpine"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package etherpad (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "dropped host hooks (pre-start): they only prepare Umbrel bind folders",
-      "service app: user 5001:0 dropped (named volumes keep the image's ownership)",
-      "service postgres: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service app: the image's own healthcheck switched off (nothing waits for it; Umbrel never acts on it)",
-      "Digest of app resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; etherpad/etherpad@sha256:c5f4a44406fab46238ce8ea9a0fbf92b3f83a8fd079ec016ded8fdb7f4986d09); image config: ExposedPorts 9001/tcp, Volumes none, User etherpad.",
-      "Digest of postgres resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; postgres@sha256:93a6166360be8f1d116b7ea97ebb8dea9e2c9c746349e952738bbba72a961d7c); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-42-harbor-q10: passed (healthy after 71s; page title \"Etherpad\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Smoke run 2026-10-23T19:59:00.859Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (3.3.8) healthy after 14 s (app restarted 1 time(s) before that), still healthy 60 s later; updated to revision 3 without a rollback, healthy after 16 s, still healthy 60 s later; fresh install of revision 3 healthy after 11 s, still healthy 60 s later."
     ]
   },
   "assets": {

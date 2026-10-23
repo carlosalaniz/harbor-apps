@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "influxdb",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "0b8f959c1068adf943bbb6516ca6b9cb374bc4a8e8252a41c7ec723540049822"
+      "sha256": "9534ef0c4686e04739fecead0e6e123bf6d1dd8f501c94524909ce7b96b2ade4"
     },
     "compose.yaml": {
-      "sha256": "12d1c4c5ca18b70a5665f85166e18f4cd4b268fa8e0e2b1322392d877c8341f0"
+      "sha256": "a52ca9f9816ec766b3909740ef5d6febab6044f0074d3acad5f3327fdf3ef613"
     },
     "README.md": {
       "sha256": "e273d58c226e93fc4bdb0896bc1eba25f3b6316a3b4ad011d243262970b148fd"
@@ -27,31 +27,31 @@
       "source": "https://hub.docker.com/_/influxdb"
     },
     "chronograf": {
-      "reference": "chronograf@sha256:91d2f47bc24b266c316550ae8463c3bd68f45001e700d231956cda7b41ec725a",
+      "reference": "chronograf@sha256:e01a840ecaf467e5b058faf985d945a1ace75a950e6064fa0218948a6e0ba069",
       "repository": "chronograf",
-      "tag": "1.11.5",
+      "tag": "1.11.6",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:3b94b0ba12c477b69fd9343430841158bd1355cba76a5bf357937ff25b3ae723",
-      "appVersion": "1.11.5",
-      "imageCreated": "2026-10-06T01:41:33Z",
+      "platformDigest": "sha256:d4fbddafa8606ced8197a964808bf9315f9b23c5956f5a11bc77943d87aeee12",
+      "appVersion": "1.11.6",
+      "imageCreated": "2026-10-16T17:45:08Z",
       "source": "https://hub.docker.com/_/chronograf"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-14",
+    "date": "2026-10-19",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "influxdb": "1.13.1",
-      "chronograf": "1.11.5"
+      "chronograf": "1.11.6"
     },
     "notes": [
-      "Digest of influxdb resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; influxdb:1.13.1); image config: ExposedPorts 8086/tcp, Volumes /var/lib/influxdb, User influxdb.",
-      "Digest of chronograf resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; chronograf:1.11.5); image config: ExposedPorts 8888/tcp, Volumes /var/lib/chronograf, User root.",
-      "Smoke run 2026-10-14T05:41:37.260Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.13.1) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 3 healthy after 2 s, still healthy 60 s later."
+      "Digest of influxdb resolved 2026-10-19 via registry API (scripts/catalog-pin.mjs; influxdb:1.13.1); image config: ExposedPorts 8086/tcp, Volumes /var/lib/influxdb, User influxdb.",
+      "Digest of chronograf resolved 2026-10-19 via registry API (scripts/catalog-pin.mjs; chronograf:1.11.6); image config: ExposedPorts 8888/tcp, Volumes /var/lib/chronograf, User root.",
+      "Smoke run 2026-10-19T05:36:30.124Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.11.5) healthy after 2 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 4 healthy after 2 s, still healthy 60 s later."
     ]
   },
   "assets": {
