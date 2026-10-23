@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "akaunting",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "15c940470fd582d42f935c5f6ba9ce53531e2c924356a2084344f9201ef27b18"
+      "sha256": "ccc3f0268521922475f653a11673c98744d904db24e13d12e0aa9fa4196223ba"
     },
     "compose.yaml": {
-      "sha256": "092dbe38613c833480ca239d3795f4ac62c60063e4a7810c78f9a063d378b533"
+      "sha256": "1d8e1f86f555e4e2fb02bd6917e727f06e0d07ed12748c1b3a58cc1e8648daf9"
     },
     "README.md": {
       "sha256": "90ddc01c78f81dcae83565cf509b96a0c724113c1b3c8a76c1526d7fbe63e1a5"
@@ -17,44 +17,41 @@
   },
   "images": {
     "app": {
-      "reference": "akaunting/akaunting@sha256:918bbc77981e5b96ab6aa6838491cfa7c98cb4ee7bbf9532ee083e7e66d04255",
+      "reference": "akaunting/akaunting@sha256:50940112be48a229a2f567dc50ace9886fe5b14e1fe33f0232e704d0fb96f29f",
       "repository": "akaunting/akaunting",
       "tag": "3.1.21",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:324d7a1ffef66e4ebefa5b92694826e595c3d0c963626a2c51e716c5200a27a9",
+      "platformDigest": "sha256:97e04c82b5929e32e3590f199f51b66c11707ce270e018a45997fd5716a0e31d",
       "appVersion": "3.1.21",
-      "imageCreated": "2025-12-17T10:11:41Z",
+      "imageCreated": "2026-03-19T10:22:19Z",
       "source": "https://hub.docker.com/r/akaunting/akaunting"
     },
     "db": {
-      "reference": "mariadb@sha256:2bcbaec92bd9d4f6591bc8103d3a8e6d0512ee2235506e47a2e129d190444405",
+      "reference": "mariadb@sha256:6422478cb8e159f080fb1d8ccf65101e26fe51385787fde7d16c3b165a331f15",
       "repository": "mariadb",
-      "tag": "11.8.2",
+      "tag": "11.8.9",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:cc77bc4f4dfe94d1c0c5d0f2bc9133e7c8211944bdd3c06df2c84028eb269196",
-      "appVersion": "11.8.2",
-      "imageCreated": "2025-06-10T21:48:21Z",
+      "platformDigest": "sha256:93fc3fe333b6cdfb061425869c2c3a5bb2851c0c74dbebc2c940f024e7482d76",
+      "appVersion": "11.8.9",
+      "imageCreated": "2026-10-02T01:31:10Z",
       "source": "https://hub.docker.com/_/mariadb"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
+    "date": "2026-10-14",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "app": "3.1.21",
-      "db": "11.8.2"
+      "db": "11.8.9"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package akaunting (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service db: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of app resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; akaunting/akaunting@sha256:918bbc77981e5b96ab6aa6838491cfa7c98cb4ee7bbf9532ee083e7e66d04255); image config: ExposedPorts 80/tcp, Volumes none, User root.",
-      "Digest of db resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; mariadb@sha256:2bcbaec92bd9d4f6591bc8103d3a8e6d0512ee2235506e47a2e129d190444405); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-31-harbor-q05: passed (healthy after 93s; page title \"Login\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of app resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; akaunting/akaunting:3.1.21); image config: ExposedPorts 80/tcp, Volumes none, User root.",
+      "Digest of db resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; mariadb:11.8.9); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
+      "Smoke run 2026-10-14T05:37:05.039Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (3.1.21) healthy after 28 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 25 s, still healthy 60 s later; fresh install of revision 3 healthy after 22 s, still healthy 60 s later."
     ]
   },
   "assets": {

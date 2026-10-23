@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "wireguard",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "dfcd79503e0b039923e595c4776d5355a3dd60a9d2271435c17f6ede106703c2"
+      "sha256": "070371b6e6abe7ce61b6c37c09f073d20c7b86481eb338cfec51cbe6428cb607"
     },
     "compose.yaml": {
-      "sha256": "0b32b548ee799178775c2b7b498e09f5a274976451c853b83bd49f19b9f22e3b"
+      "sha256": "0c19e414856c1ca945b39c290a0014531d1c45bce1f5d05412690fefffe77227"
     },
     "README.md": {
       "sha256": "5801cdbf510bf4281cf2ac2e7e35e9cc38e947d2189060abdb8fd62490d7b3b1"
@@ -17,30 +17,29 @@
   },
   "images": {
     "app": {
-      "reference": "ghcr.io/wg-easy/wg-easy@sha256:93bbd593e07bab98d02807a28770ac87ab6c48818e319e68c1f66561feb99876",
+      "reference": "ghcr.io/wg-easy/wg-easy@sha256:0e7bc9d34e86ddcaa92bc700d4d7dc9b33291dbc07ac8d13382f7c2095f949ec",
       "repository": "ghcr.io/wg-easy/wg-easy",
-      "tag": "15.3.0",
+      "tag": "15.4.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:e30672a84b78efb1612aa0a6eef43b0403fd7393667856116e6f53c4aca3d03d",
-      "appVersion": "15.3.0",
-      "imageCreated": "2026-05-18T10:21:22Z",
+      "platformDigest": "sha256:6b89677a396dc2831d3b5b74d720d6d50c38fd2cbe9071bc8419453f236a94b3",
+      "appVersion": "15.4.0",
+      "imageCreated": "2026-08-14T07:23:19Z",
       "source": "https://ghcr.io/wg-easy/wg-easy"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-22",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "15.3.0"
+      "app": "15.4.0"
     },
     "notes": [
-      "Digest of app resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/wg-easy/wg-easy@sha256:93bbd593e07bab98d02807a28770ac87ab6c48818e319e68c1f66561feb99876); image config: ExposedPorts none, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T19-51-04-harbor-q01: passed (healthy after 93s; page title \"WireGuard\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of app resolved 2026-10-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/wg-easy/wg-easy:15.4.0); image config: ExposedPorts none, Volumes none, User root.",
+      "Smoke run 2026-10-22T05:43:29.418Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (15.3.0) healthy after 61 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 61 s, still healthy 60 s later; fresh install of revision 3 healthy after 61 s, still healthy 60 s later."
     ]
   },
   "assets": {

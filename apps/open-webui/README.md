@@ -22,7 +22,13 @@ Private ChatGPT-style assistant with a bundled Ollama model server. Chat with lo
 
 ## Notes
 
-- Inference runs on the CPU of this machine; expect slow answers with large models.
+- The bundled Ollama uses the graphics card when Harbor finds one (Harbor 0.34.0 or newer): an NVIDIA card with
+  the NVIDIA container toolkit, or Intel/AMD graphics. Without one it runs on the CPU; expect slow answers with
+  large models. For NVIDIA, install the toolkit once (see the
+  [Operator Guide, GPU (graphics cards)](https://github.com/carlosalaniz/harbor/blob/main/docs/OPERATOR_GUIDE.md#gpu-graphics-cards))
+  and Restart the app.
+- Its models belong to this app. To download models once and share them with other AI apps, install the separate
+  **Ollama** app and **Open WebUI for Ollama** instead.
 - Nothing leaves this machine unless you add an external API key.
 
 Upstream: https://openwebui.com

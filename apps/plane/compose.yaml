@@ -1,0 +1,191 @@
+services:
+  # Plane's own Caddy proxy (plane-proxy) with Plane's v1.4.2 routes (apps/proxy/Caddyfile.ce: /api, /auth, /static to
+  # api, /spaces to space, /god-mode to admin, /live to live, /uploads to plane-minio, the rest to web), plain HTTP on
+  # :80 behind Harbor's proxies. The config comes on stdin (no bind mounts) so it can add what lets Plane work at
+  # every address Harbor gives it, not only the main one (WEB_URL):
+  #   - redirects to WEB_URL become path-only, so signing in keeps you on the address you came from;
+  #   - the api and MinIO see the address the browser used (X-Forwarded-Host, which Harbor's secure LAN relay sets
+  #     while it sends Host 127.0.0.1:<port>), so CSRF checks and presigned upload/download URLs match it;
+  #   - on plain http, Plane's cookies lose Secure (Plane marks them Secure when the main address is https).
+  # When plane-proxy moves to a new Plane release, compare its Caddyfile.ce with the routes below.
+  proxy:
+    image: makeplane/plane-proxy@sha256:47e651c56749c287710cc26f82dc5d1046a2af76a332aa048ab7adb881cc4cd0 # tag: v1.4.2
+    command:
+      - sh
+      - -c
+      - |
+        exec caddy run --config - --adapter caddyfile <<'EOF'
+        {
+          servers {
+            max_header_size 25MB
+            client_ip_headers X-Forwarded-For X-Real-IP
+            trusted_proxies static 0.0.0.0/0
+          }
+        }
+
+        :80 {
+          request_body {
+            max_size 5242880
+          }
+
+          map {http.request.header.X-Forwarded-Host} {plane_host} {
+            "" {http.request.hostport}
+            default {http.request.header.X-Forwarded-Host}
+          }
+          header >Location "^{env.WEB_URL}/?" "/"
+          @plain not header X-Forwarded-Proto https
+          header @plain >Set-Cookie "(?i);\s*secure(;|$)" "$1"
+
+          redir /spaces /spaces/ permanent
+          reverse_proxy /spaces/* space:3000
+
+          redir /god-mode /god-mode/ permanent
+          reverse_proxy /god-mode/* admin:3000
+
+          reverse_proxy /live/* live:3000
+
+          reverse_proxy /api/* api:8000 {
+            header_up Host {plane_host}
+          }
+          reverse_proxy /auth/* api:8000 {
+            header_up Host {plane_host}
+          }
+          reverse_proxy /static/* api:8000
+
+          reverse_proxy /uploads/* plane-minio:9000 {
+            header_up Host {plane_host}
+          }
+          reverse_proxy /uploads plane-minio:9000 {
+            header_up Host {plane_host}
+          }
+
+          reverse_proxy /* web:3000
+        }
+        EOF
+    depends_on:
+      web: {condition: service_started}
+      space: {condition: service_started}
+      admin: {condition: service_started}
+      live: {condition: service_started}
+      api: {condition: service_started}
+  web:
+    image: makeplane/plane-frontend@sha256:22fd2434fb8d6658439f669ab72f999ce0773abe587663da21a77d70bd63ff61 # tag: v1.4.2
+    depends_on:
+      api: {condition: service_started}
+  space:
+    image: makeplane/plane-space@sha256:f8f842f05f41a16e9fe8c4f5e17a3bb175338ccdc094620e58ae49764ffbd671 # tag: v1.4.2
+    depends_on:
+      api: {condition: service_started}
+  admin:
+    image: makeplane/plane-admin@sha256:6e1bb1d800d3c7ce84a09f810d5588db8613b35d4464e722a1bec12556ca0ebb # tag: v1.4.2
+    depends_on:
+      api: {condition: service_started}
+  live:
+    image: makeplane/plane-live@sha256:cbb630ccaea24bb9998040cb45c11619a7501e8b6c75d449df2f8fd9b9cddbd0 # tag: v1.4.2
+    environment:
+      API_BASE_URL: http://api:8000
+      REDIS_HOST: plane-redis
+      REDIS_PORT: "6379"
+      REDIS_URL: redis://plane-redis:6379/
+    depends_on:
+      api: {condition: service_started}
+      plane-redis: {condition: service_started}
+  # The API runs Plane's migrator first (a one-shot service upstream; every Harbor service restarts, so it lives
+  # here), then its own start script, which waits for the migrations, registers the instance and creates the bucket.
+  api:
+    image: makeplane/plane-backend@sha256:90032ce088708889b60c00d491897916f4deb882facda27db59fd10fb68729ef # tag: v1.4.2
+    command: [bash, -c, './bin/docker-entrypoint-migrator.sh && exec ./bin/docker-entrypoint-api.sh']
+    environment:
+      DEBUG: "0"
+      GUNICORN_WORKERS: "1"
+      USE_MINIO: "1"
+      MINIO_ENDPOINT_SSL: "0"
+      AWS_REGION: ""
+      AWS_S3_ENDPOINT_URL: http://plane-minio:9000
+      AWS_S3_BUCKET_NAME: uploads
+      FILE_SIZE_LIMIT: "5242880"
+      REDIS_HOST: plane-redis
+      REDIS_PORT: "6379"
+      REDIS_URL: redis://plane-redis:6379/
+      API_KEY_RATE_LIMIT: 60/minute
+      WEBHOOK_ALLOWED_IPS: ""
+      WEBHOOK_ALLOWED_HOSTS: ""
+    depends_on:
+      plane-db: {condition: service_healthy}
+      plane-redis: {condition: service_started}
+      plane-mq: {condition: service_started}
+      plane-minio: {condition: service_started}
+  worker:
+    image: makeplane/plane-backend@sha256:90032ce088708889b60c00d491897916f4deb882facda27db59fd10fb68729ef # tag: v1.4.2
+    command: [./bin/docker-entrypoint-worker.sh]
+    environment:
+      DEBUG: "0"
+      GUNICORN_WORKERS: "1"
+      USE_MINIO: "1"
+      MINIO_ENDPOINT_SSL: "0"
+      AWS_REGION: ""
+      AWS_S3_ENDPOINT_URL: http://plane-minio:9000
+      AWS_S3_BUCKET_NAME: uploads
+      FILE_SIZE_LIMIT: "5242880"
+      REDIS_HOST: plane-redis
+      REDIS_PORT: "6379"
+      REDIS_URL: redis://plane-redis:6379/
+      API_KEY_RATE_LIMIT: 60/minute
+      WEBHOOK_ALLOWED_IPS: ""
+      WEBHOOK_ALLOWED_HOSTS: ""
+    depends_on:
+      api: {condition: service_started}
+  beat-worker:
+    image: makeplane/plane-backend@sha256:90032ce088708889b60c00d491897916f4deb882facda27db59fd10fb68729ef # tag: v1.4.2
+    command: [./bin/docker-entrypoint-beat.sh]
+    environment:
+      DEBUG: "0"
+      GUNICORN_WORKERS: "1"
+      USE_MINIO: "1"
+      MINIO_ENDPOINT_SSL: "0"
+      AWS_REGION: ""
+      AWS_S3_ENDPOINT_URL: http://plane-minio:9000
+      AWS_S3_BUCKET_NAME: uploads
+      FILE_SIZE_LIMIT: "5242880"
+      REDIS_HOST: plane-redis
+      REDIS_PORT: "6379"
+      REDIS_URL: redis://plane-redis:6379/
+      API_KEY_RATE_LIMIT: 60/minute
+      WEBHOOK_ALLOWED_IPS: ""
+      WEBHOOK_ALLOWED_HOSTS: ""
+    depends_on:
+      api: {condition: service_started}
+  plane-db:
+    image: postgres@sha256:f7d23353e1b15400d22ebe31189f4d314b87a4c129cc400c8c2d8d4ca127bf81 # tag: 15.19-alpine
+    command: [postgres, -c, max_connections=1000]
+    environment:
+      POSTGRES_USER: plane
+      POSTGRES_DB: plane
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - {type: volume, source: pgdata, target: /var/lib/postgresql/data}
+    healthcheck:
+      test: [CMD, pg_isready, -U, plane, -d, plane]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  # A cache only: nothing kept across restarts (Plane's queue is RabbitMQ, sessions live in Postgres).
+  plane-redis:
+    image: valkey/valkey@sha256:c6c2f0020be34bbf684a53a0ef716ab16ff70295186d4d9f2518435beb7afbff # tag: 7.2.14-alpine
+    command: [valkey-server, --save, "", --appendonly, "no"]
+  plane-mq:
+    image: rabbitmq@sha256:606d8c0d6b3c18d1da9afc53bc7cdb2a8d5486df91b5a9830e9e07626c9ae281 # tag: 3.13.7-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: plane
+      RABBITMQ_DEFAULT_VHOST: plane
+    volumes:
+      - {type: volume, source: rabbitmq-data, target: /var/lib/rabbitmq}
+  plane-minio:
+    image: pgsty/minio@sha256:b6bfe7239bfc83fb90d31612d9704d86039dd714f7904b3f1ad68f211e602372 # tag: RELEASE.2026-08-04T00-00-00Z
+    command: [server, /export, --console-address, ":9090"]
+    volumes:
+      - {type: volume, source: uploads, target: /export}
+volumes:
+  pgdata: {}
+  rabbitmq-data: {}
+  uploads: {}

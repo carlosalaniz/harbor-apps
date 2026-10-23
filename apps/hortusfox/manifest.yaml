@@ -9,7 +9,7 @@ provisionedCredentials:
   passwordEnv: APP_ADMIN_PASSWORD
   username: umbrel@umbrel.local
 release:
-  revision: "2"
+  revision: "4"
   version: "6.3"
 deployment:
   compose: compose.yaml

@@ -1,12 +1,15 @@
 services:
   ollama:
     image: ollama/ollama@sha256:8262851b2846b87c649eddf3e76beb270c52f4d1bc94559f47efde16b0841551 # tag: 0.34.4
+    # OLLAMA_IGPU_ENABLE admits integrated Intel/AMD graphics (Vulkan, on by default in this release), which Ollama
+    # drops otherwise; it does not change a discrete NVIDIA card.
     environment:
       OLLAMA_KEEP_ALIVE: "5m"
+      OLLAMA_IGPU_ENABLE: "1"
     volumes:
       - {type: volume, source: models, target: /root/.ollama}
   web:
-    image: ghcr.io/open-webui/open-webui@sha256:1565038903151ced924b5a3226f73f40f16963df4b910441f6391f10144afdaa # tag: v0.12.0
+    image: ghcr.io/open-webui/open-webui@sha256:a537bbe1e6b428820f52ed4a029d7fff97062e24d5cf32c365fba36fd0542def # tag: v0.12.3
     environment:
       OLLAMA_BASE_URL: "http://ollama:11434"
       ENABLE_SIGNUP: "true"

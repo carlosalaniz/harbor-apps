@@ -1,6 +1,6 @@
 services:
   proxy:
-    image: reallibrephotos/librephotos-proxy@sha256:c88c0a65b50ba7e4f65ccc9aa7d5002df9827cb79edb1f88a3a4c130d0b03be4 # tag: 2026w14
+    image: reallibrephotos/librephotos-proxy@sha256:050acd28b16749e6f614174ea3557b6be9dfc063721ded8ea70d44b9458f6eef # tag: 2026w25
     volumes:
       - {type: volume, source: photos, target: "/data"}
       - {type: volume, source: protected-media, target: "/protected_media"}
@@ -10,7 +10,7 @@ services:
       frontend:
         condition: service_started
   db:
-    image: pgautoupgrade/pgautoupgrade@sha256:2ec008ae5f0a2e5dd8f4d2475df41cf3ccc9562acf49bd668fcc0c061944b9bf # tag: 17-alpine3.22
+    image: pgautoupgrade/pgautoupgrade@sha256:30327dd262e3ec44df14e1120f99aac56eb3c60b49ab36d3095a25b5cf187158 # tag: 17-alpine3.24
     environment:
       POSTGRES_USER: librephotos
       POSTGRES_PASSWORD: librephotos
@@ -31,9 +31,9 @@ services:
       timeout: 5s
       retries: 5
   frontend:
-    image: reallibrephotos/librephotos-frontend@sha256:e2fb909607b1d9552c033a9432446eadb6b693289af2b4b016da55d50724afcb # tag: 2026w14
+    image: reallibrephotos/librephotos-frontend@sha256:7cef7bdec16ac9193be9396d1be5daba5fa648663bb551de1fd5ace8e16fdc6c # tag: 2026w25
   backend:
-    image: reallibrephotos/librephotos@sha256:3f4d6fa163bf41f2cd496aca342307fec8b827fe4a7ced1e7773a050ef7a5dca # tag: 2026w14
+    image: reallibrephotos/librephotos@sha256:e9f6b494df44f554c349f17dd4c544614534aba74042ff97cb3afaa3d2e44763 # tag: 2026w25
     environment:
       BACKEND_HOST: backend
       ADMIN_EMAIL: admin@admin.com

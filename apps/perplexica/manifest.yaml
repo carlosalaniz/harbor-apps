@@ -5,7 +5,7 @@ metadata:
   name: Vane
   description: Vane is an AI-powered answering engine.
 release:
-  revision: "2"
+  revision: "3"
   version: 1.12.2-patch.1
 deployment:
   compose: compose.yaml
@@ -36,9 +36,21 @@ storage:
     composeVolume: uploads
     purpose: Data at /home/perplexica/uploads (web)
     retention: retain
+# Optional: the shared Ollama app. Vane reads OLLAMA_BASE_URL at every start and adds an Ollama provider with that
+# address when it has none with the same settings (Settings, Model providers). Without a provider nothing changes.
+links:
+  - id: ollama
+    purpose: "Ollama, the model server (shared by every AI app; optional)"
+    optional: true
+    provider:
+      packages: [ollama]
+      endpoint: web
+    bindings:
+      - {service: web, environment: OLLAMA_BASE_URL, format: url}
 presentation:
   icon: icon.png
   tagline: An AI-powered answering engine
   category: ai
   developer: Kushagra Srivastava
   website: https://github.com/ItzCrazyKns/Vane
+  releaseNotes: "Vane 1.12.2. Can link to the Ollama app for local models (optional): it then appears under Settings, Model providers."

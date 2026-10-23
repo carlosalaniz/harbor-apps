@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "wavelog",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "fee88b70daeaf335eadfad9c036d19760a05956b18190c1c7e2adabfb61ff1e9"
+      "sha256": "69655665f26f73878489ed09f19f7215899401d77797dd0242490ae5ddba5993"
     },
     "compose.yaml": {
-      "sha256": "1726c67692c3c07da1f9b2359ec3a4665c79c845963f4b5dd6a72ffdcae6a15b"
+      "sha256": "55f332dc40dfff39d7689f48c563813729e5e964f4d64c96dada96e6e633d69a"
     },
     "README.md": {
       "sha256": "0c81a2538d34ed081ccfda80dc29f42a59e31af03d7e35232429e0bae8eacbe1"
@@ -17,44 +17,41 @@
   },
   "images": {
     "app": {
-      "reference": "ghcr.io/wavelog/wavelog@sha256:600c3205ca2b5d7976beedabd023cb91e3f3dfdf45b5d58708dab75ade3b94e3",
+      "reference": "ghcr.io/wavelog/wavelog@sha256:72bbf0c1af4f1caa8115d32c2aab49e308a597721a01d98ed6b4281be4668ebd",
       "repository": "ghcr.io/wavelog/wavelog",
-      "tag": "3.2.3",
+      "tag": "3.2.4",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:c7fbb38fb5d99cc32557d58b9a4561a393dd956570fe7a90741a420c41f6bcfe",
-      "appVersion": "3.2.3",
-      "imageCreated": "2026-09-23T11:55:55Z",
+      "platformDigest": "sha256:3223bf63ba4c967861e2d4c225a5771d737eb69e3d8107249b154cb441b64e31",
+      "appVersion": "3.2.4",
+      "imageCreated": "2026-10-13T16:28:20Z",
       "source": "https://ghcr.io/wavelog/wavelog"
     },
     "wavelog-db": {
-      "reference": "mariadb@sha256:39596f079862334be04f4231664862e55d4febe54309cc62f750f2297de85b06",
+      "reference": "mariadb@sha256:250e1609e93c0e6aecf64bfbab2d84d5e89d2481540fe77447ff6c855c3b1873",
       "repository": "mariadb",
       "tag": "11.4",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:b105d14ee1f4688769a57d432a9b52179e4d95f4495783ca8a41f3c783eab03c",
+      "platformDigest": "sha256:33a6653ab666774f48818120045f9367a81cd4c54c027412fe294a7d1274e2dc",
       "appVersion": "11.4",
-      "imageCreated": "2025-05-21T23:31:53Z",
+      "imageCreated": "2026-10-17T00:32:13Z",
       "source": "https://hub.docker.com/_/mariadb"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
+    "date": "2026-10-18",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "3.2.3",
+      "app": "3.2.4",
       "wavelog-db": "11.4"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package wavelog (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "dropped host hooks (pre-start): they only prepare Umbrel bind folders",
-      "Digest of app resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/wavelog/wavelog@sha256:600c3205ca2b5d7976beedabd023cb91e3f3dfdf45b5d58708dab75ade3b94e3); image config: ExposedPorts 80/tcp, Volumes none, User root.",
-      "Digest of wavelog-db resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; mariadb@sha256:39596f079862334be04f4231664862e55d4febe54309cc62f750f2297de85b06); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-14-harbor-q12: passed (healthy after 48s; page title \"Install | Wavelog\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of app resolved 2026-10-18 via registry API (scripts/catalog-pin.mjs; ghcr.io/wavelog/wavelog:3.2.4); image config: ExposedPorts 80/tcp, Volumes none, User root.",
+      "Digest of wavelog-db resolved 2026-10-18 via registry API (scripts/catalog-pin.mjs; mariadb:11.4); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
+      "Smoke run 2026-10-18T05:34:58.623Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (3.2.3) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {

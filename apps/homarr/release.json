@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "homarr",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "cbcfacfb0034ef3f6a235c94b8a3741c54636d51d62b6a024e5f79cbf9360683"
+      "sha256": "2557ab308bacac99f6b97b5faf043d2cbeb75baf485a01b80df58c4973f77c82"
     },
     "compose.yaml": {
-      "sha256": "fb91a98490a6e122811f0d2b363ea7017e803e4c9a7f3361ee4bf4e22c37c66b"
+      "sha256": "ca156ae7ae7e19972cc82e41035efe70efb8e80a9ba3bff6a3a78140d44cea4e"
     },
     "README.md": {
       "sha256": "3b8d070732dee2a502fcf57bc852b538ee568380371da4de5f32787ab3a830c9"
@@ -17,32 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/homarr-labs/homarr@sha256:447267051fd7f3c76087498ad96c8b969f57c6762eaeb78717b69388ae1a781a",
+      "reference": "ghcr.io/homarr-labs/homarr@sha256:f532ce7cb2a388096d6dce30b7ee41ff4b413b48ddc219ad2321dedb758cd772",
       "repository": "ghcr.io/homarr-labs/homarr",
-      "tag": "v2.4.1",
+      "tag": "v2.7.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:3adca59359e358acedee8828e02b665724bcfbc66ff434dff21af26cbc2586ed",
-      "appVersion": "2.4.1",
-      "imageCreated": "2026-10-10T11:33:13Z",
+      "platformDigest": "sha256:750a8f89a68d9471161910d88367e23ce9bd022f4605d52efa5dcfeee0c4a740",
+      "appVersion": "2.7.0",
+      "imageCreated": "2026-10-20T15:47:00Z",
       "source": "https://ghcr.io/homarr-labs/homarr"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "2.4.1"
+      "web": "2.7.0"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package homarr (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/homarr-labs/homarr@sha256:447267051fd7f3c76087498ad96c8b969f57c6762eaeb78717b69388ae1a781a); image config: ExposedPorts 7575/tcp, Volumes /appdata, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-22-harbor-q13: passed (healthy after 63s; page title \"Homarr\"; health 307)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1.",
-      "Revision 3 adds screenshots only (shot-1.jpg, shot-2.jpg, presentation.gallery); compose.yaml is byte-identical to the qualified revision 2."
+      "Digest of web resolved 2026-10-23 via registry API (scripts/catalog-pin.mjs; ghcr.io/homarr-labs/homarr:v2.7.0); image config: ExposedPorts 7575/tcp, Volumes /appdata, User root.",
+      "Smoke run 2026-10-23T05:42:43.817Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (2.4.1) healthy after 4 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 4 healthy after 4 s, still healthy 60 s later."
     ]
   },
   "assets": {

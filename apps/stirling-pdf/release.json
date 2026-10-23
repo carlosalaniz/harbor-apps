@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "stirling-pdf",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "f162d842124d36a06a002c4b25ad3f5186fd29336a9907587b9b1350468af8f7"
+      "sha256": "e9c6a39c8f9770bee9a20592527bbab69f2c085b9231e1644417d6614fad4bd6"
     },
     "compose.yaml": {
-      "sha256": "2a6b510ed6d8d96b9aa98357df222d84e705c32fa784dafc6b6cc3b44b64a62e"
+      "sha256": "5b27a1fa560d23b9d55e50413bc3637be60f341c453e73ff7d2d936a33d59bbc"
     },
     "README.md": {
       "sha256": "7f33dc1e7c5a5398135f2ae3872546b7c24827d0c65807889b54ad7ae7b55aac"
@@ -17,34 +17,29 @@
   },
   "images": {
     "app": {
-      "reference": "stirlingtools/stirling-pdf@sha256:b5b9e400c086e5334a4947a0d7cd589808f743f29267d7f41c18200cf4bc48b4",
+      "reference": "stirlingtools/stirling-pdf@sha256:10164ffe04961b02ebc9fa4da12064eeacb8d3bc3e09ceb059f78ce7aaa83207",
       "repository": "stirlingtools/stirling-pdf",
-      "tag": "3.1.0",
+      "tag": "3.2.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:0b33f7ed24912de5b65b90ada2b1b42e2abc24f2029f8692adc944a148522f74",
-      "appVersion": "3.1.0",
-      "imageCreated": "2026-10-05T23:03:16Z",
+      "platformDigest": "sha256:87d465ba70452dcc761de738339951869dbf590c1a31cb4a0a287512fd614d2d",
+      "appVersion": "3.2.0",
+      "imageCreated": "2026-10-15T20:17:08Z",
       "source": "https://hub.docker.com/r/stirlingtools/stirling-pdf"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
+    "date": "2026-10-21",
+    "node": "v24.22.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "3.1.0"
+      "app": "3.2.0"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package stirling-pdf (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service app: stop_grace_period 1m dropped (Docker's default applies)",
-      "service app: the image's own healthcheck switched off (nothing waits for it; Umbrel never acts on it)",
-      "Digest of app resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; stirlingtools/stirling-pdf@sha256:b5b9e400c086e5334a4947a0d7cd589808f743f29267d7f41c18200cf4bc48b4); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-00-harbor-q14: passed (healthy after 202s; page title \"Stirling PDF\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1.",
-      "Revision 3 adds screenshots only (shot-1.jpg, shot-2.jpg, presentation.gallery); compose.yaml is byte-identical to the qualified revision 2."
+      "Digest of app resolved 2026-10-21 via registry API (scripts/catalog-pin.mjs; stirlingtools/stirling-pdf:3.2.0); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-21T05:46:01.483Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (3.1.0) healthy after 24 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 27 s, still healthy 60 s later; fresh install of revision 4 healthy after 23 s, still healthy 60 s later."
     ]
   },
   "assets": {

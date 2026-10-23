@@ -1,0 +1,15 @@
+services:
+  web:
+    image: ghcr.io/open-webui/open-webui@sha256:1565038903151ced924b5a3226f73f40f16963df4b910441f6391f10144afdaa # tag: v0.12.0
+    # OLLAMA_BASE_URL comes from the ollama link (manifest). ENABLE_OLLAMA_API stays at Open WebUI's default (on):
+    # with the link that is right, and without it Open WebUI only reports Ollama as unreachable.
+    environment:
+      ENABLE_SIGNUP: "true"
+      DEFAULT_USER_ROLE: "pending"
+      SCARF_NO_ANALYTICS: "true"
+      DO_NOT_TRACK: "true"
+      ANONYMIZED_TELEMETRY: "false"
+    volumes:
+      - {type: volume, source: data, target: /app/backend/data}
+volumes:
+  data: {}

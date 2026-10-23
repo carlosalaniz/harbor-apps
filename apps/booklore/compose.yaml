@@ -13,7 +13,7 @@ services:
       db:
         condition: service_started
   db:
-    image: mariadb@sha256:b30cc65b57a11a2e791ad5c06284e599fe9f1bf3fe9081a88d85bcf36389be4a # tag: 12.0.2
+    image: mariadb@sha256:2bdff1534a7e569fecaf4b10b66ad0d410806e382d9db29ba305448addda97c4 # tag: 12.3.3
     environment:
       MARIADB_DATABASE: booklore
       MARIADB_USER: bookloreuser

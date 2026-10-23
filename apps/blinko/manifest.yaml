@@ -5,7 +5,7 @@ metadata:
   name: Blinko
   description: An open-source, self-hosted personal AI note tool prioritizing privacy, built using TypeScript .
 release:
-  revision: "2"
+  revision: "3"
   version: 1.8.8-patch.1
   minHarbor: 0.28.4
 deployment:

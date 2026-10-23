@@ -5,8 +5,10 @@ metadata:
   name: Ollama
   description: Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.
 release:
-  revision: "2"
-  version: 0.40.3
+  revision: "4"
+  version: "0.40.6"
+  # gpu permission (decision 179) and settings (decision 180)
+  minHarbor: "0.34.0"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -19,6 +21,10 @@ endpoints:
     scheme: http
     exposure: direct
     browserContext: ordinary
+# The graphics card when Harbor finds a usable one (NVIDIA with its container toolkit, or Intel/AMD graphics);
+# without one Ollama runs on the CPU, as before.
+permissions:
+  ollama: [gpu]
 health:
   endpoint: web
   path: /
@@ -30,11 +36,77 @@ ui:
 storage:
   - id: data
     composeVolume: data
-    purpose: Data at /root/.ollama (ollama)
+    purpose: Downloaded models
     retention: retain
+    external: {hint: "Models are large (1 to 40 GB each); a folder on a big disk is a good idea."}
+# Ollama's server settings (envconfig of Ollama 0.40.3). Each default is what this package did before (context
+# length 8192) or what Ollama does when the variable is left out.
+settings:
+  - id: context-length
+    label: Context length (tokens)
+    help: "How much text a model keeps in mind at once. More needs more memory. 0 lets Ollama choose from the graphics memory (4k, 32k or 256k tokens). An app or a model's own settings can still ask for another length."
+    type: integer
+    default: 8192
+    min: 0
+    max: 262144
+    bindings:
+      - {service: ollama, environment: OLLAMA_CONTEXT_LENGTH}
+  - id: keep-alive
+    label: Keep a model loaded for
+    help: "How long a model stays in memory after its last answer, such as 5m, 1h or 24h. -1 keeps it loaded, 0 unloads it right away. An app can ask for its own time. Anything Ollama cannot read counts as 5m."
+    type: string
+    default: 5m
+    maxLength: 16
+    bindings:
+      - {service: ollama, environment: OLLAMA_KEEP_ALIVE}
+  - id: num-parallel
+    label: Parallel requests per model
+    help: "How many answers one model works on at the same time. Each one needs its own share of memory (context length times this number)."
+    type: integer
+    default: 1
+    min: 1
+    max: 16
+    bindings:
+      - {service: ollama, environment: OLLAMA_NUM_PARALLEL}
+  - id: max-loaded-models
+    label: Models loaded at once
+    help: "0 is automatic: up to 3 per graphics card (3 on the CPU), as long as they fit in memory. Ollama unloads the oldest one to make room."
+    type: integer
+    default: 0
+    min: 0
+    max: 16
+    bindings:
+      - {service: ollama, environment: OLLAMA_MAX_LOADED_MODELS}
+  - id: flash-attention
+    label: Flash attention
+    # '' leaves the choice to Ollama: it trims the quotes, so the variable reads as unset. Any text other than
+    # 1/0/true/false would force it on, so "auto" is not an option.
+    help: "Uses less memory for long conversations. Automatic turns it on where the card or the CPU supports it. Choose Off only if a model gives broken answers."
+    type: choice
+    default: "''"
+    choices:
+      - {value: "''", label: Automatic}
+      - {value: "1", label: "On"}
+      - {value: "0", label: "Off"}
+    bindings:
+      - {service: ollama, environment: OLLAMA_FLASH_ATTENTION}
+  - id: kv-cache
+    label: Conversation memory precision
+    help: "Half or a quarter saves graphics memory with a small loss in quality. Both need flash attention (Automatic or On): a model does not load when flash attention ends up off."
+    type: choice
+    default: f16
+    choices:
+      - {value: f16, label: Full}
+      - {value: q8_0, label: Half}
+      - {value: q4_0, label: Quarter}
+    bindings:
+      - {service: ollama, environment: OLLAMA_KV_CACHE_TYPE}
 presentation:
   icon: icon.png
   tagline: Self-host open source AI models like DeepSeek-R1, Llama, and more
   category: ai
   developer: Ollama
   website: https://ollama.com/
+  source: https://github.com/ollama/ollama
+  sizeHint: "About 2 GB, plus each model you download (1 to 40 GB)"
+  releaseNotes: "Ollama 0.40.6, now on the graphics card when Harbor finds one (NVIDIA needs its container toolkit; otherwise it runs on the CPU as before). Its server settings (context length, keep-alive, parallel requests, models loaded at once, flash attention, memory precision) can be changed on the app page. Other AI apps can link to it, so models are downloaded once."

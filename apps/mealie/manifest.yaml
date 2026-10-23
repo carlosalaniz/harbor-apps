@@ -5,7 +5,7 @@ metadata:
   name: "Mealie"
   description: "Recipe manager and meal planner: import recipes from any URL, plan the week, build shopping lists."
 release:
-  revision: "2"
+  revision: "4"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -48,4 +48,4 @@ presentation:
     - shot-4.jpg
   developer: "Mealie contributors"
   website: https://mealie.io
-  releaseNotes: "Mealie v3.26.0 with SQLite; sign-ups disabled (invite users from the admin area)."
+  releaseNotes: "Mealie v3.29.0 with SQLite; sign-ups disabled (invite users from the admin area)."

@@ -5,7 +5,7 @@ metadata:
   name: "Navidrome"
   description: "Modern music server and streamer compatible with Subsonic and Airsonic apps. Point it at your music folder and play anywhere."
 release:
-  revision: "2"
+  revision: "3"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -50,4 +50,4 @@ presentation:
     - shot-3.jpg
   developer: "Navidrome contributors"
   website: https://www.navidrome.org
-  releaseNotes: "Navidrome 0.64.0; scans hourly."
+  releaseNotes: "Navidrome 0.64.2; scans hourly."

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "lubelogger",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "cbae9958dd6860d97a46887bc7551106492f0c58ba6a8dc0248c7bc912a8a9af"
+      "sha256": "caf83823c0acbf935d910770b80eeea226ecad3cd5f00a3120e4f4e449508c41"
     },
     "compose.yaml": {
-      "sha256": "ab9be4036501bf0b7bbc41793bda7319a6d545bd5b4b3f10ce3d90a526e3f0bc"
+      "sha256": "7fb9e7145f88f66c95748b67e1e368e5829d45d6dfa7be1895f69f6817b38128"
     },
     "README.md": {
       "sha256": "38b9f1fd34a5b620c5017d44f5cc871990e63c03f9ffb6e1c4a332b1eb022a4e"
@@ -17,32 +17,29 @@
   },
   "images": {
     "app": {
-      "reference": "ghcr.io/hargata/lubelogger@sha256:c9d2bbb48c7f84d90e54496e2cd60422e56a5f2345c8a539ebe09f77e629d321",
+      "reference": "ghcr.io/hargata/lubelogger@sha256:483a9d7582c4e6258615fd822b3de4193b4fcc4230d0a92432c6d407faf75af2",
       "repository": "ghcr.io/hargata/lubelogger",
-      "tag": "v1.7.3",
+      "tag": "v1.7.4",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:192fdcf5a91c193a0a7d3a854c1213f8be767854cb8e07204c9789ec2cba8422",
-      "appVersion": "1.7.3",
-      "imageCreated": "2026-09-12T14:55:10Z",
+      "platformDigest": "sha256:93a3b1785553cd39401fe339f24782cb0da5792c552b8818c61bb752132e5c0a",
+      "appVersion": "1.7.4",
+      "imageCreated": "2026-10-14T17:27:07Z",
       "source": "https://ghcr.io/hargata/lubelogger"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
+    "date": "2026-10-17",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "1.7.3"
+      "app": "1.7.4"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package lubelogger (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service app: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of app resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/hargata/lubelogger@sha256:c9d2bbb48c7f84d90e54496e2cd60422e56a5f2345c8a539ebe09f77e629d321); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-42-harbor-q10: passed (healthy after 29s; page title \"Garage - LubeLogger\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of app resolved 2026-10-17 via registry API (scripts/catalog-pin.mjs; ghcr.io/hargata/lubelogger:v1.7.4); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-17T05:33:37.239Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.7.3-patch.1) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 3 healthy after 2 s, still healthy 60 s later."
     ]
   },
   "assets": {

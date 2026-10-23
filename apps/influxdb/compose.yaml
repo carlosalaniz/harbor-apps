@@ -1,13 +1,13 @@
 services:
   influxdb:
-    image: influxdb@sha256:f5eb5cd107f845529dac36359527ed6448d421c5359cedbfc9d66beffcf669af # tag: 1.13.1
+    image: influxdb@sha256:1126a8335b2dd106c5360b9f493c365d9b548100ad68791b4b421dc9f408f8d3 # tag: 1.13.1
     environment:
       INFLUXDB_ADMIN_USER: admin
       INFLUXDB_HTTP_AUTH_ENABLED: "true"
     volumes:
       - {type: volume, source: influxdb, target: "/var/lib/influxdb"}
   chronograf:
-    image: chronograf@sha256:1aa585346868ef0859c507b2c8544a175ad308024765929f5df5b64a9679031d # tag: 1.11.4
+    image: chronograf@sha256:e01a840ecaf467e5b058faf985d945a1ace75a950e6064fa0218948a6e0ba069 # tag: 1.11.6
     environment:
       INFLUXDB_URL: http://influxdb:8086
       INFLUXDB_USERNAME: admin

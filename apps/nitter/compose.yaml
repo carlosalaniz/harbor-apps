@@ -9,7 +9,7 @@ services:
       redis:
         condition: service_started
   redis:
-    image: redis@sha256:e10f55f92478715698a2cef97c2bbdc48df2a05081edd884938903aa60df6396 # tag: 6.2.2-buster
+    image: redis@sha256:11f7040a861a1456ecad6d58babe47e2c8d05b626187a671bd72aa876d7cd419 # tag: 6.2.6-buster
     command:
       - redis-server
       - --save

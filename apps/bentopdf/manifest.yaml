@@ -5,7 +5,7 @@ metadata:
   name: BentoPDF
   description: Browser PDF tools
 release:
-  revision: "1"
+  revision: "2"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -33,4 +33,4 @@ presentation:
   icon: icon.svg
   developer: alam00000
   website: https://github.com/alam00000/bentopdf
-  releaseNotes: v2.8.8 pinned by digest; all processing stays in the browser.
+  releaseNotes: v2.8.10 pinned by digest; all processing stays in the browser.

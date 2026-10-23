@@ -5,7 +5,9 @@ metadata:
   name: "Open WebUI"
   description: "Private ChatGPT-style assistant with a bundled Ollama model server. Chat with local models on this machine or connect your own API keys."
 release:
-  revision: "3"
+  revision: "5"
+  # gpu permission for the bundled Ollama (decision 179)
+  minHarbor: "0.34.0"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -19,6 +21,9 @@ endpoints:
     scheme: http
     exposure: direct
     browserContext: secure
+# The bundled Ollama gets the graphics card when Harbor finds a usable one; otherwise it runs on the CPU as before.
+permissions:
+  ollama: [gpu]
 health:
   endpoint: web
   path: /health
@@ -59,4 +64,4 @@ presentation:
     - shot-2.jpg
   developer: "Open WebUI contributors"
   website: https://openwebui.com
-  releaseNotes: "Open WebUI v0.12.0 with Ollama 0.34.4 (CPU inference; bring your own GPU later). Telemetry off."
+  releaseNotes: "Open WebUI v0.12.3 with Ollama 0.34.4, which now uses the graphics card when Harbor finds one (NVIDIA needs its container toolkit; otherwise it runs on the CPU as before). Telemetry off. To share one Ollama between several AI apps, see Open WebUI for Ollama."

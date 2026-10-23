@@ -1,6 +1,6 @@
 services:
   web:
-    image: dumbwareio/dumbpad@sha256:03e4216d7842958287bccf6c51dde1c41735b35235844fb87c70b4443143ada6 # tag: 1.0.4
+    image: dumbwareio/dumbpad@sha256:495a109141c28d990fedb9ed06e2d68db08a898b493479cdb12132d90f99d708 # tag: 1.0.5
     environment:
       SITE_TITLE: DumbPad
     volumes:

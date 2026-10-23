@@ -5,8 +5,8 @@ metadata:
   name: DumbPad
   description: A Dumb Pad with collaborative editing, fuzzy search, & markdown preview functionality
 release:
-  revision: "2"
-  version: 1.0.4-patch.1
+  revision: "3"
+  version: "1.0.5-patch.1"
 deployment:
   compose: compose.yaml
   multiInstance: true

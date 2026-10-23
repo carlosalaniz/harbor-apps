@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "open-webui-shared",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "a45c1c4cc29cc95b3a021182fa42cb599f56d3e021d6d9f8b00ba795a82e959b"
+    },
+    "compose.yaml": {
+      "sha256": "059e29f6cbef79d3bb2ac271657af31badab3815d7fbcc930f32d0f463558516"
+    },
+    "README.md": {
+      "sha256": "9f87f516af1380de069ff6e7b678e6a66cef53beb61d5c1412be21eb3a1ea10d"
+    }
+  },
+  "images": {
+    "web": {
+      "reference": "ghcr.io/open-webui/open-webui@sha256:1565038903151ced924b5a3226f73f40f16963df4b910441f6391f10144afdaa",
+      "repository": "ghcr.io/open-webui/open-webui",
+      "tag": "v0.12.0",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:208e824dd445548da7bd655a5e24718bf88112a7f60a807b5adb09096f2fd10b",
+      "appVersion": "0.12.0",
+      "imageCreated": "2026-10-10T21:21:10Z",
+      "source": "https://ghcr.io/open-webui/open-webui"
+    }
+  },
+  "qualification": {
+    "status": "pending",
+    "date": "2026-10-14",
+    "notes": [
+      "New app: Open WebUI without its bundled Ollama, linked to the Ollama app (optional link). Same web image as open-webui revision 4. Not yet run on a real Harbor host.",
+      "Digest of web resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; ghcr.io/open-webui/open-webui@sha256:1565038903151ced924b5a3226f73f40f16963df4b910441f6391f10144afdaa); image config: ExposedPorts 8080/tcp, Volumes none, User 0:0."
+    ]
+  },
+  "assets": {
+    "icon.png": {
+      "sha256": "5698a3e39513e7b6304ec96c309373ab3af0f70fe794293461de395a94deaa65"
+    },
+    "shot-1.jpg": {
+      "sha256": "a12c06fe354b759a2b037c30cbdba7af26acbd08e958e9ff646998dfa93eaf48"
+    },
+    "shot-2.jpg": {
+      "sha256": "2de38b8a2175833b720cf71747d9ddd9e6935a7e5967d5661b8d26e13975aef0"
+    }
+  }
+}

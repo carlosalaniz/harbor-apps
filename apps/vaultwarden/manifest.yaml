@@ -5,7 +5,7 @@ metadata:
   name: "Vaultwarden"
   description: "Lightweight password manager server compatible with the Bitwarden apps and browser extensions."
 release:
-  revision: "1"
+  revision: "2"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -44,4 +44,4 @@ presentation:
   icon: icon.svg
   developer: "Vaultwarden contributors"
   website: https://github.com/dani-garcia/vaultwarden
-  releaseNotes: "Vaultwarden 1.37.3 (alpine). Sign-ups are open until you turn them off."
+  releaseNotes: "Vaultwarden 1.37.4 (alpine). Sign-ups are open until you turn them off."

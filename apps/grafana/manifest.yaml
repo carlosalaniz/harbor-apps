@@ -9,8 +9,8 @@ defaultCredentials:
   password: admin
   note: Change it after the first login.
 release:
-  revision: "2"
-  version: 13.2.3
+  revision: "3"
+  version: "13.2.4"
 deployment:
   compose: compose.yaml
   multiInstance: true

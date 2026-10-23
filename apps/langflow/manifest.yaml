@@ -5,8 +5,8 @@ metadata:
   name: Langflow
   description: Langflow is a powerful tool for building and deploying AI-powered agents and workflows.
 release:
-  revision: "2"
-  version: 1.12.5
+  revision: "5"
+  version: "1.12.7"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -45,9 +45,22 @@ secrets:
     bindings:
       - service: app
         environment: LANGFLOW_SUPERUSER_PASSWORD
+# Optional: the shared Ollama app. Langflow's Language Model and Embedding Model components (provider Ollama) read
+# OLLAMA_BASE_URL from the environment; compose.yaml lets its SSRF guard reach the link's host. Without a provider
+# nothing changes.
+links:
+  - id: ollama
+    purpose: "Ollama, the model server (shared by every AI app; optional)"
+    optional: true
+    provider:
+      packages: [ollama]
+      endpoint: web
+    bindings:
+      - {service: app, environment: OLLAMA_BASE_URL, format: url}
 presentation:
   icon: icon.png
   tagline: Build AI agents and workflows visually
   category: ai
   developer: Langflow
   website: https://www.langflow.org/
+  releaseNotes: "Langflow 1.12.7. Can link to the Ollama app for local models (optional): choose Ollama as the provider in a Language Model or Embedding Model component."

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "nitter",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "77999d32f30033630e3d3055513a3443d83d294483573a55cb6f69aefbe6168a"
+      "sha256": "5a99ed8dd0de2745150d31560c3ee5c47e7c14e6575e9add05998667ffe956d1"
     },
     "compose.yaml": {
-      "sha256": "a3692cf668f2a0bd5e29a194992dc96d20b449b4717d9785d67ea90ff7e1944a"
+      "sha256": "aa83ce8b13c4f8a2e1bf5ec871ff54fb9bbdee1a6cad3d5b4d8f09b35ea50350"
     },
     "README.md": {
       "sha256": "22202bae6f5cf442537e0d3fb828bf235869c988df3fd45da4a7cdad875594c5"
@@ -27,37 +27,31 @@
       "source": "https://hub.docker.com/r/ceramicwhite/nitter"
     },
     "redis": {
-      "reference": "redis@sha256:e10f55f92478715698a2cef97c2bbdc48df2a05081edd884938903aa60df6396",
+      "reference": "redis@sha256:11f7040a861a1456ecad6d58babe47e2c8d05b626187a671bd72aa876d7cd419",
       "repository": "redis",
-      "tag": "6.2.2-buster",
+      "tag": "6.2.6-buster",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:31d8532024007f377fd91ba5e1ca99350f76135ab524c7e8fffddc9d2664e501",
-      "appVersion": "6.2.2-buster",
-      "imageCreated": "2021-04-20T23:46:01Z",
+      "platformDigest": "sha256:52ef2fd9856c681d556b18fa87449a03f9b99fc6cc2c4b471d288f45c303a111",
+      "appVersion": "6.2.6-buster",
+      "imageCreated": "2021-10-06T00:44:26Z",
       "source": "https://hub.docker.com/_/redis"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
+    "date": "2026-10-14",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "web": "build-38985af",
-      "redis": "6.2.2-buster"
+      "redis": "6.2.6-buster"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package nitter (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: stop_grace_period 1m dropped (Docker's default applies)",
-      "service web: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service redis: stop_grace_period 1m dropped (Docker's default applies)",
-      "service redis: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ceramicwhite/nitter@sha256:594a184c3a834c29957ddd917800d61f3d560411d26fa6cf389bef350d4c4ac6); image config: ExposedPorts 8080/tcp, Volumes none, User nitter.",
-      "Digest of redis resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; redis@sha256:e10f55f92478715698a2cef97c2bbdc48df2a05081edd884938903aa60df6396); image config: ExposedPorts 6379/tcp, Volumes /data, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-36-harbor-q07: passed (healthy after 42s; page title \"nitter\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; ceramicwhite/nitter:build-38985af); image config: ExposedPorts 8080/tcp, Volumes none, User nitter.",
+      "Digest of redis resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; redis:6.2.6-buster); image config: ExposedPorts 6379/tcp, Volumes /data, User root.",
+      "Smoke run 2026-10-14T05:42:32.810Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (38985af) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 17 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {

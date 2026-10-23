@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "forgejo",
-    "revision": "1"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "a6f46cb39a76743dfd89b0c0acb29b2f3abcd53032a424bf913d3f6701d2f26a"
+      "sha256": "c49a1c4ae185ba6c643ffa7ac600bb13dff29fd3ae008c6475ce78acb0e17ea9"
     },
     "compose.yaml": {
-      "sha256": "0dbccb333ff9c5275a504e56561ea589466771dac3d4c858dc3fdb1706d4e1aa"
+      "sha256": "1c9242cc801328164aa172b60c2be5841ca8f916404c74a7f7b1159e9d1a6c0f"
     },
     "README.md": {
       "sha256": "4fb816b7fa568b6b2c43d1b3a0ea7f7280b101d6e4f373a80fd8239a3f694b7a"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "codeberg.org/forgejo/forgejo@sha256:a3e33d03e771d3e58b27de5573c3a25dc4f670583a6724c1878a6d0bbecf3556",
+      "reference": "codeberg.org/forgejo/forgejo@sha256:e2c34a699543ca8a00217ee9ab2bea5feedc98bd6d0ea95ec287d3b7ae1355c6",
       "repository": "codeberg.org/forgejo/forgejo",
-      "tag": "16.0.4",
+      "tag": "16.0.6",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:d11261f3634f6257f4dd946bffa7215beb144e24debb7f9f5cbccb4823f13b1a",
-      "appVersion": "16.0.4",
-      "imageCreated": "2026-09-10T11:11:00Z",
+      "platformDigest": "sha256:399e23d193f079b9402d883b504770cacfd1b1099dd49bc44819f663c5f413e3",
+      "appVersion": "16.0.6",
+      "imageCreated": "2026-10-12T09:44:48Z",
       "source": "https://codeberg.org/forgejo/forgejo"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-09-15",
-    "node": "v24.12.0",
-    "dockerEngine": "29.8.0",
-    "dockerCompose": "5.5.1",
-    "hostOs": "Ubuntu 24.04.4 LTS x86_64",
+    "date": "2026-10-15",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.0",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "16.0.4"
+      "web": "16.0.6"
     },
     "notes": [
-      "Digest of web resolved 2026-09-14 via registry API (scripts/catalog-pin.mjs; codeberg.org/forgejo/forgejo:16.0.4); image config: ExposedPorts 22/tcp,3000/tcp, Volumes /data, User root.",
-      "Live catalog run catalog-2026-09-15T00-13-13: passed (healthy after 28s; page title \"Installation - Forgejo: Beyond coding. We forge.\"; health 200)"
+      "Digest of web resolved 2026-10-15 via registry API (scripts/catalog-pin.mjs; codeberg.org/forgejo/forgejo:16.0.6); image config: ExposedPorts 22/tcp,3000/tcp, Volumes /data, User root.",
+      "Smoke run 2026-10-15T05:36:47.285Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (16.0.5) healthy after 3 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {

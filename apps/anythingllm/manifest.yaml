@@ -5,7 +5,7 @@ metadata:
   name: "AnythingLLM"
   description: "All-in-one AI workspace: chat with your documents, build agents and connect any model provider, including a local Ollama."
 release:
-  revision: "1"
+  revision: "3"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -28,7 +28,7 @@ ui:
   primaryEndpoint: web
 setup:
   endpoint: web
-  instructions: "Open AnythingLLM and follow the onboarding: pick an LLM provider (for example an OpenAI-compatible endpoint or an Ollama URL) and create your first workspace."
+  instructions: "Open AnythingLLM and follow the onboarding: pick an LLM provider (Ollama, when you linked the Ollama app: its address is filled in) and create your first workspace."
 storage:
   - id: storage
     composeVolume: storage
@@ -53,6 +53,17 @@ secrets:
     retention: retain
     bindings:
       - {service: web, environment: SIG_SALT}
+# Optional: the shared Ollama app. AnythingLLM reads OLLAMA_BASE_PATH for its Ollama LLM provider and agents (the
+# onboarding form shows it); choose Ollama as the provider to use it. Without a provider nothing changes.
+links:
+  - id: ollama
+    purpose: "Ollama, the model server (shared by every AI app; optional)"
+    optional: true
+    provider:
+      packages: [ollama]
+      endpoint: web
+    bindings:
+      - {service: web, environment: OLLAMA_BASE_PATH, format: url}
 presentation:
   tagline: "Chat with your documents and build AI agents"
   sizeHint: "About 2 GB, plus your documents"
@@ -60,4 +71,4 @@ presentation:
   icon: icon.png
   developer: "Mintplex Labs"
   website: https://anythingllm.com
-  releaseNotes: "AnythingLLM 1.16.1; telemetry disabled. Uses its built-in LanceDB vector store."
+  releaseNotes: "AnythingLLM 1.18.0; telemetry disabled. Uses its built-in LanceDB vector store. Can link to the Ollama app for local models (optional)."

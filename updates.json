@@ -11,6 +11,12 @@
       ],
       "note": "Immich names the exact Postgres (VectorChord) image each release needs in its own docker-compose.yml; move it by hand with the release notes open."
     },
+    "plane": {
+      "match": {
+        "proxy": "^v1\\.4\\.[0-9]+$"
+      },
+      "note": "compose.yaml carries plane-proxy's Caddyfile in the proxy's command (Plane's v1.4.2 routes plus the address handling). Patch releases move on their own; for a Plane minor release, compare apps/proxy/Caddyfile.ce with the routes there, update them and widen this match by hand."
+    },
     "karakeep": {
       "hold": [
         "meilisearch"

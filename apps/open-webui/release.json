@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "package": {
     "id": "open-webui",
-    "revision": "3"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "2e6933609b9cdf183aa3e1f64a9a50d696021d9cec510571673c0b9a0dbd0c52"
+      "sha256": "039041a7f47597e1dd0391c6b6149bb8ec5f0a7aac0cdf1ab37f8b68f8d1e270"
     },
     "compose.yaml": {
-      "sha256": "75cb3b012ba45b4d6afdc5f5464266dfcf2ae8b31ec9e7b924afbe037186b186"
+      "sha256": "74b933522cd4be9cc113af197fdde7a03f70856761125341a824c1be93ad0578"
     },
     "README.md": {
-      "sha256": "1bd2f5ecb3ae70f1880189ab2436682aa3de10dd13cdb51fd1310fcdcf69f6b2"
+      "sha256": "2a601f1263674e2920366f4f73a6d15b4611841605229e509c8c3edc4f2d46c9"
     }
   },
   "images": {
@@ -27,31 +27,31 @@
       "source": "https://hub.docker.com/r/ollama/ollama"
     },
     "web": {
-      "reference": "ghcr.io/open-webui/open-webui@sha256:1565038903151ced924b5a3226f73f40f16963df4b910441f6391f10144afdaa",
+      "reference": "ghcr.io/open-webui/open-webui@sha256:a537bbe1e6b428820f52ed4a029d7fff97062e24d5cf32c365fba36fd0542def",
       "repository": "ghcr.io/open-webui/open-webui",
-      "tag": "v0.12.0",
+      "tag": "v0.12.3",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:208e824dd445548da7bd655a5e24718bf88112a7f60a807b5adb09096f2fd10b",
-      "appVersion": "0.12.0",
-      "imageCreated": "2026-10-10T21:21:10Z",
+      "platformDigest": "sha256:ef11a68f38457d831e23168486858c25b9d9c4399094c9e72c0d4d8767ac09de",
+      "appVersion": "0.12.3",
+      "imageCreated": "2026-10-16T11:50:41Z",
       "source": "https://ghcr.io/open-webui/open-webui"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-13",
+    "date": "2026-10-20",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "2.38.2",
+    "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "ollama": "0.34.4",
-      "web": "0.12.0"
+      "web": "0.12.3"
     },
     "notes": [
-      "Digest of ollama resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; ollama/ollama:0.34.4); image config: ExposedPorts 11434/tcp, Volumes none, User root.",
-      "Digest of web resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; ghcr.io/open-webui/open-webui:v0.12.0); image config: ExposedPorts 8080/tcp, Volumes none, User 0:0.",
-      "Smoke run 2026-10-13T16:38:41.191Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.11.3) healthy after 34 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 35 s, still healthy 60 s later; fresh install of revision 3 healthy after 34 s, still healthy 60 s later."
+      "Digest of ollama resolved 2026-10-20 via registry API (scripts/catalog-pin.mjs; ollama/ollama:0.34.4); image config: ExposedPorts 11434/tcp, Volumes none, User root.",
+      "Digest of web resolved 2026-10-20 via registry API (scripts/catalog-pin.mjs; ghcr.io/open-webui/open-webui:v0.12.3); image config: ExposedPorts 8080/tcp, Volumes none, User 0:0.",
+      "Smoke run 2026-10-20T05:44:23.409Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (0.12.0) healthy after 36 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 34 s, still healthy 60 s later; fresh install of revision 5 healthy after 33 s, still healthy 60 s later."
     ]
   },
   "assets": {

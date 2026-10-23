@@ -1,0 +1,68 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: open-webui-shared
+  name: "Open WebUI for Ollama"
+  description: "Private ChatGPT-style assistant for the separate Ollama app: chat with the models every AI app on this machine shares, or connect your own API keys."
+release:
+  revision: "1"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    web: application
+endpoints:
+  web:
+    service: web
+    containerPort: 8080
+    scheme: http
+    exposure: direct
+    browserContext: secure
+health:
+  endpoint: web
+  path: /health
+  expectedStatus: [200]
+  timeoutSeconds: 5
+  deadlineSeconds: 420
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Create the first account (it becomes the admin). Then download a model under Admin Panel, Settings, Models (for example llama3.2:1b; it is stored in the Ollama app) or add an API key under Connections."
+storage:
+  - id: data
+    composeVolume: data
+    purpose: "Chats, users and settings"
+    retention: retain
+secrets:
+  - id: session-key
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: web, environment: WEBUI_SECRET_KEY}
+# The shared model server. Required: Open WebUI saves this address in its own database at its first start, so it
+# must be there from the start (an optional link is not picked for you, and a later one would not reach the saved
+# address). Harbor picks the only Ollama itself; with none it asks you to install Ollama first. For API keys only,
+# the bundled open-webui app needs no Ollama app.
+links:
+  - id: ollama
+    purpose: "Ollama, the model server (shared by every AI app)"
+    provider:
+      packages: [ollama]
+      endpoint: web
+    bindings:
+      - {service: web, environment: OLLAMA_BASE_URL, format: url}
+configuration:
+  - {service: web, environment: WEBUI_URL, endpoint: web, format: origin}
+presentation:
+  tagline: "Your private AI assistant, on the shared Ollama"
+  sizeHint: "About 4 GB; models are stored in the Ollama app"
+  category: ai
+  icon: icon.png
+  gallery:
+    - shot-1.jpg
+    - shot-2.jpg
+  developer: "Open WebUI contributors"
+  website: https://openwebui.com
+  releaseNotes: "Open WebUI v0.12.0 without a model server of its own: it uses the Ollama app, so models are downloaded once and shared with your other AI apps. Telemetry off."

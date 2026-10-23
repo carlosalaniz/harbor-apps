@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "docmost",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "6dcc3d348e1066f311fd54911a0b8356a3203e65da95cc7fcfe0e7f0327c0b0b"
+      "sha256": "4293e5619dac44c0c935d549b18c7de45362d8eefdb0f01eb8c5748b8c56de45"
     },
     "compose.yaml": {
-      "sha256": "b4229b8e6b34ed96b26845938366148886c68f34065e1044cee00f600a6faa0b"
+      "sha256": "58eb9d48f95ee46b23491b15fb1a2f79e5841733cc35a9e246da2efadd464289"
     },
     "README.md": {
       "sha256": "835e5588d5159c573eff9e6d1b8b3d43b39aad81fe5ddc90da2d3cc3832b355b"
@@ -27,49 +27,43 @@
       "source": "https://hub.docker.com/r/docmost/docmost"
     },
     "db": {
-      "reference": "postgres@sha256:0321e2252ebfeecb8bc1a899755084d29bce872953e1a5a3e25ec0860b739098",
+      "reference": "postgres@sha256:2d2b8998d31037bf721cfdf764d76ba74171b4fab3431b7f72c27c56ddbdf9e3",
       "repository": "postgres",
-      "tag": "17.3",
+      "tag": "17.11",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:e366371d957315076aa46904bbbe3b6a6c2069b5ffdb8fb39d07d25e8f995389",
-      "appVersion": "17.3",
-      "imageCreated": "2025-02-16T19:03:06Z",
+      "platformDigest": "sha256:3cec7eb015ba8adb28139fa5c83b8489cdf0e666e53dfdf20f598ae0cc8739e3",
+      "appVersion": "17.11",
+      "imageCreated": "2026-10-06T01:33:02Z",
       "source": "https://hub.docker.com/_/postgres"
     },
     "redis": {
-      "reference": "redis@sha256:b3ad79880c88e302deb5e0fed6cee3e90c0031eb90cd936b01ef2f83ff5b3ff2",
+      "reference": "redis@sha256:2c2dff791878316e3b083188be0d578423b24813cdda5de0e80ea4f7b3e6bfd6",
       "repository": "redis",
-      "tag": "8.0.1",
+      "tag": "8.10.2",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:5ccc8af4cdb4f8fe6fe87eb71f7cf8ea41517a6fd26a18965fe904cf776ec47b",
-      "appVersion": "8.0.1",
-      "imageCreated": "2025-05-13T16:54:20Z",
+      "platformDigest": "sha256:6e9101032a2126aeeb4b1e862ac77d2fcf26b831ae37e5ff2e69169f82ddd411",
+      "appVersion": "8.10.2",
+      "imageCreated": "2026-10-06T01:39:38Z",
       "source": "https://hub.docker.com/_/redis"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
+    "date": "2026-10-16",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "web": "0.96.0",
-      "db": "17.3",
-      "redis": "8.0.1"
+      "db": "17.11",
+      "redis": "8.10.2"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package docmost (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service db: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service redis: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; docmost/docmost@sha256:b56947fcfd08aab8fae12a377e1792784786adbf8b96e4281f14ef4fc072685a); image config: ExposedPorts 3000/tcp, Volumes /app/data/storage, User node.",
-      "Digest of db resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; postgres@sha256:0321e2252ebfeecb8bc1a899755084d29bce872953e1a5a3e25ec0860b739098); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of redis resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; redis@sha256:b3ad79880c88e302deb5e0fed6cee3e90c0031eb90cd936b01ef2f83ff5b3ff2); image config: ExposedPorts 6379/tcp, Volumes /data, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-22-harbor-q04: passed (healthy after 144s; page title \"Setup Workspace - Docmost\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1.",
-      "Revision 3 adds screenshots only (shot-1.jpg, shot-2.jpg, presentation.gallery); compose.yaml is byte-identical to the qualified revision 2."
+      "Digest of web resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; docmost/docmost:0.96.0); image config: ExposedPorts 3000/tcp, Volumes /app/data/storage, User node.",
+      "Digest of db resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; postgres:17.11); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of redis resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; redis:8.10.2); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-16T05:42:57.898Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (0.96.0-patch.1) healthy after 8 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 8 s, still healthy 60 s later; fresh install of revision 4 healthy after 8 s, still healthy 60 s later."
     ]
   },
   "assets": {

@@ -13,7 +13,7 @@ services:
       redis:
         condition: service_started
   db:
-    image: postgres@sha256:0321e2252ebfeecb8bc1a899755084d29bce872953e1a5a3e25ec0860b739098 # tag: 17.3
+    image: postgres@sha256:2d2b8998d31037bf721cfdf764d76ba74171b4fab3431b7f72c27c56ddbdf9e3 # tag: 17.11
     environment:
       POSTGRES_DB: docmost
       POSTGRES_USER: docmostuser
@@ -21,7 +21,7 @@ services:
     volumes:
       - {type: volume, source: db-data, target: "/var/lib/postgresql/data"}
   redis:
-    image: redis@sha256:b3ad79880c88e302deb5e0fed6cee3e90c0031eb90cd936b01ef2f83ff5b3ff2 # tag: 8.0.1
+    image: redis@sha256:2c2dff791878316e3b083188be0d578423b24813cdda5de0e80ea4f7b3e6bfd6 # tag: 8.10.2
     volumes:
       - {type: volume, source: redis-data, target: "/data"}
 volumes:

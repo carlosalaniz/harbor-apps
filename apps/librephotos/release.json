@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "librephotos",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "1cb9c8be4aee55e8c85750980e1a04b947e76cbd6c72885b0f554511e63f5b5c"
+      "sha256": "e470f839d89fde334396f599a840662a437baeee5b4562a9bd3dd644f2c34090"
     },
     "compose.yaml": {
-      "sha256": "f7eb453e58bc51cc42fb2e5456d119de659e1a8b301fdfd32f9c7fe67b534496"
+      "sha256": "35a0a18b49ca44ca8c39c703ed118fb04328b20fedf871e0587cd27597b0ff15"
     },
     "README.md": {
       "sha256": "cc0263ce2cdf36cec6f386c099a33091ee186d0becfc218b1e2cac0fb7dc6f87"
@@ -17,67 +17,65 @@
   },
   "images": {
     "proxy": {
-      "reference": "reallibrephotos/librephotos-proxy@sha256:c88c0a65b50ba7e4f65ccc9aa7d5002df9827cb79edb1f88a3a4c130d0b03be4",
+      "reference": "reallibrephotos/librephotos-proxy@sha256:050acd28b16749e6f614174ea3557b6be9dfc063721ded8ea70d44b9458f6eef",
       "repository": "reallibrephotos/librephotos-proxy",
-      "tag": "2026w14",
+      "tag": "2026w25",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:72300a7f04158fcea24c5eb1836de89edf2e99e4adc724572a4b2ce515734110",
-      "appVersion": "2026w14",
-      "imageCreated": "2026-04-05T16:08:27Z",
+      "platformDigest": "sha256:50f2de84ef9bae5fd5867434b12f674c8c817a6186a08569f38217124ca1c266",
+      "appVersion": "2026w25",
+      "imageCreated": "2026-06-21T11:22:51Z",
       "source": "https://hub.docker.com/r/reallibrephotos/librephotos-proxy"
     },
     "db": {
-      "reference": "pgautoupgrade/pgautoupgrade@sha256:2ec008ae5f0a2e5dd8f4d2475df41cf3ccc9562acf49bd668fcc0c061944b9bf",
+      "reference": "pgautoupgrade/pgautoupgrade@sha256:30327dd262e3ec44df14e1120f99aac56eb3c60b49ab36d3095a25b5cf187158",
       "repository": "pgautoupgrade/pgautoupgrade",
-      "tag": "17-alpine3.22",
+      "tag": "17-alpine3.24",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:b7a5bf780bcb7c113aa8ae41c2aba13d067692782b39de3699dd8c74bd19fbef",
-      "appVersion": "17-alpine3.22",
-      "imageCreated": "2025-07-16T12:39:43Z",
+      "platformDigest": "sha256:aa453a7f541ed056d318e67739251c64fb28429f4baaeb3834c776571e6286bc",
+      "appVersion": "17-alpine3.24",
+      "imageCreated": "2026-10-14T06:23:10Z",
       "source": "https://hub.docker.com/r/pgautoupgrade/pgautoupgrade"
     },
     "frontend": {
-      "reference": "reallibrephotos/librephotos-frontend@sha256:e2fb909607b1d9552c033a9432446eadb6b693289af2b4b016da55d50724afcb",
+      "reference": "reallibrephotos/librephotos-frontend@sha256:7cef7bdec16ac9193be9396d1be5daba5fa648663bb551de1fd5ace8e16fdc6c",
       "repository": "reallibrephotos/librephotos-frontend",
-      "tag": "2026w14",
+      "tag": "2026w25",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:535b966b9b7d51bb8fb4af0780fbdb434abf0d23ab4efb6700cf7ce8655ad075",
-      "appVersion": "2026w14",
-      "imageCreated": "2026-04-05T16:09:52Z",
+      "platformDigest": "sha256:4c6436c1d39f211d04d7a6eea4cbdefd2111b05abff4e975396e4787875de508",
+      "appVersion": "2026w25",
+      "imageCreated": "2026-06-21T11:23:54Z",
       "source": "https://hub.docker.com/r/reallibrephotos/librephotos-frontend"
     },
     "backend": {
-      "reference": "reallibrephotos/librephotos@sha256:3f4d6fa163bf41f2cd496aca342307fec8b827fe4a7ced1e7773a050ef7a5dca",
+      "reference": "reallibrephotos/librephotos@sha256:e9f6b494df44f554c349f17dd4c544614534aba74042ff97cb3afaa3d2e44763",
       "repository": "reallibrephotos/librephotos",
-      "tag": "2026w14",
+      "tag": "2026w25",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:c47cba1d227640dd53e7eca6559970df56c71bf2c1a860ed257015143294f6f1",
-      "appVersion": "2026w14",
-      "imageCreated": "2026-04-05T16:11:22Z",
+      "platformDigest": "sha256:01bc2af92311c28e3343cfd5152ff60a6f9d26610e2008b1ff1b6fe216507904",
+      "appVersion": "2026w25",
+      "imageCreated": "2026-06-21T11:26:58Z",
       "source": "https://hub.docker.com/r/reallibrephotos/librephotos"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
+    "date": "2026-10-19",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "proxy": "2026w14",
-      "db": "17-alpine3.22",
-      "frontend": "2026w14",
-      "backend": "2026w14"
+      "proxy": "2026w25",
+      "db": "17-alpine3.24",
+      "frontend": "2026w25",
+      "backend": "2026w25"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package librephotos (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "Digest of proxy resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; reallibrephotos/librephotos-proxy@sha256:c88c0a65b50ba7e4f65ccc9aa7d5002df9827cb79edb1f88a3a4c130d0b03be4); image config: ExposedPorts 80/tcp, Volumes none, User root.",
-      "Digest of db resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; pgautoupgrade/pgautoupgrade@sha256:2ec008ae5f0a2e5dd8f4d2475df41cf3ccc9562acf49bd668fcc0c061944b9bf); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of frontend resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; reallibrephotos/librephotos-frontend@sha256:e2fb909607b1d9552c033a9432446eadb6b693289af2b4b016da55d50724afcb); image config: ExposedPorts 3000/tcp,8080/tcp, Volumes none, User static.",
-      "Digest of backend resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; reallibrephotos/librephotos@sha256:3f4d6fa163bf41f2cd496aca342307fec8b827fe4a7ced1e7773a050ef7a5dca); image config: ExposedPorts 8001/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-40-harbor-q02: passed (healthy after 152s; page title \"LibrePhotos\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of proxy resolved 2026-10-19 via registry API (scripts/catalog-pin.mjs; reallibrephotos/librephotos-proxy:2026w25); image config: ExposedPorts 80/tcp, Volumes none, User root.",
+      "Digest of db resolved 2026-10-19 via registry API (scripts/catalog-pin.mjs; pgautoupgrade/pgautoupgrade:17-alpine3.24); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of frontend resolved 2026-10-19 via registry API (scripts/catalog-pin.mjs; reallibrephotos/librephotos-frontend:2026w25); image config: ExposedPorts 3000/tcp,8080/tcp, Volumes none, User static.",
+      "Digest of backend resolved 2026-10-19 via registry API (scripts/catalog-pin.mjs; reallibrephotos/librephotos:2026w25); image config: ExposedPorts 8001/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-19T05:45:39.746Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2026w14-patch.1) healthy after 8 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 38 s, still healthy 60 s later; fresh install of revision 3 healthy after 7 s, still healthy 60 s later."
     ]
   },
   "assets": {

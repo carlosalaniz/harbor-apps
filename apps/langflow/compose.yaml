@@ -1,16 +1,19 @@
 services:
   app:
-    image: langflowai/langflow@sha256:25e13252fc3701ca16e2b9a6cf2d3edd720aafbbc297a701ec0b7a15a3287792 # tag: 1.12.5
+    image: langflowai/langflow@sha256:d2df4bb593c49ce385a3862d74278cf119bb9c7672ba69ee6e727530911a12f9 # tag: 1.12.7
     environment:
       LANGFLOW_CONFIG_DIR: /app/langflow
       HOME: /app/langflow
       DO_NOT_TRACK: "true"
       LANGFLOW_AUTO_LOGIN: "true"
       LANGFLOW_DATABASE_URL: postgresql://langflow:langflow@db:5432/langflow
+      # Langflow refuses private addresses for model providers by default (SSRF protection). The ollama link's
+      # provider answers as ollama-link (Harbor decision 126) on a private network; allow that one host only.
+      LANGFLOW_SSRF_ALLOWED_HOSTS: ollama-link
     volumes:
       - {type: volume, source: app, target: "/app/langflow"}
   db:
-    image: postgres@sha256:4b7183ac05f8ef417db21fd72d71047a4238340c261d3cc3ddb6d579ab5071ae # tag: 16.14-trixie
+    image: postgres@sha256:9e2cf6287f25c3151f4c9421ccce2b17f3e60061c111a29165e0d2cdd9ff0a97 # tag: 16.15-trixie
     environment:
       POSTGRES_USER: langflow
       POSTGRES_PASSWORD: langflow

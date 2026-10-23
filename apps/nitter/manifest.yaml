@@ -5,7 +5,7 @@ metadata:
   name: Nitter
   description: Alternative Twitter front-end
 release:
-  revision: "2"
+  revision: "3"
   version: 38985af
 deployment:
   compose: compose.yaml

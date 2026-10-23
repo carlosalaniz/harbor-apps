@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "grafana",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "0f27adc555cca1fd8593bd11529ff1c7658aa8e8887896ce49bf52efa7d1f318"
+      "sha256": "75ae4a29ca701a6c4877096d063c3c95b2f06bfb0be5486e2bedcdfaf871f10e"
     },
     "compose.yaml": {
-      "sha256": "159bfdfe1d17e6356d6f0988a50590383171c75e632bb30b1ca06b31e65c19fa"
+      "sha256": "4fc584e8cc947bccc65b552b5a8fa998b3a3b59c02518de47b32ebe3ddf1b7a4"
     },
     "README.md": {
       "sha256": "d013aeb8c11920963ffb904cbb759fa0a66c367e374fe53351aac8a3309dfc7d"
@@ -17,32 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "grafana/grafana@sha256:b28bae15e219c998fb0e0424ed724930cc61b1f61fb404d47c862f9a23f9e572",
+      "reference": "grafana/grafana@sha256:dbbc38ea21103cefb50396340cd88afec779c7e070b0a7bf5a75b4ce46651d3f",
       "repository": "grafana/grafana",
-      "tag": "13.2.3",
+      "tag": "13.2.4",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:d84563330dc9d2fd2bc096d0fb96021b5319c75bf6ed555566709998e823dec4",
-      "appVersion": "13.2.3",
-      "imageCreated": "2026-09-28T20:55:24Z",
+      "platformDigest": "sha256:7b22f3edf947329d75eba7a62d9f6ea1ac1e786736813ef7a98cfb275a52e49b",
+      "appVersion": "13.2.4",
+      "imageCreated": "2026-10-12T12:57:33Z",
       "source": "https://hub.docker.com/r/grafana/grafana"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
+    "date": "2026-10-15",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "13.2.3"
+      "web": "13.2.4"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package grafana (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; grafana/grafana@sha256:b28bae15e219c998fb0e0424ed724930cc61b1f61fb404d47c862f9a23f9e572); image config: ExposedPorts 3000/tcp, Volumes none, User 472.",
-      "Live catalog run catalog-2026-10-12T18-21-36-harbor-q07: passed (healthy after 58s; page title \"Grafana\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-10-15 via registry API (scripts/catalog-pin.mjs; grafana/grafana:13.2.4); image config: ExposedPorts 3000/tcp, Volumes none, User 472.",
+      "Smoke run 2026-10-15T05:35:21.912Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (13.2.3) healthy after 5 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 3 healthy after 5 s, still healthy 60 s later."
     ]
   },
   "assets": {

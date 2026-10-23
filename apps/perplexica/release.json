@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "package": {
     "id": "perplexica",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "c1cf8cd17d056ae473fec41379023fc758ffb6fc060ac8a6d58822df25b7ce75"
+      "sha256": "234f970b2d4fba1409a1481c7be1cad76e34d2d9edf102af5f59270ab6430936"
     },
     "compose.yaml": {
       "sha256": "78c99b811c647bfe72645ab881a3c646a97cdfbd7c006e9188d5b9ea1fe873a6"
     },
     "README.md": {
-      "sha256": "3438078aa46806e904e90d1e4639f5793ae42fc956d6e434d687cd7033128ed3"
+      "sha256": "9e246df10e8c8df5ccef4598c1c2ada50225cf7b93e3e4a6c9f071fafd35594c"
     }
   },
   "images": {
@@ -28,20 +28,12 @@
     }
   },
   "qualification": {
-    "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
-    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
-    "appVersions": {
-      "web": "1.12.2"
-    },
+    "status": "pending",
+    "date": "2026-10-14",
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package perplexica (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
       "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; itzcrazykns1337/vane@sha256:61f2bbf3386ff3df08911fb3de0e1893b04702a4d49ef13fbadbda937b47ab7c); image config: ExposedPorts 3000/tcp,8080/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-22-harbor-q13: passed (healthy after 248s; page title \"Chat - Vane\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Revision 2 was passed (2026-10-12) on Docker 29.9.0.",
+      "Revision 3: optional ollama link (OLLAMA_BASE_URL); compose.yaml is byte-identical to revision 2, so an install without a provider renders as before. Not yet run on a real Harbor host."
     ]
   },
   "assets": {

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "wikijs",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "173f42da2314cfdeca36f9807100c60a81e38b27413f8e6945baa44c54109e46"
+      "sha256": "02f54c05db75deb0ae2451dac1178b2ea3f0a7577fa15058a1f869782ff7064d"
     },
     "compose.yaml": {
-      "sha256": "8955f5f2847bf7311033b6080b21f64f09124f2a6794721f22a433c8cbae8f42"
+      "sha256": "2406c63c9df5e94cee8b7bf537a992af1aba1a6c28d9666390cd217daf5f95fb"
     },
     "README.md": {
       "sha256": "841539fe42f61b7ab8fb8c5548a324bfa9a329b747f52f86fe95e78a2228ba15"
@@ -17,33 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "linuxserver/wikijs@sha256:1cbb7cd39f62b12025b6cb5fea4f95629833162c72bf0604c568090f343c8665",
+      "reference": "linuxserver/wikijs@sha256:995782758c4c4c34495bb2fcf1230897aa0b9d57c406f0205f059532e89c0b47",
       "repository": "linuxserver/wikijs",
-      "tag": "2.5.315",
+      "tag": "2.5.316",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:540f222f3c8d267ed2c5ffac1b7bf0d6a4dd7352540bd5d44030307095a02f26",
-      "appVersion": "2.5.315",
-      "imageCreated": "2026-09-21T14:31:50Z",
+      "platformDigest": "sha256:dfb33ac237525096262e3c9401ce2112aaa27e891051978505da1e581081cd0f",
+      "appVersion": "2.5.316",
+      "imageCreated": "2026-10-11T00:10:48Z",
       "source": "https://hub.docker.com/r/linuxserver/wikijs"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
+    "date": "2026-10-15",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "2.5.315"
+      "server": "2.5.316"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package wikijs (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "dropped host hooks (pre-start): they only prepare Umbrel bind folders",
-      "service server: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of server resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; linuxserver/wikijs@sha256:1cbb7cd39f62b12025b6cb5fea4f95629833162c72bf0604c568090f343c8665); image config: ExposedPorts 3000/tcp, Volumes /config, User root.",
-      "Live catalog run catalog-2026-10-12T18-19-57-harbor-q01: passed (healthy after 49s; page title \"Wiki.js Setup\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of server resolved 2026-10-15 via registry API (scripts/catalog-pin.mjs; linuxserver/wikijs:2.5.316); image config: ExposedPorts 3000/tcp, Volumes /config, User root.",
+      "Smoke run 2026-10-15T05:42:08.749Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2.5.315) healthy after 4 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 7 s, still healthy 60 s later; fresh install of revision 3 healthy after 4 s, still healthy 60 s later."
     ]
   },
   "assets": {

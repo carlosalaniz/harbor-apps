@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "nutstash-wallet",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "744af2200d08119ae0f530cad1e3239b759d733ad249e5a3203b47f9431b199a"
+      "sha256": "e0fa0d80c4c0c9e6446419c8631a9dea061f99e859ed98cab21dadd8d01e8ff7"
     },
     "compose.yaml": {
-      "sha256": "10301cb24652b96f897120a9df07710be847bb7eb91473f5194f013fb49a6652"
+      "sha256": "d0485c4fd0b6ad2de7d210f1cf20e60e313bbc8875923fb12520fac6686f65a4"
     },
     "README.md": {
       "sha256": "8c717a3318ec8ba36703732bada04e285040de3a6fc7abe2fb702a5186ea3d1d"
@@ -17,32 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/gandlafbtc/nutstash-wallet@sha256:8a585c4a6545e68e9a1c8fcf2a0a15ef401ad040accf925234451fe1b838d180",
+      "reference": "ghcr.io/gandlafbtc/nutstash-wallet@sha256:6694139731ccd120ab2b90073eaa7c28ea9286355b4dce9cd5764872b762ca06",
       "repository": "ghcr.io/gandlafbtc/nutstash-wallet",
-      "tag": "0.1.10",
+      "tag": "0.1.12",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:70b5da210d0296b3caec008f13568ed8c419c53e36d5f8562fb9d3a42b9473e5",
-      "appVersion": "0.1.10",
-      "imageCreated": "2023-04-18T04:39:11Z",
+      "platformDigest": "sha256:0a1ead6fa8a022f83bbcafb1ae99cb553324c1fac057ee8250005c8c243fb28f",
+      "appVersion": "0.1.12",
+      "imageCreated": "2023-05-23T05:55:49Z",
       "source": "https://ghcr.io/gandlafbtc/nutstash-wallet"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
+    "date": "2026-10-20",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "0.1.10"
+      "web": "0.1.12"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package nutstash-wallet (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: stop_grace_period 1m dropped (Docker's default applies)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/gandlafbtc/nutstash-wallet@sha256:8a585c4a6545e68e9a1c8fcf2a0a15ef401ad040accf925234451fe1b838d180); image config: ExposedPorts 3000/tcp, Volumes none, User node.",
-      "Live catalog run catalog-2026-10-12T18-21-41-harbor-q03: passed (healthy after 45s; page title \"\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-10-20 via registry API (scripts/catalog-pin.mjs; ghcr.io/gandlafbtc/nutstash-wallet:0.1.12); image config: ExposedPorts 3000/tcp, Volumes none, User 1000.",
+      "Smoke run 2026-10-20T05:40:52.049Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.1.10) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 17 s, still healthy 60 s later; fresh install of revision 3 healthy after 2 s, still healthy 60 s later."
     ]
   },
   "assets": {

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "audiobookshelf",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "07c669467b134d9c1710d9b36f12ffa2a4ffeb49f535167075c207293e3dd0a8"
+      "sha256": "7cc27f684ad9783a2be7a1284ab4fcefddc39ba63e5677037242fbc13d84ee49"
     },
     "compose.yaml": {
-      "sha256": "41f8e3e2fc87d0b0b7ead56d1b885005e3342e0c7838c1c57653cd1ed2c5e82b"
+      "sha256": "5efc33abdf1930814e7f794052b0d370d5566a1c0896dbe20fa3549fd142ab72"
     },
     "README.md": {
       "sha256": "11c658f3678e8751d31f755eb4ed4a1165587db55ef9fe7cda91bc347652f691"
@@ -17,30 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/advplyr/audiobookshelf@sha256:180acad33d69c99ed208676465d8edcb268fa46967735579a7810859885b1a8e",
+      "reference": "ghcr.io/advplyr/audiobookshelf@sha256:581d68b2a6fc7ebf58d81c878a9f387cbbc0d88ac9d37b298b9cee10168af85b",
       "repository": "ghcr.io/advplyr/audiobookshelf",
-      "tag": "2.36.0",
+      "tag": "2.37.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:e388e90e381ae3fa8660346612b2955f2c555ede81c9c286e2218bdf966b4de8",
-      "appVersion": "2.36.0",
-      "imageCreated": "2026-07-27T22:34:22Z",
+      "platformDigest": "sha256:10f3490855630aa024ba618b90ba6f58f3d9d7063dd77e1d1e958fdc4ede7c70",
+      "appVersion": "2.37.1",
+      "imageCreated": "2026-09-29T22:32:36Z",
       "source": "https://ghcr.io/advplyr/audiobookshelf"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-04",
-    "node": "v24.12.0",
-    "dockerEngine": "29.8.2",
+    "date": "2026-10-16",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "2.36.0"
+      "web": "2.37.1"
     },
     "notes": [
-      "Digest of web resolved 2026-09-14 via registry API (scripts/catalog-pin.mjs; ghcr.io/advplyr/audiobookshelf:2.36.0); image config: ExposedPorts 80/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-04T03-29-24: passed (healthy after 41s; page title \"Audiobookshelf\"; health 200)",
-      "Revision 2 adds screenshots only (shot-1.jpg, shot-2.jpg, presentation.gallery); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/advplyr/audiobookshelf:2.37.1); image config: ExposedPorts 80/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-16T05:36:05.910Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2.36.0) healthy after 4 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "mealie",
-    "revision": "2"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "a466dc20804ef566d7337d0afbfd5fb0cf4cd40b71ad0462a43ef9c8d0d302a7"
+      "sha256": "981c31e89fb06264fb4b0d873e3faf443b7ccebf70f5e96e8d654820a2407319"
     },
     "compose.yaml": {
-      "sha256": "49fecffecde39f1ddf740e6d9a45ba8577a7ffda1ef5e194037b61568e1c2962"
+      "sha256": "c86a5419e6e0c70f7d05e7e2adff3061e93dd3c5aea7ee1e3887a95aa2d1987e"
     },
     "README.md": {
       "sha256": "d73b238d03d869e94ee08676db5d10e5a31dd02a85d537aaca07454caa1223d0"
@@ -17,30 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/mealie-recipes/mealie@sha256:a4d12ab3a009832cc94058345e22aea831c3e992e94783fefc1cd5a08544fe0c",
+      "reference": "ghcr.io/mealie-recipes/mealie@sha256:78eb28b8776d0bad40c5e605c72b3f4f5976793e491558c7dcbdfc04c835d4bc",
       "repository": "ghcr.io/mealie-recipes/mealie",
-      "tag": "v3.26.0",
+      "tag": "v3.29.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:20270d87515436aa9578aba3607607859d667b4b948d5ba3eb4ed7c719976bde",
-      "appVersion": "3.26.0",
-      "imageCreated": "2026-09-14T01:56:59Z",
+      "platformDigest": "sha256:243e33ea66e71b2094cb1f9c9167af24452405a33fc899a1dc7359dc210506f8",
+      "appVersion": "3.29.0",
+      "imageCreated": "2026-10-17T16:33:52Z",
       "source": "https://ghcr.io/mealie-recipes/mealie"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-09-15",
-    "node": "v24.12.0",
-    "dockerEngine": "29.8.0",
-    "dockerCompose": "5.5.1",
-    "hostOs": "Ubuntu 24.04.4 LTS x86_64",
+    "date": "2026-10-20",
+    "node": "v24.22.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.0",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "3.26.0"
+      "web": "3.29.0"
     },
     "notes": [
-      "Digest of web resolved 2026-09-14 via registry API (scripts/catalog-pin.mjs; ghcr.io/mealie-recipes/mealie:v3.26.0); image config: ExposedPorts 9000/tcp, Volumes /app/data/, User root.",
-      "Live catalog run catalog-2026-09-15T00-13-13: passed (healthy after 81s; page title \"Login\"; health 200)",
-      "Revision 2 adds screenshots only (shot-1.jpg, shot-2.jpg, shot-3.jpg, shot-4.jpg, presentation.gallery); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-10-20 via registry API (scripts/catalog-pin.mjs; ghcr.io/mealie-recipes/mealie:v3.29.0); image config: ExposedPorts 9000/tcp, Volumes /app/data/, User root.",
+      "Smoke run 2026-10-20T05:37:03.671Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (3.28.0) healthy after 31 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 33 s, still healthy 60 s later; fresh install of revision 4 healthy after 31 s, still healthy 60 s later."
     ]
   },
   "assets": {

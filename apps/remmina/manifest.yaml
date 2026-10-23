@@ -5,8 +5,8 @@ metadata:
   name: Remmina
   description: Remote access screen and file sharing
 release:
-  revision: "2"
-  version: 1.4.35-patch.1
+  revision: "3"
+  version: "1.4.43-patch.1"
 deployment:
   compose: compose.yaml
   multiInstance: true

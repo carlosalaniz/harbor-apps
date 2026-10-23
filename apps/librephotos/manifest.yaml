@@ -9,8 +9,8 @@ provisionedCredentials:
   passwordEnv: ADMIN_PASSWORD
   username: admin
 release:
-  revision: "2"
-  version: 2026w14-patch.1
+  revision: "3"
+  version: "2026w25-patch.1"
 deployment:
   compose: compose.yaml
   multiInstance: true

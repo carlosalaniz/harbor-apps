@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "navidrome",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "6df3250c5bea1748d5fe64693b730d4a53906658f8a7e412550945efc200708d"
+      "sha256": "e67391a9bbf6369aa05364832af48dd93ebded48b950c38814d555a0a07afb02"
     },
     "compose.yaml": {
-      "sha256": "402140f16591092022152e166466aa40873e2c0fce9a69b6e9cac2478d5c0915"
+      "sha256": "f53a06e88f0d434240bdbfa6f1ff45adc5ca9ec37f4ee9f802df29fc87364404"
     },
     "README.md": {
       "sha256": "d223af28264e750869559a2cfde38d07799b631f3d2c1aee2345f158d0f36a01"
@@ -17,30 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "deluan/navidrome@sha256:a384948b81bd1529986c5960169e7fc4fa00f46bde6bd517971a4c36671db2af",
+      "reference": "deluan/navidrome@sha256:38dc2727bfcfd5ede290f8ada114fc90368146f265ae4701ddddbcbe2a44ee52",
       "repository": "deluan/navidrome",
-      "tag": "0.64.0",
+      "tag": "0.64.2",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:1a64cbb2603cec5d2615c3a27e91442436b2229583408a55cdc8d85705b95e65",
-      "appVersion": "0.64.0",
-      "imageCreated": "2026-09-12T18:23:49Z",
+      "platformDigest": "sha256:59ce76e6e06193fbfbb1736a93b8468227e1ea663fc7b25b1da13fbb97f5197b",
+      "appVersion": "0.64.2",
+      "imageCreated": "2026-09-24T23:09:43Z",
       "source": "https://hub.docker.com/r/deluan/navidrome"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-04",
-    "node": "v24.12.0",
-    "dockerEngine": "29.8.2",
+    "date": "2026-10-20",
+    "node": "v24.22.0",
+    "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "0.64.0"
+      "web": "0.64.2"
     },
     "notes": [
-      "Digest of web resolved 2026-09-14 via registry API (scripts/catalog-pin.mjs; deluan/navidrome:0.64.0); image config: ExposedPorts 4533/tcp, Volumes /data,/music, User root.",
-      "Live catalog run catalog-2026-10-04T03-29-24: passed (healthy after 33s; page title \"Navidrome\"; health 200)",
-      "Revision 2 adds screenshots only (shot-1.jpg, shot-2.jpg, shot-3.jpg, presentation.gallery); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-10-20 via registry API (scripts/catalog-pin.mjs; deluan/navidrome:0.64.2); image config: ExposedPorts 4533/tcp, Volumes /data,/music, User root.",
+      "Smoke run 2026-10-20T05:36:55.452Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.64.0) healthy after 4 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {

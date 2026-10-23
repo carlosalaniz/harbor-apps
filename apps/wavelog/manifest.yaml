@@ -5,8 +5,8 @@ metadata:
   name: Wavelog
   description: Webbased Amateur Radio Logging Software - Log your contacts from everywhere!
 release:
-  revision: "2"
-  version: 3.2.3
+  revision: "3"
+  version: "3.2.4"
 deployment:
   compose: compose.yaml
   multiInstance: true

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "webcheck",
-    "revision": "2"
+    "revision": "7"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "690dd4e3aa79809d44296b7af4176e7f8551ab12d24ec1d392f28a8dddccd32f"
+      "sha256": "f192c624c15a59321240600ca7267202bbf601c6b2b5e057529be21cb9b0c4f1"
     },
     "compose.yaml": {
-      "sha256": "20bd771db0fdfab38084b9b4fb3e14559c411232ac1a45080c996f41100eb908"
+      "sha256": "39cf8d34cf77ed1235dc842f7070d72dda1968788c1ef192ff7994f5554b4274"
     },
     "README.md": {
       "sha256": "7e3435de6d2e22b5efd78ce8417bc131a77cd5fd082d066e2f92945572fe06ac"
@@ -17,32 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "ghcr.io/lissy93/web-check@sha256:6fb2b5a58e4fa77afb724a7e6e041f876c081e2f9340b7ba6520ac4d4fc2290a",
+      "reference": "ghcr.io/lissy93/web-check@sha256:1cd3f9599dd54e6c08b545bd22435887251e75ba9408a888d9e736eb10360b17",
       "repository": "ghcr.io/lissy93/web-check",
-      "tag": "2.3.0",
+      "tag": "2.3.8",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:0b8a9252bae0c05c4f41a868988ebb27384fb5e06d4a2a1af139389a8c156b9d",
-      "appVersion": "2.3.0",
-      "imageCreated": "2026-10-02T18:37:04Z",
+      "platformDigest": "sha256:910530aa23c02fbcc4e8ed0d72614d5e57b6d2098195bdbbb62078713bfd9255",
+      "appVersion": "2.3.8",
+      "imageCreated": "2026-10-20T19:23:57Z",
       "source": "https://ghcr.io/lissy93/web-check"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "2.3.0"
+      "server": "2.3.8"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package webcheck (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service server: the image's own healthcheck switched off (nothing waits for it; Umbrel never acts on it)",
-      "Digest of server resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/lissy93/web-check@sha256:6fb2b5a58e4fa77afb724a7e6e041f876c081e2f9340b7ba6520ac4d4fc2290a); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-00-harbor-q14: passed (healthy after 50s; page title \"Web Check\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of server resolved 2026-10-23 via registry API (scripts/catalog-pin.mjs; ghcr.io/lissy93/web-check:2.3.8); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-23T05:36:42.183Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (2.3.7) healthy after 1 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 7 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
