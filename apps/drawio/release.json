@@ -29,17 +29,17 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-13",
+    "date": "2026-10-23",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "web": "32.4.1"
     },
     "notes": [
       "Digest of web resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; jgraph/drawio@sha256:1fc183e15611c35ced75a0e990258a46991b70bea250b18385da5d9cdc934262); image config: ExposedPorts 8080/tcp,8443/tcp, Volumes none, User tomcat.",
-      "Smoke run 2026-10-13T22:44:04.872Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 5 s, still healthy 60 s later."
+      "Smoke run 2026-10-23T19:26:50.483Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 4 s, still healthy 60 s later."
     ]
   },
   "assets": {
