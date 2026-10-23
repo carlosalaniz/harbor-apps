@@ -38,10 +38,18 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "ollama": "0.34.4",
+      "web": "0.12.3"
+    },
     "notes": [
-      "Revision 6: the optional comfyui link (decision 182, live-checked on harbor-old 2026-10-14 against 0.12.0) on top of main's Open WebUI v0.12.3; images unchanged from main. The smoke test cannot set up links, so this stays pending until a linked install is checked."
+      "Smoke run 2026-10-23T20:24:24.261Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (0.12.3) healthy after 34 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 35 s, still healthy 60 s later; fresh install of revision 6 healthy after 33 s, still healthy 60 s later."
     ]
   },
   "assets": {
