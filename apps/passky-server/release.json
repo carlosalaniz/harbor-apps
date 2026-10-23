@@ -29,21 +29,17 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "server": "8.1.8"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package passky-server (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service server: stop_grace_period 1m dropped (Docker's default applies)",
       "Digest of server resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; rabbitcompany/passky-server@sha256:e9bf7b9ecdf4904f1e3893b5968e98cbb61d4984bca1482081df2f59df05fca6); image config: ExposedPorts 443/tcp,80/tcp,9000/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-00-harbor-q11: passed (healthy after 43s; page title \"Passky\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1.",
-      "Revision 3 adds a PHP2Shell security warning (README, description) only; compose.yaml is byte-identical to the qualified revision 2."
+      "Smoke run 2026-10-23T19:59:00.063Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (8.1.8-patch.1) healthy after 4 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 8 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {
