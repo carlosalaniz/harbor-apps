@@ -39,10 +39,10 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-14",
+    "date": "2026-10-23",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "app": "3.1.21",
@@ -51,8 +51,7 @@
     "notes": [
       "Digest of app resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; akaunting/akaunting:3.1.21); image config: ExposedPorts 80/tcp, Volumes none, User root.",
       "Digest of db resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; mariadb:11.8.9); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
-      "Smoke run 2026-10-14T05:37:05.039Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (3.1.21) healthy after 28 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 25 s, still healthy 60 s later; fresh install of revision 3 healthy after 22 s, still healthy 60 s later.",
-      "Revision 4 adds a PHP2Shell security warning (README, description) only; compose.yaml is byte-identical to the qualified revision 3."
+      "Smoke run 2026-10-23T19:58:48.233Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (3.1.21) healthy after 20 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 23 s, still healthy 60 s later; fresh install of revision 4 healthy after 20 s, still healthy 60 s later."
     ]
   },
   "assets": {
