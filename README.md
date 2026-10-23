@@ -17,6 +17,7 @@ apps/<id>/release.json   sha256 of every file, image digests, qualification resu
 apps/<id>/icon.svg|png   the app's icon: required here (CI checks it), up to 256 KiB (plus optional screenshots)
 scripts/subset.mjs       CI helper: a catalog dir with only some apps (to check them with an older Harbor)
 scripts/require-icons.mjs CI check: every app names an existing .svg/.png icon in presentation.icon
+updates.json             rules for the automatic upstream updates (updates.yml)
 ```
 
 ## Add or update an app
@@ -32,9 +33,13 @@ Follow it; the short version:
 3. Pin new images to digests: `node scripts/catalog-pin.mjs <id>` (in the Harbor checkout).
 4. Refresh the hashes: `pnpm catalog:hash <id>`, then check everything: `pnpm catalog:verify`.
 5. Open a pull request. CI runs the same checks with the latest Harbor release and with the one your app declares (below).
+   `qualify.yml` also smoke-tests every app the pull request adds or changes on a GitHub runner (x86-64 Ubuntu, real
+   Docker, Harbor's own engine: a changed app is installed at main's revision and updated, then every app gets a fresh
+   install). For a branch of this repository it records each pass as the app's qualification on the branch.
 
 Qualification (`"status": "passed"` in `release.json`) only ever comes from Harbor's
-`scripts/vm/qualify-catalog.mjs` run on a disposable droplet. Never set it by hand.
+`scripts/vm/qualify-catalog.mjs` run on a disposable droplet, or from `pnpm catalog:smoke --record` on a GitHub runner
+(`qualify.yml`, `updates.yml`). Never set it by hand.
 
 ### minHarbor: the oldest Harbor your app runs on
 
