@@ -49,10 +49,10 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-13",
+    "date": "2026-10-23",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "meilisearch": "1.41.0",
@@ -63,7 +63,7 @@
       "Digest of meilisearch resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; getmeili/meilisearch:v1.41.0); image config: ExposedPorts 7700/tcp, Volumes none, User root.",
       "Digest of chrome resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; ghcr.io/karakeep-app/karakeep-chrome:154.0.8037.57-r1); image config: ExposedPorts 9222/tcp, Volumes none, User 65534:65534.",
       "Digest of web resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; ghcr.io/karakeep-app/karakeep:0.33.2); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Smoke run 2026-10-13T22:45:36.920Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 17 s, still healthy 60 s later."
+      "Smoke run 2026-10-23T19:27:15.337Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 17 s, still healthy 60 s later."
     ]
   },
   "assets": {
