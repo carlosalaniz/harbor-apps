@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "ghostfolio",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "bd7f4ed81da356334f4abf6954496dcc40b85da945ec529e79d21bb75bd9192e"
+    },
+    "compose.yaml": {
+      "sha256": "cee4606f797b08031a78fc9e4b53a3a1a02829393e74275a097b965e023239d4"
+    },
+    "README.md": {
+      "sha256": "a05027ee4e6d6e419e88a4520106ff3ab792251f1081626a9956489147449d85"
+    }
+  },
+  "images": {
+    "db": {
+      "reference": "postgres@sha256:f7d23353e1b15400d22ebe31189f4d314b87a4c129cc400c8c2d8d4ca127bf81",
+      "repository": "postgres",
+      "tag": "15.19-alpine",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:25d430274d8a31184f9435cc5b2f56aff254952065bbbcac0c51acedb5a1d1e7",
+      "appVersion": "15.19-alpine",
+      "imageCreated": "2026-09-17T21:32:10Z",
+      "source": "https://hub.docker.com/_/postgres"
+    },
+    "redis": {
+      "reference": "redis@sha256:3811787313eba226a2ef38658c6ccb91cd5e110edc89c37767de373120a0e5a0",
+      "repository": "redis",
+      "tag": "8.10.2-alpine",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:2d3814be5e9b06a30a0be54770b7e12052e7e79ec85271aefd34875c1f393b23",
+      "appVersion": "8.10.2-alpine",
+      "imageCreated": "2026-09-21T17:37:00Z",
+      "source": "https://hub.docker.com/_/redis"
+    },
+    "web": {
+      "reference": "ghostfolio/ghostfolio@sha256:8dd6b9bd5cad3aa886e87300b89edc0fe2dd583e622b4e45669c139bc734bd36",
+      "repository": "ghostfolio/ghostfolio",
+      "tag": "3.84.2",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:85f6dad78ed7c0f0b419a3c7208d12b2d0619e2814c5580f7876cb8c97311d9c",
+      "appVersion": "3.84.2",
+      "imageCreated": "2026-10-11T19:02:30Z",
+      "source": "https://hub.docker.com/r/ghostfolio/ghostfolio"
+    }
+  },
+  "qualification": {
+    "status": "passed",
+    "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "db": "15.19-alpine",
+      "redis": "8.10.2-alpine",
+      "web": "3.84.2"
+    },
+    "notes": [
+      "Digest of db resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; postgres:15.19-alpine); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of redis resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; redis:8.10.2-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Digest of web resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; ghostfolio/ghostfolio:3.84.2); image config: ExposedPorts 3333/tcp, Volumes none, User node.",
+      "Smoke run 2026-10-23T19:26:48.687Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 15 s, still healthy 60 s later."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "9d48139ef4232c0e779d1f666214ba1fb298afc9c64814af05e7b5ba6a133175"
+    }
+  }
+}

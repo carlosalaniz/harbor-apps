@@ -1,0 +1,85 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: karakeep
+  name: "Karakeep"
+  description: "Save links, notes, images and PDFs in one place. Karakeep keeps a copy of every page, makes it all searchable and can tag it for you with a local AI model."
+release:
+  revision: "1"
+  minHarbor: "0.30.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    web: application
+    # Application, not infrastructure, so the update bot also offers new Chrome majors (as a pull request):
+    # this browser opens every page you save, and Chrome ships a major about every four weeks. Its smoke run
+    # only proves DevTools answers (the healthcheck), so save a page before merging one (updates.json note).
+    chrome: application
+    meilisearch: infrastructure
+endpoints:
+  web:
+    service: web
+    containerPort: 3000
+    scheme: http
+    exposure: direct
+    browserContext: secure
+health:
+  endpoint: web
+  path: /api/health
+  expectedStatus: [200]
+  timeoutSeconds: 5
+  deadlineSeconds: 300
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Open Karakeep and sign up: the first account becomes the administrator. Sign-up stays open to anyone who can reach the app, so keep it on your network or tailnet, or add other people under Admin, Users."
+storage:
+  - id: data
+    composeVolume: data
+    purpose: "Bookmarks database, page copies, screenshots and uploaded files"
+    retention: retain
+    external: {hint: "Saved pages, screenshots and uploads add up over the years; a folder on a big disk is a good idea, for example /mnt/karakeep."}
+  - id: meilisearch
+    composeVolume: meilisearch
+    purpose: "Search index (Karakeep can rebuild it from the bookmarks)"
+    retention: retain
+secrets:
+  - id: nextauth-secret
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: web, environment: NEXTAUTH_SECRET}
+  - id: meili-master-key
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: meilisearch, environment: MEILI_MASTER_KEY}
+      - {service: web, environment: MEILI_MASTER_KEY}
+# Optional AI tagging and summaries with a local model. Without a provider Karakeep works as usual and only
+# the AI features stay off. Karakeep talks to Ollama's own API; the model it asks for is set in compose.yaml.
+links:
+  - id: ollama
+    purpose: "Ollama, for automatic tags and summaries with a local model (optional)"
+    optional: true
+    provider:
+      packages: [ollama]
+      endpoint: web
+    bindings:
+      - {service: web, environment: OLLAMA_BASE_URL, format: url}
+# Login cookies, links in the browser extension and share pages follow this address. Over an https main
+# address the login cookie is secure-only, so sign in over https addresses then (not plain-http LAN).
+configuration:
+  - {service: web, environment: NEXTAUTH_URL, endpoint: web, format: origin}
+presentation:
+  tagline: "Save anything, find it again"
+  sizeHint: "About 1.1 GB to download and 1 GB of memory, plus everything you save"
+  category: productivity
+  icon: icon.png
+  developer: "Karakeep contributors"
+  website: https://karakeep.app
+  source: https://github.com/karakeep-app/karakeep
+  releaseNotes: "Karakeep 0.33.2 with its headless Chrome 154.0.8037.57-r1 for page copies and Meilisearch v1.41.0 for search. AI tagging is optional, through the Ollama app."

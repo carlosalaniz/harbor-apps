@@ -1,0 +1,18 @@
+services:
+  server:
+    # linuxserver.io build: its s6 init writes a first qBittorrent.conf (legal notice accepted, saves to
+    # /downloads) and runs qbittorrent-nox as uid 1000, so the after-start hook can stop it to edit settings
+    image: linuxserver/qbittorrent@sha256:97333cc1ccf903e0bbcd8eb67e3332e4970e9c1ecabe145e499e9c0847ebcaed # tag: 5.2.4
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      # the WebUI's port inside the container (Harbor publishes it on a port of its own)
+      WEBUI_PORT: "8080"
+      # the peer port; the manifest publishes it on UDP 6881 of the machine
+      TORRENTING_PORT: "6881"
+    volumes:
+      - {type: volume, source: config, target: /config}
+      - {type: volume, source: downloads, target: /downloads}
+volumes:
+  config: {}
+  downloads: {}

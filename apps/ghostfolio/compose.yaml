@@ -1,0 +1,40 @@
+services:
+  db:
+    # PostgreSQL 15, the version upstream's own compose file runs
+    image: postgres@sha256:f7d23353e1b15400d22ebe31189f4d314b87a4c129cc400c8c2d8d4ca127bf81 # tag: 15.19-alpine
+    environment:
+      POSTGRES_DB: "ghostfolio"
+      POSTGRES_USER: "ghostfolio"
+    healthcheck:
+      # Over TCP: the temporary server of the first initialisation only listens on its socket
+      test: [CMD, pg_isready, -h, 127.0.0.1, -U, ghostfolio, -d, ghostfolio]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    volumes:
+      - {type: volume, source: db-data, target: /var/lib/postgresql/data}
+  redis:
+    # Cache and job queues only: nothing in it is real data, so it never persists
+    image: redis@sha256:3811787313eba226a2ef38658c6ccb91cd5e110edc89c37767de373120a0e5a0 # tag: 8.10.2-alpine
+    command: [redis-server, --save, "", --appendonly, "no"]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  web:
+    image: ghostfolio/ghostfolio@sha256:8dd6b9bd5cad3aa886e87300b89edc0fe2dd583e622b4e45669c139bc734bd36 # tag: 3.84.2
+    environment:
+      REDIS_HOST: "redis"
+      REDIS_PORT: "6379"
+      # Every start runs the Prisma CLI through npx (migrate, seed): no usage telemetry to
+      # checkpoint.prisma.io, and no npm version check against the registry
+      CHECKPOINT_DISABLE: "1"
+      NPM_CONFIG_UPDATE_NOTIFIER: "false"
+    # No container healthcheck: the first start migrates the database for a while, and Harbor's own
+    # check of /api/v1/health (manifest health:) waits for it
+    depends_on:
+      db: {condition: service_healthy}
+      redis: {condition: service_healthy}
+volumes:
+  db-data: {}

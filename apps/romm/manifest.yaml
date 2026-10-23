@@ -1,0 +1,141 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: romm
+  name: "RomM"
+  description: "Turns a folder of your own game backups into a library with covers and descriptions, and plays most classic consoles right in the browser, with saves kept for each player."
+release:
+  revision: "1"
+  minHarbor: "0.30.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    romm: application
+    db: infrastructure
+endpoints:
+  web:
+    service: romm
+    containerPort: 8080
+    scheme: http
+    exposure: direct
+    # The in-browser players need cross-origin isolation (SharedArrayBuffer) for their faster cores,
+    # which browsers only grant on HTTPS. Over plain http the library works and most consoles still play.
+    browserContext: secure
+health:
+  endpoint: web
+  path: /api/heartbeat
+  expectedStatus: [200]
+  timeoutSeconds: 10
+  deadlineSeconds: 600
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Open RomM and follow its setup wizard: it creates the admin account and a folder for each console you pick. Put games in roms/<platform>/ inside your games folder (or upload them in RomM), then press Scan."
+# The image's nginx drops to uid 1000 and serves every download and every in-browser Play straight from
+# /romm/library (X-Accel-Redirect), so it must be able to pass through (not list) both mount roots.
+# /romm (data) is always Harbor-managed storage, and so is /romm/library when the operator picked no folder:
+# an empty Docker volume is 0755, but a volume inside an app home starts 0700, so the hook adds o+x there.
+# The operator's own folder (it carries Harbor's .harbor-bind.json marker) is never changed: the hook only
+# checks it and reports, and the storage hint asks for `sudo chmod o+x` (as Nextcloud's hint does). Idempotent.
+hooks:
+  afterStart:
+    service: romm
+    user: root
+    timeoutSeconds: 30
+    command:
+      - sh
+      - -c
+      - |
+        passable() { case "$(ls -ld "$1")" in ?????????[xt]*) return 0 ;; esac; return 1; }
+        passable /romm || chmod o+x /romm || exit 1
+        if [ -e /romm/library/.harbor-bind.json ]; then
+          if ! passable /romm/library; then
+            echo "Your games folder is closed to RomM's web server (uid 1000), so Download and Play answer 403. Open it once on the machine: sudo chmod o+x <your games folder>"
+            exit 1
+          fi
+        else
+          passable /romm/library || chmod o+x /romm/library || exit 1
+        fi
+        echo "RomM's web server can reach the library"
+storage:
+  - id: library
+    composeVolume: library
+    purpose: "Your games and BIOS files (roms/<platform>/, bios/<platform>/)"
+    retention: retain
+    external: {hint: "A folder for your games, e.g. /mnt/games. Prepare it once: sudo chmod o+x /mnt/games (RomM's web server must enter it). The wizard creates roms/<platform>/; add bios/<platform>/ yourself.", required: false, readOnly: false}
+  - id: data
+    composeVolume: data
+    purpose: "Covers and screenshots, uploaded saves and states, config.yml"
+    retention: retain
+  - id: database
+    composeVolume: database
+    purpose: "MariaDB database (library index, users, play history)"
+    retention: retain
+  # The image declares VOLUME /redis-data for its built-in Valkey. It is not only a cache: it holds the sign-in
+  # sessions and refresh tokens, so upstream's snapshot policy stays (hourly, and on every clean stop), and a
+  # backup's stop/start or a reboot does not sign everyone out. Small while LaunchBox/TitleDB loads stay off.
+  - id: cache
+    composeVolume: cache
+    purpose: "Built-in Valkey (sign-in sessions, task queue, metadata lookups)"
+    retention: retain
+secrets:
+  - id: auth-secret
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: romm, environment: ROMM_AUTH_SECRET_KEY}
+  - id: database-password
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: db, environment: MARIADB_PASSWORD}
+      - {service: romm, environment: DB_PASSWD}
+  - id: database-root-password
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: db, environment: MARIADB_ROOT_PASSWORD}
+  - id: screenscraper-user
+    source: operator
+    prompt: "ScreenScraper username (optional): a free account at screenscraper.fr adds box art, screenshots and descriptions"
+    optional: true
+    retention: retain
+    bindings:
+      - {service: romm, environment: SCREENSCRAPER_USER}
+  - id: screenscraper-password
+    source: operator
+    prompt: "ScreenScraper password (optional, with the username above)"
+    optional: true
+    retention: retain
+    bindings:
+      - {service: romm, environment: SCREENSCRAPER_PASSWORD}
+  - id: retroachievements-api-key
+    source: operator
+    prompt: "RetroAchievements web API key (optional): retroachievements.org, Settings, Keys"
+    optional: true
+    retention: retain
+    bindings:
+      - {service: romm, environment: RETROACHIEVEMENTS_API_KEY}
+  - id: steamgriddb-api-key
+    source: operator
+    prompt: "SteamGridDB API key (optional, for extra cover art): steamgriddb.com, Preferences, API"
+    optional: true
+    retention: retain
+    bindings:
+      - {service: romm, environment: STEAMGRIDDB_API_KEY}
+configuration:
+  - {service: romm, environment: ROMM_BASE_URL, endpoint: web, format: origin}
+presentation:
+  tagline: "Your retro game library, playable in the browser"
+  sizeHint: "About 2 GB, plus your games"
+  category: media
+  icon: icon.svg
+  developer: "RomM contributors"
+  website: https://romm.app
+  source: https://github.com/rommapp/romm
+  releaseNotes: "RomM 5.4.0 (the full image with its in-browser players) and MariaDB 11.8 LTS. Covers come from Hasheous without any key; ScreenScraper, RetroAchievements and SteamGridDB are optional."

@@ -1,0 +1,35 @@
+services:
+  romm:
+    image: rommapp/romm@sha256:03295f95a6290e752641f9553ac4198b0e5b71b879d57f7b2371b98f608feb54 # tag: 5.4.0
+    environment:
+      DB_HOST: "db"
+      DB_NAME: "romm"
+      DB_USER: "romm"
+      HASHEOUS_API_ENABLED: "true"
+      WEB_SERVER_CONCURRENCY: "2"
+      SCAN_WORKERS: "2"
+      TZ: "UTC"
+    depends_on:
+      db: {condition: service_healthy}
+    volumes:
+      - {type: volume, source: data, target: /romm}
+      - {type: volume, source: library, target: /romm/library}
+      - {type: volume, source: cache, target: /redis-data}
+  db:
+    image: mariadb@sha256:6422478cb8e159f080fb1d8ccf65101e26fe51385787fde7d16c3b165a331f15 # tag: 11.8.9
+    environment:
+      MARIADB_DATABASE: "romm"
+      MARIADB_USER: "romm"
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    volumes:
+      - {type: volume, source: database, target: /var/lib/mysql}
+volumes:
+  data: {}
+  library: {}
+  cache: {}
+  database: {}

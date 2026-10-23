@@ -1,0 +1,25 @@
+services:
+  app:
+    image: binwiederhier/ntfy@sha256:8563a39da2f5a47360618b2ab9200239c76b37f4145f6d627d9ab4368abd23f0 # tag: v2.30.0
+    # The image's entrypoint is `ntfy`; `serve` starts the server on port 80. Everything is configured
+    # through NTFY_* variables, so no server.yml is needed.
+    command: [serve]
+    environment:
+      NTFY_CACHE_FILE: "/var/lib/ntfy/cache.db"
+      NTFY_AUTH_FILE: "/var/lib/ntfy/user.db"
+      NTFY_ATTACHMENT_CACHE_DIR: "/var/lib/ntfy/attachments"
+      # A private server: nobody reads or sends without an account or token, and nobody signs up.
+      NTFY_AUTH_DEFAULT_ACCESS: "deny-all"
+      NTFY_ENABLE_LOGIN: "true"
+      NTFY_REQUIRE_LOGIN: "true"
+      NTFY_ENABLE_SIGNUP: "false"
+      # Harbor's proxies (secure LAN, Tailscale, domains) add X-Forwarded-For; without this every phone
+      # behind them would share one visitor and its rate limits. ntfy then believes that header from any
+      # peer, so on the plain LAN port a device can dodge the failed-login limit (README, Limits).
+      NTFY_BEHIND_PROXY: "true"
+      # NTFY_UPSTREAM_BASE_URL / NTFY_UPSTREAM_ACCESS_TOKEN (the iPhone relay) come from the optional
+      # values the operator types (manifest secrets ios-relay, ios-relay-token); unset means no relay.
+    volumes:
+      - {type: volume, source: data, target: /var/lib/ntfy}
+volumes:
+  data: {}

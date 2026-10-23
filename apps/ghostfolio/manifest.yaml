@@ -1,0 +1,76 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: ghostfolio
+  name: "Ghostfolio"
+  description: "Track your stocks, ETFs and crypto in one private dashboard: net worth, allocation, performance and dividends, with free market prices from Yahoo Finance and CoinGecko."
+release:
+  revision: "1"
+  # presentation.source is accepted from Harbor 0.30.0 on
+  minHarbor: "0.30.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    web: application
+    db: infrastructure
+    redis: infrastructure
+endpoints:
+  web:
+    service: web
+    containerPort: 3333
+    scheme: http
+    exposure: direct
+    browserContext: secure
+health:
+  endpoint: web
+  # Answers 200 once PostgreSQL and Redis do, before any account exists (503 until then)
+  path: /api/v1/health
+  expectedStatus: [200]
+  timeoutSeconds: 10
+  # The first start runs the database migrations and the seed before the server listens
+  deadlineSeconds: 300
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Open Ghostfolio, press Get Started, then Create Account. Tick the box and press Continue: the account exists from that moment, and the first one becomes the administrator. It signs in with a security token, not a password, shown only once: press Copy to clipboard, save it in your password manager, then press Create Account. Then turn off User Signup under Admin Control, Overview, so nobody else can create an account."
+storage:
+  - id: db-data
+    composeVolume: db-data
+    purpose: "PostgreSQL database (accounts, activities, market data)"
+    retention: retain
+secrets:
+  - id: database-password
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: db, environment: POSTGRES_PASSWORD}
+      - service: web
+        environment: DATABASE_URL
+        template: "postgresql://ghostfolio:{{value}}@db:5432/ghostfolio?connect_timeout=300"
+  # Salts the security tokens people sign in with: it must never change, or every token stops working
+  - id: access-token-salt
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: web, environment: ACCESS_TOKEN_SALT}
+  - id: jwt-secret
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: web, environment: JWT_SECRET_KEY}
+configuration:
+  - {service: web, environment: ROOT_URL, endpoint: web, format: origin}
+presentation:
+  tagline: "Your stocks, ETFs and crypto, privately"
+  sizeHint: "About 1 GB"
+  category: finance
+  icon: icon.svg
+  developer: "Ghostfolio contributors"
+  website: https://ghostfol.io
+  source: https://github.com/ghostfolio/ghostfolio
+  releaseNotes: "Ghostfolio 3.84.2 with PostgreSQL 15 and Redis 8 (cache only). Prices from Yahoo Finance and CoinGecko."

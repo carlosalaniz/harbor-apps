@@ -1,0 +1,12 @@
+services:
+  web:
+    # jgraph/docker-drawio: Tomcat serving the draw.io web app on 8080, running as the image's tomcat user.
+    # Its entrypoint writes the editor's settings (js/PreConfig.js) at every start. DRAWIO_SERVER_URL "/"
+    # keeps the editor's own files and calls root-relative, so it works on whichever address it is opened
+    # on, and keeps Tomcat at the root path. Harbor adds DRAWIO_BASE_URL and DRAWIO_LIGHTBOX_URL (the main
+    # address, manifest configuration) for the links and HTML files the editor writes out. With the other
+    # DRAWIO_* variables unset, the cloud storage integrations, server-side export and the proxy stay off.
+    # No volume: nothing is stored here.
+    image: jgraph/drawio@sha256:1fc183e15611c35ced75a0e990258a46991b70bea250b18385da5d9cdc934262 # tag: 32.4.1
+    environment:
+      DRAWIO_SERVER_URL: "/"

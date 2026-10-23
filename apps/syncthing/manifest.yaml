@@ -1,0 +1,107 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: syncthing
+  name: Syncthing
+  description: "Keeps folders in step between your computers, phones and this machine, straight from device to device: no cloud account and no central server."
+release:
+  revision: "1"
+  # ports (0.29.0) and presentation.source (0.30.0)
+  minHarbor: "0.30.0"
+deployment:
+  compose: compose.yaml
+  # one fixed UDP port on the machine: a second copy could not have it
+  multiInstance: false
+  services:
+    app: application
+endpoints:
+  web:
+    service: app
+    containerPort: 8384
+    scheme: http
+    exposure: direct
+    browserContext: ordinary
+# Devices connect to each other here (QUIC). Syncthing's TCP listener and LAN discovery (UDP 21027) are
+# not published: Harbor only publishes UDP ports, and discovery broadcasts never leave a bridge network.
+ports:
+  sync:
+    service: app
+    containerPort: 22000
+    hostPort: 22000
+    protocol: udp
+    purpose: "Syncthing connections from your other devices"
+health:
+  endpoint: web
+  # answers without a login, before and after one exists
+  path: /rest/noauth/health
+  expectedStatus: [200]
+  timeoutSeconds: 5
+  deadlineSeconds: 180
+ui:
+  primaryEndpoint: web
+# Syncthing's page is open to anyone who reaches it until it has a login. Syncthing does not read these
+# variables itself: the hook below hands them to it.
+provisionedCredentials:
+  service: app
+  usernameEnv: GUI_ADMIN_USER
+  passwordEnv: GUI_ADMIN_PASSWORD
+  username: admin
+  label: Syncthing login
+  note: "Sign in to Syncthing as admin with this password. You can change both under Actions, Settings, GUI."
+# Runs Syncthing's own command line inside the app, which talks to the running Syncthing with the API key
+# Harbor generated (STGUIAPIKEY; the image's STGUIADDRESS says where). It sets the login Harbor generated
+# while Syncthing has none (a login you changed is left alone) and, in that same step only, turns off crash
+# reports (Syncthing sends them to crash.syncthing.net by default; `crenabled` is how its command line
+# spells options.crashReportingEnabled), so a later choice of yours is kept. It also names this device
+# "Harbor" while it still carries the container's random hostname. Syncthing restarts its page after a
+# change, so each call is retried for a little while.
+hooks:
+  afterStart:
+    service: app
+    timeoutSeconds: 120
+    command:
+      - sh
+      - -c
+      - |
+        set -u
+        st() { n=0; until syncthing cli "$@"; do n=$((n+1)); [ "$n" -ge 15 ] && return 1; sleep 2; done; }
+        id="$(st show system | sed -n 's/^ *"myID": *"\([A-Z0-9-]*\)".*/\1/p')"
+        if [ -n "$id" ] && [ "$(st config devices "$id" name get)" = "$(hostname)" ]; then
+          st config devices "$id" name set Harbor >/dev/null && echo "named this device Harbor"
+        fi
+        user="$(st config gui user get)" || { echo "could not read Syncthing's login settings"; exit 1; }
+        pass="$(st config gui password get)" || { echo "could not read Syncthing's login settings"; exit 1; }
+        if [ -n "$user" ] && [ -n "$pass" ]; then echo "Syncthing has a login; left as it is"; exit 0; fi
+        st config gui password set "$GUI_ADMIN_PASSWORD" >/dev/null || exit 1
+        st config gui user set "$GUI_ADMIN_USER" >/dev/null || exit 1
+        echo "set the login Harbor generated for $GUI_ADMIN_USER"
+        st config options crenabled set false >/dev/null || { echo "could not turn off crash reports"; exit 1; }
+        echo "turned off crash reports"
+setup:
+  endpoint: web
+  instructions: "Sign in as admin with the password Harbor showed after the install. If Syncthing opens without asking for a password, set a login now (Actions, Settings, GUI); if it refuses that password, someone set another login first: uninstall it completely and install it again. Other apps on this machine can read Syncthing's login cookie, so keep only apps you trust beside it, leave Stay logged in unticked and log out when done. Add your other devices with Add Remote Device (each side accepts the other), then share folders. For fast syncing at home, set this device's address on each other device to quic://<this machine's LAN address>:22000, dynamic: Syncthing cannot find it on the LAN by itself here. From outside your network, forward UDP 22000 on your router to this machine; otherwise devices connect through Syncthing's public relays (slower, still encrypted). New folders belong under /var/syncthing."
+storage:
+  - id: data
+    composeVolume: data
+    purpose: "Synced folders, this device's keys and Syncthing's settings"
+    retention: retain
+    # No operator folder here: the image's entrypoint chowns /var/syncthing to 1000:1000 on every start, which
+    # locks Harbor out of its own 0700 folder (the drive guard then stops the app), and this path also holds
+    # the device's keys, which belong in the sealed home and in backups.
+secrets:
+  # what the hook's command line uses to reach Syncthing (Syncthing accepts it as an API key)
+  - id: api-key
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: app, environment: STGUIAPIKEY}
+presentation:
+  tagline: "Sync folders between your devices, no cloud in between"
+  category: files
+  icon: icon.svg
+  developer: "The Syncthing Foundation"
+  website: https://syncthing.net
+  source: https://github.com/syncthing/syncthing
+  releaseNotes: "Syncthing 2.1.6. Harbor sets up the login, turns off Syncthing's crash reports and opens UDP 22000 so your devices can connect directly."
+  sizeHint: "About 60 MB, plus your synced files"

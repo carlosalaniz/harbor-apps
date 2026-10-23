@@ -1,0 +1,54 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: drawio
+  name: draw.io
+  description: "Diagram editor for flowcharts, org charts, UML, network and database diagrams. No account to create: diagrams are saved as files on your device or in your browser, never on the server."
+release:
+  revision: "1"
+  # presentation.source is accepted from Harbor 0.30.0 on (decision 164)
+  minHarbor: "0.30.0"
+deployment:
+  compose: compose.yaml
+  # stateless: every copy is its own editor on its own address
+  multiInstance: true
+  services:
+    web: application
+endpoints:
+  web:
+    service: web
+    containerPort: 8080
+    scheme: http
+    exposure: direct
+    # the system clipboard and saving straight back to a file on your device need HTTPS in the browser;
+    # over plain http the editor still works and saves by download
+    browserContext: secure
+health:
+  endpoint: web
+  path: /
+  expectedStatus: [200]
+  timeoutSeconds: 5
+  # Tomcat plus a one-time self-signed key for its unused internal HTTPS port on first start
+  deadlineSeconds: 180
+ui:
+  primaryEndpoint: web
+# The main address goes only into what the editor writes out: Publish → Link and Embed → IFrame (lightbox
+# or not) open on it. The editor itself stays root-relative (compose DRAWIO_SERVER_URL "/"), so it keeps
+# working on every address (LAN, Tailscale or a domain).
+# An Embed → HTML snippet and an Export as → HTML page load their viewer from the main address too, but that
+# viewer script never reads this box's settings: clicking the diagram (lightbox) or Edit opens it on
+# draw.io's own viewer.diagrams.net / app.diagrams.net, which then receive the diagram. The package cannot
+# change that.
+# No setup block on purpose: without one, a public domain gets Harbor's basic-auth password by default.
+configuration:
+  - {service: web, environment: DRAWIO_BASE_URL, endpoint: web, format: origin}
+  - {service: web, environment: DRAWIO_LIGHTBOX_URL, endpoint: web, format: origin}
+presentation:
+  tagline: "Flowcharts and diagrams, drawn in your browser"
+  sizeHint: "About 1.3 GB; your diagrams stay on your device"
+  category: productivity
+  icon: icon.svg
+  developer: "draw.io Ltd"
+  website: https://www.drawio.com
+  source: https://github.com/jgraph/drawio
+  releaseNotes: "draw.io 32.4.1. Cloud storage (Google Drive, OneDrive, Dropbox, GitHub, GitLab) is off; save diagrams to your device or your browser."

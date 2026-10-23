@@ -1,0 +1,15 @@
+services:
+  server:
+    image: triliumnext/trilium@sha256:be93e82699b12950ac4e2e7b565ce092fe215b8dd6ddfc47921e37b49e6a0e8b # tag: v0.106.0
+    environment:
+      TZ: "UTC"
+    volumes:
+      - {type: volume, source: data, target: /home/node/trilium-data}
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:8080/api/health-check').then((r) => process.exit(r.ok ? 0 : 1), () => process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 120s
+volumes:
+  data: {}

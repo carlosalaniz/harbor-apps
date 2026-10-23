@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "trilium",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "183d0eac588ae64245a960f4d111cf38095df38839f679fd738c62c23567e362"
+    },
+    "compose.yaml": {
+      "sha256": "929aa733eb8c17131cfc255adb1dcb3785d60ad74654132f22585b38226a74db"
+    },
+    "README.md": {
+      "sha256": "b41eb26534f6da430e1cf040cfb1b1c7140e641fce42c75fe2b9155d9e459c64"
+    }
+  },
+  "images": {
+    "server": {
+      "reference": "triliumnext/trilium@sha256:be93e82699b12950ac4e2e7b565ce092fe215b8dd6ddfc47921e37b49e6a0e8b",
+      "repository": "triliumnext/trilium",
+      "tag": "v0.106.0",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:24585639da9ba32c5701501c4075b00f4879f2a3eb996477a6dc577590f2d8f4",
+      "appVersion": "0.106.0",
+      "imageCreated": "2026-09-25T18:10:06Z",
+      "source": "https://hub.docker.com/r/triliumnext/trilium"
+    }
+  },
+  "qualification": {
+    "status": "passed",
+    "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "server": "0.106.0"
+    },
+    "notes": [
+      "Digest of server resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; triliumnext/trilium:v0.106.0); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-23T19:29:27.055Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 6 s, still healthy 60 s later."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "7e53b90e12ee3b7d20863cc050779d3c51270bbb31d0d07e1cfdc6f8e9930d78"
+    }
+  }
+}
