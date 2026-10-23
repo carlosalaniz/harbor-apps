@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "baikal",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "517d20291f676e97c3573268da41c375031e7120e941140a6fd42ea19e2b70a1"
+      "sha256": "ca02b648f526cc837d1d2d2670d2522c08fbbbc91fb7eda7d542e1ccf70bbddb"
     },
     "compose.yaml": {
-      "sha256": "f89c303fd85af155f4abb75c10968abd1c5be534d9e7c7f72cb8a38dfdeaa63c"
+      "sha256": "87afd45e1f23c01b94e7994baf3cec6912526bfcbf740813d2c455dc577b1d3a"
     },
     "README.md": {
       "sha256": "f0c02a74d89e9bb9ef06d1dc52580e22e7a19846c52bb1446d58b16b37a770f9"
@@ -17,32 +17,21 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/aalmenar/baikal@sha256:f83c70831ebe2ca9ba84ba7b60927f25941f0fba88bdea6bbebe1d0464bb2aa7",
+      "reference": "ghcr.io/aalmenar/baikal@sha256:329ade88f83e2017e37715b4f649f51ddee0c0425d6940b8c2542ce04a0873dd",
       "repository": "ghcr.io/aalmenar/baikal",
-      "tag": "0.11.1-nginx",
+      "tag": "0.13.0-r2-nginx",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:6fa037abd16a7c6bf10a2524e36a171f9b36f90355bc83ce4242f9f1074a94c8",
-      "appVersion": "0.11.1-nginx",
-      "imageCreated": "2026-01-16T18:49:29Z",
+      "platformDigest": "sha256:3b03a1556126bb8d0983a4e5b35d6fd1ac00d46f4162eb27b43bfc87cc7a325b",
+      "appVersion": "0.13.0-r2-nginx",
+      "imageCreated": "2026-10-23T15:44:18Z",
       "source": "https://ghcr.io/aalmenar/baikal"
     }
   },
   "qualification": {
-    "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
-    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
-    "appVersions": {
-      "web": "0.11.1-nginx"
-    },
+    "status": "pending",
+    "date": "2026-10-23",
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package baikal (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "dropped host hooks (pre-start): they only prepare Umbrel bind folders",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/aalmenar/baikal@sha256:f83c70831ebe2ca9ba84ba7b60927f25941f0fba88bdea6bbebe1d0464bb2aa7); image config: ExposedPorts 80/tcp, Volumes /var/www/baikal/Specific,/var/www/baikal/config, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-41-harbor-q03: passed (healthy after 33s; page title \"Baïkal Maintenance\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Revision 3: Baïkal 0.13.0 (PHP 8.5.12, patched against PHP2Shell CVE-2026-109618/109619). Not yet smoke-tested."
     ]
   },
   "assets": {

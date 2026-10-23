@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "pastefy",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "6c210bca24dbc9642cfad1659384edba95a85287ecbb7880b0a58db471720100"
+      "sha256": "e3a7afb43d44ed468df8fe936c147ac73cbacb8c3ce86f2c03a98c77917f13ab"
     },
     "compose.yaml": {
-      "sha256": "7e97a23669b186eb1281dfecb3b742e31e4ba7996949d84252ea4863798ffdce"
+      "sha256": "d2cf9a790e5e5d157e7c5891d93b79a286c6a0e9ab860005888954b6f3c86b30"
     },
     "README.md": {
       "sha256": "e04d76fcc6354938af1ed9bf4628f80da5b088009376077064068fe1b384d194"
@@ -38,24 +38,10 @@
     }
   },
   "qualification": {
-    "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
-    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
-    "appVersions": {
-      "db": "11.4.5",
-      "app": "7.1.6"
-    },
+    "status": "pending",
+    "date": "2026-10-23",
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package pastefy (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service db: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service app: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of db resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; mariadb@sha256:5dfb3093333fa0ea53194ddef0a2bfa21d3b1e1353bd228b22610cd6fc0c04da); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
-      "Digest of app resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; interaapps/pastefy@sha256:353ce246ccf24ab1dec42e3c387744b47925065c207699f0bf1ce8e560619ca9); image config: ExposedPorts 1337/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-35-harbor-q09: passed (healthy after 48s; page title \"Pastefy • Share your code snippets\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Revision 3: the app waits for its database to answer over TCP (healthcheck + depends_on service_healthy) instead of crashing once on first start. Not yet smoke-tested."
     ]
   },
   "assets": {

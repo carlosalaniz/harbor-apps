@@ -6,7 +6,7 @@
       "dir": "actual"
     },
     "akaunting": {
-      "revision": "3",
+      "revision": "4",
       "dir": "akaunting"
     },
     "anythingllm": {
@@ -22,7 +22,7 @@
       "dir": "autobrr"
     },
     "baikal": {
-      "revision": "2",
+      "revision": "3",
       "dir": "baikal"
     },
     "bark-wallet": {
@@ -126,7 +126,7 @@
       "dir": "ersatztv-legacy"
     },
     "etherpad": {
-      "revision": "2",
+      "revision": "3",
       "dir": "etherpad"
     },
     "excalidraw": {
@@ -162,7 +162,7 @@
       "dir": "freshrss"
     },
     "ghost": {
-      "revision": "2",
+      "revision": "3",
       "dir": "ghost"
     },
     "gitea-mirror": {
@@ -366,11 +366,11 @@
       "dir": "passky-client"
     },
     "passky-server": {
-      "revision": "2",
+      "revision": "3",
       "dir": "passky-server"
     },
     "pastefy": {
-      "revision": "2",
+      "revision": "3",
       "dir": "pastefy"
     },
     "pearcircle-seeder": {
@@ -430,7 +430,7 @@
       "dir": "slink"
     },
     "snapdrop": {
-      "revision": "2",
+      "revision": "3",
       "dir": "snapdrop"
     },
     "snort": {
@@ -514,7 +514,7 @@
       "dir": "vert"
     },
     "wallos": {
-      "revision": "3",
+      "revision": "4",
       "dir": "wallos"
     },
     "wavelog": {

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "ghost",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "de6a2ce04504738e76437d9084926fb2f5cd61a39f47e37b64895408e2d12860"
+      "sha256": "c4cd028cf85d4cf6090bc82cce187b81a540c6b10580139197062fe4e450619b"
     },
     "compose.yaml": {
-      "sha256": "985fdbbbc768e877495b2333cc181d748d1f1038b48139d01e48bd5233c9cfe6"
+      "sha256": "c681591914ab2d7f76afde4e28cf6f1915351659ea4532ba0785a2736a57575f"
     },
     "README.md": {
       "sha256": "d23ede1554017f92cea18cc3dd83fb00f3a356d84bbfb20d52c7c408a3ac7e6a"
@@ -38,24 +38,10 @@
     }
   },
   "qualification": {
-    "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
-    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
-    "appVersions": {
-      "web": "6.69.0",
-      "db": "8.4.4"
-    },
+    "status": "pending",
+    "date": "2026-10-23",
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package ghost (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service db: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghost@sha256:55131b90d48c3cecae6c085f873b2067542ababd286b12d08474b2b34328e266); image config: ExposedPorts 2368/tcp, Volumes /var/lib/ghost/content, User root.",
-      "Digest of db resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; mysql@sha256:339598fe066c73daa4120f2d9dfefd3146c3519cd324748e1d3f9d2b6c71d10b); image config: ExposedPorts 3306/tcp,33060/tcp, Volumes /var/lib/mysql, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-14-harbor-q12: passed (healthy after 139s; page title \"Ghost\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Revision 3: the app waits for its database to answer over TCP (healthcheck + depends_on service_healthy) instead of crashing once on first start. Not yet smoke-tested."
     ]
   },
   "assets": {

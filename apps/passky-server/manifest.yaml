@@ -3,13 +3,13 @@ kind: Application
 metadata:
   id: passky-server
   name: Passky Server
-  description: Server for Passky (password manager)
+  description: "Server for Passky (password manager). Not patched against PHP2Shell yet: keep it off public addresses."
 provisionedCredentials:
   service: server
   passwordEnv: ADMIN_PASSWORD
   username: admin
 release:
-  revision: "2"
+  revision: "3"
   version: 8.1.8-patch.1
 deployment:
   compose: compose.yaml

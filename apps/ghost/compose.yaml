@@ -8,12 +8,20 @@ services:
       database__connection__password: umbrel
       database__connection__database: ghost
       security__staffDeviceVerification: "false"
+    depends_on:
+      db:
+        condition: service_healthy
     volumes:
       - {type: volume, source: content, target: "/var/lib/ghost/content"}
   db:
     image: mysql@sha256:339598fe066c73daa4120f2d9dfefd3146c3519cd324748e1d3f9d2b6c71d10b # tag: 8.4.4
     environment:
       MYSQL_ROOT_PASSWORD: umbrel
+    healthcheck:
+      test: [CMD, mysqladmin, ping, -h, 127.0.0.1, --silent]
+      interval: 5s
+      timeout: 5s
+      retries: 30
     volumes:
       - {type: volume, source: db, target: "/var/lib/mysql"}
 volumes:

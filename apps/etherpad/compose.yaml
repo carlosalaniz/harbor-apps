@@ -26,7 +26,7 @@ services:
       - {type: volume, source: etherpad-var, target: "/opt/etherpad-lite/var"}
     depends_on:
       postgres:
-        condition: service_started
+        condition: service_healthy
     healthcheck:
       disable: true
   postgres:
@@ -37,6 +37,11 @@ services:
       POSTGRES_PORT: "5432"
       POSTGRES_USER: admin
       PGDATA: /var/lib/postgresql/data/pgdata
+    healthcheck:
+      test: [CMD, pg_isready, -h, 127.0.0.1, -U, admin, -d, etherpad]
+      interval: 5s
+      timeout: 5s
+      retries: 30
     volumes:
       - {type: volume, source: postgres-data, target: "/var/lib/postgresql/data/pgdata"}
 volumes:
