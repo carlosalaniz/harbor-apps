@@ -28,10 +28,17 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "web": "1.30.4"
+    },
     "notes": [
-      "Revision 4: re-pinned to an image with PHP patched against PHP2Shell (CVE-2026-109618/109619; PHP 8.5.12, 8.4.27, 8.3.36). Not yet smoke-tested."
+      "Smoke run 2026-10-23T19:12:48.638Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.30.2) healthy after 2 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 4 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
