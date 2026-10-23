@@ -6,7 +6,7 @@
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "bd6f55c9ba294f21abf68fe804665f7c1fc6a124f361b1ccd8ff45a72db7714c"
+      "sha256": "585ddd6b49bb4419382011afb2ff51e3f5c8d832e06c8463af51445145c7f5b6"
     },
     "compose.yaml": {
       "sha256": "76d78bf2c6dae0ce4355cd2456336e5ab989d2fabe1404b47220d188ea355739"
@@ -31,7 +31,8 @@
     "status": "pending",
     "date": "2026-10-23",
     "notes": [
-      "Revision 4: Wallos 5.10.1 (PHP 8.3.36, patched against PHP2Shell CVE-2026-109618/109619). Not yet smoke-tested."
+      "Revision 4: Wallos 5.10.1 (PHP 8.3.36, patched against PHP2Shell CVE-2026-109618/109619). Not yet smoke-tested.",
+      "Health path /health.php (answers without opening the database): probing / in the first second created an empty wallos.db, and a fresh install then restarted in a loop at migration 000013."
     ]
   },
   "assets": {
