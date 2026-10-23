@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "package": {
     "id": "open-webui",
-    "revision": "5"
+    "revision": "6"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "039041a7f47597e1dd0391c6b6149bb8ec5f0a7aac0cdf1ab37f8b68f8d1e270"
+      "sha256": "6755736617f544ce9c7a934c50df0176f579be6fb2b0bbbf40b3fbe771c207f7"
     },
     "compose.yaml": {
-      "sha256": "74b933522cd4be9cc113af197fdde7a03f70856761125341a824c1be93ad0578"
+      "sha256": "f43c270f571aace9e32e5faa85b6303b791beca19970b5c00da4b7c20ae63e73"
     },
     "README.md": {
-      "sha256": "2a601f1263674e2920366f4f73a6d15b4611841605229e509c8c3edc4f2d46c9"
+      "sha256": "7ec6286d321ca5b6e7ac837e246e3f97d7e356634ec8c1c6d15692ab1a47f8e2"
     }
   },
   "images": {
@@ -39,19 +39,17 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-20",
+    "date": "2026-10-23",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "ollama": "0.34.4",
       "web": "0.12.3"
     },
     "notes": [
-      "Digest of ollama resolved 2026-10-20 via registry API (scripts/catalog-pin.mjs; ollama/ollama:0.34.4); image config: ExposedPorts 11434/tcp, Volumes none, User root.",
-      "Digest of web resolved 2026-10-20 via registry API (scripts/catalog-pin.mjs; ghcr.io/open-webui/open-webui:v0.12.3); image config: ExposedPorts 8080/tcp, Volumes none, User 0:0.",
-      "Smoke run 2026-10-20T05:44:23.409Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (0.12.0) healthy after 36 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 34 s, still healthy 60 s later; fresh install of revision 5 healthy after 33 s, still healthy 60 s later."
+      "Smoke run 2026-10-23T20:24:24.261Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (0.12.3) healthy after 34 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 35 s, still healthy 60 s later; fresh install of revision 6 healthy after 33 s, still healthy 60 s later."
     ]
   },
   "assets": {
