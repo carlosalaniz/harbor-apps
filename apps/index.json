@@ -202,7 +202,7 @@
       "dir": "hortusfox"
     },
     "immich": {
-      "revision": "5",
+      "revision": "6",
       "dir": "immich"
     },
     "influxdb": {
