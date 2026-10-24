@@ -9,8 +9,8 @@ provisionedCredentials:
   passwordEnv: ADMIN_PASSWORD
   username: admin
 release:
-  revision: "3"
-  version: 3.3.8
+  revision: "4"
+  version: "3.3.9"
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml
