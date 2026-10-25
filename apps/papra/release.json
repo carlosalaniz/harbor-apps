@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "papra",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "81ce8ea4f4819764d975ba14ed25f3bf34c0627a947cbff3886b23a7c7ed79e0"
+      "sha256": "52a96f1f5a7687bcea1d12efd431302ad80e8dfc5bdf6d8e3d0afb8e6beaa352"
     },
     "compose.yaml": {
-      "sha256": "4cc708b8877e6467fe752397c1a2913339eadd0f1130704e149eae082adf5e32"
+      "sha256": "636013a5e57664d0d026d05e67c6989aea59cbaa81a55b7f18ec2ed59105e568"
     },
     "README.md": {
       "sha256": "daf36bfac915a80f77632ad849f7b7151dcffd645b987507648a014ffa93d4de"
@@ -17,29 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "ghcr.io/papra-hq/papra@sha256:bf4a66e776d0a40d71543747a2e17af800204b4a81d19f7951b8552c8032dbeb",
+      "reference": "ghcr.io/papra-hq/papra@sha256:d1f596a35332ad04d8a69d88a5e19bc82acd47f2bc2fe687dd2145b1ef5a8b19",
       "repository": "ghcr.io/papra-hq/papra",
-      "tag": "26.7.0-rootless",
+      "tag": "26.7.1-rootless",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:a91ebe7559dfef8dd1ac1bbab19807d61d3e4319758b046d2abb1aa5ff85577a",
-      "appVersion": "26.7.0-rootless",
-      "imageCreated": "2026-10-01T21:07:56Z",
+      "platformDigest": "sha256:eba88ca674fa7a02581cf246d74d0122d92d3f19276f76dcfdfde06bca88dd29",
+      "appVersion": "26.7.1-rootless",
+      "imageCreated": "2026-10-22T19:48:36Z",
       "source": "https://ghcr.io/papra-hq/papra"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-21",
+    "date": "2026-10-25",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "26.7.0-rootless"
+      "server": "26.7.1-rootless"
     },
     "notes": [
-      "Digest of server resolved 2026-10-21 via registry API (scripts/catalog-pin.mjs; ghcr.io/papra-hq/papra:26.7.0-rootless); image config: ExposedPorts 1221/tcp, Volumes none, User nonroot.",
-      "Smoke run 2026-10-21T05:36:15.927Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (26.6.2-patch.1) healthy after 7 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 6 s, still healthy 60 s later; fresh install of revision 3 healthy after 5 s, still healthy 60 s later."
+      "Digest of server resolved 2026-10-25 via registry API (scripts/catalog-pin.mjs; ghcr.io/papra-hq/papra:26.7.1-rootless); image config: ExposedPorts 1221/tcp, Volumes none, User nonroot.",
+      "Smoke run 2026-10-25T05:35:33.241Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (26.7.0-patch.1) healthy after 5 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 6 s, still healthy 60 s later; fresh install of revision 4 healthy after 5 s, still healthy 60 s later."
     ]
   },
   "assets": {
