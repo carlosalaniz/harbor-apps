@@ -1,6 +1,6 @@
 services:
   server:
-    image: linuxserver/emby@sha256:9642a578312eac8ca5ec0b979c90b22d96021db9551bfab6a7c89b3f2098c1ff # tag: version-4.10.1.0
+    image: linuxserver/emby@sha256:f3827243e5e7a54086714f3fa8a46192b8c81e3da7262443c83eb69b2a5d329a # tag: version-4.10.2.0
     environment:
       TZ: Europe/Berlin
       UID: "1000"

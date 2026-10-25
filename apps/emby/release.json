@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "emby",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "b6dee6ba099f1f223aa284851f5d4f16f7a9ffc4b8be2362c909603f0d9a6bf2"
+      "sha256": "ff5f8660c144dec2effa9eb67fc5ec5ec7830af715b14b27be11e16c68fd5fcc"
     },
     "compose.yaml": {
-      "sha256": "d729563795288487abf6a3b661fb7dd33779408a770faf9f320c78edf1ab96f7"
+      "sha256": "8aa693eb2ba312ef76079300965b0eec4f6c98d048d962aa7012aedc4623cf36"
     },
     "README.md": {
       "sha256": "6eed9267add018cb5d6c9e9072cfcb8f62ffbc6d3e3c224288291443256134ed"
@@ -17,32 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "linuxserver/emby@sha256:9642a578312eac8ca5ec0b979c90b22d96021db9551bfab6a7c89b3f2098c1ff",
+      "reference": "linuxserver/emby@sha256:f3827243e5e7a54086714f3fa8a46192b8c81e3da7262443c83eb69b2a5d329a",
       "repository": "linuxserver/emby",
-      "tag": "version-4.10.1.0",
+      "tag": "version-4.10.2.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:05a24b56077c87094a8aa657aa0589c37868e00d4b061a25c8b448e94429e796",
-      "appVersion": "ersion-4.10.1.0",
-      "imageCreated": "2026-09-30T00:51:07Z",
+      "platformDigest": "sha256:f5bd3b99400676155d2ae3b78d86ca3ecbeebecd92fc6ebd7b7ec2bceab93061",
+      "appVersion": "ersion-4.10.2.0",
+      "imageCreated": "2026-10-23T00:04:51Z",
       "source": "https://hub.docker.com/r/linuxserver/emby"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-25",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "ersion-4.10.1.0"
+      "server": "ersion-4.10.2.0"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package emby (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "GPU access dropped: runs on the CPU",
-      "Digest of server resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; linuxserver/emby@sha256:9642a578312eac8ca5ec0b979c90b22d96021db9551bfab6a7c89b3f2098c1ff); image config: ExposedPorts 8096/tcp,8920/tcp, Volumes /config, User root.",
-      "Live catalog run catalog-2026-10-12T18-19-57-harbor-q01: passed (healthy after 50s; page title \"9382df6e54bf\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of server resolved 2026-10-25 via registry API (scripts/catalog-pin.mjs; linuxserver/emby:version-4.10.2.0); image config: ExposedPorts 8096/tcp,8920/tcp, Volumes /config, User root.",
+      "Smoke run 2026-10-25T05:34:25.295Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (4.10.1.0) healthy after 3 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 7 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {
