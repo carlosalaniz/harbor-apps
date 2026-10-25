@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres@sha256:67f41722b7a8cbdb868a44a4995c846eddfdc2973bccb291ce937dce88ad5675 # tag: 17.11
+    image: postgres@sha256:b8faeff7712663c2773a190181e1246e37e364b887611c04658c28b44e2408fe # tag: 17.11
     environment:
       POSTGRES_USER: "nextcloud"
       POSTGRES_DB: "nextcloud"
@@ -12,14 +12,14 @@ services:
     volumes:
       - {type: volume, source: db, target: /var/lib/postgresql/data}
   redis:
-    image: redis@sha256:becdda6c7f4b3fb42e42fd7f120bbf5c54c4caaaf16f26da24e4563d2c1f0576 # tag: 8.10.1-alpine
+    image: redis@sha256:0bf6577d7774e592b29d093e3ac9390eb91e13d72c21e506afce736de5e0eeb0 # tag: 8.10.2-alpine
     healthcheck:
       test: [CMD, redis-cli, ping]
       interval: 5s
       timeout: 3s
       retries: 30
   app:
-    image: nextcloud@sha256:5cd0788a5c7e0374256939dd86fefa34160ae03730cb28246d16939eacfd4c08 # tag: 34.0.5-apache
+    image: nextcloud@sha256:1f9212adecae32010cdbf137d7e0db78d08c696dc3e77f1eddcbf902d10209b4 # tag: 34.0.5-apache
     environment:
       POSTGRES_HOST: "db"
       POSTGRES_DB: "nextcloud"

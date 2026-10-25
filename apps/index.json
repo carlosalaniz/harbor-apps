@@ -306,7 +306,7 @@
       "dir": "networkingtoolbox"
     },
     "nextcloud": {
-      "revision": "6",
+      "revision": "7",
       "dir": "nextcloud"
     },
     "nitter": {
