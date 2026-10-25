@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghost@sha256:55131b90d48c3cecae6c085f873b2067542ababd286b12d08474b2b34328e266 # tag: 6.69.0
+    image: ghost@sha256:c0d83a8d45222b3f37a897572000050ab8e6e507d3eee5a35b3ef8345c7293d6 # tag: 6.72.0
     environment:
       database__client: mysql
       database__connection__host: db
@@ -14,7 +14,7 @@ services:
     volumes:
       - {type: volume, source: content, target: "/var/lib/ghost/content"}
   db:
-    image: mysql@sha256:339598fe066c73daa4120f2d9dfefd3146c3519cd324748e1d3f9d2b6c71d10b # tag: 8.4.4
+    image: mysql@sha256:76f0358884cb92d9a086d24e5671c38048d3fef40f2588703d73eb55392d6b69 # tag: 8.4.13
     environment:
       MYSQL_ROOT_PASSWORD: umbrel
     healthcheck:

@@ -162,7 +162,7 @@
       "dir": "freshrss"
     },
     "ghost": {
-      "revision": "3",
+      "revision": "4",
       "dir": "ghost"
     },
     "gitea-mirror": {
