@@ -5,7 +5,7 @@ metadata:
   name: n8n
   description: Workflow automation with a private PostgreSQL database
 release:
-  revision: "6"
+  revision: "7"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -67,4 +67,4 @@ presentation:
     - shot-2.jpg
   developer: n8n GmbH
   website: https://n8n.io
-  releaseNotes: n8n 2.45.1 (upstream stable) with PostgreSQL 16.15; telemetry disabled.
+  releaseNotes: n8n 2.45.2 (upstream stable) with PostgreSQL 16.15; telemetry disabled.

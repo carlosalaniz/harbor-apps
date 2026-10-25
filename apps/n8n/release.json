@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "n8n",
-    "revision": "6"
+    "revision": "7"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "8fa1e2a68d33a19f869a808b02bd3cbfe710eaeb0c8a8038633f0d95a90bf37a"
+      "sha256": "99084678c6bdad75987159eedf83bfc3b7543eb2330f3f76d8da0d437ab8dda4"
     },
     "compose.yaml": {
-      "sha256": "06e733795c55b898af455409d93bfc231aed1d29629d1db08f4ccf6e84abc78e"
+      "sha256": "977a8ada2ea7e07b7eca3140e0109d10fe908bd6fa462d1fdacc23ef425f290e"
     },
     "README.md": {
       "sha256": "1f7c11c451cf693b0daa8128e8ca116794b2b5a356bd4d47becb9d2aa4528022"
@@ -17,13 +17,13 @@
   },
   "images": {
     "web": {
-      "reference": "n8nio/n8n@sha256:d099edfa840d4b9c4a68f2ee4c0f4b6dad49d5d1237c7f1203ef48d7e6e7b4a5",
+      "reference": "n8nio/n8n@sha256:fd7f4dc4617e9113c499ba62a6c58f17df2dce3dd82028e357485947af383041",
       "repository": "n8nio/n8n",
-      "tag": "2.45.1",
+      "tag": "2.45.2",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:025b349fe3245faef7f7dfa6dbf8873f6c254729a8b4cb08a7befd540d60d433",
-      "appVersion": "2.45.1",
-      "imageCreated": "2026-10-21T12:48:13Z",
+      "platformDigest": "sha256:564414d9b60159da4ae2fe811f206673c93d7788e04323554665cc8a6624d235",
+      "appVersion": "2.45.2",
+      "imageCreated": "2026-10-22T09:14:31Z",
       "source": "https://hub.docker.com/r/n8nio/n8n"
     },
     "postgres": {
@@ -39,19 +39,19 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-24",
+    "date": "2026-10-25",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "2.45.1",
+      "web": "2.45.2",
       "postgres": "16.15"
     },
     "notes": [
-      "Digest of postgres resolved 2026-10-24 via registry API (scripts/catalog-pin.mjs; postgres:16.15); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of web resolved 2026-10-24 via registry API (scripts/catalog-pin.mjs; n8nio/n8n:2.45.1); image config: ExposedPorts 5678/tcp, Volumes none, User node.",
-      "Smoke run 2026-10-24T05:37:18.111Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (2.45.0) healthy after 15 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 20 s, still healthy 60 s later; fresh install of revision 6 healthy after 15 s, still healthy 60 s later."
+      "Digest of postgres resolved 2026-10-25 via registry API (scripts/catalog-pin.mjs; postgres:16.15); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of web resolved 2026-10-25 via registry API (scripts/catalog-pin.mjs; n8nio/n8n:2.45.2); image config: ExposedPorts 5678/tcp, Volumes none, User node.",
+      "Smoke run 2026-10-25T05:35:25.844Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (2.45.1) healthy after 19 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 21 s, still healthy 60 s later; fresh install of revision 7 healthy after 19 s, still healthy 60 s later."
     ]
   },
   "assets": {
