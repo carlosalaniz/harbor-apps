@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "enclosed",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "12f9797ff47aebcca4bbb5377175817b2f2753a848fd28c72f1d5a8c21bbd352"
+      "sha256": "b43310461f45b2b7e66edfe2146fdfd3233a926bd2df6bfb452a7caabc4dc7cf"
     },
     "compose.yaml": {
-      "sha256": "121eaa58b1e66eed41116b3aff6e533124410f477ba127438ba6a1b70d00003d"
+      "sha256": "a32ea87fcb5ba7cf63e17d776dcd562ab523cba410302ee41125537ab3dcd5a5"
     },
     "README.md": {
       "sha256": "a837ac010b92d7255ced7338c1428e21d7e61bac2d6cf374533ee032462c6c49"
@@ -17,33 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "corentinth/enclosed@sha256:0631baee489b974cf16ffe3884c814e7bcc75df7bd36662b8ded76443b768d06",
+      "reference": "corentinth/enclosed@sha256:26cfc00ba76f20b9ed7c5f867d241eddb02379c39090e9ad88c08c671d31d5e9",
       "repository": "corentinth/enclosed",
-      "tag": "1.16.0-rootless",
+      "tag": "1.16.1-rootless",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:9e9cbc6e769066bbc343d31e651156fec40b9e48fb97032c8ce2bb58c7845853",
-      "appVersion": "1.16.0-rootless",
-      "imageCreated": "2025-07-22T19:23:14Z",
+      "platformDigest": "sha256:dc3bc05c2677add79215fa7ea604da0133fa075a8ce6ff9a0a48f27fba8b7403",
+      "appVersion": "1.16.1-rootless",
+      "imageCreated": "2026-10-23T17:58:40Z",
       "source": "https://hub.docker.com/r/corentinth/enclosed"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-26",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.16.0-rootless"
+      "web": "1.16.1-rootless"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package enclosed (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service web: stop_grace_period 1m dropped (Docker's default applies)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; corentinth/enclosed@sha256:0631baee489b974cf16ffe3884c814e7bcc75df7bd36662b8ded76443b768d06); image config: ExposedPorts 8787/tcp, Volumes none, User nonroot.",
-      "Live catalog run catalog-2026-10-12T18-21-40-harbor-q02: passed (healthy after 46s; page title \"Enclosed - Send private and secure notes\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-10-26 via registry API (scripts/catalog-pin.mjs; corentinth/enclosed:1.16.1-rootless); image config: ExposedPorts 8787/tcp, Volumes none, User nonroot.",
+      "Smoke run 2026-10-26T05:40:05.975Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.16.0-patch.1) healthy after 1 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 16 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
