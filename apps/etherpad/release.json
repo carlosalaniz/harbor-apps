@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "etherpad",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "3f33e8b3ef6ba69edf7bd1d4c435d99d3dc67e3be050816e6a2c59fa65d071f9"
+      "sha256": "8fab9e245a06ae579a0b90627fda74494dbc65d391d0fc508ce22e4774896404"
     },
     "compose.yaml": {
-      "sha256": "aa4e36a17a4bb9aa9f60b9142691d528b0bf6461d6f7ab7860152b188244a90c"
+      "sha256": "bebfa3c570ba24c21ad7b3687f303272b4b9b01a699d1e84505c03e1048fa2ef"
     },
     "README.md": {
       "sha256": "28e6189b1d623facf73bc068d7cf23637ca78408d0189a77fd5e91627ef77418"
@@ -17,13 +17,13 @@
   },
   "images": {
     "app": {
-      "reference": "etherpad/etherpad@sha256:3d59d633d285de17cb5d4a479b1f27b90e3194a09d5030c498de98a04f47cf77",
+      "reference": "etherpad/etherpad@sha256:ebe37b915aa25072b0bd13d94bd83ae6a4eb58cb81e876b217b230addb6eb8b4",
       "repository": "etherpad/etherpad",
-      "tag": "3.3.9",
+      "tag": "3.3.10",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:b32d9b929eaa9aafe99cdcfa4c0812183d5e2064406d911228e7dda8487c144f",
-      "appVersion": "3.3.9",
-      "imageCreated": "2026-10-18T18:19:14Z",
+      "platformDigest": "sha256:11310bda5ea4f7267a0e7d6b99e29458fbe16b91a702add722822821f0dbd105",
+      "appVersion": "3.3.10",
+      "imageCreated": "2026-10-23T17:00:59Z",
       "source": "https://hub.docker.com/r/etherpad/etherpad"
     },
     "postgres": {
@@ -39,19 +39,19 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-24",
+    "date": "2026-10-26",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "3.3.9",
+      "app": "3.3.10",
       "postgres": "15-alpine"
     },
     "notes": [
-      "Digest of app resolved 2026-10-24 via registry API (scripts/catalog-pin.mjs; etherpad/etherpad:3.3.9); image config: ExposedPorts 9001/tcp, Volumes none, User etherpad.",
-      "Digest of postgres resolved 2026-10-24 via registry API (scripts/catalog-pin.mjs; postgres:15-alpine); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Smoke run 2026-10-24T05:37:56.849Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (3.3.8) healthy after 11 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 16 s, still healthy 60 s later; fresh install of revision 4 healthy after 11 s, still healthy 60 s later."
+      "Digest of app resolved 2026-10-26 via registry API (scripts/catalog-pin.mjs; etherpad/etherpad:3.3.10); image config: ExposedPorts 9001/tcp, Volumes none, User etherpad.",
+      "Digest of postgres resolved 2026-10-26 via registry API (scripts/catalog-pin.mjs; postgres:15-alpine); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Smoke run 2026-10-26T05:39:47.347Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (3.3.9) healthy after 11 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 16 s, still healthy 60 s later; fresh install of revision 5 healthy after 11 s, still healthy 60 s later."
     ]
   },
   "assets": {
