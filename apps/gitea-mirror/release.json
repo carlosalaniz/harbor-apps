@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "gitea-mirror",
-    "revision": "6"
+    "revision": "7"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "1a0ada269019f1dbc934be30fff9307448ab748c5bea994fd4a8c78c97b259b4"
+      "sha256": "164b8fcf17944b1f01e615cfa9e4d4730c49e3dfa10141f1373f75a32e7c9e55"
     },
     "compose.yaml": {
-      "sha256": "b6611263a981b13888a0ee1e0effb787e56f37736bd9e28b0321038bd53c5172"
+      "sha256": "f8c7f94670c184f139dfae12fb9f9a2e8ea6f9f873d2ab0743b4e73511e2eef7"
     },
     "README.md": {
       "sha256": "562536fcf2f0713f2e94f3a953446f6d20d9a4b2423e0a22735bb607e3f0eb27"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/raylabshq/gitea-mirror@sha256:8803c03829450733324e98d243f86a87f6695cb6d1912ed7ac25986c1aeafe1d",
+      "reference": "ghcr.io/raylabshq/gitea-mirror@sha256:b303d3b0a2f9d0e8e96fa264998529a814787e94012d0f6f01e13096ae67b182",
       "repository": "ghcr.io/raylabshq/gitea-mirror",
-      "tag": "v3.44.0",
+      "tag": "v3.45.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:fbae769232a58fd00439113ad80aa8204d72d389770d04cfdddab84baee527b4",
-      "appVersion": "3.44.0",
-      "imageCreated": "2026-10-23T03:30:54Z",
+      "platformDigest": "sha256:c3537f7de6499a8ed96020e6f790de535a1eb730f33804f2e39a4cb5aabe0b61",
+      "appVersion": "3.45.0",
+      "imageCreated": "2026-10-23T13:48:09Z",
       "source": "https://ghcr.io/raylabshq/gitea-mirror"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-25",
+    "date": "2026-10-26",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "3.44.0"
+      "web": "3.45.0"
     },
     "notes": [
-      "Digest of web resolved 2026-10-25 via registry API (scripts/catalog-pin.mjs; ghcr.io/raylabshq/gitea-mirror:v3.44.0); image config: ExposedPorts 4321/tcp, Volumes /app/data, User gitea-mirror.",
-      "Smoke run 2026-10-25T05:41:42.032Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (3.42.0) healthy after 2 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 6 healthy after 2 s, still healthy 60 s later."
+      "Digest of web resolved 2026-10-26 via registry API (scripts/catalog-pin.mjs; ghcr.io/raylabshq/gitea-mirror:v3.45.0); image config: ExposedPorts 4321/tcp, Volumes /app/data, User gitea-mirror.",
+      "Smoke run 2026-10-26T05:47:29.864Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (3.44.0) healthy after 2 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 7 healthy after 2 s, still healthy 60 s later."
     ]
   },
   "assets": {
