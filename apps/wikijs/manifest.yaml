@@ -5,8 +5,8 @@ metadata:
   name: WikiJS
   description: Wiki.js | Next Generation Open Source Wiki
 release:
-  revision: "3"
-  version: "2.5.316"
+  revision: "4"
+  version: "2.5.317"
 deployment:
   compose: compose.yaml
   multiInstance: true
