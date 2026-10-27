@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "invio",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "7e411c7723e05022672f5de481f8b0367f6decdc44d5efbeccaa6147e3b17d3b"
+      "sha256": "7d5d677528911fa1794584bb55d293c64fb65a3c74931b91b2a1d70de8cd24f2"
     },
     "compose.yaml": {
-      "sha256": "a58e0bc128dca50848f6f8f6ff6dd0ca29eeb4e72db27b2e816302083fc8e7d6"
+      "sha256": "7884569fe62426c815c6d8e132d8f2b1c71e315414140d6cd4c860ca296f1691"
     },
     "README.md": {
       "sha256": "7e421446aa09af2af5eba950db88c3ac65eb9c4f56f658910b75e8ffde9b1413"
@@ -17,43 +17,41 @@
   },
   "images": {
     "backend": {
-      "reference": "ghcr.io/kittendevv/invio-backend@sha256:402c3b2255021834fefeeaaae32cd0f68563a2205dbd6b99914a42cf89e699b5",
+      "reference": "ghcr.io/kittendevv/invio-backend@sha256:ea93d65abe16dd744bf8319048f0afb3d010cc4152ce0e568ee8b2752eddaa47",
       "repository": "ghcr.io/kittendevv/invio-backend",
-      "tag": "v2.2.0",
+      "tag": "v2.3.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:5d6e4e51a796367c7684599ce81463d35a642417ae3b4d16a83954e82a830eac",
-      "appVersion": "2.2.0",
-      "imageCreated": "2026-08-18T14:56:01Z",
+      "platformDigest": "sha256:2fc9445aa0b2e4fb968fb4886cc14d002c3e3e8c639f624efe67ba674a4fd848",
+      "appVersion": "2.3.0",
+      "imageCreated": "2026-10-24T16:27:30Z",
       "source": "https://ghcr.io/kittendevv/invio-backend"
     },
     "frontend": {
-      "reference": "ghcr.io/kittendevv/invio-frontend@sha256:b2a48dc3bfa04771a2b658905268dfc766958c72be6f783f141e313c189c61b8",
+      "reference": "ghcr.io/kittendevv/invio-frontend@sha256:13d16e68e015412c28e1d925a42ab71f371ad31d8a2dc2eeaddf9c5b51610660",
       "repository": "ghcr.io/kittendevv/invio-frontend",
-      "tag": "v2.2.0",
+      "tag": "v2.3.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:981be69208088bca04cc7eb79192fac92f18e22915412aaf3dd8113e8eb5daaa",
-      "appVersion": "2.2.0",
-      "imageCreated": "2026-08-18T14:55:37Z",
+      "platformDigest": "sha256:e79191ab48b3e5b9a1319b0cffea7cf30e7b5d74c0f3a66a90d326974188d531",
+      "appVersion": "2.3.0",
+      "imageCreated": "2026-10-24T16:27:01Z",
       "source": "https://ghcr.io/kittendevv/invio-frontend"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-27",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "backend": "2.2.0",
-      "frontend": "2.2.0"
+      "backend": "2.3.0",
+      "frontend": "2.3.0"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package invio (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "Digest of backend resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/kittendevv/invio-backend@sha256:402c3b2255021834fefeeaaae32cd0f68563a2205dbd6b99914a42cf89e699b5); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Digest of frontend resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/kittendevv/invio-frontend@sha256:b2a48dc3bfa04771a2b658905268dfc766958c72be6f783f141e313c189c61b8); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-55-harbor-q15: passed (healthy after 71s; page title \"Invio\"; health 303)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of backend resolved 2026-10-27 via registry API (scripts/catalog-pin.mjs; ghcr.io/kittendevv/invio-backend:v2.3.0); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Digest of frontend resolved 2026-10-27 via registry API (scripts/catalog-pin.mjs; ghcr.io/kittendevv/invio-frontend:v2.3.0); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-27T05:45:10.442Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2.2.0-patch.1) healthy after 4 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 3 healthy after 6 s, still healthy 60 s later."
     ]
   },
   "assets": {
