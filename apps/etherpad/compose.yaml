@@ -1,6 +1,6 @@
 services:
   app:
-    image: etherpad/etherpad@sha256:ebe37b915aa25072b0bd13d94bd83ae6a4eb58cb81e876b217b230addb6eb8b4 # tag: 3.3.10
+    image: etherpad/etherpad@sha256:2540ced7be293925de4e3452255ee0ee74ced100cfe20abd2edc6ad4426edd34 # tag: 3.3.11
     environment:
       NODE_ENV: production
       CI: "true"
@@ -30,7 +30,7 @@ services:
     healthcheck:
       disable: true
   postgres:
-    image: postgres@sha256:a8e042598834300dfaa17a54f695b87b7f25d3490433bbbe2ef3bffbb9747f24 # tag: 15-alpine
+    image: postgres@sha256:54e0dd8e8cddcdbb9156c2486eed5a43eccb7214d7c6828097d41ce049fb3984 # tag: 15-alpine
     environment:
       POSTGRES_DB: etherpad
       POSTGRES_PASSWORD: admin
