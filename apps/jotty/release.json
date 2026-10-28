@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "jotty",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "5ea44f0a4ea5d4018460dae07f6ee92cd4935f9603e47dbea230a7675d9e5535"
+      "sha256": "8db7c6f7fc917eb9d1764f87c7e98868067c5f79cf4b73ea1436921882aeed61"
     },
     "compose.yaml": {
-      "sha256": "ceccfed49288dc1da1442425f658862ff412a1547c947abe30dfbc55dd915de3"
+      "sha256": "812f2f44e9b83bdd9558dc355d6e74eeac7fda3d244cb38025971c7b3afdd945"
     },
     "README.md": {
       "sha256": "c914ebca662fc3044c34c2d47661ea1ba20c9fcded4591363766ae46c5a9ebdb"
@@ -17,32 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/fccview/jotty@sha256:df965e56fe2e3ce056351425b8ff5d7df991a6596dfa807c73c91cf5eaa30c86",
+      "reference": "ghcr.io/fccview/jotty@sha256:5295d8a85aada46519ed6a1822d5989a373583f42017a346e8a62b44d75af71a",
       "repository": "ghcr.io/fccview/jotty",
-      "tag": "1.28.0",
+      "tag": "1.29.2",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:ae30f7d09d1af3054066e1afbab361602c791a101a885be62e1d4370789ec17f",
-      "appVersion": "1.28.0",
-      "imageCreated": "2026-09-28T22:03:55Z",
+      "platformDigest": "sha256:cd98b26a4f2bfde5e45a0960b4e9a71f9050aea20e0c5bf4cad8a7c4ed4ac073",
+      "appVersion": "1.29.2",
+      "imageCreated": "2026-10-25T14:01:54Z",
       "source": "https://ghcr.io/fccview/jotty"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-28",
+    "node": "v24.22.1",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.28.0"
+      "web": "1.29.2"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package jotty (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/fccview/jotty@sha256:df965e56fe2e3ce056351425b8ff5d7df991a6596dfa807c73c91cf5eaa30c86); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-40-harbor-q02: passed (healthy after 60s; page title \"jotty·page\"; health 307)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-10-28 via registry API (scripts/catalog-pin.mjs; ghcr.io/fccview/jotty:1.29.2); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-28T05:35:32.567Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.28.0) healthy after 3 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 18 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {

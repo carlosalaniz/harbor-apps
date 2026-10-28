@@ -226,7 +226,7 @@
       "dir": "jellyfin"
     },
     "jotty": {
-      "revision": "2",
+      "revision": "3",
       "dir": "jotty"
     },
     "kiwix": {
