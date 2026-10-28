@@ -1,3 +1,3 @@
 services:
   app:
-    image: emqx/mqttx-web@sha256:e777a2221a4e92ea0b87b3170a96ae09d4e557d2dc80c694175669762f47cfd0 # tag: v1.13.1
+    image: emqx/mqttx-web@sha256:723906acdb1995ce2649b72b9cd33e86dc21b3a659b6464f04d2de01da10e6cc # tag: v1.13.2

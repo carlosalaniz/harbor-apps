@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "mqttx-web",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "6b6961f441e5a607dc9444bf358c275dfc5fb5b67cff7c5934a681d5b1c4e981"
+      "sha256": "5a64c8269ca8f55fcdd6f1175d6df3e8fa8a3e2c53a3f9020bd97d68dbda15f6"
     },
     "compose.yaml": {
-      "sha256": "116ee0ad6108801453a63d6f93fdb64a55fcfa3af44ac4a38722f45b2cede374"
+      "sha256": "c91e149d28cefb23b64f857feca8a893c1038a1b3822c2ea5e6e57aefb13705f"
     },
     "README.md": {
       "sha256": "941719c6864f53c14aaa4897e13cb9f9ef109474d3fb9a0dc101c49296e10496"
@@ -17,32 +17,29 @@
   },
   "images": {
     "app": {
-      "reference": "emqx/mqttx-web@sha256:e777a2221a4e92ea0b87b3170a96ae09d4e557d2dc80c694175669762f47cfd0",
+      "reference": "emqx/mqttx-web@sha256:723906acdb1995ce2649b72b9cd33e86dc21b3a659b6464f04d2de01da10e6cc",
       "repository": "emqx/mqttx-web",
-      "tag": "v1.13.1",
+      "tag": "v1.13.2",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:1251e86f563e6e2de350a3423ef581a8519c66f1c7395379adfedb6ee4bdc6bc",
-      "appVersion": "1.13.1",
-      "imageCreated": "2026-09-20T07:14:10Z",
+      "platformDigest": "sha256:4582d9ce1671c0d06bca2bcd7a81e4da34c1ed607bc06bcf95a4c03aa5617e02",
+      "appVersion": "1.13.2",
+      "imageCreated": "2026-10-26T03:01:40Z",
       "source": "https://hub.docker.com/r/emqx/mqttx-web"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-28",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "1.13.1"
+      "app": "1.13.2"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package mqttx-web (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service app: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of app resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; emqx/mqttx-web@sha256:e777a2221a4e92ea0b87b3170a96ae09d4e557d2dc80c694175669762f47cfd0); image config: ExposedPorts 80/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-22-harbor-q13: passed (healthy after 36s; page title \"Easy-to-Use Online MQTT Client | Try Now\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of app resolved 2026-10-28 via registry API (scripts/catalog-pin.mjs; emqx/mqttx-web:v1.13.2); image config: ExposedPorts 80/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-28T05:30:24.300Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.13.1) healthy after 1 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
