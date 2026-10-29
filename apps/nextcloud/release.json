@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "nextcloud",
-    "revision": "7"
+    "revision": "8"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "6c43865d44778c67bc672fc9f56df42dcb753cd4852eebe1fe0def4735d62e33"
+      "sha256": "9997aa213823d2ad3413b6bdfb2ddb3dc858832e0c9968037b4eb84b35d3e556"
     },
     "compose.yaml": {
-      "sha256": "c70bd50015a5cc358febffde38d716fe90615517e6b93674e8ed0860a8ea6e08"
+      "sha256": "127db6e478f9bd5c889483be700798eb244ecec9f7de41f4321ed05cc83e0dd3"
     },
     "README.md": {
       "sha256": "db4570ec4613f20860f01a33d228e8039cf30bb7083a3a91e8f59580c2e07daf"
@@ -17,53 +17,53 @@
   },
   "images": {
     "db": {
-      "reference": "postgres@sha256:b8faeff7712663c2773a190181e1246e37e364b887611c04658c28b44e2408fe",
+      "reference": "postgres@sha256:31ba9c94a03ada9988f2bb493a22a75eef3a185884533e5cdbcd498ea835b08f",
       "repository": "postgres",
       "tag": "17.11",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:3518071376d0b6156b02e1db2747a78511b5b9dc3763cc79c506ebe2dc2ee71c",
+      "platformDigest": "sha256:0b81cec82228160abfa753aeaad0609b709eb26eeb950f2e404ad2326e1cc370",
       "appVersion": "17.11",
-      "imageCreated": "2026-10-21T00:37:20Z",
+      "imageCreated": "2026-10-28T01:31:27Z",
       "source": "https://hub.docker.com/_/postgres"
     },
     "redis": {
-      "reference": "redis@sha256:0bf6577d7774e592b29d093e3ac9390eb91e13d72c21e506afce736de5e0eeb0",
+      "reference": "redis@sha256:21090af93f8324db2f0f0f4f38a7c60369d47d917e000c3423d89d2ae2883537",
       "repository": "redis",
-      "tag": "8.10.2-alpine",
+      "tag": "8.10.3-alpine",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:16b124a2d3eacd620d917ead6fd26cbf1f1d7117fa94122398971931cfe2d403",
-      "appVersion": "8.10.2-alpine",
-      "imageCreated": "2026-10-21T21:22:18Z",
+      "platformDigest": "sha256:be7c1cada5a6eb1656adfa2635b99296af725881301b21f84f35a71fac072c7f",
+      "appVersion": "8.10.3-alpine",
+      "imageCreated": "2026-10-26T16:42:40Z",
       "source": "https://hub.docker.com/_/redis"
     },
     "app": {
-      "reference": "nextcloud@sha256:1f9212adecae32010cdbf137d7e0db78d08c696dc3e77f1eddcbf902d10209b4",
+      "reference": "nextcloud@sha256:393d46e80fc241374a1b69064408cf0d54476580d7a00eb74cae3f4f2b2bb8a0",
       "repository": "nextcloud",
       "tag": "34.0.5-apache",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:39289781f568f61a710f9ebbf734750d3f7eab7635d7cc962d893fb983d39cdb",
+      "platformDigest": "sha256:e881320833451d8320727d7e20386c39021d51ba03bbb1e153ddfeb114ce6145",
       "appVersion": "34.0.5-apache",
-      "imageCreated": "2026-10-23T16:40:11Z",
+      "imageCreated": "2026-10-28T02:39:03Z",
       "source": "https://hub.docker.com/_/nextcloud"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-25",
-    "node": "v24.21.0",
+    "date": "2026-10-29",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "db": "17.11",
-      "redis": "8.10.2-alpine",
+      "redis": "8.10.3-alpine",
       "app": "34.0.5-apache"
     },
     "notes": [
-      "Digest of db resolved 2026-10-25 via registry API (scripts/catalog-pin.mjs; postgres:17.11); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of redis resolved 2026-10-25 via registry API (scripts/catalog-pin.mjs; redis:8.10.2-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
-      "Digest of app resolved 2026-10-25 via registry API (scripts/catalog-pin.mjs; nextcloud:34.0.5-apache); image config: ExposedPorts 80/tcp, Volumes /var/www/html, User root.",
-      "Smoke run 2026-10-25T05:35:12.432Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (34.0.5) healthy after 42 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 14 s, still healthy 60 s later; fresh install of revision 7 healthy after 40 s, still healthy 60 s later."
+      "Digest of db resolved 2026-10-29 via registry API (scripts/catalog-pin.mjs; postgres:17.11); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of redis resolved 2026-10-29 via registry API (scripts/catalog-pin.mjs; redis:8.10.3-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Digest of app resolved 2026-10-29 via registry API (scripts/catalog-pin.mjs; nextcloud:34.0.5-apache); image config: ExposedPorts 80/tcp, Volumes /var/www/html, User root.",
+      "Smoke run 2026-10-29T05:33:12.280Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 7 (34.0.5) healthy after 40 s, still healthy 60 s later; updated to revision 8 without a rollback, healthy after 14 s, still healthy 60 s later; fresh install of revision 8 healthy after 38 s, still healthy 60 s later."
     ]
   },
   "assets": {
