@@ -1,6 +1,6 @@
 services:
   server:
-    image: linuxserver/mstream@sha256:087024466308b1cb67b805c32b26613054c4c3705fc663bea7c790045c90ecb5 # tag: 6.31.1
+    image: linuxserver/mstream@sha256:cc60f6c062a896c2c72516a7658eec340df9503fe00a5afd8b4753499e424376 # tag: 6.32.0
     environment:
       PUID: "1000"
       PGID: "1000"
