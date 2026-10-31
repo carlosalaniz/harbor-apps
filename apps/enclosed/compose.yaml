@@ -1,6 +1,6 @@
 services:
   web:
-    image: corentinth/enclosed@sha256:0631baee489b974cf16ffe3884c814e7bcc75df7bd36662b8ded76443b768d06 # tag: 1.16.0-rootless
+    image: corentinth/enclosed@sha256:26cfc00ba76f20b9ed7c5f867d241eddb02379c39090e9ad88c08c671d31d5e9 # tag: 1.16.1-rootless
     volumes:
       - {type: volume, source: data, target: "/app/.data"}
 volumes:

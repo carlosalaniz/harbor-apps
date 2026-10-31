@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "stirling-pdf",
-    "revision": "4"
+    "revision": "6"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "e9c6a39c8f9770bee9a20592527bbab69f2c085b9231e1644417d6614fad4bd6"
+      "sha256": "dd38544cee5c4845417a1269f5b94c24d1ce649aa6031bed6b8a5ac925929c66"
     },
     "compose.yaml": {
-      "sha256": "5b27a1fa560d23b9d55e50413bc3637be60f341c453e73ff7d2d936a33d59bbc"
+      "sha256": "aaf46a54b558f090f810e92bfb4ecd7db03c28a3b4a5da9d4381b1487bb72990"
     },
     "README.md": {
       "sha256": "7f33dc1e7c5a5398135f2ae3872546b7c24827d0c65807889b54ad7ae7b55aac"
@@ -17,29 +17,29 @@
   },
   "images": {
     "app": {
-      "reference": "stirlingtools/stirling-pdf@sha256:10164ffe04961b02ebc9fa4da12064eeacb8d3bc3e09ceb059f78ce7aaa83207",
+      "reference": "stirlingtools/stirling-pdf@sha256:c6872dd056b0046a14c5de1e9970283e7f1e1ff685bb08090c6b37a231127d31",
       "repository": "stirlingtools/stirling-pdf",
-      "tag": "3.2.0",
+      "tag": "3.2.2",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:87d465ba70452dcc761de738339951869dbf590c1a31cb4a0a287512fd614d2d",
-      "appVersion": "3.2.0",
-      "imageCreated": "2026-10-15T20:17:08Z",
+      "platformDigest": "sha256:0d3fa730272ddb037c71db6ae760e1af991722d88c2129f41c31feee6fca30e6",
+      "appVersion": "3.2.2",
+      "imageCreated": "2026-10-24T09:32:59Z",
       "source": "https://hub.docker.com/r/stirlingtools/stirling-pdf"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-21",
-    "node": "v24.22.0",
+    "date": "2026-10-27",
+    "node": "v24.21.0",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "3.2.0"
+      "app": "3.2.2"
     },
     "notes": [
-      "Digest of app resolved 2026-10-21 via registry API (scripts/catalog-pin.mjs; stirlingtools/stirling-pdf:3.2.0); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
-      "Smoke run 2026-10-21T05:46:01.483Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (3.1.0) healthy after 24 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 27 s, still healthy 60 s later; fresh install of revision 4 healthy after 23 s, still healthy 60 s later."
+      "Digest of app resolved 2026-10-27 via registry API (scripts/catalog-pin.mjs; stirlingtools/stirling-pdf:3.2.2); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-27T05:37:31.190Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (3.2.1) healthy after 24 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 27 s, still healthy 60 s later; fresh install of revision 6 healthy after 23 s, still healthy 60 s later."
     ]
   },
   "assets": {

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "mstream",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "9c77d8d41ac84844c5762f56ec80770a018c81348f050b3d1a7c1e9fb2c5925e"
+      "sha256": "c8946167a62b16465fe38b2050f6b22c9d01a96081970c764ee274cf10af01b3"
     },
     "compose.yaml": {
-      "sha256": "c75e6332f5f8c809034edff8e544a1d4df6e2637c4fd86a15acef5049a7c401f"
+      "sha256": "bf1c6180dd2e22db08d10fd98d807822ec94a2a55d0ff050e494f3d0310abed6"
     },
     "README.md": {
       "sha256": "4cffa0ef442fd86524b5401761ad61ae73c1bff444e1e87573c1b6042f7ffc78"
@@ -17,31 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "linuxserver/mstream@sha256:087024466308b1cb67b805c32b26613054c4c3705fc663bea7c790045c90ecb5",
+      "reference": "linuxserver/mstream@sha256:cc60f6c062a896c2c72516a7658eec340df9503fe00a5afd8b4753499e424376",
       "repository": "linuxserver/mstream",
-      "tag": "6.31.1",
+      "tag": "6.32.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:67bf0de262e8801c713cb461428e8316172af3f919413382d47b047a680ac555",
-      "appVersion": "6.31.1",
-      "imageCreated": "2026-10-04T19:12:33Z",
+      "platformDigest": "sha256:8cece50a347d2d1022c73a1c7247be08af8f73890f92b7d2bc268009566ae5b5",
+      "appVersion": "6.32.0",
+      "imageCreated": "2026-10-28T12:49:35Z",
       "source": "https://hub.docker.com/r/linuxserver/mstream"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-31",
+    "node": "v24.22.1",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "6.31.1"
+      "server": "6.32.0"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package mstream (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "Digest of server resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; linuxserver/mstream@sha256:087024466308b1cb67b805c32b26613054c4c3705fc663bea7c790045c90ecb5); image config: ExposedPorts 3000/tcp, Volumes /config, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-00-harbor-q14: passed (healthy after 49s; page title \"mStream Music\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of server resolved 2026-10-31 via registry API (scripts/catalog-pin.mjs; linuxserver/mstream:6.32.0); image config: ExposedPorts 3000/tcp, Volumes /config, User root.",
+      "Smoke run 2026-10-31T05:33:15.718Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (6.31.1) healthy after 4 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 7 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {

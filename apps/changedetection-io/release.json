@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "changedetection-io",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "8eeb083440e984c5d910045245ea3c904a39bdfa02fa173ce04a782c22c6491b"
+      "sha256": "a459bcf6801cfcb7ac8cb7a1bce970a37e48005a30d66afef233ccce613a5911"
     },
     "compose.yaml": {
-      "sha256": "93a2959d61efe2048c5ba0b5d10c4e0c816ef72839b04e35c3149a51d93e3c7a"
+      "sha256": "aec391b03ce142b5eb5c45937751df421a9de2808f74062004e83b823966ded3"
     },
     "README.md": {
       "sha256": "98e40e394c110ae6bf5e8de127ab92e7f98ade6cd77cd4ba1f23462b18fbfa74"
@@ -17,29 +17,29 @@
   },
   "images": {
     "app": {
-      "reference": "ghcr.io/dgtlmoon/changedetection.io@sha256:04eaae7915bad711160cb15abe160f6d3fabe98bbbd658509d4b7a654000fb2d",
+      "reference": "ghcr.io/dgtlmoon/changedetection.io@sha256:72f97681f390e4d6ae3e6585e1e0036449910f347144b766fc23910458566a1a",
       "repository": "ghcr.io/dgtlmoon/changedetection.io",
-      "tag": "0.60.9",
+      "tag": "0.60.10",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:6e45efa0bac5966e528013726e0ce240e40f2717ba3cc007c22a8c26e0275949",
-      "appVersion": "0.60.9",
-      "imageCreated": "2026-10-12T07:54:19Z",
+      "platformDigest": "sha256:82b82565b5f4fbb309c56ce888f03dd441b51805a17548f4763a7db840f27f0c",
+      "appVersion": "0.60.10",
+      "imageCreated": "2026-10-26T12:01:54Z",
       "source": "https://ghcr.io/dgtlmoon/changedetection.io"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-16",
-    "node": "v24.21.0",
+    "date": "2026-10-29",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "0.60.9"
+      "app": "0.60.10"
     },
     "notes": [
-      "Digest of app resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/dgtlmoon/changedetection.io:0.60.9); image config: ExposedPorts 5000/tcp, Volumes none, User root.",
-      "Smoke run 2026-10-16T05:44:47.597Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.60.8) healthy after 4 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 3 healthy after 4 s, still healthy 60 s later."
+      "Digest of app resolved 2026-10-29 via registry API (scripts/catalog-pin.mjs; ghcr.io/dgtlmoon/changedetection.io:0.60.10); image config: ExposedPorts 5000/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-29T05:40:11.925Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (0.60.9) healthy after 4 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 4 healthy after 4 s, still healthy 60 s later."
     ]
   },
   "assets": {

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "autobrr",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "9b316a87b7a4a72f502030b55159b9b0806b51378af3cbdbd05b21c36db33c96"
+      "sha256": "791935e85246bbcd76f4d83d387372f44b2c6c3a62f6630edbc7c8ed60821529"
     },
     "compose.yaml": {
-      "sha256": "377c1a1ec749df6bd606fc684fc11bb123d00b1b2e364550cf98cd323b032d7c"
+      "sha256": "8cf21a2bc5d056f200d6ee8c6703e9ca65009581e1608391e3eb9cb174d10bc7"
     },
     "README.md": {
       "sha256": "13befe0837d06a486b0523e5dbd17128b1464620c4c591a8a6b2b43d2f0b920f"
@@ -17,33 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/autobrr/autobrr@sha256:e200008d43fe6cd2d944c9bcf20900cfb8ba8a8e509625bb78ee51910b994005",
+      "reference": "ghcr.io/autobrr/autobrr@sha256:60efc357e1852f1cd337b8c26d65c5299feadbb4f364c89299b1eede5d159ce4",
       "repository": "ghcr.io/autobrr/autobrr",
-      "tag": "v1.88.0",
+      "tag": "v1.89.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:3714c1882686f5f6b71d9e84c93e8723238520bcf8566bb6414c13c1c9e026b6",
-      "appVersion": "1.88.0",
-      "imageCreated": "2026-10-06T19:37:11Z",
+      "platformDigest": "sha256:03644017858c2e54fdc3138c2a13ae8ea8b142d1b9f2ac92e7a2c005b3f3958d",
+      "appVersion": "1.89.0",
+      "imageCreated": "2026-10-21T21:31:24Z",
       "source": "https://ghcr.io/autobrr/autobrr"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-10-24",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.88.0"
+      "web": "1.89.0"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package autobrr (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: stop_grace_period 1m dropped (Docker's default applies)",
-      "service web: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/autobrr/autobrr@sha256:e200008d43fe6cd2d944c9bcf20900cfb8ba8a8e509625bb78ee51910b994005); image config: ExposedPorts 7474/tcp, Volumes /config, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-55-harbor-q15: passed (healthy after 22s; page title \"autobrr\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-10-24 via registry API (scripts/catalog-pin.mjs; ghcr.io/autobrr/autobrr:v1.89.0); image config: ExposedPorts 7474/tcp, Volumes /config, User root.",
+      "Smoke run 2026-10-24T05:44:36.212Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.88.0) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {

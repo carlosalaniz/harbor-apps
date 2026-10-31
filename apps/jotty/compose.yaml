@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/fccview/jotty@sha256:df965e56fe2e3ce056351425b8ff5d7df991a6596dfa807c73c91cf5eaa30c86 # tag: 1.28.0
+    image: ghcr.io/fccview/jotty@sha256:5295d8a85aada46519ed6a1822d5989a373583f42017a346e8a62b44d75af71a # tag: 1.29.2
     environment:
       NODE_ENV: production
     volumes:

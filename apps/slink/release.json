@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "slink",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "28712ff5c9f213d9879175721e6f0958b8bb6cb64760a2271070b95c91054d06"
+      "sha256": "9db327b882e07be595cdfc0257d48cb3e111f95b4dc94abaf69c5e99a1d1d922"
     },
     "compose.yaml": {
-      "sha256": "b2c4676a5c7a5442b9ae42f39815a5831d197d45e0d5091b63a77cef30cd01f5"
+      "sha256": "c804400c0a2322259607b615bcb021440ed705ba7002097f8131e62535d973ac"
     },
     "README.md": {
       "sha256": "808e73f8d6f426cd4fc5a6885ebd72e6f1c2e08514cf482560ce617fe77436f1"
@@ -17,28 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "anirdev/slink@sha256:dd2af33782a4bf16b1445c74c8354593a0a810585ae4a65cf6a0263edab10835",
+      "reference": "anirdev/slink@sha256:529ac1e0cb9d4509f95b6a5b982b28e43980a8696f05091f81b67de8450038c7",
       "repository": "anirdev/slink",
-      "tag": "v1.14.3",
+      "tag": "v1.14.4",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:ebec8781e81ea3a5fc24d9490480519a66997311147308b5a1754aac672f1aa2",
-      "appVersion": "1.14.3",
-      "imageCreated": "2026-10-21T18:50:03Z",
+      "platformDigest": "sha256:1d0f8b03290002bd61b9f1db90fbdae3945672fec863340ebc73d8cf48f5cd94",
+      "appVersion": "1.14.4",
+      "imageCreated": "2026-10-24T16:49:49Z",
       "source": "https://hub.docker.com/r/anirdev/slink"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
+    "date": "2026-10-27",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.14.3"
+      "web": "1.14.4"
     },
     "notes": [
-      "Smoke run 2026-10-23T19:18:39.716Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.14.2) healthy after 8 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 9 s, still healthy 60 s later; fresh install of revision 4 healthy after 8 s, still healthy 60 s later."
+      "Digest of web resolved 2026-10-27 via registry API (scripts/catalog-pin.mjs; anirdev/slink:v1.14.4); image config: ExposedPorts 3000/tcp, Volumes /data, User root.",
+      "Smoke run 2026-10-27T05:38:40.834Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (1.14.3) healthy after 6 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 9 s, still healthy 60 s later; fresh install of revision 5 healthy after 6 s, still healthy 60 s later."
     ]
   },
   "assets": {

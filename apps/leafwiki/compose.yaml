@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/perber/leafwiki@sha256:d11cf3c73760fef930b509dd52e69bd4c220ab612361d026714129d67251b535 # tag: v0.14.1
+    image: ghcr.io/perber/leafwiki@sha256:bc07b7d0f3de916233a570f6d4b54fe14de0e2cb77e179e6a07bf417fb109585 # tag: v0.14.2
     environment:
       LEAFWIKI_ALLOW_INSECURE: "true"
     volumes:

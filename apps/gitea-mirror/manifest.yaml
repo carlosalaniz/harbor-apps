@@ -5,8 +5,8 @@ metadata:
   name: Gitea Mirror
   description: Gitea Mirror auto-syncs GitHub repos to your self-hosted Gitea/Forgejo, with a sleek Web UI and easy Docker deployment.
 release:
-  revision: "5"
-  version: "3.42.0"
+  revision: "8"
+  version: "3.46.0"
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml

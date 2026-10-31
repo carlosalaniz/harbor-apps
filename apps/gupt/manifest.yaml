@@ -5,8 +5,8 @@ metadata:
   name: Gupt
   description: Self-hosted, end-to-end encrypted messenger. A privacy-first alternative to Telegram, Signal, WhatsApp & Discord.
 release:
-  revision: "3"
-  version: "5.1.5"
+  revision: "4"
+  version: "5.2.0"
 deployment:
   compose: compose.yaml
   multiInstance: true

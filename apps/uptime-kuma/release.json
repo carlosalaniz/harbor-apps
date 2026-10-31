@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "uptime-kuma",
-    "revision": "3"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "bbe0dd2cd04162ca57ff861c85f8a413321f598a2c27056f4e7cb9b7f724e2b8"
+      "sha256": "a226999089a08dfdfd648a70b0da3f23e80ef4651d9e637a346087f9be936fc0"
     },
     "compose.yaml": {
-      "sha256": "fd555e3892b60df785308a2314b775e869c8fabc9bd6af9db9cfcac14e956099"
+      "sha256": "9081e46233862f17c7fca6bcdd720b658c78cfb288b79d49e4e64e7da21b0181"
     },
     "README.md": {
       "sha256": "805276192b82b95ca6be9fe43ca7a686d1eca873d87af3887325f6e8cade3101"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "louislam/uptime-kuma@sha256:9912da7d7d9b6ddc0c2d904beb84d24689c1ed9c33b81419eb9008663a92a329",
+      "reference": "louislam/uptime-kuma@sha256:20abea8c48a163cf0a7a5d5936ab418e4b742d908704e1f58f6c06e56a9c6b67",
       "repository": "louislam/uptime-kuma",
-      "tag": "2.5.6",
+      "tag": "2.5.8",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:99286a05eb86191f3f1aab9b537950aa55b958e77d9f7a2385bc9332674e6e00",
-      "appVersion": "2.5.6",
-      "imageCreated": "2026-10-09T15:44:11Z",
+      "platformDigest": "sha256:a3d1aa0de332e1fb316c012529936d23ed235895715bd035af9a4e428f5a001a",
+      "appVersion": "2.5.8",
+      "imageCreated": "2026-10-26T17:08:30Z",
       "source": "https://hub.docker.com/r/louislam/uptime-kuma"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-15",
-    "node": "v24.21.0",
+    "date": "2026-10-29",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "2.5.6"
+      "web": "2.5.8"
     },
     "notes": [
-      "Digest of web resolved 2026-10-15 via registry API (scripts/catalog-pin.mjs; louislam/uptime-kuma:2.5.6); image config: ExposedPorts 3001/tcp, Volumes none, User root.",
-      "Smoke run 2026-10-15T05:37:33.724Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2.5.4) healthy after 7 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 6 s, still healthy 60 s later; fresh install of revision 3 healthy after 6 s, still healthy 60 s later."
+      "Digest of web resolved 2026-10-29 via registry API (scripts/catalog-pin.mjs; louislam/uptime-kuma:2.5.8); image config: ExposedPorts 3001/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-29T05:37:21.375Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (2.5.7) healthy after 6 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 7 s, still healthy 60 s later; fresh install of revision 5 healthy after 6 s, still healthy 60 s later."
     ]
   },
   "assets": {

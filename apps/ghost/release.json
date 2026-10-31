@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "ghost",
-    "revision": "3"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "c4cd028cf85d4cf6090bc82cce187b81a540c6b10580139197062fe4e450619b"
+      "sha256": "d490b3a094e379e2f888cb4021bf38aa9a19487fa6013d5a4109ac7c2b1f5dcc"
     },
     "compose.yaml": {
-      "sha256": "c681591914ab2d7f76afde4e28cf6f1915351659ea4532ba0785a2736a57575f"
+      "sha256": "946a012b147c532366d2a572a1a4635aab50c58a11985de6338e7789c4a3226e"
     },
     "README.md": {
       "sha256": "d23ede1554017f92cea18cc3dd83fb00f3a356d84bbfb20d52c7c408a3ac7e6a"
@@ -17,39 +17,41 @@
   },
   "images": {
     "web": {
-      "reference": "ghost@sha256:55131b90d48c3cecae6c085f873b2067542ababd286b12d08474b2b34328e266",
+      "reference": "ghost@sha256:3e62a20e7f172af9c313bcd74c67098359c4fa7f7121a20ebd740c9f6cd0c0b9",
       "repository": "ghost",
-      "tag": "6.69.0",
+      "tag": "6.73.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:5bd9c840eb97394695f6f5cb5e0a13b47c5a059ebbcb0c26f66afe4631b5dc5b",
-      "appVersion": "6.69.0",
-      "imageCreated": "2026-10-07T19:19:15Z",
+      "platformDigest": "sha256:3656324ad804308b9ef39571b15b41465cdee64f6a78d1807719b5ea379688fd",
+      "appVersion": "6.73.0",
+      "imageCreated": "2026-10-28T02:42:42Z",
       "source": "https://hub.docker.com/_/ghost"
     },
     "db": {
-      "reference": "mysql@sha256:339598fe066c73daa4120f2d9dfefd3146c3519cd324748e1d3f9d2b6c71d10b",
+      "reference": "mysql@sha256:a0225d1ea6631c8bc2385dc4c2faba17bbf1834ecf369e1659a9a382bd8d5dd7",
       "repository": "mysql",
-      "tag": "8.4.4",
+      "tag": "8.4.13",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:cf47e4de19a5473dbe250162757a0bc764f841becc55f2cf3b4f584ac00265df",
-      "appVersion": "8.4.4",
-      "imageCreated": "2025-01-21T17:21:51Z",
+      "platformDigest": "sha256:5cf1e1293ea42e077e6a22114e6773b9aae3bb8f9933a2acd5a9721518ff8f5b",
+      "appVersion": "8.4.13",
+      "imageCreated": "2026-10-27T23:09:13Z",
       "source": "https://hub.docker.com/_/mysql"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
-    "node": "v24.21.0",
+    "date": "2026-10-30",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "6.69.0",
-      "db": "8.4.4"
+      "web": "6.73.0",
+      "db": "8.4.13"
     },
     "notes": [
-      "Smoke run 2026-10-23T19:59:51.525Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (6.69.0) healthy after 20 s (web restarted 6 time(s) before that), still healthy 60 s later; updated to revision 3 without a rollback, healthy after 12 s, still healthy 60 s later; fresh install of revision 3 healthy after 19 s, still healthy 60 s later."
+      "Digest of web resolved 2026-10-30 via registry API (scripts/catalog-pin.mjs; ghost:6.73.0); image config: ExposedPorts 2368/tcp, Volumes /var/lib/ghost/content, User root.",
+      "Digest of db resolved 2026-10-30 via registry API (scripts/catalog-pin.mjs; mysql:8.4.13); image config: ExposedPorts 3306/tcp,33060/tcp, Volumes /var/lib/mysql, User root.",
+      "Smoke run 2026-10-30T05:33:00.027Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (6.72.0) healthy after 19 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 14 s, still healthy 60 s later; fresh install of revision 5 healthy after 19 s, still healthy 60 s later."
     ]
   },
   "assets": {

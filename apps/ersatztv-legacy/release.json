@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "ersatztv-legacy",
-    "revision": "3"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "98a7765eab38c414a73262f97765286905a82fb9ad8e9ac0464959f11c6bb4fb"
+      "sha256": "5532a2afe932ebf5d1aa698ed95f8994a9c37990d67f2d864e7a458475767590"
     },
     "compose.yaml": {
-      "sha256": "f76483ad37a0247b32874eddc1f9e27b7239503d1c0e388cd27ae8d3b235041b"
+      "sha256": "444ed4af38c54d05c6c58dcefa36fdf1fb5fe6281f624d21a9c6f425e8a70435"
     },
     "README.md": {
       "sha256": "96b0fbd28cef3ccb6560ecff9fa25fa9728592899a6593c1fdc690e6fb085a52"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/ersatztv/legacy@sha256:cb0383fdb22050bdaff19e94974e86151d289e56355ca77cde8f15c3b49895d7",
+      "reference": "ghcr.io/ersatztv/legacy@sha256:9d82593791d78d20b7d3673dd10dc4bc0a060ede27eada7e2487d5226e91abda",
       "repository": "ghcr.io/ersatztv/legacy",
-      "tag": "v26.11.3",
+      "tag": "v26.11.5",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:d8eaa0459d2d19164ac15bfed1a0a02fc1d4bacf4e47fe9c9589cad4f31c43a2",
-      "appVersion": "26.11.3",
-      "imageCreated": "2026-10-13T21:02:01Z",
+      "platformDigest": "sha256:120f0c0f577f5a3f817829aed72993c8bacc68595e6fba070891f0f5cf7a9780",
+      "appVersion": "26.11.5",
+      "imageCreated": "2026-10-24T16:30:46Z",
       "source": "https://ghcr.io/ersatztv/legacy"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-16",
+    "date": "2026-10-27",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "26.11.3"
+      "web": "26.11.5"
     },
     "notes": [
-      "Digest of web resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/ersatztv/legacy:v26.11.3); image config: ExposedPorts none, Volumes none, User root.",
-      "Smoke run 2026-10-16T05:35:27.530Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (26.11.1) healthy after 5 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 3 healthy after 4 s, still healthy 60 s later."
+      "Digest of web resolved 2026-10-27 via registry API (scripts/catalog-pin.mjs; ghcr.io/ersatztv/legacy:v26.11.5); image config: ExposedPorts none, Volumes none, User root.",
+      "Smoke run 2026-10-27T05:38:11.345Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (26.11.4) healthy after 5 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 5 healthy after 4 s, still healthy 60 s later."
     ]
   },
   "assets": {

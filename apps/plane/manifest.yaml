@@ -5,8 +5,8 @@ metadata:
   name: Plane
   description: Open-source project management for tasks, sprints, docs and triage, an alternative to Jira, Linear and Asana.
 release:
-  revision: "3"
-  version: 1.4.2
+  revision: "4"
+  version: "1.4.3"
   minHarbor: "0.30.0"
 deployment:
   compose: compose.yaml

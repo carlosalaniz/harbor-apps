@@ -75,4 +75,4 @@ presentation:
     - shot-2.jpg
   developer: "Open WebUI contributors"
   website: https://openwebui.com
-  releaseNotes: "Open WebUI v0.12.3 without a model server of its own: it uses the Ollama app, so models are downloaded once and shared with your other AI apps. Optional link to ComfyUI to make images in chats. Telemetry off."
+  releaseNotes: "Open WebUI v0.12.4 without a model server of its own: it uses the Ollama app, so models are downloaded once and shared with your other AI apps. Optional link to ComfyUI to make images in chats. Telemetry off."

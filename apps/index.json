@@ -10,15 +10,15 @@
       "dir": "akaunting"
     },
     "anythingllm": {
-      "revision": "3",
+      "revision": "4",
       "dir": "anythingllm"
     },
     "audiobookshelf": {
-      "revision": "3",
+      "revision": "4",
       "dir": "audiobookshelf"
     },
     "autobrr": {
-      "revision": "2",
+      "revision": "3",
       "dir": "autobrr"
     },
     "baikal": {
@@ -66,7 +66,7 @@
       "dir": "cashu-me"
     },
     "changedetection-io": {
-      "revision": "3",
+      "revision": "4",
       "dir": "changedetection-io"
     },
     "chatbot-ui": {
@@ -94,11 +94,11 @@
       "dir": "docmost"
     },
     "docuseal": {
-      "revision": "4",
+      "revision": "5",
       "dir": "docuseal"
     },
     "downtify": {
-      "revision": "4",
+      "revision": "5",
       "dir": "downtify"
     },
     "dropgate-server": {
@@ -114,23 +114,23 @@
       "dir": "duplicati"
     },
     "element": {
-      "revision": "4",
+      "revision": "5",
       "dir": "element"
     },
     "emby": {
-      "revision": "2",
+      "revision": "3",
       "dir": "emby"
     },
     "enclosed": {
-      "revision": "2",
+      "revision": "3",
       "dir": "enclosed"
     },
     "ersatztv-legacy": {
-      "revision": "3",
+      "revision": "5",
       "dir": "ersatztv-legacy"
     },
     "etherpad": {
-      "revision": "3",
+      "revision": "7",
       "dir": "etherpad"
     },
     "excalidraw": {
@@ -166,15 +166,15 @@
       "dir": "freshrss"
     },
     "ghost": {
-      "revision": "3",
+      "revision": "5",
       "dir": "ghost"
     },
     "gitea-mirror": {
-      "revision": "5",
+      "revision": "8",
       "dir": "gitea-mirror"
     },
     "grafana": {
-      "revision": "3",
+      "revision": "4",
       "dir": "grafana"
     },
     "grocy": {
@@ -182,7 +182,7 @@
       "dir": "grocy"
     },
     "gupt": {
-      "revision": "3",
+      "revision": "4",
       "dir": "gupt"
     },
     "heimdall": {
@@ -194,7 +194,7 @@
       "dir": "hermes-agent"
     },
     "homarr": {
-      "revision": "4",
+      "revision": "5",
       "dir": "homarr"
     },
     "homebox": {
@@ -206,7 +206,7 @@
       "dir": "hortusfox"
     },
     "immich": {
-      "revision": "5",
+      "revision": "6",
       "dir": "immich"
     },
     "influxdb": {
@@ -218,11 +218,11 @@
       "dir": "influxdb2"
     },
     "invio": {
-      "revision": "2",
+      "revision": "5",
       "dir": "invio"
     },
     "jackett": {
-      "revision": "8",
+      "revision": "12",
       "dir": "jackett"
     },
     "jellyfin": {
@@ -230,7 +230,7 @@
       "dir": "jellyfin"
     },
     "jotty": {
-      "revision": "2",
+      "revision": "3",
       "dir": "jotty"
     },
     "kiwix": {
@@ -238,11 +238,11 @@
       "dir": "kiwix"
     },
     "langflow": {
-      "revision": "5",
+      "revision": "6",
       "dir": "langflow"
     },
     "leafwiki": {
-      "revision": "2",
+      "revision": "3",
       "dir": "leafwiki"
     },
     "libreoffice": {
@@ -262,7 +262,7 @@
       "dir": "llama-gpt"
     },
     "localai": {
-      "revision": "2",
+      "revision": "3",
       "dir": "localai"
     },
     "lubelogger": {
@@ -278,7 +278,7 @@
       "dir": "memos"
     },
     "metube": {
-      "revision": "4",
+      "revision": "8",
       "dir": "metube"
     },
     "morphos": {
@@ -286,11 +286,11 @@
       "dir": "morphos"
     },
     "mqttx-web": {
-      "revision": "2",
+      "revision": "3",
       "dir": "mqttx-web"
     },
     "mstream": {
-      "revision": "2",
+      "revision": "3",
       "dir": "mstream"
     },
     "myspeed": {
@@ -298,7 +298,7 @@
       "dir": "myspeed"
     },
     "n8n": {
-      "revision": "5",
+      "revision": "8",
       "dir": "n8n"
     },
     "navidrome": {
@@ -310,7 +310,7 @@
       "dir": "networkingtoolbox"
     },
     "nextcloud": {
-      "revision": "6",
+      "revision": "8",
       "dir": "nextcloud"
     },
     "nitter": {
@@ -330,7 +330,7 @@
       "dir": "nutstash-wallet"
     },
     "ollama": {
-      "revision": "4",
+      "revision": "5",
       "dir": "ollama"
     },
     "omnitools": {
@@ -338,7 +338,7 @@
       "dir": "omnitools"
     },
     "open-webui": {
-      "revision": "6",
+      "revision": "7",
       "dir": "open-webui"
     },
     "open-webui-shared": {
@@ -362,7 +362,7 @@
       "dir": "paperless"
     },
     "papra": {
-      "revision": "3",
+      "revision": "4",
       "dir": "papra"
     },
     "passky-client": {
@@ -398,7 +398,7 @@
       "dir": "pingvin-share"
     },
     "plane": {
-      "revision": "3",
+      "revision": "4",
       "dir": "plane"
     },
     "pyload-ng": {
@@ -410,7 +410,7 @@
       "dir": "remmina"
     },
     "rotki": {
-      "revision": "2",
+      "revision": "3",
       "dir": "rotki"
     },
     "satoshi-dashboard": {
@@ -430,7 +430,7 @@
       "dir": "skybro"
     },
     "slink": {
-      "revision": "4",
+      "revision": "5",
       "dir": "slink"
     },
     "snapdrop": {
@@ -454,7 +454,7 @@
       "dir": "stash"
     },
     "stirling-pdf": {
-      "revision": "4",
+      "revision": "6",
       "dir": "stirling-pdf"
     },
     "strix": {
@@ -502,7 +502,7 @@
       "dir": "trip"
     },
     "uptime-kuma": {
-      "revision": "3",
+      "revision": "5",
       "dir": "uptime-kuma"
     },
     "valorgrid": {
@@ -518,7 +518,7 @@
       "dir": "vert"
     },
     "wallos": {
-      "revision": "4",
+      "revision": "5",
       "dir": "wallos"
     },
     "wavelog": {
@@ -526,7 +526,7 @@
       "dir": "wavelog"
     },
     "webcheck": {
-      "revision": "7",
+      "revision": "10",
       "dir": "webcheck"
     },
     "whoogle-search": {
@@ -534,7 +534,7 @@
       "dir": "whoogle-search"
     },
     "wikijs": {
-      "revision": "3",
+      "revision": "4",
       "dir": "wikijs"
     },
     "wingfit": {

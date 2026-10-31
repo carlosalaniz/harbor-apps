@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "wallos",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "585ddd6b49bb4419382011afb2ff51e3f5c8d832e06c8463af51445145c7f5b6"
+      "sha256": "f544b384e115453d44a82c0196da176c4a64b1f7afff19e02066c3bec1f5eaa0"
     },
     "compose.yaml": {
-      "sha256": "76d78bf2c6dae0ce4355cd2456336e5ab989d2fabe1404b47220d188ea355739"
+      "sha256": "7b38cb45c94849ed1ff8310f2f923da7502ec2d27f42027e9ecc1abfe80113dd"
     },
     "README.md": {
       "sha256": "2c33e972b683e27ae266c92e2bd297984fd1a50069f79b49c42fba581c852fa3"
@@ -17,23 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "bellamy/wallos@sha256:b12fc3f6456fa4879346d27f13c96011a1dce8d5285ef31fcec9323f2bac9854",
+      "reference": "bellamy/wallos@sha256:8873c2328e745c7ca8ff0e0f5508215219ec5c02a3469c0d8049602be2a2bca3",
       "repository": "bellamy/wallos",
-      "tag": "5.10.1",
+      "tag": "5.10.2",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:6e4fdc304fd073e13d38a12850d2688c061e7851b3410b30a5fd9adc10748478",
-      "appVersion": "5.10.1",
-      "imageCreated": "2026-10-21T17:29:02Z",
+      "platformDigest": "sha256:cac810e960e906720b87f838ad900e999bcd9e7fbbff832200ae0782ec0b4297",
+      "appVersion": "5.10.2",
+      "imageCreated": "2026-10-23T22:25:56Z",
       "source": "https://hub.docker.com/r/bellamy/wallos"
     }
   },
   "qualification": {
-    "status": "pending",
-    "date": "2026-10-23",
+    "status": "passed",
+    "date": "2026-10-26",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "server": "5.10.2"
+    },
     "notes": [
-      "Revision 4: Wallos 5.10.1 (PHP 8.3.36, patched against PHP2Shell CVE-2026-109618/109619). Not yet smoke-tested.",
-      "Health path /health.php (answers without opening the database): probing / in the first second created an empty wallos.db, and a fresh install then restarted in a loop at migration 000013.",
-      "2026-10-23: fresh-install smoke of this revision passed on Docker Desktop (pnpm catalog:smoke, healthy after 4 s, still healthy 60 s later). The GitHub runner smoke cannot run the upgrade path yet: it installs main's revision 3 first, and that revision crash-looped on the same race there (4 restarts). The next update after this one runs on a fixed base."
+      "Digest of server resolved 2026-10-26 via registry API (scripts/catalog-pin.mjs; bellamy/wallos:5.10.2); image config: ExposedPorts 80/tcp,9000/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-26T05:45:21.209Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (5.10.1) healthy after 1 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 5 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {

@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/homarr-labs/homarr@sha256:f532ce7cb2a388096d6dce30b7ee41ff4b413b48ddc219ad2321dedb758cd772 # tag: v2.7.0
+    image: ghcr.io/homarr-labs/homarr@sha256:9e866425f4e2bcd03b662f7a7a04b6c180f1de95a3812868fd0a306df026e08c # tag: v2.9.0
     volumes:
       - {type: volume, source: data, target: "/appdata"}
 volumes:

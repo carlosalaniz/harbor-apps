@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "wikijs",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "02f54c05db75deb0ae2451dac1178b2ea3f0a7577fa15058a1f869782ff7064d"
+      "sha256": "ef54eaefade12032f81b9e370cf436ce1056c029fa2b9a1f7434ed1e9d9c2852"
     },
     "compose.yaml": {
-      "sha256": "2406c63c9df5e94cee8b7bf537a992af1aba1a6c28d9666390cd217daf5f95fb"
+      "sha256": "c882fe34fa9a0e4ae90a748c383eff82b46bf107feaea483db81ac8c2af99ae0"
     },
     "README.md": {
       "sha256": "841539fe42f61b7ab8fb8c5548a324bfa9a329b747f52f86fe95e78a2228ba15"
@@ -17,29 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "linuxserver/wikijs@sha256:995782758c4c4c34495bb2fcf1230897aa0b9d57c406f0205f059532e89c0b47",
+      "reference": "linuxserver/wikijs@sha256:c85bd3099014aee55bbffcf02008c11d68b9f503187b34c9eabe584bd4ff6ab0",
       "repository": "linuxserver/wikijs",
-      "tag": "2.5.316",
+      "tag": "2.5.317",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:dfb33ac237525096262e3c9401ce2112aaa27e891051978505da1e581081cd0f",
-      "appVersion": "2.5.316",
-      "imageCreated": "2026-10-11T00:10:48Z",
+      "platformDigest": "sha256:104bed3992ee8860142e042f9e7090f48a0a64cc2a6f40f2afa6460175cb1cd4",
+      "appVersion": "2.5.317",
+      "imageCreated": "2026-10-26T13:50:04Z",
       "source": "https://hub.docker.com/r/linuxserver/wikijs"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-15",
+    "date": "2026-10-27",
     "node": "v24.21.0",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "2.5.316"
+      "server": "2.5.317"
     },
     "notes": [
-      "Digest of server resolved 2026-10-15 via registry API (scripts/catalog-pin.mjs; linuxserver/wikijs:2.5.316); image config: ExposedPorts 3000/tcp, Volumes /config, User root.",
-      "Smoke run 2026-10-15T05:42:08.749Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2.5.315) healthy after 4 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 7 s, still healthy 60 s later; fresh install of revision 3 healthy after 4 s, still healthy 60 s later."
+      "Digest of server resolved 2026-10-27 via registry API (scripts/catalog-pin.mjs; linuxserver/wikijs:2.5.317); image config: ExposedPorts 3000/tcp, Volumes /config, User root.",
+      "Smoke run 2026-10-27T05:43:59.782Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (2.5.316) healthy after 4 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 7 s, still healthy 60 s later; fresh install of revision 4 healthy after 4 s, still healthy 60 s later."
     ]
   },
   "assets": {

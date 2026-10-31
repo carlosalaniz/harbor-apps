@@ -5,8 +5,8 @@ metadata:
   name: mStream
   description: The easiest music streaming server available
 release:
-  revision: "2"
-  version: 6.31.1
+  revision: "3"
+  version: "6.32.0"
 deployment:
   compose: compose.yaml
   multiInstance: true

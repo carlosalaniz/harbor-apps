@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "gupt",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "16eb9d1f56f70abab347736b9609b2a507e9e438b475993f5feff5acb480a175"
+      "sha256": "27909539e2a8c7665fd1e2fa6b91938cb7d9ea2862d6308ad59bdea88f85917e"
     },
     "compose.yaml": {
-      "sha256": "a9b6233bb755ff2287f2bf1838f74dbbfc9843a5c3cc155595b692942896a1a9"
+      "sha256": "0b17c976ebf8698ab17ddb311cbec80b709e4a95ba4a7fbfaeaf61562a1ff382"
     },
     "README.md": {
       "sha256": "8e5da33410944d0e77f5def5945d217802afa3fa025b74f1600d81a88678066e"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/besoeasy/gupt@sha256:549b3554048c14c24a2fd726a0b2e3f396c8e66b543fd8858df95987dae2341d",
+      "reference": "ghcr.io/besoeasy/gupt@sha256:4fdccb58200b5912afa727842b6f223c16a26ccde7ec1634da2fd1b68c1f3d61",
       "repository": "ghcr.io/besoeasy/gupt",
-      "tag": "5.1.5",
+      "tag": "5.2.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:206d220434300ce86695d26bcec239539c6dc1836dbb2c6aafb0a270327811a2",
-      "appVersion": "5.1.5",
-      "imageCreated": "2026-10-13T22:20:08Z",
+      "platformDigest": "sha256:01430ac001e095a170749a1a9f9fd718880a5c2324051e2c1e1c883f2c5941e8",
+      "appVersion": "5.2.0",
+      "imageCreated": "2026-10-28T05:01:56Z",
       "source": "https://ghcr.io/besoeasy/gupt"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-17",
-    "node": "v24.21.0",
+    "date": "2026-10-30",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "5.1.5"
+      "web": "5.2.0"
     },
     "notes": [
-      "Digest of web resolved 2026-10-17 via registry API (scripts/catalog-pin.mjs; ghcr.io/besoeasy/gupt:5.1.5); image config: ExposedPorts 2019/tcp,443/tcp,443/udp,80/tcp,8000/tcp, Volumes none, User root.",
-      "Smoke run 2026-10-17T05:43:15.313Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (5.0.33) healthy after 1 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
+      "Digest of web resolved 2026-10-30 via registry API (scripts/catalog-pin.mjs; ghcr.io/besoeasy/gupt:5.2.0); image config: ExposedPorts 2019/tcp,443/tcp,443/udp,80/tcp,8000/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-30T05:38:01.360Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (5.1.5) healthy after 1 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 4 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
