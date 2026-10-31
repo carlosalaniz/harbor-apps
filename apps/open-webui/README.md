@@ -20,6 +20,15 @@ Private ChatGPT-style assistant with a bundled Ollama model server. Chat with lo
 2. Pull a model (Settings, Models) or add an API key (Settings, Connections). Small models such as llama3.2:1b work on CPU; larger ones need RAM.
 3. Optionally publish it on your tailnet or a public hostname from the Publishing page.
 
+## Images (ComfyUI, optional)
+
+Install the **ComfyUI** app first and pick it at install under *Talks privately to* (*ComfyUI, to make images in
+chats*; it starts at *None for now*). Open WebUI then starts with the address `http://comfyui-link:8188` and the
+node map of its built-in workflow filled in. Turn it on under Admin Panel, Settings, Images (engine ComfyUI, pick
+a model such as `SDXL/sd_xl_base_1.0.safetensors`), then click Image under the message box in a chat. Linking
+ComfyUI to an Open WebUI that already ran (app page, Links) needs the address and node IDs typed once: the ComfyUI
+app's README has them.
+
 ## Notes
 
 - The bundled Ollama uses the graphics card when Harbor finds one (Harbor 0.34.0 or newer): an NVIDIA card with
