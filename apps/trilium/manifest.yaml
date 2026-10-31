@@ -1,0 +1,48 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: trilium
+  name: "Trilium Notes"
+  description: "A personal knowledge base: notes in a tree as deep as you like, with rich text, code, canvas and mind map notes, full-text search, per-note encryption and sync with the Trilium desktop app."
+release:
+  revision: "1"
+  minHarbor: "0.33.2" # Harbor 0.33.2 drops the HSTS header Trilium sends, which on 0.33.1 and older pinned harbor.local to HTTPS (decision 178)
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    server: application
+endpoints:
+  web:
+    service: server
+    containerPort: 8080
+    scheme: http
+    exposure: direct
+    browserContext: secure
+# The health route needs no login and answers before the knowledge base exists (setup page).
+health:
+  endpoint: web
+  path: /api/health-check
+  expectedStatus: [200]
+  timeoutSeconds: 5
+  deadlineSeconds: 300
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Open Trilium right after the install: until it is set up, whoever opens the page first can claim it. New knowledge base: create it, then set the password you will log in with. Existing Trilium desktop app: create nothing here; in the desktop, enter this app's address under Options, Sync and click Test sync. The desktop pushes its notes, and this server then takes the desktop's password. You can also restore a Trilium backup file."
+# One volume on purpose, and no own-folder option: the image's start script runs chown -R on
+# /home/node at every start, so it would re-own a folder of yours to uid 1000.
+storage:
+  - id: data
+    composeVolume: data
+    purpose: "Notes database, attachments, Trilium's own backups and logs"
+    retention: retain
+presentation:
+  tagline: "Your personal knowledge base, as a tree of notes"
+  sizeHint: "About 500 MB, plus your notes and attachments"
+  category: productivity
+  icon: icon.svg
+  developer: "TriliumNext contributors"
+  website: https://triliumnotes.org
+  releaseNotes: "Trilium Notes v0.106.0, the server edition (web and mobile web interface, sync server for the desktop app). Backend scripting and the SQL console stay off, as upstream ships them."

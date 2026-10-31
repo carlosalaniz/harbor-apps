@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "ntfy",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "1925cc2d77dce67b51ee7cc083b618c37c81775b878447f99468e74020078989"
+    },
+    "compose.yaml": {
+      "sha256": "bad9000d294ae3869aade0251122e2791bf8cc9a0eef4131cef807fc8525e1e6"
+    },
+    "README.md": {
+      "sha256": "442349f47ee30c83fd0799c741b55c29a3e4095cd09b9ec15934c8cdc75dc7fc"
+    }
+  },
+  "images": {
+    "app": {
+      "reference": "binwiederhier/ntfy@sha256:8563a39da2f5a47360618b2ab9200239c76b37f4145f6d627d9ab4368abd23f0",
+      "repository": "binwiederhier/ntfy",
+      "tag": "v2.30.0",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:fbdc720484cca95d544d50f76ad9e62d6e2f8a6912860e4afcf5210ae4764077",
+      "appVersion": "2.30.0",
+      "imageCreated": "2026-10-12T13:25:22Z",
+      "source": "https://hub.docker.com/r/binwiederhier/ntfy"
+    }
+  },
+  "qualification": {
+    "status": "passed",
+    "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "app": "2.30.0"
+    },
+    "notes": [
+      "Digest of app resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; binwiederhier/ntfy:v2.30.0); image config: ExposedPorts 80/tcp, Volumes none, User root.",
+      "Smoke run 2026-10-23T19:26:56.699Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 2 s, still healthy 60 s later."
+    ]
+  },
+  "assets": {
+    "icon.png": {
+      "sha256": "0a24badbb6628248456e980157bef301701bcfd63430bd4663ecdf04da55a745"
+    },
+    "shot-1.png": {
+      "sha256": "da6ef8aefea161f4dd3729e174a6b128aed9fbcdc34e9103a4728b954914174e"
+    },
+    "shot-2.png": {
+      "sha256": "e78fcbd9b0c62acc3de97c4c0ce3afb2032d6ae6565f8082e34b37012c08878f"
+    }
+  }
+}

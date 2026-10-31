@@ -1,0 +1,207 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: qbittorrent
+  name: "qBittorrent"
+  description: "A free, open-source BitTorrent client you run from the browser: add torrent files or magnet links, choose which files to fetch, set speed limits, search and follow RSS feeds. No ads."
+release:
+  revision: "1"
+  # ports (0.29.0), presentation.source (0.30.0), and 0.32.0's secure LAN relay: it drops a client's own
+  # X-Forwarded-For and sends the real peer, which the hook below trusts for qBittorrent's login ban
+  minHarbor: "0.32.0"
+deployment:
+  compose: compose.yaml
+  # one copy only: the peer port below is a fixed port of the machine
+  multiInstance: false
+  services:
+    server: application
+endpoints:
+  web:
+    service: server
+    containerPort: 8080
+    scheme: http
+    exposure: direct
+    browserContext: ordinary
+ports:
+  peers:
+    service: server
+    containerPort: 6881
+    hostPort: 6881
+    protocol: udp
+    purpose: "BitTorrent peers (uTP) and DHT"
+health:
+  endpoint: web
+  path: /
+  # 401 only until the after-start hook has turned off qBittorrent's Host-port check (the very first probe
+  # arrives on Harbor's port, not qBittorrent's own 8080); from then on / is the 200 login page. A hook that
+  # finds the check still on stops qBittorrent, so a broken hook shows as not answering, never as healthy.
+  expectedStatus: [200, 401]
+  timeoutSeconds: 5
+  deadlineSeconds: 300
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Sign in as admin with the password Harbor showed when the install finished. Torrents save to /downloads, which is the folder you picked for downloads (or the app's own volume). For more peers, forward UDP 6881 on your router to this machine."
+provisionedCredentials:
+  service: server
+  # the image does not read this variable itself: the after-start hook writes its hash into qBittorrent.conf
+  passwordEnv: QBITTORRENT_ADMIN_PASSWORD
+  username: admin
+  label: "qBittorrent WebUI login"
+  note: "Sign in to qBittorrent as admin with this password. You can change it under Tools, Options, WebUI; Harbor writes it again only while qBittorrent has no password at all."
+# qBittorrent answers 401 to any request whose Host names a port other than its own (8080), and every Harbor
+# address does (LAN, secure LAN, Tailscale). It has no variable or flag for that check, nor for the WebUI
+# password, so after every start this hook edits qBittorrent.conf: Host-port check off, forwarded headers
+# trusted from Harbor's proxies only (HARBOR_PROXIES), and the generated password (PBKDF2-SHA512, the format
+# qBittorrent itself writes) only while none is set. qBittorrent saves its settings when it stops, so the hook
+# stops it through s6, edits, and starts it again; it only does that when something has to change.
+# Then it proves the result from inside the container, because Harbor treats a failing hook as a warning and the
+# health check accepts the 401: if a Host with another port still gets 401, or a password it just wrote does not
+# log in, the WebUI is useless through Harbor, so it stops qBittorrent (or, without its s6 service, the
+# container). Harbor then reports the app as not answering, and an image update that breaks this hook fails
+# Harbor's smoke test instead of shipping.
+hooks:
+  afterStart:
+    service: server
+    timeoutSeconds: 360
+    command:
+      - sh
+      - -c
+      - |
+        conf=/config/qBittorrent/qBittorrent.conf
+        svc=/run/service/svc-qbittorrent
+        PATH="/command:$PATH"
+        prefs() {
+        python3 - "$1" "$conf" <<'PY'
+        import base64, hashlib, os, sys, tempfile
+        mode, path = sys.argv[1], sys.argv[2]
+        want = {"WebUI\\HostHeaderValidation": "false"}
+        proxies = ";".join(os.environ.get("HARBOR_PROXIES", "").split())
+        if proxies:
+            want["WebUI\\ReverseProxySupportEnabled"] = "true"
+            want["WebUI\\TrustedReverseProxiesList"] = proxies
+        with open(path, encoding="utf-8") as f:
+            lines = f.read().splitlines()
+        def plain(v):
+            v = v.strip()
+            if len(v) > 1 and v[0] == '"' and v[-1] == '"':
+                v = v[1:-1].replace('\\"', '"').replace("\\\\", "\\")
+            return v
+        def spell(v):
+            if any(c in v for c in ";,=") or v != v.strip():
+                return '"' + v.replace("\\", "\\\\").replace('"', '\\"') + '"'
+            return v
+        if "[Preferences]" not in lines:
+            lines += ["", "[Preferences]"]
+        top = lines.index("[Preferences]")
+        end = next((i for i in range(top + 1, len(lines)) if lines[i].startswith("[")), len(lines))
+        while end > top + 1 and not lines[end - 1].strip():
+            end -= 1
+        have = {}
+        for i in range(top + 1, end):
+            k, eq, v = lines[i].partition("=")
+            if eq:
+                have[k] = (i, plain(v))
+        todo = {k: v for k, v in want.items() if have.get(k, (0, None))[1] != v}
+        password = os.environ.get("QBITTORRENT_ADMIN_PASSWORD", "")
+        if password and not have.get("WebUI\\Password_PBKDF2", (0, ""))[1]:
+            salt = os.urandom(16)
+            key = hashlib.pbkdf2_hmac("sha512", password.encode(), salt, 100000, 64)
+            todo["WebUI\\Username"] = "admin"
+            todo["WebUI\\Password_PBKDF2"] = "@ByteArray(" + base64.b64encode(salt).decode() + ":" + base64.b64encode(key).decode() + ")"
+        if mode == "check":
+            sys.exit(3 if todo else 0)
+        for k, v in todo.items():
+            if k in have:
+                lines[have[k][0]] = k + "=" + spell(v)
+            else:
+                lines.insert(end, k + "=" + spell(v))
+                end += 1
+        st = os.stat(path)
+        fd, tmp = tempfile.mkstemp(dir=os.path.dirname(path), prefix=".harbor-")
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
+        os.chown(tmp, st.st_uid, st.st_gid)
+        os.chmod(tmp, st.st_mode & 0o7777)
+        os.replace(tmp, path)
+        print("set " + ", ".join(sorted(k.split("\\")[1] for k in todo)))
+        PY
+        }
+        configure() {
+          [ -d "$svc" ] || { echo "no qBittorrent service at $svc"; return 1; }
+          i=0
+          while [ ! -s "$conf" ] && [ "$i" -lt 30 ]; do sleep 1; i=$((i+1)); done
+          [ -s "$conf" ] || { echo "no settings file at $conf"; return 1; }
+          prefs check; rc=$?
+          if [ "$rc" = 0 ]; then echo "WebUI settings already in place"; return 0; fi
+          [ "$rc" = 3 ] || { echo "could not read $conf"; return 1; }
+          echo "applying Harbor's WebUI settings; qBittorrent restarts once"
+          if ! s6-svc -wD -T 90000 -d "$svc"; then
+            s6-svc -u "$svc"
+            echo "qBittorrent did not stop within 90 s; settings left as they were (tried again on the next start)"
+            return 1
+          fi
+          did=$(prefs apply); rc=$?
+          s6-svc -u "$svc"
+          s6-svwait -U -t 90000 "$svc" || echo "qBittorrent is slow to come back up"
+          [ "$rc" = 0 ] || { echo "could not write $conf"; return 1; }
+          echo "WebUI settings applied (${did#set })"
+        }
+        did=""
+        configure; rc=$?
+        # the proof (see the comment above the hook)
+        command -v curl >/dev/null || { echo "curl is missing, so the WebUI was not checked"; exit 1; }
+        bad=""
+        code=000
+        i=0
+        while [ "$i" -lt 20 ]; do
+          code=$(curl -s -o /dev/null -m 2 -w '%{http_code}' -H 'Host: harbor-check.invalid:1' http://127.0.0.1:8080/ 2>/dev/null)
+          [ -n "$code" ] && [ "$code" != 000 ] && break
+          sleep 1; i=$((i+1))
+        done
+        if [ "$code" = 401 ]; then
+          bad="qBittorrent still refuses Harbor's addresses (401 for a Host with another port)"
+        elif [ -z "$code" ] || [ "$code" = 000 ]; then
+          echo "the WebUI did not answer, so it was not checked"
+          exit 1
+        fi
+        case "$did" in *Password_PBKDF2*)
+          out=$(printf %s "$QBITTORRENT_ADMIN_PASSWORD" | curl -s -m 10 -w ' %{http_code}' --data-urlencode username=admin --data-urlencode password@- http://127.0.0.1:8080/api/v2/auth/login 2>/dev/null)
+          case "$out" in
+            *Fails*) bad="${bad:+$bad; }the password Harbor wrote does not log in" ;;
+            *" 200"|*" 204") ;;
+            *) bad="${bad:+$bad; }the password Harbor wrote does not log in (HTTP ${out##* })" ;;
+          esac
+        esac
+        if [ -n "$bad" ]; then
+          if [ -d "$svc" ]; then
+            msg="$bad: stopping qBittorrent so Harbor shows the app as not answering; Restart the app to try again"
+          else
+            msg="$bad: stopping the container, as there is no s6 service to stop qBittorrent with"
+          fi
+          echo "$msg"
+          ( echo "[Harbor after-start hook] $msg" >/proc/1/fd/1 ) 2>/dev/null
+          s6-svc -d "$svc" 2>/dev/null || kill -TERM 1
+          exit 1
+        fi
+        exit "$rc"
+storage:
+  - id: config
+    composeVolume: config
+    purpose: "Settings, the torrent list and resume data"
+    retention: retain
+  - id: downloads
+    composeVolume: downloads
+    purpose: "Downloaded files"
+    retention: retain
+    external: {hint: "Recommended: a folder on a large drive, not inside another app's folder, e.g. /mnt/downloads. Its top level becomes owned by uid 1000. Downloads in the app's own volume are copied by every backup.", required: false}
+presentation:
+  tagline: "Download torrents from your browser, into a folder you choose"
+  sizeHint: "About 250 MB, plus your downloads"
+  category: media
+  icon: icon.svg
+  developer: "The qBittorrent project"
+  website: https://www.qbittorrent.org
+  source: https://github.com/qbittorrent/qBittorrent
+  releaseNotes: "qBittorrent 5.2.4 (linuxserver.io image). Harbor sets the WebUI login and makes the WebUI work on every Harbor address (LAN, secure LAN, Tailscale, your domains). Peers reach it on UDP 6881."

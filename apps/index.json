@@ -97,6 +97,10 @@
       "revision": "5",
       "dir": "downtify"
     },
+    "drawio": {
+      "revision": "1",
+      "dir": "drawio"
+    },
     "dropgate-server": {
       "revision": "2",
       "dir": "dropgate-server"
@@ -165,6 +169,10 @@
       "revision": "5",
       "dir": "ghost"
     },
+    "ghostfolio": {
+      "revision": "1",
+      "dir": "ghostfolio"
+    },
     "gitea-mirror": {
       "revision": "8",
       "dir": "gitea-mirror"
@@ -228,6 +236,14 @@
     "jotty": {
       "revision": "3",
       "dir": "jotty"
+    },
+    "karakeep": {
+      "revision": "1",
+      "dir": "karakeep"
+    },
+    "kavita": {
+      "revision": "1",
+      "dir": "kavita"
     },
     "kiwix": {
       "revision": "2",
@@ -321,6 +337,10 @@
       "revision": "2",
       "dir": "notediscovery"
     },
+    "ntfy": {
+      "revision": "1",
+      "dir": "ntfy"
+    },
     "nutstash-wallet": {
       "revision": "3",
       "dir": "nutstash-wallet"
@@ -401,9 +421,17 @@
       "revision": "2",
       "dir": "pyload-ng"
     },
+    "qbittorrent": {
+      "revision": "1",
+      "dir": "qbittorrent"
+    },
     "remmina": {
       "revision": "3",
       "dir": "remmina"
+    },
+    "romm": {
+      "revision": "1",
+      "dir": "romm"
     },
     "rotki": {
       "revision": "3",
@@ -465,6 +493,10 @@
       "revision": "2",
       "dir": "swingmusic"
     },
+    "syncthing": {
+      "revision": "1",
+      "dir": "syncthing"
+    },
     "tautulli": {
       "revision": "2",
       "dir": "tautulli"
@@ -492,6 +524,10 @@
     "transmute": {
       "revision": "2",
       "dir": "transmute"
+    },
+    "trilium": {
+      "revision": "1",
+      "dir": "trilium"
     },
     "trip": {
       "revision": "2",

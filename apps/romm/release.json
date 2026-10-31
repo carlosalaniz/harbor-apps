@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "romm",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "ff04ccdcbf0af456d0c1041a2e39373d12a17d2107033dbc3e156694878e6978"
+    },
+    "compose.yaml": {
+      "sha256": "f356170b7bd91d5123be439f80f72cfbe818b3c35fa0ca9e2909cac9f83f3b75"
+    },
+    "README.md": {
+      "sha256": "80df1fc76561afd9d95bb879f0ddac59dbdc2506b9007100a7c655817bdd1695"
+    }
+  },
+  "images": {
+    "romm": {
+      "reference": "rommapp/romm@sha256:03295f95a6290e752641f9553ac4198b0e5b71b879d57f7b2371b98f608feb54",
+      "repository": "rommapp/romm",
+      "tag": "5.4.0",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:d5cd2424802f2649dbd6526c07a8de335b9687a4c032b46256c96c82217067f6",
+      "appVersion": "5.4.0",
+      "imageCreated": "2026-10-10T15:17:50Z",
+      "source": "https://hub.docker.com/r/rommapp/romm"
+    },
+    "db": {
+      "reference": "mariadb@sha256:6422478cb8e159f080fb1d8ccf65101e26fe51385787fde7d16c3b165a331f15",
+      "repository": "mariadb",
+      "tag": "11.8.9",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:93fc3fe333b6cdfb061425869c2c3a5bb2851c0c74dbebc2c940f024e7482d76",
+      "appVersion": "11.8.9",
+      "imageCreated": "2026-10-02T01:31:10Z",
+      "source": "https://hub.docker.com/_/mariadb"
+    }
+  },
+  "qualification": {
+    "status": "passed",
+    "date": "2026-10-23",
+    "node": "v24.21.0",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "romm": "5.4.0",
+      "db": "11.8.9"
+    },
+    "notes": [
+      "Digest of romm resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; rommapp/romm:5.4.0); image config: ExposedPorts 6379/tcp,8080/tcp, Volumes /redis-data,/romm, User root.",
+      "Digest of db resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; mariadb:11.8.9); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
+      "Smoke run 2026-10-23T19:30:35.811Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 42 s, still healthy 60 s later."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "c4da6353cb16e6c5196bf8baab8d4f249626469fe34503d9361764c20b50b7f1"
+    }
+  }
+}
