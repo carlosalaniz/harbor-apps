@@ -1,6 +1,6 @@
 services:
   backend:
-    image: ghcr.io/kittendevv/invio-backend@sha256:af231d8c50a19564a658f9da596b5af25255d2e8cba23430b26fa2403bcc945f # tag: v2.3.1
+    image: ghcr.io/kittendevv/invio-backend@sha256:f8be7b258ab9ba8c6305dffc755b1b1bec61d6b9e78a96db594f20414e03c60f # tag: v2.4.0
     environment:
       ADMIN_USER: admin
       SESSION_TTL_SECONDS: "43200"
@@ -10,7 +10,7 @@ services:
     volumes:
       - {type: volume, source: data, target: "/app/data"}
   frontend:
-    image: ghcr.io/kittendevv/invio-frontend@sha256:47832e1ffd794a7be6944f6d4efa6eaa1a8b414ab06f6c06ed99a6c9a72ec76f # tag: v2.3.1
+    image: ghcr.io/kittendevv/invio-frontend@sha256:e76eb76a040edc75c6c7aba6859ea051c195ca76ab93291e41efea2aadd13d28 # tag: v2.4.0
     environment:
       PORT: "8000"
       BACKEND_URL: http://backend:3000
