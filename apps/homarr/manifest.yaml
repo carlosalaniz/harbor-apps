@@ -5,7 +5,7 @@ metadata:
   name: Homarr
   description: A modern and easy to use dashboard. 80+ integrations. 20K+ icons built in. Authentication out of the box. No YAML, drag and drop configuration.
 release:
-  revision: "5"
+  revision: "6"
   version: "2.9.0"
 deployment:
   compose: compose.yaml
@@ -21,9 +21,11 @@ endpoints:
     browserContext: ordinary
 health:
   endpoint: web
-  path: /
-  expectedStatus: [200, 301, 302, 303, 307, 308, 401]
-  timeoutSeconds: 5
+  # Homarr's own liveness route (database + Redis). `/` renders the whole page and answered too slowly for one
+  # 5-second probe while Homarr imports its icon list at first start (issue #23).
+  path: /api/health/live
+  expectedStatus: [200]
+  timeoutSeconds: 15
   deadlineSeconds: 300
 ui:
   primaryEndpoint: web

@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "package": {
     "id": "homarr",
-    "revision": "5"
+    "revision": "6"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "167d43f2319f62e5b364813f8d5c6dbe8b82c2c1486de6430a7dda10dfbed16d"
+      "sha256": "92683eecc8f4c753f3533b742a9324879032f300d8c6fc74c1d801a06e253f92"
     },
     "compose.yaml": {
       "sha256": "29c40a505d9a82032807dcd27d0fcf2c44f3e9841d25fe4fa4535600b130b437"
