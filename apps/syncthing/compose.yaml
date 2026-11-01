@@ -1,6 +1,6 @@
 services:
   app:
-    image: syncthing/syncthing@sha256:4d0281bdcb4ed9baf503d251d0544ddd856f49fce3f114056257ae172b7fb670 # tag: 2.1.6
+    image: syncthing/syncthing@sha256:2b71da7c0d0a91a6ae5285ad079226fecc0a365d08b27720e1f7037b018f7546 # tag: 2.1.7
     environment:
       # The image's entrypoint starts as root, takes the top of /var/syncthing for this user and runs
       # Syncthing as it, so synced files are written as uid/gid 1000. The image already listens on

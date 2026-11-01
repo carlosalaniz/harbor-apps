@@ -5,7 +5,7 @@ metadata:
   name: Syncthing
   description: "Keeps folders in step between your computers, phones and this machine, straight from device to device: no cloud account and no central server."
 release:
-  revision: "1"
+  revision: "2"
   # ports (0.29.0) and presentation.source (0.30.0)
   minHarbor: "0.30.0"
 deployment:
@@ -103,5 +103,5 @@ presentation:
   developer: "The Syncthing Foundation"
   website: https://syncthing.net
   source: https://github.com/syncthing/syncthing
-  releaseNotes: "Syncthing 2.1.6. Harbor sets up the login, turns off Syncthing's crash reports and opens UDP 22000 so your devices can connect directly."
+  releaseNotes: "Syncthing 2.1.7. Harbor sets up the login, turns off Syncthing's crash reports and opens UDP 22000 so your devices can connect directly."
   sizeHint: "About 60 MB, plus your synced files"

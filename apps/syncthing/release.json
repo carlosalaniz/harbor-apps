@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "syncthing",
-    "revision": "1"
+    "revision": "2"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "e08e457ec1fef84d97a6feec8d38b29e674d2ad54a91a2329de4dc945310a6fb"
+      "sha256": "32084814cc5ef08e50185d4d287f00856121cc90b88b85b05a444ba759f9819f"
     },
     "compose.yaml": {
-      "sha256": "10d997cadf321b9e2701eb15172208149a3c0bea25d75d64132a3eae41f13c40"
+      "sha256": "d7a9c6e5c539036fb5519a753cc24846041e128734e07083ada14a92b2d7ca9b"
     },
     "README.md": {
       "sha256": "c27d50e9299a620661426f14ffbfc76b11ec472cbb1c62e7079dca99be27b7af"
@@ -17,29 +17,29 @@
   },
   "images": {
     "app": {
-      "reference": "syncthing/syncthing@sha256:4d0281bdcb4ed9baf503d251d0544ddd856f49fce3f114056257ae172b7fb670",
+      "reference": "syncthing/syncthing@sha256:2b71da7c0d0a91a6ae5285ad079226fecc0a365d08b27720e1f7037b018f7546",
       "repository": "syncthing/syncthing",
-      "tag": "2.1.6",
+      "tag": "2.1.7",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:92e9a8bf559062b955ab45c7a60bc33d0b97ebdb1e5e86959b40714b482f740a",
-      "appVersion": "2.1.6",
-      "imageCreated": "2026-10-06T06:02:15Z",
+      "platformDigest": "sha256:c28e86f5173bacc429aef92af915b5c4fac56e1a9dcd3875855fd51f664d0414",
+      "appVersion": "2.1.7",
+      "imageCreated": "2026-10-21T05:58:35Z",
       "source": "https://hub.docker.com/r/syncthing/syncthing"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
-    "node": "v24.21.0",
+    "date": "2026-11-01",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "2.1.6"
+      "app": "2.1.7"
     },
     "notes": [
-      "Digest of app resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; syncthing/syncthing:2.1.6); image config: ExposedPorts 21027/udp,22000/tcp,22000/udp,8384/tcp, Volumes /var/syncthing, User root.",
-      "Smoke run 2026-10-23T19:30:41.518Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 6 s, still healthy 60 s later."
+      "Digest of app resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; syncthing/syncthing:2.1.7); image config: ExposedPorts 21027/udp,22000/tcp,22000/udp,8384/tcp, Volumes /var/syncthing, User root.",
+      "Smoke run 2026-11-01T05:33:18.646Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (2.1.6) healthy after 7 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 7 s, still healthy 60 s later; fresh install of revision 2 healthy after 7 s, still healthy 60 s later."
     ]
   },
   "assets": {
