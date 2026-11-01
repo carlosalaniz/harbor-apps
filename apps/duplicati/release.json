@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "duplicati",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "1e469abcdac65cd1d64f59f448fa97a263a75628af332e920d0db91ae292e86f"
+      "sha256": "965157322cfd293dfc436dd9b50528ef03c6d97cee60b0cded1b1144f9b531b1"
     },
     "compose.yaml": {
-      "sha256": "bc062a2808bf8a4fedb7c529141b39104a79d10f1fbabc3524b82f64668c920d"
+      "sha256": "6c245e2055f86d3b887cb7725d12d40a3880ea352d461d5bf99184d813d5d3e9"
     },
     "README.md": {
       "sha256": "d079551c837f3143e359ef70b67ae0572ff3d5fb13525d81c75f12e99bbc75a3"
@@ -17,33 +17,29 @@
   },
   "images": {
     "duplicati": {
-      "reference": "duplicati/duplicati@sha256:e32e280cc30e98ac5cea8d2b339cd19810b1b39e638fb9d39253786630104de0",
+      "reference": "duplicati/duplicati@sha256:5df64d95abd79ddaa41897a6c234c956d6de03df767a1b8eb8c5baecf3162bbf",
       "repository": "duplicati/duplicati",
-      "tag": "2.4.0.1",
+      "tag": "2.4.1.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:b37ce0b035cdbf1ed3bf38386cd8f0830a382f8148b02bc3c7861bfa6f711b61",
-      "appVersion": "2.4.0.1",
-      "imageCreated": "2026-10-07T12:37:23Z",
+      "platformDigest": "sha256:6b5b090c9486b46db73bf42604a302e337a90c31498cbf3eab07f6215cef534b",
+      "appVersion": "2.4.1.0",
+      "imageCreated": "2026-10-29T14:48:38Z",
       "source": "https://hub.docker.com/r/duplicati/duplicati"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-11-01",
+    "node": "v24.22.1",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "duplicati": "2.4.0.1"
+      "duplicati": "2.4.1.0"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package duplicati (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service duplicati: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service duplicati: stop_grace_period 1m dropped (Docker's default applies)",
-      "Digest of duplicati resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; duplicati/duplicati@sha256:e32e280cc30e98ac5cea8d2b339cd19810b1b39e638fb9d39253786630104de0); image config: ExposedPorts 8200/tcp, Volumes /data, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-00-harbor-q14: passed (healthy after 39s; page title \"Duplicati ngclient\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of duplicati resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; duplicati/duplicati:2.4.1.0); image config: ExposedPorts 8200/tcp, Volumes /data, User root.",
+      "Smoke run 2026-11-01T05:28:53.682Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2.4.0.1_stable_2026-10-07) healthy after 4 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 3 healthy after 4 s, still healthy 60 s later."
     ]
   },
   "assets": {

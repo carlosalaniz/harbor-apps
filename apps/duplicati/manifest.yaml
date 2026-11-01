@@ -5,8 +5,8 @@ metadata:
   name: Duplicati
   description: Store securely encrypted backups in the cloud!
 release:
-  revision: "2"
-  version: 2.4.0.1_stable_2026-10-07
+  revision: "3"
+  version: "2.4.1.0"
 deployment:
   compose: compose.yaml
   multiInstance: true
