@@ -48,12 +48,22 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-11-01",
+    "node": "v24.22.1",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "android": "15.0.0-250627",
+      "screen": "0.9.0-dev.20260930.cd6cea6",
+      "proxy": "2.11.7-alpine"
+    },
     "notes": [
       "Digest of android resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; redroid/redroid:15.0.0-250627); image config: ExposedPorts none, Volumes none, User root.",
       "Digest of screen resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/ws-scrcpy:0.9.0-dev.20260930.cd6cea6); image config: ExposedPorts 8000/tcp, Volumes none, User node.",
-      "Digest of proxy resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; caddy:2.11.7-alpine); image config: ExposedPorts 2019/tcp,443/tcp,443/udp,80/tcp, Volumes none, User root."
+      "Digest of proxy resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; caddy:2.11.7-alpine); image config: ExposedPorts 2019/tcp,443/tcp,443/udp,80/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-01T15:21:21.698Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 23 s, still healthy 60 s later."
     ]
   },
   "assets": {
