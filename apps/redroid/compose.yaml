@@ -1,4 +1,4 @@
-# Android in a container (redroid) with a browser screen (ws-scrcpy) behind a login (Caddy).
+# Android in a container (redroid) with a browser screen (ws-scrcpy) behind Harbor's app login.
 #
 # android  redroid only runs as a privileged container on a kernel with Android's binder driver: the manifest asks for
 #          both (permissions privileged + binder, Harbor decision 193; only official-catalog apps get them). Harbor
@@ -7,10 +7,9 @@
 #          needed), memfd (kernels since 5.18 have no ashmem). The health check only reports; the screen does not wait
 #          for it (a first boot can outlast Harbor's start timeout) and keeps reconnecting instead.
 # screen   ws-scrcpy, built by this repository from a pinned upstream commit (images/ws-scrcpy). It keeps adb connected
-#          to android:5555. It has no login of its own and offers an adb shell: it is never an endpoint itself.
-# proxy    the only endpoint. HTTP basic auth with the login Harbor generates at install (provisionedCredentials;
-#          Caddy wants a bcrypt hash, made at every start from the password Harbor hands over), except
-#          /harbor-health, which proves the screen answers before anyone logs in. WebSockets pass through.
+#          to android:5555. It has no login of its own and offers an adb shell, so its endpoint declares
+#          `login: required` (Harbor decision 194): Harbor's login page is always in front of it, with a password the
+#          operator can see and change in the app's drawer.
 services:
   android:
     image: redroid/redroid@sha256:81889852444606824d33eb0232fa5813bce3f0993afe871785120af0d7c991ad # tag: 15.0.0-250627
@@ -34,34 +33,5 @@ services:
       ADB_CONNECT: android:5555
     depends_on:
       android: {condition: service_started}
-  proxy:
-    image: caddy@sha256:e70b164da81ef698b3ad19af799ea6086ce6d9e48ed4079eb9fe26f6fbf14ee5 # tag: 2.11.7-alpine
-    command:
-      - sh
-      - -c
-      - |
-        set -eu
-        AUTH_HASH="$(printf '%s\n' "$AUTH_PASSWORD" | caddy hash-password)"
-        export AUTH_HASH
-        exec caddy run --config - --adapter caddyfile <<'EOF'
-        {
-          admin off
-        }
-
-        :80 {
-          handle /harbor-health {
-            rewrite * /
-            reverse_proxy screen:8000
-          }
-          handle {
-            basic_auth {
-              {$AUTH_USER} {$AUTH_HASH}
-            }
-            reverse_proxy screen:8000
-          }
-        }
-        EOF
-    depends_on:
-      screen: {condition: service_started}
 volumes:
   data: {}
