@@ -68,14 +68,26 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-11-01",
+    "node": "v24.22.1",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "proxy": "2.11.7-alpine",
+      "server": "2.0.0-beta.28",
+      "db": "0.8.7-pg15",
+      "sandbox": "latest",
+      "search": "2026.10.30-ffa88e3ba"
+    },
     "notes": [
       "Digest of proxy resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; caddy:2.11.7-alpine); image config: ExposedPorts 2019/tcp,443/tcp,443/udp,80/tcp, Volumes none, User root.",
       "Digest of server resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; ghcr.io/khoj-ai/khoj:2.0.0-beta.28); image config: ExposedPorts 42110/tcp, Volumes none, User root.",
       "Digest of db resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; pgvector/pgvector:0.8.7-pg15); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
       "Digest of sandbox resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; ghcr.io/khoj-ai/terrarium:latest); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
-      "Digest of search resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; searxng/searxng:2026.10.30-ffa88e3ba); image config: ExposedPorts 8080/tcp, Volumes /etc/searxng,/var/cache/searxng, User root."
+      "Digest of search resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; searxng/searxng:2026.10.30-ffa88e3ba); image config: ExposedPorts 8080/tcp, Volumes /etc/searxng,/var/cache/searxng, User root.",
+      "Smoke run 2026-11-01T02:01:28.509Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 28 s, still healthy 60 s later."
     ]
   },
   "assets": {
