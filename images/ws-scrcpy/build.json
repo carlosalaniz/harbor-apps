@@ -1,5 +1,5 @@
 {
-  "$comment": "What .github/workflows/images.yml builds: the upstream commit and the image tag (upstream version + commit date + short commit). Change both together; a new tag is a new image, never a moved one.",
+  "$comment": "What .github/workflows/images.yml builds: the upstream commit and the image tag (upstream version + commit date + short commit, then .h<n> for Harbor's own changes: HarborInput.ts, harbor-input.c, the entrypoint). Change the tag with any of them; a new tag is a new image, never a moved one.",
   "commit": "cd6cea6ebde17af6685c2b325183fc24bef9d52b",
-  "tag": "0.9.0-dev.20260930.cd6cea6"
+  "tag": "0.9.0-dev.20260930.cd6cea6.h1"
 }

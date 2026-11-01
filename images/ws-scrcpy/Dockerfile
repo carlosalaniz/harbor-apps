@@ -14,6 +14,10 @@ RUN git init -q . \
  && git fetch -q --depth 1 origin "$WS_SCRCPY_COMMIT" \
  && git checkout -q FETCH_HEAD \
  && test "$(git rev-parse HEAD)" = "$WS_SCRCPY_COMMIT"
+# Harbor: the browser's taps and keys as hardware input (HarborInput.ts + harbor-input.c, see README.md)
+COPY HarborInput.ts patch-ws-scrcpy.mjs harbor-input.c /harbor/
+RUN node /harbor/patch-ws-scrcpy.mjs /harbor/HarborInput.ts \
+ && gcc -static -O2 -Wall -o /harbor/harbor-input /harbor/harbor-input.c
 # iOS support (appium, an optional dependency) is not built in (INCLUDE_APPL is false upstream)
 RUN npm ci --omit=optional --no-audit --no-fund && npm run dist
 WORKDIR /src/dist
@@ -25,6 +29,7 @@ RUN apt-get update \
  && apt-get install -y --no-install-recommends adb tini \
  && rm -rf /var/lib/apt/lists/*
 COPY --from=build /src/dist /app
+COPY --from=build /harbor/harbor-input /usr/local/lib/harbor-input
 COPY entrypoint.sh /usr/local/bin/ws-scrcpy-entrypoint
 LABEL org.opencontainers.image.source="https://github.com/carlosalaniz/harbor-apps" \
       org.opencontainers.image.description="ws-scrcpy (NetrisTV) for Harbor's redroid app" \
