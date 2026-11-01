@@ -5,7 +5,7 @@ metadata:
   name: "Ghostfolio"
   description: "Track your stocks, ETFs and crypto in one private dashboard: net worth, allocation, performance and dividends, with free market prices from Yahoo Finance and CoinGecko."
 release:
-  revision: "1"
+  revision: "2"
   # presentation.source is accepted from Harbor 0.30.0 on
   minHarbor: "0.30.0"
 deployment:
@@ -73,4 +73,4 @@ presentation:
   developer: "Ghostfolio contributors"
   website: https://ghostfol.io
   source: https://github.com/ghostfolio/ghostfolio
-  releaseNotes: "Ghostfolio 3.84.2 with PostgreSQL 15 and Redis 8 (cache only). Prices from Yahoo Finance and CoinGecko."
+  releaseNotes: "Ghostfolio 3.94.0 with PostgreSQL 15 and Redis 8 (cache only). Prices from Yahoo Finance and CoinGecko."
