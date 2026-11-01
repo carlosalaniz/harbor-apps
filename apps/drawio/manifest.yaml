@@ -5,7 +5,7 @@ metadata:
   name: draw.io
   description: "Diagram editor for flowcharts, org charts, UML, network and database diagrams. No account to create: diagrams are saved as files on your device or in your browser, never on the server."
 release:
-  revision: "1"
+  revision: "2"
   # presentation.source is accepted from Harbor 0.30.0 on (decision 164)
   minHarbor: "0.30.0"
 deployment:
@@ -51,4 +51,4 @@ presentation:
   developer: "draw.io Ltd"
   website: https://www.drawio.com
   source: https://github.com/jgraph/drawio
-  releaseNotes: "draw.io 32.4.1. Cloud storage (Google Drive, OneDrive, Dropbox, GitHub, GitLab) is off; save diagrams to your device or your browser."
+  releaseNotes: "draw.io 32.5.5. Cloud storage (Google Drive, OneDrive, Dropbox, GitHub, GitLab) is off; save diagrams to your device or your browser."

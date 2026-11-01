@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "drawio",
-    "revision": "1"
+    "revision": "2"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "0b5d70e4728750f2a7f52d03268bfc5a2b1d2b556a8c42caeda8110fae37b333"
+      "sha256": "63aa9b9f9782bb95365b98ede5875dc98ca9598f75db45c30fbd4bad2ee2e1a0"
     },
     "compose.yaml": {
-      "sha256": "333b32e3f14e1d807066c780a46f45acef32ffa67c5920b258b0aac0568a2b66"
+      "sha256": "852da37e130c962f59f13711dbc3f6c677cc6ae0c5cb298b83290058a817c4ff"
     },
     "README.md": {
       "sha256": "529034f435d8178afc500bb9eaf2609090f0a38ab312746ed37b047e9e5203cf"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "jgraph/drawio@sha256:1fc183e15611c35ced75a0e990258a46991b70bea250b18385da5d9cdc934262",
+      "reference": "jgraph/drawio@sha256:16296fe9fd09eff92a3808cc674ce1883712c1b0bae5d48ccc30f9abf13c578b",
       "repository": "jgraph/drawio",
-      "tag": "32.4.1",
+      "tag": "32.5.5",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:1dcbfcef99aa590192bba64aad568b12d0dac3ccdb298cc679f8dd544ef87b36",
-      "appVersion": "32.4.1",
-      "imageCreated": "2026-10-12T04:34:18Z",
+      "platformDigest": "sha256:c852dc514091e9cb43d7d563ef83775a46c276496adcd69b665c0bc0a423a0a8",
+      "appVersion": "32.5.5",
+      "imageCreated": "2026-10-19T04:27:06Z",
       "source": "https://hub.docker.com/r/jgraph/drawio"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
-    "node": "v24.21.0",
+    "date": "2026-11-01",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "32.4.1"
+      "web": "32.5.5"
     },
     "notes": [
-      "Digest of web resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; jgraph/drawio@sha256:1fc183e15611c35ced75a0e990258a46991b70bea250b18385da5d9cdc934262); image config: ExposedPorts 8080/tcp,8443/tcp, Volumes none, User tomcat.",
-      "Smoke run 2026-10-23T19:26:50.483Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 4 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; jgraph/drawio:32.5.5); image config: ExposedPorts 8080/tcp,8443/tcp, Volumes none, User tomcat.",
+      "Smoke run 2026-11-01T05:34:27.784Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (32.4.1) healthy after 3 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 3 s, still healthy 60 s later; fresh install of revision 2 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {
