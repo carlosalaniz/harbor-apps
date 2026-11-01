@@ -1,0 +1,112 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: khoj
+  name: Khoj
+  description: "Your AI second brain: chat with your notes and documents, search the web, run code and schedule research, with local models through Ollama or an API provider."
+release:
+  revision: "1"
+  version: 2.0.0-beta.28
+  minHarbor: "0.30.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    proxy: application
+    server: application
+    sandbox: application
+    search: application
+    db: infrastructure
+endpoints:
+  web:
+    service: proxy
+    containerPort: 80
+    scheme: http
+    exposure: direct
+    browserContext: secure
+health:
+  endpoint: web
+  path: /api/health
+  expectedStatus: [200]
+  timeoutSeconds: 10
+  deadlineSeconds: 600
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Open Khoj and start chatting: there is no sign-in (single-user mode). Chat models come from the Ollama link or the API keys you gave at install; add others in the admin panel (/server/admin) with the login shown after install."
+provisionedCredentials:
+  service: server
+  usernameEnv: KHOJ_ADMIN_EMAIL
+  username: admin@khoj.local
+  passwordEnv: KHOJ_ADMIN_PASSWORD
+  label: Khoj admin panel login
+  note: "For /server/admin, where you add model providers and chat models. Khoj itself has no sign-in."
+storage:
+  - id: db
+    composeVolume: db
+    purpose: "Khoj's database: chats, indexed notes and documents, models and settings"
+    retention: retain
+  - id: config
+    composeVolume: config
+    purpose: "Khoj's own folder (/root/.khoj)"
+    retention: retain
+  - id: models
+    composeVolume: models
+    purpose: "Search and embedding models Khoj downloads at its first start (a cache)"
+    retention: retain
+  - id: search
+    composeVolume: search
+    purpose: "SearXNG web search settings"
+    retention: retain
+secrets:
+  - id: db-password
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: db, environment: POSTGRES_PASSWORD}
+      - {service: server, environment: POSTGRES_PASSWORD}
+  - id: django-secret
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: server, environment: KHOJ_DJANGO_SECRET_KEY}
+  # Khoj reads these at its first start only, to set up chat models; afterwards providers live in its admin panel.
+  - id: anthropic-api-key
+    source: operator
+    prompt: "Anthropic API key, for Claude models (optional; read at the first start only, later add keys in Khoj's admin panel)"
+    optional: true
+    retention: retain
+    bindings:
+      - {service: server, environment: ANTHROPIC_API_KEY}
+  - id: gemini-api-key
+    source: operator
+    prompt: "Google Gemini API key (optional; read at the first start only, later add keys in Khoj's admin panel)"
+    optional: true
+    retention: retain
+    bindings:
+      - {service: server, environment: GEMINI_API_KEY}
+# Optional: the shared Ollama app, reached through the proxy (see compose.yaml). Khoj lists Ollama's models at every
+# start; without a provider the list is empty.
+links:
+  - id: ollama
+    purpose: "Ollama, the model server (shared by every AI app; optional)"
+    optional: true
+    provider:
+      packages: [ollama]
+      endpoint: web
+    bindings:
+      - {service: proxy, environment: OLLAMA_URL, format: url}
+configuration:
+  - {service: server, environment: KHOJ_DOMAIN, endpoint: web, format: host}
+presentation:
+  tagline: "Your AI second brain"
+  sizeHint: "About 5 GB, plus your documents"
+  category: ai
+  icon: icon.svg
+  developer: "Khoj Inc."
+  website: https://khoj.dev
+  source: https://github.com/khoj-ai/khoj
+  releaseNotes: "Khoj 2.0.0-beta.28 in single-user mode, with its code sandbox (Terrarium) and web search (SearXNG); telemetry off. Can link to the Ollama app for local models (optional)."
