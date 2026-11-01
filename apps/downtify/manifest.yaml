@@ -9,8 +9,8 @@ defaultCredentials:
   password: downtify
   note: Change it after the first login.
 release:
-  revision: "5"
-  version: "3.7.0"
+  revision: "6"
+  version: "3.8.0"
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml
