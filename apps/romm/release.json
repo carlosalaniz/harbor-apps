@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "romm",
-    "revision": "1"
+    "revision": "2"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "ff04ccdcbf0af456d0c1041a2e39373d12a17d2107033dbc3e156694878e6978"
+      "sha256": "afad1c0858151636063de6c08859355ed0007d8716c40fddde2a4b5f69a345d0"
     },
     "compose.yaml": {
-      "sha256": "f356170b7bd91d5123be439f80f72cfbe818b3c35fa0ca9e2909cac9f83f3b75"
+      "sha256": "08d1fa20da2e449ba4e96ae5a41dcbfa250b32b06a489bc75dbf5c74464ff3ea"
     },
     "README.md": {
       "sha256": "80df1fc76561afd9d95bb879f0ddac59dbdc2506b9007100a7c655817bdd1695"
@@ -17,41 +17,41 @@
   },
   "images": {
     "romm": {
-      "reference": "rommapp/romm@sha256:03295f95a6290e752641f9553ac4198b0e5b71b879d57f7b2371b98f608feb54",
+      "reference": "rommapp/romm@sha256:8677fb7b81b1d3db20b849e989a1dadc2a11159e51eb34a2acdcb01102274edf",
       "repository": "rommapp/romm",
-      "tag": "5.4.0",
+      "tag": "5.4.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:d5cd2424802f2649dbd6526c07a8de335b9687a4c032b46256c96c82217067f6",
-      "appVersion": "5.4.0",
-      "imageCreated": "2026-10-10T15:17:50Z",
+      "platformDigest": "sha256:923a808be529a834a171b3e045821aeb7e2851f4b6fc9514076785b68a9142f6",
+      "appVersion": "5.4.1",
+      "imageCreated": "2026-10-22T22:52:28Z",
       "source": "https://hub.docker.com/r/rommapp/romm"
     },
     "db": {
-      "reference": "mariadb@sha256:6422478cb8e159f080fb1d8ccf65101e26fe51385787fde7d16c3b165a331f15",
+      "reference": "mariadb@sha256:c4124d1afa875e47f2892edf26b482fa54f796e2f342d3717a04ca091a22a9bd",
       "repository": "mariadb",
       "tag": "11.8.9",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:93fc3fe333b6cdfb061425869c2c3a5bb2851c0c74dbebc2c940f024e7482d76",
+      "platformDigest": "sha256:8a4a99eff981d95c3ab12d019b82fe59725fb7761f1f9a5f155bc3f025528f4f",
       "appVersion": "11.8.9",
-      "imageCreated": "2026-10-02T01:31:10Z",
+      "imageCreated": "2026-10-26T23:24:57Z",
       "source": "https://hub.docker.com/_/mariadb"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
-    "node": "v24.21.0",
+    "date": "2026-11-01",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "romm": "5.4.0",
+      "romm": "5.4.1",
       "db": "11.8.9"
     },
     "notes": [
-      "Digest of romm resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; rommapp/romm:5.4.0); image config: ExposedPorts 6379/tcp,8080/tcp, Volumes /redis-data,/romm, User root.",
-      "Digest of db resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; mariadb:11.8.9); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
-      "Smoke run 2026-10-23T19:30:35.811Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 42 s, still healthy 60 s later."
+      "Digest of romm resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; rommapp/romm:5.4.1); image config: ExposedPorts 6379/tcp,8080/tcp, Volumes /redis-data,/romm, User root.",
+      "Digest of db resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; mariadb:11.8.9); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
+      "Smoke run 2026-11-01T05:29:02.517Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (5.4.0) healthy after 46 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 39 s, still healthy 60 s later; fresh install of revision 2 healthy after 43 s, still healthy 60 s later."
     ]
   },
   "assets": {

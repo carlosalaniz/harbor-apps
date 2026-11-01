@@ -5,7 +5,7 @@ metadata:
   name: "RomM"
   description: "Turns a folder of your own game backups into a library with covers and descriptions, and plays most classic consoles right in the browser, with saves kept for each player."
 release:
-  revision: "1"
+  revision: "2"
   minHarbor: "0.30.0"
 deployment:
   compose: compose.yaml
@@ -138,4 +138,4 @@ presentation:
   developer: "RomM contributors"
   website: https://romm.app
   source: https://github.com/rommapp/romm
-  releaseNotes: "RomM 5.4.0 (the full image with its in-browser players) and MariaDB 11.8 LTS. Covers come from Hasheous without any key; ScreenScraper, RetroAchievements and SteamGridDB are optional."
+  releaseNotes: "RomM 5.4.1 (the full image with its in-browser players) and MariaDB 11.8 LTS. Covers come from Hasheous without any key; ScreenScraper, RetroAchievements and SteamGridDB are optional."
