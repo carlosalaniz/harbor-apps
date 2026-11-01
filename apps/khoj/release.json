@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "khoj",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "27c559cd2d21eaf1a523d4d9475b3ae22cee1520d79b10aff36e0205e198d562"
+    },
+    "compose.yaml": {
+      "sha256": "fd5e2f39a9176cd0c5e60f42cb69c9ee6c34aa7cf1b27dbe2d43bf143a3ba40c"
+    },
+    "README.md": {
+      "sha256": "61ca26cb2843b6df9096a5a6cebd90f8cf237b85b53504031407cf865c30a99c"
+    }
+  },
+  "images": {
+    "proxy": {
+      "reference": "caddy@sha256:e70b164da81ef698b3ad19af799ea6086ce6d9e48ed4079eb9fe26f6fbf14ee5",
+      "repository": "caddy",
+      "tag": "2.11.7-alpine",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:04913b1da43339a40ad1ea87827d70a576ac5aa6cf674c6e24fdca675887533a",
+      "appVersion": "2.11.7-alpine",
+      "imageCreated": "2026-10-21T21:32:33Z",
+      "source": "https://hub.docker.com/_/caddy"
+    },
+    "server": {
+      "reference": "ghcr.io/khoj-ai/khoj@sha256:eb2e44669df44b51cb206b394dc0a00c782ac152dda02c97c9e3dac3d643dbb4",
+      "repository": "ghcr.io/khoj-ai/khoj",
+      "tag": "2.0.0-beta.28",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:6edad8f5864aaf8b79f17e642340def031b33550a3ce6f3f5f983e341ee9ffdb",
+      "appVersion": "2.0.0-beta.28",
+      "imageCreated": "2026-03-26T03:40:03Z",
+      "source": "https://ghcr.io/khoj-ai/khoj"
+    },
+    "db": {
+      "reference": "pgvector/pgvector@sha256:88164492558c9773a1e17a8305abaca7863e05b3d8bbcdb792774890a2047e06",
+      "repository": "pgvector/pgvector",
+      "tag": "0.8.7-pg15",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:3a780571a333f6b7a3142bc7bfdd48bc9536f664e0ff74f48499d0a5d50e39ea",
+      "appVersion": "0.8.7-pg15",
+      "imageCreated": "2026-10-31T09:59:39Z",
+      "source": "https://hub.docker.com/r/pgvector/pgvector"
+    },
+    "sandbox": {
+      "reference": "ghcr.io/khoj-ai/terrarium@sha256:caf9356305daf9f7f4e4a63ef1ce3a72dc2c0190cb8fdfa4e0e837d2298f19ce",
+      "repository": "ghcr.io/khoj-ai/terrarium",
+      "tag": "latest",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:69331ec14a80791d3de5e99173fa581c14934df459cf718cde717770f8c8a09b",
+      "appVersion": "latest",
+      "imageCreated": "2025-05-04T22:05:50Z",
+      "source": "https://ghcr.io/khoj-ai/terrarium"
+    },
+    "search": {
+      "reference": "searxng/searxng@sha256:f4aa660c54d062dedb268be84e821ea24e39f48c7a496af8dd02cc9eedb93847",
+      "repository": "searxng/searxng",
+      "tag": "2026.10.30-ffa88e3ba",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:e2ee9d55b73ce5b531b3d7b9aca3578c7517b3762a2a6153bee28b2645dda51e",
+      "appVersion": "2026.10.30-ffa88e3ba",
+      "imageCreated": "2026-10-30T18:15:05Z",
+      "source": "https://hub.docker.com/r/searxng/searxng"
+    }
+  },
+  "qualification": {
+    "status": "passed",
+    "date": "2026-11-01",
+    "node": "v24.22.1",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "proxy": "2.11.7-alpine",
+      "server": "2.0.0-beta.28",
+      "db": "0.8.7-pg15",
+      "sandbox": "latest",
+      "search": "2026.10.30-ffa88e3ba"
+    },
+    "notes": [
+      "Digest of proxy resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; caddy:2.11.7-alpine); image config: ExposedPorts 2019/tcp,443/tcp,443/udp,80/tcp, Volumes none, User root.",
+      "Digest of server resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; ghcr.io/khoj-ai/khoj:2.0.0-beta.28); image config: ExposedPorts 42110/tcp, Volumes none, User root.",
+      "Digest of db resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; pgvector/pgvector:0.8.7-pg15); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of sandbox resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; ghcr.io/khoj-ai/terrarium:latest); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
+      "Digest of search resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; searxng/searxng:2026.10.30-ffa88e3ba); image config: ExposedPorts 8080/tcp, Volumes /etc/searxng,/var/cache/searxng, User root.",
+      "Smoke run 2026-11-01T02:01:28.509Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 28 s, still healthy 60 s later."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "b2344bb3d8fa757220acf2cafa170425dbb06be76f08dd2a6e9705eb67925903"
+    }
+  }
+}

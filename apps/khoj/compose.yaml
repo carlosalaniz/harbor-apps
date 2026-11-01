@@ -1,0 +1,106 @@
+services:
+  # A small Caddy in front of Khoj, plain HTTP behind Harbor's proxies. The config comes on stdin (no bind mounts).
+  # :80 lets Khoj's Django admin (/server/admin) work at every address Harbor gives it:
+  #   - Khoj sees the address the browser used (X-Forwarded-Host, which Harbor's secure LAN relay sets while it
+  #     sends Host 127.0.0.1:<port>), so Django's CSRF origin check matches it (KHOJ_ALLOWED_DOMAIN "*" lets any
+  #     host through Django's own host check);
+  #   - cookies lose the Domain Khoj gives them (KHOJ_DOMAIN), and on plain http also Secure and SameSite=None.
+  # :11434 is the address Khoj gets for Ollama (OPENAI_BASE_URL http://proxy:11434/v1/): with the optional Ollama
+  # link it forwards there; without it, the model list is empty. Harbor's link hands over http://ollama-link:11434,
+  # without the /v1 Khoj's OpenAI client needs, and Khoj names its provider "Ollama" (and refreshes its models at
+  # every start) only when the address ends in ":11434/v1/".
+  proxy:
+    image: caddy@sha256:e70b164da81ef698b3ad19af799ea6086ce6d9e48ed4079eb9fe26f6fbf14ee5 # tag: 2.11.7-alpine
+    command:
+      - sh
+      - -c
+      - |
+        exec caddy run --config - --adapter caddyfile <<'EOF'
+        {
+          admin off
+          servers {
+            trusted_proxies static 0.0.0.0/0
+          }
+        }
+
+        :80 {
+          map {http.request.header.X-Forwarded-Host} {khoj_host} {
+            "" {http.request.hostport}
+            default {http.request.header.X-Forwarded-Host}
+          }
+          header >Set-Cookie "(?i);\s*domain=[^;]*" ""
+          @plain not header X-Forwarded-Proto https
+          header @plain >Set-Cookie "(?i);\s*secure(;|$)" "$1"
+          header @plain >Set-Cookie "(?i)samesite=none" "SameSite=Lax"
+          reverse_proxy server:42110 {
+            header_up Host {khoj_host}
+          }
+        }
+
+        :11434 {
+          @linked expression `{env.OLLAMA_URL} != ""`
+          handle @linked {
+            reverse_proxy {$OLLAMA_URL:127.0.0.1:9} {
+              header_up Host {upstream_hostport}
+            }
+          }
+          handle /v1/models {
+            header Content-Type application/json
+            respond `{"object":"list","data":[]}` 200
+          }
+          handle {
+            respond "Ollama is not linked to Khoj" 502
+          }
+        }
+        EOF
+    depends_on:
+      server: {condition: service_started}
+  # Khoj in single-user (anonymous) mode: no sign-in. The admin account Harbor provisions is for /server/admin.
+  server:
+    image: ghcr.io/khoj-ai/khoj@sha256:eb2e44669df44b51cb206b394dc0a00c782ac152dda02c97c9e3dac3d643dbb4 # tag: 2.0.0-beta.28
+    command: [--host=0.0.0.0, --port=42110, --anonymous-mode, --non-interactive]
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_PORT: "5432"
+      POSTGRES_DB: khoj
+      POSTGRES_USER: khoj
+      KHOJ_ALLOWED_DOMAIN: "*"
+      KHOJ_DEBUG: "False"
+      KHOJ_TELEMETRY_DISABLE: "True"
+      KHOJ_TERRARIUM_URL: http://sandbox:8080
+      KHOJ_SEARXNG_URL: http://search:8080
+      OPENAI_BASE_URL: http://proxy:11434/v1/
+    volumes:
+      - {type: volume, source: config, target: /root/.khoj}
+      - {type: volume, source: models, target: /root/.cache/huggingface}
+    depends_on:
+      db: {condition: service_healthy}
+      sandbox: {condition: service_started}
+      search: {condition: service_started}
+  db:
+    image: pgvector/pgvector@sha256:88164492558c9773a1e17a8305abaca7863e05b3d8bbcdb792774890a2047e06 # tag: 0.8.7-pg15
+    environment:
+      POSTGRES_DB: khoj
+      POSTGRES_USER: khoj
+    volumes:
+      - {type: volume, source: db, target: /var/lib/postgresql/data}
+    healthcheck:
+      test: [CMD, pg_isready, -U, khoj, -d, khoj]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  # Terrarium: the sandbox where Khoj runs the Python code it writes (charts, calculations).
+  sandbox:
+    image: ghcr.io/khoj-ai/terrarium@sha256:caf9356305daf9f7f4e4a63ef1ce3a72dc2c0190cb8fdfa4e0e837d2298f19ce # tag: latest
+  # SearXNG: Khoj's web search. It writes its settings (with a random secret) to /etc/searxng at the first start.
+  search:
+    image: searxng/searxng@sha256:f4aa660c54d062dedb268be84e821ea24e39f48c7a496af8dd02cc9eedb93847 # tag: 2026.10.30-ffa88e3ba
+    environment:
+      SEARXNG_BASE_URL: http://search:8080/
+    volumes:
+      - {type: volume, source: search, target: /etc/searxng}
+volumes:
+  config: {}
+  models: {}
+  db: {}
+  search: {}
