@@ -429,6 +429,10 @@
       "revision": "1",
       "dir": "qbittorrent"
     },
+    "redroid": {
+      "revision": "2",
+      "dir": "redroid"
+    },
     "remmina": {
       "revision": "3",
       "dir": "remmina"

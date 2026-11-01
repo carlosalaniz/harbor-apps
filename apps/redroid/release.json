@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "redroid",
+    "revision": "2"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "e8c5705942cf2f5859ab95fb1405e08830e5ab85ccecc44d5a6e67f3aa61fafc"
+    },
+    "compose.yaml": {
+      "sha256": "1da4a9d3f814e8856683310545b9eace84806934ddd4755f094ef9b21d3688e1"
+    },
+    "README.md": {
+      "sha256": "976553d8067a727897221ee34aed69a18823e8c49e0afea3ea24bbb39debf068"
+    }
+  },
+  "images": {
+    "android": {
+      "reference": "redroid/redroid@sha256:81889852444606824d33eb0232fa5813bce3f0993afe871785120af0d7c991ad",
+      "repository": "redroid/redroid",
+      "tag": "15.0.0-250627",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:25879821f13ffd38d5d6047d832379b96cf72ec520508b45036dca25cdc3737f",
+      "appVersion": "15.0.0-250627",
+      "imageCreated": "2025-06-27T15:38:04Z",
+      "source": "https://hub.docker.com/r/redroid/redroid"
+    },
+    "screen": {
+      "reference": "ghcr.io/carlosalaniz/ws-scrcpy@sha256:afc7135ad72739e539c3b0290b32b115d49daabbe14c762bc8794c5b7df1d94c",
+      "repository": "ghcr.io/carlosalaniz/ws-scrcpy",
+      "tag": "0.9.0-dev.20260930.cd6cea6.h1",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:659685fc59828462d77f93a42f3da1ce997fa0b571ad7f641de34e9037f526bf",
+      "appVersion": "0.9.0-dev.20260930.cd6cea6.h1",
+      "imageCreated": "2026-11-01T19:56:12Z",
+      "source": "https://ghcr.io/carlosalaniz/ws-scrcpy"
+    }
+  },
+  "qualification": {
+    "status": "passed",
+    "date": "2026-11-01",
+    "node": "v24.22.1",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "android": "15.0.0-250627",
+      "screen": "0.9.0-dev.20260930.cd6cea6.h1"
+    },
+    "notes": [
+      "Digest of android resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; redroid/redroid:15.0.0-250627); image config: ExposedPorts none, Volumes none, User root.",
+      "Digest of screen resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/ws-scrcpy:0.9.0-dev.20260930.cd6cea6.h1); image config: ExposedPorts 8000/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-01T20:05:53.982Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 2 healthy after 24 s, still healthy 60 s later."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "476353022174eb58aed675ef56be1610a797fb12dc936569568a90352c19917c"
+    }
+  }
+}
