@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "redroid",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "388f003c8da6eea61702c8efe1a86b222ab4004da20c840302ecde5e49e7ec7b"
+    },
+    "compose.yaml": {
+      "sha256": "ba24630c55502c93e1a8bf6eb9d2277db9247ab125deff64eb52596796872361"
+    },
+    "README.md": {
+      "sha256": "63e32157f71df2de19fe4d9e01d2618dfd82a8a8d2506ec7ec6794ff061ec47e"
+    }
+  },
+  "images": {
+    "android": {
+      "reference": "redroid/redroid@sha256:81889852444606824d33eb0232fa5813bce3f0993afe871785120af0d7c991ad",
+      "repository": "redroid/redroid",
+      "tag": "15.0.0-250627",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:25879821f13ffd38d5d6047d832379b96cf72ec520508b45036dca25cdc3737f",
+      "appVersion": "15.0.0-250627",
+      "imageCreated": "2025-06-27T15:38:04Z",
+      "source": "https://hub.docker.com/r/redroid/redroid"
+    },
+    "screen": {
+      "reference": "ghcr.io/carlosalaniz/ws-scrcpy@sha256:096f8c2e3acdd63c04107e71d9d8b8909ba575cf68d3986a43f1a006df7a9eb5",
+      "repository": "ghcr.io/carlosalaniz/ws-scrcpy",
+      "tag": "0.9.0-dev.20260930.cd6cea6",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:72c760f20d5f1cf662fdc696060dbd2c6ec00c8a9ae484b16996055d2ef30429",
+      "appVersion": "0.9.0-dev.20260930.cd6cea6",
+      "imageCreated": "2026-11-01T14:22:57Z",
+      "source": "https://ghcr.io/carlosalaniz/ws-scrcpy"
+    },
+    "proxy": {
+      "reference": "caddy@sha256:e70b164da81ef698b3ad19af799ea6086ce6d9e48ed4079eb9fe26f6fbf14ee5",
+      "repository": "caddy",
+      "tag": "2.11.7-alpine",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:04913b1da43339a40ad1ea87827d70a576ac5aa6cf674c6e24fdca675887533a",
+      "appVersion": "2.11.7-alpine",
+      "imageCreated": "2026-10-21T21:32:33Z",
+      "source": "https://hub.docker.com/_/caddy"
+    }
+  },
+  "qualification": {
+    "status": "pending",
+    "date": "2026-11-01",
+    "notes": [
+      "Digest of android resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; redroid/redroid:15.0.0-250627); image config: ExposedPorts none, Volumes none, User root.",
+      "Digest of screen resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/ws-scrcpy:0.9.0-dev.20260930.cd6cea6); image config: ExposedPorts 8000/tcp, Volumes none, User node.",
+      "Digest of proxy resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; caddy:2.11.7-alpine); image config: ExposedPorts 2019/tcp,443/tcp,443/udp,80/tcp, Volumes none, User root."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "476353022174eb58aed675ef56be1610a797fb12dc936569568a90352c19917c"
+    }
+  }
+}

@@ -34,6 +34,12 @@
     },
     "kavita": {
       "note": "compose.yaml passes [-c, script] to the image ENTRYPOINT [/bin/bash], which then execs /entrypoint.sh, to write appsettings.Production.json (KnownProxies). Before merging a move, check the release Dockerfile still has ENTRYPOINT /bin/bash and /entrypoint.sh; otherwise the script is silently skipped and EPUB pictures break on the secure LAN address, while the smoke still passes."
+    },
+    "redroid": {
+      "hold": [
+        "screen"
+      ],
+      "note": "screen is this repository's own ws-scrcpy build: move it with images/ws-scrcpy/build.json (new tag, then catalog-pin). An Android major (15 -> 16) upgrades the data partition in place and cannot go back; check that ws-scrcpy still streams it before merging that pull request."
     }
   }
 }

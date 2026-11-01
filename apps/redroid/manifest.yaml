@@ -1,0 +1,59 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: redroid
+  name: Android
+  description: "Android 15 running on this machine (redroid), with its screen in your browser: install apps, try them out, or keep a phone that never leaves home. It needs full control of this machine, which Harbor gives only to apps from its own catalog."
+release:
+  revision: "1"
+  version: 15.0.0-250627
+  minHarbor: "0.40.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: false
+  services:
+    android: application
+    screen: application
+    proxy: application
+endpoints:
+  web:
+    service: proxy
+    containerPort: 80
+    scheme: http
+    exposure: direct
+    browserContext: secure
+health:
+  endpoint: web
+  path: /harbor-health
+  expectedStatus: [200]
+  timeoutSeconds: 10
+  deadlineSeconds: 600
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Open Android and sign in with the login shown after install. The first start takes a minute or two; then click the device in the list and pick a player (WebCodecs is the smoothest, on the secure address)."
+provisionedCredentials:
+  service: proxy
+  usernameEnv: AUTH_USER
+  username: android
+  passwordEnv: AUTH_PASSWORD
+  label: Android screen login
+  note: "The screen also offers a shell on the device: keep this login to yourself."
+# Harbor decision 193: redroid only runs as a privileged container with Android's binder driver in the host kernel.
+permissions:
+  android: [privileged, binder]
+storage:
+  - id: data
+    composeVolume: data
+    purpose: "Android's data partition (/data): installed apps, their data, accounts and settings"
+    retention: retain
+presentation:
+  tagline: "Android in your browser"
+  sizeHint: "About 1 GB, plus the apps you install; 2 GB of memory while it runs"
+  category: developer
+  icon: icon.svg
+  developer: "redroid (remote-android)"
+  website: https://github.com/remote-android/redroid-doc
+  source: https://github.com/remote-android/redroid-doc
+  releaseNotes: "Android 15 (redroid 15.0.0-250627) at 720x1280, software rendering, with a browser screen (ws-scrcpy) behind its own login. No Google Play: install apps from APK files or an open store like F-Droid. Needs the binder driver in the kernel (Ubuntu: linux-modules-extra); Harbor loads it."
