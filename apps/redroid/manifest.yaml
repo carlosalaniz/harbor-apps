@@ -5,7 +5,7 @@ metadata:
   name: Android
   description: "Android 15 running on this machine (redroid), with its screen in your browser: install apps, try them out, or keep a phone that never leaves home. It needs full control of this machine, which Harbor gives only to apps from its own catalog."
 release:
-  revision: "1"
+  revision: "2"
   version: 15.0.0-250627
   minHarbor: "0.41.0"
 deployment:

@@ -7,7 +7,9 @@
 #          needed), memfd (kernels since 5.18 have no ashmem). The health check only reports; the screen does not wait
 #          for it (a first boot can outlast Harbor's start timeout) and keeps reconnecting instead.
 # screen   ws-scrcpy, built by this repository from a pinned upstream commit (images/ws-scrcpy). It keeps adb connected
-#          to android:5555. It has no login of its own and offers an adb shell, so its endpoint declares
+#          to android:5555, and HARBOR_INPUT makes the browser's taps and keys hardware input (a uinput touchscreen and
+#          keyboard inside Android, daemon on android:7008): some apps, WhatsApp's registration among them, ignore
+#          the virtual input scrcpy injects otherwise. It has no login of its own and offers an adb shell, so its endpoint declares
 #          `login: required` (Harbor decision 194): Harbor's login page is always in front of it, with a password the
 #          operator can see and change in the app's drawer.
 services:
@@ -28,9 +30,10 @@ services:
       retries: 3
       start_period: 5m
   screen:
-    image: ghcr.io/carlosalaniz/ws-scrcpy@sha256:096f8c2e3acdd63c04107e71d9d8b8909ba575cf68d3986a43f1a006df7a9eb5 # tag: 0.9.0-dev.20260930.cd6cea6
+    image: ghcr.io/carlosalaniz/ws-scrcpy@sha256:afc7135ad72739e539c3b0290b32b115d49daabbe14c762bc8794c5b7df1d94c # tag: 0.9.0-dev.20260930.cd6cea6.h1
     environment:
       ADB_CONNECT: android:5555
+      HARBOR_INPUT: android:7008
     depends_on:
       android: {condition: service_started}
 volumes:

@@ -23,8 +23,15 @@ login page.
    *WebCodecs* is the smoothest; it needs the secure (https) address. The others work over plain http.
 3. Click and type to use Android. The screen is 720x1280 at 320 dpi, drawn without a graphics card.
 
+Your clicks and keys reach Android as a real touchscreen and keyboard, not as injected input: some apps ignore
+injected input, WhatsApp's registration among them. Back, Home and the other buttons beside the screen work as
+before.
+
 There is no Google Play. Install apps from APK files (drag them onto the screen, or use the file list) or from an
 open store such as F-Droid.
+
+**WhatsApp** says it found a custom ROM; tap OK. If it opens "Link as companion device" and you want this to be
+your WhatsApp number instead, use ⋮ → Register new account.
 
 The device list also offers a **shell** on Android: anyone with the password has it, and Android has full control
 of this machine. Keep the password to yourself, and do not publish the app on the internet.
