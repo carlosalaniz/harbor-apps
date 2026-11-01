@@ -306,7 +306,7 @@
       "dir": "mqttx-web"
     },
     "mstream": {
-      "revision": "3",
+      "revision": "4",
       "dir": "mstream"
     },
     "myspeed": {
