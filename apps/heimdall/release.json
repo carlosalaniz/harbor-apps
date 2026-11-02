@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "heimdall",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "7e487db55afbf88212507ce7c5e4afcf409b14d31d2eb2866e4233897ac92bb4"
+      "sha256": "efefa8b0fee72fdf45998256dd9e910eeb9d80ed9bf8f76486cb5766fc35575a"
     },
     "compose.yaml": {
-      "sha256": "eb76ac8e28366c648d08c11f8a8d98dc115f0363a5836898817fbc5bfaf3bf2c"
+      "sha256": "4d96c76d7eca968962e3c9b08bb7bce3b0d5b94b32507e8104b8d1bc61e1c010"
     },
     "README.md": {
       "sha256": "6317b4fa0c27c8065727e4ed0ed1ccbcc25ce14261efc5f32ea42429473bc5fa"
@@ -17,28 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "linuxserver/heimdall@sha256:134636c92aa9fd47291f63adb6dc71b7c4e3abdde69e382abbf4a51461f9908a",
+      "reference": "linuxserver/heimdall@sha256:80c6a91e8d14e7ac5b7461a0877b8db8bca659e62ddc944d1f37e5159e7efa55",
       "repository": "linuxserver/heimdall",
-      "tag": "2.8.3",
+      "tag": "2.8.4",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:d0732e66502837541d34970fc902809ad57865625a92ffe1c52543ab9578abd2",
-      "appVersion": "2.8.3",
-      "imageCreated": "2026-10-21T20:29:49Z",
+      "platformDigest": "sha256:2d7521b2d4111e3a06475f19e2f54ddb7ce6bc73d5e772253fa2436ddb300a27",
+      "appVersion": "2.8.4",
+      "imageCreated": "2026-10-30T22:22:33Z",
       "source": "https://hub.docker.com/r/linuxserver/heimdall"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
-    "node": "v24.21.0",
+    "date": "2026-11-02",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "2.8.3"
+      "server": "2.8.4"
     },
     "notes": [
-      "Smoke run 2026-10-23T19:11:57.168Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2.8.3) healthy after 12 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 14 s, still healthy 60 s later; fresh install of revision 3 healthy after 12 s, still healthy 60 s later."
+      "Digest of server resolved 2026-11-02 via registry API (scripts/catalog-pin.mjs; linuxserver/heimdall:2.8.4); image config: ExposedPorts 443/tcp,80/tcp, Volumes /config, User root.",
+      "Smoke run 2026-11-02T13:40:42.890Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (2.8.3) healthy after 12 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 15 s, still healthy 60 s later; fresh install of revision 4 healthy after 10 s, still healthy 60 s later."
     ]
   },
   "assets": {
