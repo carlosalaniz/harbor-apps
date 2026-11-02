@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "foldergram",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "b19bdddd1ed9a3f1327568722770122de897ee5317f4ccc1e4cd149afc15d279"
+      "sha256": "0b0cc5093494fd4ac3c335728cfe5ec24c76ea81a05bf4a5b9dab7b45051d306"
     },
     "compose.yaml": {
-      "sha256": "7fe9c349c449dda47e63491d792e49bd1c2739f1e603078612f39aa5a151c3e8"
+      "sha256": "baa6811e2b6e5f73b70c76a086ed97ab3bdc7fe22b67f62fbf90329713cd2541"
     },
     "README.md": {
       "sha256": "e152b0150232f8c5a1cbca39ed2697bb30108f2ba19d765d12a7a1f93a8025ee"
@@ -17,31 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/foldergram/foldergram@sha256:f72dfe39d9042555fd1b509a06f6c93c8b9a8be02541c80135a9a8f25fe362d4",
+      "reference": "ghcr.io/foldergram/foldergram@sha256:5b0bfd2779c2d33999441f8e78c88de50b4d803305be1d2bb8a6cae7479da9e4",
       "repository": "ghcr.io/foldergram/foldergram",
-      "tag": "1.2.2",
+      "tag": "1.3.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:923218faff1edb6bdc7e6abc80884059830dc61ac28cdccb1580a74c58e98700",
-      "appVersion": "1.2.2",
-      "imageCreated": "2026-06-01T09:56:04Z",
+      "platformDigest": "sha256:661d95c2cac14b45a75dfd718fc0867d689fd77b769c8efd242e80f513e213d8",
+      "appVersion": "1.3.0",
+      "imageCreated": "2026-10-31T01:18:20Z",
       "source": "https://ghcr.io/foldergram/foldergram"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-11-02",
+    "node": "v24.22.1",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.6.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.2.2"
+      "web": "1.3.0"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package foldergram (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/foldergram/foldergram@sha256:f72dfe39d9042555fd1b509a06f6c93c8b9a8be02541c80135a9a8f25fe362d4); image config: ExposedPorts 4141/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-32-harbor-q06: passed (healthy after 46s; page title \"Foldergram\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-11-02 via registry API (scripts/catalog-pin.mjs; ghcr.io/foldergram/foldergram:1.3.0); image config: ExposedPorts 4141/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-02T13:47:14.502Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.2.2-patch.1) healthy after 1 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {

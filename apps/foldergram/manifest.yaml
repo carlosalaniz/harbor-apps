@@ -5,8 +5,8 @@ metadata:
   name: Foldergram
   description: Self-hosted folder-based Instagram-style photo and video gallery app.
 release:
-  revision: "2"
-  version: 1.2.2-patch.1
+  revision: "3"
+  version: "1.3.0-patch.1"
 deployment:
   compose: compose.yaml
   multiInstance: true
