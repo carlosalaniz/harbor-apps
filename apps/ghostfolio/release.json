@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "ghostfolio",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "423304d5dd5bfda6764bae79f042d5a42a4391f0e27936a654291ae150e46d5f"
+      "sha256": "c3d671f202fb9733e792b99e67b12744108722f724c49cae309d848d763aa187"
     },
     "compose.yaml": {
-      "sha256": "e55357040a7b7ee73ca38e250757758d69d61990dcffef524c7b779a2c239aca"
+      "sha256": "ae81be106b21d6cbcbc2ed187203807a6c820655a3c3801df2f2a5c8fc419f81"
     },
     "README.md": {
       "sha256": "a05027ee4e6d6e419e88a4520106ff3ab792251f1081626a9956489147449d85"
@@ -37,19 +37,19 @@
       "source": "https://hub.docker.com/_/redis"
     },
     "web": {
-      "reference": "ghostfolio/ghostfolio@sha256:713016ce4fe8e862c09f0e0c12731c0656f9c39dd46d6edbc1c20dd73e2d7808",
+      "reference": "ghostfolio/ghostfolio@sha256:5967c0e00f08fab2cabb85e375ec1bf1cbe999bd829ea55f1a76a41ba6592d6a",
       "repository": "ghostfolio/ghostfolio",
-      "tag": "3.94.0",
+      "tag": "3.95.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:fdc8a95084206da050a2057e8607361112921c836dccc3aa3f3a5b7f9410ff13",
-      "appVersion": "3.94.0",
-      "imageCreated": "2026-10-28T18:57:25Z",
+      "platformDigest": "sha256:fccfc964f7b7d3eb48a67abaed6a3cc7cab539e669d7e574b0d38e239d62ddbc",
+      "appVersion": "3.95.0",
+      "imageCreated": "2026-10-31T10:01:53Z",
       "source": "https://hub.docker.com/r/ghostfolio/ghostfolio"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-01",
+    "date": "2026-11-02",
     "node": "v24.22.1",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.6.1",
@@ -57,13 +57,13 @@
     "appVersions": {
       "db": "15.19-alpine",
       "redis": "8.10.3-alpine",
-      "web": "3.94.0"
+      "web": "3.95.0"
     },
     "notes": [
-      "Digest of db resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; postgres:15.19-alpine); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of redis resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; redis:8.10.3-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
-      "Digest of web resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; ghostfolio/ghostfolio:3.94.0); image config: ExposedPorts 3333/tcp, Volumes none, User node.",
-      "Smoke run 2026-11-01T05:36:51.569Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (3.84.2) healthy after 11 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 11 s, still healthy 60 s later; fresh install of revision 2 healthy after 11 s, still healthy 60 s later."
+      "Digest of db resolved 2026-11-02 via registry API (scripts/catalog-pin.mjs; postgres:15.19-alpine); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of redis resolved 2026-11-02 via registry API (scripts/catalog-pin.mjs; redis:8.10.3-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Digest of web resolved 2026-11-02 via registry API (scripts/catalog-pin.mjs; ghostfolio/ghostfolio:3.95.0); image config: ExposedPorts 3333/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-02T13:47:53.624Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (3.94.0) healthy after 15 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 16 s, still healthy 60 s later; fresh install of revision 3 healthy after 15 s, still healthy 60 s later."
     ]
   },
   "assets": {
