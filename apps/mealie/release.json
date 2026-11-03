@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "mealie",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "981c31e89fb06264fb4b0d873e3faf443b7ccebf70f5e96e8d654820a2407319"
+      "sha256": "a9d5d77f470df24ff1e6278518bc52861016e9cca7f1a34a39dbad9e6f20f248"
     },
     "compose.yaml": {
-      "sha256": "c86a5419e6e0c70f7d05e7e2adff3061e93dd3c5aea7ee1e3887a95aa2d1987e"
+      "sha256": "123bddfb04c616c0e0bdfd2487f1473e1ea95497955f547edd262007089805e8"
     },
     "README.md": {
       "sha256": "d73b238d03d869e94ee08676db5d10e5a31dd02a85d537aaca07454caa1223d0"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/mealie-recipes/mealie@sha256:78eb28b8776d0bad40c5e605c72b3f4f5976793e491558c7dcbdfc04c835d4bc",
+      "reference": "ghcr.io/mealie-recipes/mealie@sha256:90f83da6f3ab0a421efc827118a556168573930105f13fa3321768f42163d784",
       "repository": "ghcr.io/mealie-recipes/mealie",
-      "tag": "v3.29.0",
+      "tag": "v3.30.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:243e33ea66e71b2094cb1f9c9167af24452405a33fc899a1dc7359dc210506f8",
-      "appVersion": "3.29.0",
-      "imageCreated": "2026-10-17T16:33:52Z",
+      "platformDigest": "sha256:d552b662eb93f4dafa127fccfd8db9139e24c249753c72c17c9248edbc21e0c8",
+      "appVersion": "3.30.0",
+      "imageCreated": "2026-11-01T00:02:50Z",
       "source": "https://ghcr.io/mealie-recipes/mealie"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-20",
-    "node": "v24.22.0",
+    "date": "2026-11-03",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "3.29.0"
+      "web": "3.30.0"
     },
     "notes": [
-      "Digest of web resolved 2026-10-20 via registry API (scripts/catalog-pin.mjs; ghcr.io/mealie-recipes/mealie:v3.29.0); image config: ExposedPorts 9000/tcp, Volumes /app/data/, User root.",
-      "Smoke run 2026-10-20T05:37:03.671Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (3.28.0) healthy after 31 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 33 s, still healthy 60 s later; fresh install of revision 4 healthy after 31 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-03 via registry API (scripts/catalog-pin.mjs; ghcr.io/mealie-recipes/mealie:v3.30.0); image config: ExposedPorts 9000/tcp, Volumes /app/data/, User root.",
+      "Smoke run 2026-11-03T13:01:04.758Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (3.29.0) healthy after 31 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 32 s, still healthy 60 s later; fresh install of revision 5 healthy after 31 s, still healthy 60 s later."
     ]
   },
   "assets": {
