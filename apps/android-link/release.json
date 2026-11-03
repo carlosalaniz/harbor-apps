@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "android-link",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "1040f3cbf9075d457eba97b5a0af30365de1408264262f95616a1f21ec12eade"
+    },
+    "compose.yaml": {
+      "sha256": "6687cc36e90f6a0f62532d8e81a86992cf827847278d0849ffad7ffa6d098ff0"
+    },
+    "README.md": {
+      "sha256": "90b9bb24f83d9598afb1ba69a76553e51be507d3ce801705aefadfba416e63aa"
+    }
+  },
+  "images": {
+    "link": {
+      "reference": "ghcr.io/carlosalaniz/ws-scrcpy@sha256:21872ee10ddc7ffec6db69d17d8a02c5d5448faaa8447b9defa53662ed7b3815",
+      "repository": "ghcr.io/carlosalaniz/ws-scrcpy",
+      "tag": "0.9.0-dev.20260930.cd6cea6.h2",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:1f0b725ed11615ec221416fb22dd9517bc367a4899e4bbedab1a3d8ae12de909",
+      "appVersion": "0.9.0-dev.20260930.cd6cea6.h2",
+      "imageCreated": "2026-11-03T04:10:25Z",
+      "source": "https://ghcr.io/carlosalaniz/ws-scrcpy"
+    }
+  },
+  "qualification": {
+    "status": "pending",
+    "date": "2026-11-03",
+    "notes": [
+      "Digest of link resolved 2026-11-03 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/ws-scrcpy:0.9.0-dev.20260930.cd6cea6.h2); image config: ExposedPorts 8000/tcp,8001/tcp, Volumes none, User node."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "ef450642122f7bd7f8657e24221941a7e011a09ffaaba90b3b8aa46bba8e5a5e"
+    }
+  }
+}
