@@ -1,0 +1,58 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: android-link
+  name: Android Link
+  description: "Your Android phones in the browser, from anywhere Harbor shares the app: pair a phone on this machine's network once, then see its screen, tap, type and copy and paste. It works over Android's Wireless debugging; nothing to install on the phone."
+release:
+  revision: "1"
+  version: 0.9.0-dev.20260930
+  # both endpoints use Harbor's login (decision 194); 0.41.1 is the first gate that serves an app whose health path is /
+  minHarbor: "0.41.1"
+deployment:
+  compose: compose.yaml
+  multiInstance: false
+  services:
+    link: application
+endpoints:
+  web:
+    service: link
+    containerPort: 8000
+    scheme: http
+    exposure: direct
+    browserContext: secure
+    # the phones' screens and a shell on each: Harbor's login is always in front (decision 194)
+    login: required
+  admin:
+    service: link
+    containerPort: 8001
+    scheme: http
+    exposure: direct
+    browserContext: ordinary
+    # pairs phones: a login of its own, so the screens can be shared without it
+    login: required
+health:
+  endpoint: web
+  path: /
+  expectedStatus: [200]
+  timeoutSeconds: 10
+  deadlineSeconds: 120
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: admin
+  instructions: "Open Android Link's admin address and type its password (shown after install; the app's drawer shows both passwords again under Login). On the phone, turn on Developer options and Wireless debugging, tap \"Pair device with pairing code\" and type the addresses and the code into the admin page. Then open Android Link's main address and pick the phone."
+storage:
+  - id: data
+    composeVolume: data
+    purpose: "The paired phones and the key they trust (losing it means pairing every phone again)"
+    retention: retain
+presentation:
+  tagline: "Your phones in the browser"
+  sizeHint: "About 250 MB; a little memory per open screen"
+  category: developer
+  icon: icon.svg
+  developer: "Harbor (screen viewer: ws-scrcpy by NetrisTV)"
+  website: https://github.com/NetrisTV/ws-scrcpy
+  source: https://github.com/carlosalaniz/harbor-apps/tree/main/images/ws-scrcpy
+  releaseNotes: "First release: an admin page to pair Android 11+ phones over Wireless debugging (or add one by address), kept connected and listed on the main page; screen, touch, keyboard, clipboard and APK drop through ws-scrcpy, all behind Harbor's login."

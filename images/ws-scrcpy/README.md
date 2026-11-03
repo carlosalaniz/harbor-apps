@@ -15,10 +15,16 @@ and arm64. Apps pin the pushed digest like any other image.
   the browser's taps, keys and typed ASCII text. Back, Home, Power, volume and non-ASCII text still go through
   scrcpy, as does everything while the daemon is not reachable. The device shell in the browser is a root shell
   then (it was already behind the app's login, on a privileged container).
-- Port 8000, plain HTTP, **no login of its own**: put it behind something that asks for one (the redroid app's
-  `proxy` service does).
-- Runs as the image's `node` user; adb keys live in the container and are not kept (redroid accepts adb
-  without a key).
+- `LINK_DATA` + `LINK_ADMIN_PORT` (the Android Link app sets `/data` and `8001`): Android Link's admin page
+  (`link-admin.mjs`, no dependencies; `link-admin.test.mjs` runs in the build). It pairs phones on the local network
+  over Wireless debugging (`adb pair`, `adb connect`, then `adb tcpip 5555` so the port stays the same until the
+  phone restarts), adds phones by address, keeps them connected every 15 s, and keeps the list in
+  `LINK_DATA/phones.json`. `HOME` points at `LINK_DATA`, so adb's key (the one paired phones trust) is kept too.
+  Base image Debian trixie: its adb (34) pairs; bookworm's (29) cannot.
+- Ports 8000 (screens) and 8001 (admin), plain HTTP, **no login of their own**: put them behind something that asks
+  for one (both apps declare Harbor's `login: required`).
+- Runs as the image's `node` user. Without `LINK_DATA`, adb keys live in the container and are not kept (redroid
+  accepts adb without a key).
 
 To move upstream: change `commit` and `tag` in `build.json` together, push, then pin the new digest in the apps
 that use it (`node scripts/catalog-pin.mjs <app>` from the Harbor repository).

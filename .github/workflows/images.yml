@@ -1,5 +1,6 @@
 # Container images this repository builds itself, because upstream publishes none (images/<name>/: Dockerfile +
-# build.json with the upstream commit and the tag). Today: ws-scrcpy, the browser screen of apps/redroid.
+# build.json with the upstream commit and the tag). Today: ws-scrcpy, the browser screen of apps/redroid and
+# apps/android-link.
 #
 # A push touching images/** (any branch of this repository; forks get no write token) builds every image whose tag
 # is not on ghcr.io yet, for linux/amd64 and linux/arm64, and pushes ghcr.io/carlosalaniz/<name>:<tag>. A tag that

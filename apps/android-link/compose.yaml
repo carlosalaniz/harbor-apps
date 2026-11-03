@@ -1,0 +1,19 @@
+# Android phones on the local network, shown in the browser (Android Link).
+#
+# link  ws-scrcpy, built by this repository from a pinned upstream commit (images/ws-scrcpy), plus Android Link's admin
+#       page (images/ws-scrcpy/link-admin.mjs, port 8001). The admin page pairs phones over Wireless debugging (adb
+#       pair + connect, then adb tcpip 5555 so the port stays the same until the phone restarts) and keeps them
+#       connected; ws-scrcpy (port 8000) lists every connected phone and streams it. Both share one adb server.
+#       LINK_DATA keeps the phone list and adb's key (the one the phones trust) on the data volume. Neither port has
+#       a login of its own and the screens offer a shell on each phone, so both endpoints declare `login: required`
+#       (Harbor decision 194), each with its own password.
+services:
+  link:
+    image: ghcr.io/carlosalaniz/ws-scrcpy@sha256:0000000000000000000000000000000000000000000000000000000000000000 # tag: 0.9.0-dev.20260930.cd6cea6.h2
+    environment:
+      LINK_DATA: /data
+      LINK_ADMIN_PORT: "8001"
+    volumes:
+      - {type: volume, source: data, target: /data}
+volumes:
+  data: {}

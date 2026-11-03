@@ -1,9 +1,11 @@
 # syntax=docker/dockerfile:1.7
 # ws-scrcpy (https://github.com/NetrisTV/ws-scrcpy, MIT) built from one pinned upstream commit: the browser screen
-# of the redroid app (apps/redroid). Upstream publishes no image; third-party rebuilds have no known provenance, and
-# this container drives adb, which is root inside a privileged Android container. Built and pushed to
-# ghcr.io/carlosalaniz/ws-scrcpy by .github/workflows/images.yml; apps pin the pushed digest.
-ARG NODE=22-bookworm
+# of the redroid and Android Link apps (apps/redroid, apps/android-link). Upstream publishes no image; third-party
+# rebuilds have no known provenance, and this container drives adb, which is root inside a privileged Android
+# container. Built and pushed to ghcr.io/carlosalaniz/ws-scrcpy by .github/workflows/images.yml; apps pin the pushed
+# digest. Also Android Link's admin page (link-admin.mjs). Debian trixie: its adb (34) pairs over Wireless
+# debugging; bookworm's (29) cannot.
+ARG NODE=22-trixie
 
 FROM node:${NODE} AS build
 ARG WS_SCRCPY_COMMIT
@@ -15,9 +17,10 @@ RUN git init -q . \
  && git checkout -q FETCH_HEAD \
  && test "$(git rev-parse HEAD)" = "$WS_SCRCPY_COMMIT"
 # Harbor: the browser's taps and keys as hardware input (HarborInput.ts + harbor-input.c, see README.md)
-COPY HarborInput.ts patch-ws-scrcpy.mjs harbor-input.c /harbor/
+COPY HarborInput.ts patch-ws-scrcpy.mjs harbor-input.c link-admin.mjs link-admin.test.mjs /harbor/
 RUN node /harbor/patch-ws-scrcpy.mjs /harbor/HarborInput.ts \
- && gcc -static -O2 -Wall -o /harbor/harbor-input /harbor/harbor-input.c
+ && gcc -static -O2 -Wall -o /harbor/harbor-input /harbor/harbor-input.c \
+ && node --test /harbor/link-admin.test.mjs
 # iOS support (appium, an optional dependency) is not built in (INCLUDE_APPL is false upstream)
 RUN npm ci --omit=optional --no-audit --no-fund && npm run dist
 WORKDIR /src/dist
@@ -30,13 +33,16 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 COPY --from=build /src/dist /app
 COPY --from=build /harbor/harbor-input /usr/local/lib/harbor-input
+COPY --from=build /harbor/link-admin.mjs /usr/local/lib/harbor/link-admin.mjs
+# Android Link keeps its phones and adb key here (a volume; it takes this owner when Docker creates it)
+RUN mkdir -p /data && chown node:node /data
 COPY entrypoint.sh /usr/local/bin/ws-scrcpy-entrypoint
 LABEL org.opencontainers.image.source="https://github.com/carlosalaniz/harbor-apps" \
-      org.opencontainers.image.description="ws-scrcpy (NetrisTV) for Harbor's redroid app" \
+      org.opencontainers.image.description="ws-scrcpy (NetrisTV) for Harbor's redroid and Android Link apps" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.revision="${WS_SCRCPY_COMMIT}"
 USER node
 WORKDIR /app
 ENV HOME=/home/node
-EXPOSE 8000
+EXPOSE 8000 8001
 ENTRYPOINT ["/usr/bin/tini", "--", "/usr/local/bin/ws-scrcpy-entrypoint"]
