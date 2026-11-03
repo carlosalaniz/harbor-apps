@@ -1,0 +1,80 @@
+# Container images this repository builds itself, because upstream publishes none (images/<name>/: Dockerfile +
+# build.json with the upstream commit and the tag). Today: ws-scrcpy, the browser screen of apps/redroid.
+#
+# A push touching images/** (any branch of this repository; forks get no write token) builds every image whose tag
+# is not on ghcr.io yet, for linux/amd64 and linux/arm64, and pushes ghcr.io/carlosalaniz/<name>:<tag>. A tag that
+# exists is never pushed again (apps pin digests; a tag means one build). The job summary prints the digest to pin.
+# Never put ${{ }} of file contents inside a run: script; pass values through env and quote them.
+name: images
+on:
+  push:
+    paths:
+      - 'images/**'
+      - '.github/workflows/images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  ws-scrcpy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      packages: write
+    env:
+      IMAGE: ghcr.io/carlosalaniz/ws-scrcpy
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read build.json
+        id: meta
+        run: |
+          commit="$(jq -r .commit images/ws-scrcpy/build.json)"
+          tag="$(jq -r .tag images/ws-scrcpy/build.json)"
+          [[ "$commit" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::build.json commit must be a full 40-character sha"; exit 1; }
+          [[ "$tag" =~ ^[0-9A-Za-z][0-9A-Za-z._-]{0,127}$ ]] || { echo "::error::build.json tag is not a valid image tag"; exit 1; }
+          echo "commit=$commit" >> "$GITHUB_OUTPUT"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Is this tag published already?
+        id: exists
+        env:
+          TAG: ${{ steps.meta.outputs.tag }}
+        run: |
+          if docker buildx imagetools inspect "$IMAGE:$TAG" > /dev/null 2>&1; then
+            echo "already=true" >> "$GITHUB_OUTPUT"
+            echo "$IMAGE:$TAG is published already; not pushed again" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "already=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: docker/setup-qemu-action@v3
+        if: steps.exists.outputs.already == 'false'
+      - uses: docker/setup-buildx-action@v3
+        if: steps.exists.outputs.already == 'false'
+      - name: Build and push
+        id: build
+        if: steps.exists.outputs.already == 'false'
+        uses: docker/build-push-action@v6
+        with:
+          context: images/ws-scrcpy
+          platforms: linux/amd64,linux/arm64
+          build-args: WS_SCRCPY_COMMIT=${{ steps.meta.outputs.commit }}
+          tags: ${{ env.IMAGE }}:${{ steps.meta.outputs.tag }}
+          push: true
+          provenance: mode=max
+          sbom: true
+      - name: Digest to pin
+        if: steps.exists.outputs.already == 'false'
+        env:
+          TAG: ${{ steps.meta.outputs.tag }}
+          DIGEST: ${{ steps.build.outputs.digest }}
+        run: echo "pushed \`$IMAGE@$DIGEST\` (tag $TAG)" >> "$GITHUB_STEP_SUMMARY"
