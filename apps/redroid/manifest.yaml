@@ -7,7 +7,8 @@ metadata:
 release:
   revision: "2"
   version: 15.0.0-250627
-  minHarbor: "0.41.0"
+  # 0.41.1: the first Harbor whose login page serves an app with health path / (0.41.0 showed a blank page)
+  minHarbor: "0.41.1"
 deployment:
   compose: compose.yaml
   multiInstance: false
