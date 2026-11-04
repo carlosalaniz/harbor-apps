@@ -5,8 +5,8 @@ metadata:
   name: WebCheck
   description: 🕵️‍♂️ All-in-one OSINT tool for analysing any website
 release:
-  revision: "10"
-  version: "2.3.11"
+  revision: "11"
+  version: "2.3.12"
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml
