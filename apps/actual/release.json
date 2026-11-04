@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "actual",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "96fdac773fff75460e3449c9ae9fcc4a8ee12cd0b4603e34186df3ab3e9a0e50"
+      "sha256": "9c70a272efcfe2579f5ff17b4f36ceadbca2cdb36d335fded31951fb1ce807fc"
     },
     "compose.yaml": {
-      "sha256": "6dbf8d410d0f59866a502687f438ae1f4731307d8447f0bbbc06316a12d26a86"
+      "sha256": "e5b448ca0dad521edb3c06e9b56f8220c832f75357187a7f0ba5ed4dd13a6d98"
     },
     "README.md": {
       "sha256": "417bc15ec6341c7aa1c7132f5ac880d161d3f1a8fb6fd9842d7790d8c43d5439"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "actualbudget/actual-server@sha256:24645e971da6bb1a1f953d6859e307a0b29be1e8b4130a35b3220c209b5b860c",
+      "reference": "actualbudget/actual-server@sha256:06cf186569cf58d93e12659ff1a517b65b5b0ebee7050a3991d4bd8a1d398da6",
       "repository": "actualbudget/actual-server",
-      "tag": "26.10.0",
+      "tag": "26.11.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:bdfbb624d5fe9df05481d8eb6791a00a4a78ab8152bce31e79c6f18917e6933e",
-      "appVersion": "26.10.0",
-      "imageCreated": "2026-10-02T15:01:03Z",
+      "platformDigest": "sha256:c56adb686c5b72d755a4958905a27212edc6be27d065ebe3cb470c95c552df89",
+      "appVersion": "26.11.0",
+      "imageCreated": "2026-11-02T00:40:38Z",
       "source": "https://hub.docker.com/r/actualbudget/actual-server"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-15",
-    "node": "v24.21.0",
+    "date": "2026-11-04",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "26.10.0"
+      "web": "26.11.0"
     },
     "notes": [
-      "Digest of web resolved 2026-10-15 via registry API (scripts/catalog-pin.mjs; actualbudget/actual-server:26.10.0); image config: ExposedPorts 5006/tcp, Volumes none, User root.",
-      "Smoke run 2026-10-15T05:43:50.771Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (26.9.0) healthy after 3 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 3 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-04 via registry API (scripts/catalog-pin.mjs; actualbudget/actual-server:26.11.0); image config: ExposedPorts 5006/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-04T13:13:57.167Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (26.10.0) healthy after 3 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 3 s, still healthy 60 s later; fresh install of revision 4 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {
