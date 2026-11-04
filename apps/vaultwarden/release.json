@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "vaultwarden",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "d5e0a57b1676c0f7888f012eba7321acb1659a20393da50c8995140bc9a7ac0d"
+      "sha256": "6c9a0a9965ca782998700635aaee42998d34686407950e6828b1bea31b999c6d"
     },
     "compose.yaml": {
-      "sha256": "a2fc109fd41fe98a0f0359a47bb9a78dfb8e08a46d5279b1ef54723a8f01401e"
+      "sha256": "a38b62f54592241054b03564a57ec389628a4e95e74c34b627c54ee3ecc3b991"
     },
     "README.md": {
       "sha256": "fb0854b9e13d98919f2af8ab60c78a6f2767c23378d15f099939bbdef2475662"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "vaultwarden/server@sha256:19ea2b669945d842dadc3d500f2d6a795866a003330f59a47b9634658bae98bb",
+      "reference": "vaultwarden/server@sha256:bbe684a02d6b0db54256ff88eac9754f4519284a7b26314afc241fd7d0918191",
       "repository": "vaultwarden/server",
-      "tag": "1.37.4-alpine",
+      "tag": "1.37.5-alpine",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:7d90670a4e2531e752f014e58f7283b9d197847b6f073bf84e99598f49d80ffd",
-      "appVersion": "1.37.4-alpine",
-      "imageCreated": "2026-10-05T23:36:52Z",
+      "platformDigest": "sha256:bda2ee084beddcb179ca433a2c24a548205fef9d3807319e3d27aed02eeed3ce",
+      "appVersion": "1.37.5-alpine",
+      "imageCreated": "2026-11-01T22:12:40Z",
       "source": "https://hub.docker.com/r/vaultwarden/server"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-15",
-    "node": "v24.21.0",
+    "date": "2026-11-04",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.37.4-alpine"
+      "web": "1.37.5-alpine"
     },
     "notes": [
-      "Digest of web resolved 2026-10-15 via registry API (scripts/catalog-pin.mjs; vaultwarden/server:1.37.4-alpine); image config: ExposedPorts 80/tcp, Volumes /data, User root.",
-      "Smoke run 2026-10-15T05:39:26.897Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (1.37.3) healthy after 61 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 61 s, still healthy 60 s later; fresh install of revision 2 healthy after 61 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-04 via registry API (scripts/catalog-pin.mjs; vaultwarden/server:1.37.5-alpine); image config: ExposedPorts 80/tcp, Volumes /data, User root.",
+      "Smoke run 2026-11-04T13:07:46.138Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.37.4) healthy after 61 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 61 s, still healthy 60 s later; fresh install of revision 3 healthy after 61 s, still healthy 60 s later."
     ]
   },
   "assets": {
