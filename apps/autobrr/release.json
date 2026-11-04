@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "autobrr",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "791935e85246bbcd76f4d83d387372f44b2c6c3a62f6630edbc7c8ed60821529"
+      "sha256": "bef2292232c0d8672e9666b99f45a855212c66b992806eedb45ef8a2585b64fc"
     },
     "compose.yaml": {
-      "sha256": "8cf21a2bc5d056f200d6ee8c6703e9ca65009581e1608391e3eb9cb174d10bc7"
+      "sha256": "321f24937e5cb0ed3f19b614bff9f096312f47959a668a3438d53ec0a215318e"
     },
     "README.md": {
       "sha256": "13befe0837d06a486b0523e5dbd17128b1464620c4c591a8a6b2b43d2f0b920f"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/autobrr/autobrr@sha256:60efc357e1852f1cd337b8c26d65c5299feadbb4f364c89299b1eede5d159ce4",
+      "reference": "ghcr.io/autobrr/autobrr@sha256:72bb5fe5e8c73f85660f92502d9015b21b07156495f039b55864633b9f8b7a89",
       "repository": "ghcr.io/autobrr/autobrr",
-      "tag": "v1.89.0",
+      "tag": "v1.90.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:03644017858c2e54fdc3138c2a13ae8ea8b142d1b9f2ac92e7a2c005b3f3958d",
-      "appVersion": "1.89.0",
-      "imageCreated": "2026-10-21T21:31:24Z",
+      "platformDigest": "sha256:053cb81aaf32fbc875046351a918198f80532f88c50a8fe49f5973b75f6ebb76",
+      "appVersion": "1.90.0",
+      "imageCreated": "2026-11-01T21:27:20Z",
       "source": "https://ghcr.io/autobrr/autobrr"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-24",
-    "node": "v24.21.0",
+    "date": "2026-11-04",
+    "node": "v24.22.1",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.89.0"
+      "web": "1.90.0"
     },
     "notes": [
-      "Digest of web resolved 2026-10-24 via registry API (scripts/catalog-pin.mjs; ghcr.io/autobrr/autobrr:v1.89.0); image config: ExposedPorts 7474/tcp, Volumes /config, User root.",
-      "Smoke run 2026-10-24T05:44:36.212Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.88.0) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-04 via registry API (scripts/catalog-pin.mjs; ghcr.io/autobrr/autobrr:v1.90.0); image config: ExposedPorts 7474/tcp, Volumes /config, User root.",
+      "Smoke run 2026-11-04T13:13:24.151Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.89.0) healthy after 2 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 4 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
