@@ -1,6 +1,6 @@
 services:
   app:
-    image: etherpad/etherpad@sha256:e240564a6897845ee665b02c35853564c0866aafc4641f04c94ce82813373194 # tag: 3.3.12
+    image: etherpad/etherpad@sha256:eab672b563d4355974f186de050ad203890a1ba6637cfff68764e5ad1bf9aca4 # tag: 3.3.13
     environment:
       NODE_ENV: production
       CI: "true"
