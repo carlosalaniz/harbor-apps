@@ -174,7 +174,7 @@
       "dir": "ghostfolio"
     },
     "gitea-mirror": {
-      "revision": "9",
+      "revision": "10",
       "dir": "gitea-mirror"
     },
     "grafana": {
