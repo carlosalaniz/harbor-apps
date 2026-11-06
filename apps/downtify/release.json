@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "downtify",
-    "revision": "7"
+    "revision": "8"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "7cd2bca7f4a3cdb540b29aa90c26c8a0e62e9fb4c8b535a5d4644a65ffbf3749"
+      "sha256": "30d7a05bcaafa801c9efdf499c6e31541dbdc1f260d0702864b2c0af3d1832f6"
     },
     "compose.yaml": {
-      "sha256": "f07e66375fbc2039d2a11bfe9b6d99e56619263ac96d3718102dc92c2b8ed334"
+      "sha256": "50f8039017c3fa658b5fd2d17265165f8d026dcfa261570ba21074c9bfe768f3"
     },
     "README.md": {
       "sha256": "09d52a3bfd619c51aea96a18e462bc370d5d96bd64c5b8617bd86f83612c1d36"
@@ -17,29 +17,29 @@
   },
   "images": {
     "downtify": {
-      "reference": "ghcr.io/henriquesebastiao/downtify@sha256:1cee6d2335fdc441bcfb453a113f165459bbcb6e4d9d84c40f9158af14eac8ea",
+      "reference": "ghcr.io/henriquesebastiao/downtify@sha256:663b2c3e193cd4f2792968071b45524316ad622c49abd54546531d69ab5ca2a0",
       "repository": "ghcr.io/henriquesebastiao/downtify",
-      "tag": "3.8.1",
+      "tag": "3.9.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:5c6b2f01f12237519798d71d2ec415dbbc7f4af5e93e9e59c881ba6dd1457352",
-      "appVersion": "3.8.1",
-      "imageCreated": "2026-10-31T17:37:41Z",
+      "platformDigest": "sha256:e5b5f8b6303c67a71f052ed372d6a59015b363d22a5b7ef9d8e6471ce8ea7d89",
+      "appVersion": "3.9.0",
+      "imageCreated": "2026-11-04T09:49:11Z",
       "source": "https://ghcr.io/henriquesebastiao/downtify"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-03",
-    "node": "v24.22.1",
+    "date": "2026-11-06",
+    "node": "v24.22.2",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "downtify": "3.8.1"
+      "downtify": "3.9.0"
     },
     "notes": [
-      "Digest of downtify resolved 2026-11-03 via registry API (scripts/catalog-pin.mjs; ghcr.io/henriquesebastiao/downtify:3.8.1); image config: ExposedPorts 8000/tcp, Volumes /data,/downloads, User root.",
-      "Smoke run 2026-11-03T12:53:32.024Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (3.8.0) healthy after 6 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 6 s, still healthy 60 s later; fresh install of revision 7 healthy after 6 s, still healthy 60 s later."
+      "Digest of downtify resolved 2026-11-06 via registry API (scripts/catalog-pin.mjs; ghcr.io/henriquesebastiao/downtify:3.9.0); image config: ExposedPorts 8000/tcp, Volumes /data,/downloads, User root.",
+      "Smoke run 2026-11-06T13:08:49.858Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 7 (3.8.1) healthy after 6 s, still healthy 60 s later; updated to revision 8 without a rollback, healthy after 6 s, still healthy 60 s later; fresh install of revision 8 healthy after 6 s, still healthy 60 s later."
     ]
   },
   "assets": {
