@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "mqttx-web",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "5a64c8269ca8f55fcdd6f1175d6df3e8fa8a3e2c53a3f9020bd97d68dbda15f6"
+      "sha256": "b8a3cac05478cc542d71d0eb6ae50583bfc495a79be4459fe557107b3dbdc354"
     },
     "compose.yaml": {
-      "sha256": "c91e149d28cefb23b64f857feca8a893c1038a1b3822c2ea5e6e57aefb13705f"
+      "sha256": "46f860932e4aa1a96408c8e64e0589d4a692bb1d7e7129c4a4061087b3866810"
     },
     "README.md": {
       "sha256": "941719c6864f53c14aaa4897e13cb9f9ef109474d3fb9a0dc101c49296e10496"
@@ -17,29 +17,29 @@
   },
   "images": {
     "app": {
-      "reference": "emqx/mqttx-web@sha256:723906acdb1995ce2649b72b9cd33e86dc21b3a659b6464f04d2de01da10e6cc",
+      "reference": "emqx/mqttx-web@sha256:63f6ee50bc1b7dc6c9743d3571822ff13009ed41dc5de399645fb4a1340a5240",
       "repository": "emqx/mqttx-web",
-      "tag": "v1.13.2",
+      "tag": "v1.13.3",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:4582d9ce1671c0d06bca2bcd7a81e4da34c1ed607bc06bcf95a4c03aa5617e02",
-      "appVersion": "1.13.2",
-      "imageCreated": "2026-10-26T03:01:40Z",
+      "platformDigest": "sha256:7a98b66398562cacbf5787b5efd90ad9fd32293b538bc17300b704294ced8665",
+      "appVersion": "1.13.3",
+      "imageCreated": "2026-11-04T11:30:59Z",
       "source": "https://hub.docker.com/r/emqx/mqttx-web"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-28",
-    "node": "v24.21.0",
+    "date": "2026-11-06",
+    "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "1.13.2"
+      "app": "1.13.3"
     },
     "notes": [
-      "Digest of app resolved 2026-10-28 via registry API (scripts/catalog-pin.mjs; emqx/mqttx-web:v1.13.2); image config: ExposedPorts 80/tcp, Volumes none, User root.",
-      "Smoke run 2026-10-28T05:30:24.300Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.13.1) healthy after 1 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
+      "Digest of app resolved 2026-11-06 via registry API (scripts/catalog-pin.mjs; emqx/mqttx-web:v1.13.3); image config: ExposedPorts 80/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-06T13:04:07.193Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.13.2) healthy after 1 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 4 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {

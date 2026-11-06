@@ -5,8 +5,8 @@ metadata:
   name: MQTTX Web
   description: A Powerful and All-in-One MQTT 5.0 client toolbox for Desktop, CLI and WebSocket.
 release:
-  revision: "3"
-  version: "1.13.2"
+  revision: "4"
+  version: "1.13.3"
 deployment:
   compose: compose.yaml
   multiInstance: true

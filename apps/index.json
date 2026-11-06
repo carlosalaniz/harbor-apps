@@ -302,7 +302,7 @@
       "dir": "morphos"
     },
     "mqttx-web": {
-      "revision": "3",
+      "revision": "4",
       "dir": "mqttx-web"
     },
     "mstream": {
