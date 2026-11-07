@@ -214,7 +214,7 @@
       "dir": "immich"
     },
     "influxdb": {
-      "revision": "4",
+      "revision": "5",
       "dir": "influxdb"
     },
     "influxdb2": {

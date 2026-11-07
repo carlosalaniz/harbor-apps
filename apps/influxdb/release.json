@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "influxdb",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "9534ef0c4686e04739fecead0e6e123bf6d1dd8f501c94524909ce7b96b2ade4"
+      "sha256": "67b4b78f730a87783069e40c7323b25dac43aa9e030ba123b04a8f1e283a8498"
     },
     "compose.yaml": {
-      "sha256": "a52ca9f9816ec766b3909740ef5d6febab6044f0074d3acad5f3327fdf3ef613"
+      "sha256": "f3001d07323a3d01600d4714a7297b15896be6fa2ba822de450dcad6b3d8119f"
     },
     "README.md": {
       "sha256": "e273d58c226e93fc4bdb0896bc1eba25f3b6316a3b4ad011d243262970b148fd"
@@ -17,41 +17,41 @@
   },
   "images": {
     "influxdb": {
-      "reference": "influxdb@sha256:1126a8335b2dd106c5360b9f493c365d9b548100ad68791b4b421dc9f408f8d3",
+      "reference": "influxdb@sha256:ffa96366d916545608b8ae8dcc09d1efb5d792e4139096dfdcb1daf8789b211a",
       "repository": "influxdb",
-      "tag": "1.13.1",
+      "tag": "1.13.2",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:c4a105cc44e7ffaa0d1e741ffbc7c6745aa296d7afc2e01ea0008757dc72f1c4",
-      "appVersion": "1.13.1",
-      "imageCreated": "2026-10-06T02:38:08Z",
+      "platformDigest": "sha256:d4b2bbbe05e012eaba0e68ee0d4f74567ca22efc34f6de8bcc7aede9937a3977",
+      "appVersion": "1.13.2",
+      "imageCreated": "2026-11-05T08:35:49Z",
       "source": "https://hub.docker.com/_/influxdb"
     },
     "chronograf": {
-      "reference": "chronograf@sha256:e01a840ecaf467e5b058faf985d945a1ace75a950e6064fa0218948a6e0ba069",
+      "reference": "chronograf@sha256:973b10204ba70249c4f778611d398d47f861984be037ee52c8320a953c7a4956",
       "repository": "chronograf",
-      "tag": "1.11.6",
+      "tag": "1.11.7",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:d4fbddafa8606ced8197a964808bf9315f9b23c5956f5a11bc77943d87aeee12",
-      "appVersion": "1.11.6",
-      "imageCreated": "2026-10-16T17:45:08Z",
+      "platformDigest": "sha256:ae7140d4e18b8f10d6316c33c528fb7cb6ac1e4be4b90ef1d9bec16903762969",
+      "appVersion": "1.11.7",
+      "imageCreated": "2026-11-05T07:38:28Z",
       "source": "https://hub.docker.com/_/chronograf"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-19",
-    "node": "v24.21.0",
+    "date": "2026-11-07",
+    "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "influxdb": "1.13.1",
-      "chronograf": "1.11.6"
+      "influxdb": "1.13.2",
+      "chronograf": "1.11.7"
     },
     "notes": [
-      "Digest of influxdb resolved 2026-10-19 via registry API (scripts/catalog-pin.mjs; influxdb:1.13.1); image config: ExposedPorts 8086/tcp, Volumes /var/lib/influxdb, User influxdb.",
-      "Digest of chronograf resolved 2026-10-19 via registry API (scripts/catalog-pin.mjs; chronograf:1.11.6); image config: ExposedPorts 8888/tcp, Volumes /var/lib/chronograf, User root.",
-      "Smoke run 2026-10-19T05:36:30.124Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.11.5) healthy after 2 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 4 healthy after 2 s, still healthy 60 s later."
+      "Digest of influxdb resolved 2026-11-07 via registry API (scripts/catalog-pin.mjs; influxdb:1.13.2); image config: ExposedPorts 8086/tcp, Volumes /var/lib/influxdb, User influxdb.",
+      "Digest of chronograf resolved 2026-11-07 via registry API (scripts/catalog-pin.mjs; chronograf:1.11.7); image config: ExposedPorts 8888/tcp, Volumes /var/lib/chronograf, User root.",
+      "Smoke run 2026-11-07T11:58:02.818Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (1.11.6) healthy after 2 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 5 healthy after 2 s, still healthy 60 s later."
     ]
   },
   "assets": {
