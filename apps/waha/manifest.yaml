@@ -5,10 +5,10 @@ metadata:
   name: "WAHA"
   description: "WhatsApp HTTP API: link a WhatsApp number once, then send and receive messages from n8n, scripts and your own apps through a REST API and webhooks."
 release:
-  revision: "1"
+  revision: "2"
   version: 2026.10.1
-  # endpoint `login: never` (decision 194)
-  minHarbor: "0.41.0"
+  # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
+  minHarbor: "0.43.0"
 deployment:
   compose: compose.yaml
   multiInstance: true
@@ -58,6 +58,8 @@ secrets:
     encoding: hex
     retention: retain
     showOnce: WAHA password (user admin, dashboard and Swagger)
+    # the app page keeps this one viewable (Saved passwords), behind the Harbor password (decision 199)
+    revealable: true
     bindings:
       - {service: api, environment: WAHA_DASHBOARD_PASSWORD}
       - {service: api, environment: WHATSAPP_SWAGGER_PASSWORD}

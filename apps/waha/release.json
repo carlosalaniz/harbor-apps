@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "package": {
     "id": "waha",
-    "revision": "1"
+    "revision": "2"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "6128fc51daf76d15b7ddff771c26c5b72adf909373aa15c195c5f006a71545fb"
+      "sha256": "9df85a2df4dd7ea060c8eff51d14b8e136a15a87916cfbbf490208b2b1bf678e"
     },
     "compose.yaml": {
       "sha256": "c58e7b311e2b0a3d24e69ce3bbb32258580d700ed80a4fe57441ad4cf445d1b0"
     },
     "README.md": {
-      "sha256": "3404e3cb267cb0cdb9461c21c4022aed3adee3b5835d92d25f350d9abfad4902"
+      "sha256": "30c8cf73e0c7b0412ff3eaa71f06c25d982d928268b38b61ed532be711590764"
     }
   },
   "images": {
