@@ -9,6 +9,10 @@
       "revision": "4",
       "dir": "akaunting"
     },
+    "android-link": {
+      "revision": "2",
+      "dir": "android-link"
+    },
     "anythingllm": {
       "revision": "4",
       "dir": "anythingllm"

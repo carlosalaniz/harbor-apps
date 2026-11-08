@@ -1,0 +1,19 @@
+# Android phones on the local network, shown in the browser (Android Link, https://github.com/carlosalaniz/android-link).
+#
+# link  Android Link's app on port 8001: a JSON API (/api) and the web app on one port. It pairs phones over Wireless
+#       debugging (found over mDNS, queried from port 5353 straight to each address of the network, which crosses
+#       Docker's NAT), keeps them connected, shows a phone's screen (scrcpy-server 5.0.1 pushed to the phone, video over
+#       a WebSocket) with a hardware keyboard and mouse (UHID), runs shell sessions and automation scripts (in a
+#       sandbox). Its database (SQLite) and adb's key (the one the phones trust) live on the data volume (LINK_DATA).
+#       The image also runs ws-scrcpy on port 8000 for Harbor's redroid app; this app does not publish it. Port 8001
+#       has no login of its own: the endpoint declares `login: required` (decision 194).
+services:
+  link:
+    image: ghcr.io/carlosalaniz/android-link@sha256:b25cbd90d6de386b5ef09a89c85ed987a78dc1240bbdfa5ab6a41df4417e39f9 # tag: 0.2.0
+    environment:
+      LINK_DATA: /data
+      LINK_ADMIN_PORT: "8001"
+    volumes:
+      - {type: volume, source: data, target: /data}
+volumes:
+  data: {}
