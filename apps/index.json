@@ -230,7 +230,7 @@
       "dir": "influxdb2"
     },
     "invio": {
-      "revision": "5",
+      "revision": "6",
       "dir": "invio"
     },
     "jackett": {
