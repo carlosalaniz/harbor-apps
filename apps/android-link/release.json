@@ -28,10 +28,18 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-11-08",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.7.0",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "link": "0.2.0"
+    },
     "notes": [
-      "Digest of link resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/android-link:0.2.0); image config: ExposedPorts 8000/tcp,8001/tcp, Volumes none, User node."
+      "Digest of link resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/android-link:0.2.0); image config: ExposedPorts 8000/tcp,8001/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-08T16:04:08.493Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 2 healthy after 7 s, still healthy 60 s later."
     ]
   },
   "assets": {
