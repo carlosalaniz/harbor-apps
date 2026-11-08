@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "package": {
     "id": "open-webui",
-    "revision": "6"
+    "revision": "7"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "736c4144705cf58ba9ec382ea939bd3c3d1bc39d46a970d7091ee104cabfae45"
+      "sha256": "de8c74cac629d04689095bd671308e59c2df25f9365c550f3f3d0e9f5b6cb96f"
     },
     "compose.yaml": {
-      "sha256": "9861a3bedcff358deb19968a4c6a31e4731107777e1f6038ebf95a433faec13b"
+      "sha256": "6c5fdb7b8f11d3975e52df93acf2b1d8ac1ab24a9ba9664ca0a859b2522de353"
     },
     "README.md": {
-      "sha256": "2a601f1263674e2920366f4f73a6d15b4611841605229e509c8c3edc4f2d46c9"
+      "sha256": "7ec6286d321ca5b6e7ac837e246e3f97d7e356634ec8c1c6d15692ab1a47f8e2"
     }
   },
   "images": {
@@ -51,7 +51,7 @@
     "notes": [
       "Digest of ollama resolved 2026-10-31 via registry API (scripts/catalog-pin.mjs; ollama/ollama:0.34.4); image config: ExposedPorts 11434/tcp, Volumes none, User root.",
       "Digest of web resolved 2026-10-31 via registry API (scripts/catalog-pin.mjs; ghcr.io/open-webui/open-webui:v0.12.4); image config: ExposedPorts 8080/tcp, Volumes none, User 0:0.",
-      "Smoke run 2026-10-31T05:37:12.208Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (0.12.3) healthy after 32 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 34 s, still healthy 60 s later; fresh install of revision 6 healthy after 32 s, still healthy 60 s later."
+      "Smoke run 2026-10-31T22:22:58.022Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (0.12.4) healthy after 32 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 34 s, still healthy 60 s later; fresh install of revision 7 healthy after 32 s, still healthy 60 s later."
     ]
   },
   "assets": {
