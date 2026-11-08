@@ -9,7 +9,7 @@
 #       has no login of its own: the endpoint declares `login: required` (decision 194).
 services:
   link:
-    image: ghcr.io/carlosalaniz/android-link@sha256:b25cbd90d6de386b5ef09a89c85ed987a78dc1240bbdfa5ab6a41df4417e39f9 # tag: 0.2.0
+    image: ghcr.io/carlosalaniz/android-link@sha256:7e07ad2aed6eb2f3ff77d451ab30b293367473ff0467084127fdb5d3b8d40cc8 # tag: 0.2.1
     environment:
       LINK_DATA: /data
       LINK_ADMIN_PORT: "8001"

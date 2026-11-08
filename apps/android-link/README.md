@@ -26,7 +26,8 @@ password…) and can change it.
    network as this machine.
 3. Tap **Pair device with pairing code** and keep that dialog open.
 4. Open Android Link: the phone appears under **Add a phone** with its pairing port filled in. Type the six-digit
-   code from the dialog and press **Pair**.
+   code from the dialog and press **Pair**. If it asks for the **phone port**, that is the number after the colon
+   under **IP address & Port** on the Wireless debugging screen.
 
 If the phone does not show up, set **Home network range** in the app's settings (for example `192.168.1.0/24`), or
 use *Can't see your phone? Enter its address yourself*.
