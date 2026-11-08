@@ -35,11 +35,11 @@
     "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "link": "0.2.0"
+      "link": "0.2.1"
     },
     "notes": [
-      "Smoke run 2026-11-08T16:04:08.493Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 2 healthy after 7 s, still healthy 60 s later.",
-      "Digest of link resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/android-link:0.2.1); image config: ExposedPorts 8000/tcp,8001/tcp, Volumes none, User node."
+      "Digest of link resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/android-link:0.2.1); image config: ExposedPorts 8000/tcp,8001/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-08T18:18:29.665Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.2.0) healthy after 7 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 3 healthy after 4 s, still healthy 60 s later."
     ]
   },
   "assets": {
