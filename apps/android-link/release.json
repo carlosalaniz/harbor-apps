@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "android-link",
+    "revision": "2"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "33c9d1f02a44410136fbb43876e08fa386e1f78e067cfc63ba1b16cac968fd7c"
+    },
+    "compose.yaml": {
+      "sha256": "eb756327210d01535d377ed73f082bc81c574e83d5b4d8c4352edfcbab0e7b4c"
+    },
+    "README.md": {
+      "sha256": "6e1ff8a4904afad011260d3af72a5d14ed4eb9602f418bc1ecdd449959e4e970"
+    }
+  },
+  "images": {
+    "link": {
+      "reference": "ghcr.io/carlosalaniz/android-link@sha256:b25cbd90d6de386b5ef09a89c85ed987a78dc1240bbdfa5ab6a41df4417e39f9",
+      "repository": "ghcr.io/carlosalaniz/android-link",
+      "tag": "0.2.0",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:c560ec6a4f9a1c4d8342ecae9e9f8d95834bf44997029110f794ae33bd1bf8c6",
+      "appVersion": "0.2.0",
+      "imageCreated": "2026-11-08T07:58:54Z",
+      "source": "https://ghcr.io/carlosalaniz/android-link"
+    }
+  },
+  "qualification": {
+    "status": "pending",
+    "date": "2026-11-08",
+    "notes": [
+      "Digest of link resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/android-link:0.2.0); image config: ExposedPorts 8000/tcp,8001/tcp, Volumes none, User node."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "ef450642122f7bd7f8657e24221941a7e011a09ffaaba90b3b8aa46bba8e5a5e"
+    }
+  }
+}
