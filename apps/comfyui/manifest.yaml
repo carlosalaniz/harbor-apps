@@ -5,8 +5,8 @@ metadata:
   name: ComfyUI
   description: Make images with Stable Diffusion, FLUX and other open models on this machine's graphics card, in a node editor or from Open WebUI.
 release:
-  revision: "1"
-  version: 0.40.0
+  revision: "2"
+  version: "cu130-slim-v2-20261019"
   # gpu permission (decision 179)
   minHarbor: "0.34.0"
 deployment:
