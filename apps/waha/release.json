@@ -28,10 +28,18 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-11-08",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.7.0",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "api": "gows-2026.10.1"
+    },
     "notes": [
-      "Digest of api resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; devlikeapro/waha:gows-2026.10.1); image config: ExposedPorts 3000/tcp, Volumes none, User root."
+      "Digest of api resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; devlikeapro/waha:gows-2026.10.1); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-08T17:17:33.782Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 5 s, still healthy 60 s later."
     ]
   },
   "assets": {
