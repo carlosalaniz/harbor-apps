@@ -1,0 +1,74 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: waha
+  name: "WAHA"
+  description: "WhatsApp HTTP API: link a WhatsApp number once, then send and receive messages from n8n, scripts and your own apps through a REST API and webhooks."
+release:
+  revision: "1"
+  version: 2026.10.1
+  # endpoint `login: never` (decision 194)
+  minHarbor: "0.41.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    api: application
+endpoints:
+  web:
+    service: api
+    containerPort: 3000
+    scheme: http
+    exposure: direct
+    browserContext: ordinary
+    # WAHA has its own logins (the API key for /api, admin + password for the dashboard and Swagger), and its clients
+    # (n8n, scripts, webhooks tools) send only the X-Api-Key header, which a Harbor login page in front would block.
+    login: never
+health:
+  endpoint: web
+  # the only route WAHA answers without the API key or the password
+  path: /ping
+  expectedStatus: [200]
+  timeoutSeconds: 5
+  deadlineSeconds: 180
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Open WAHA and sign in as admin with the password shown after install, then open the Dashboard (/dashboard). Connect it to this server with the API key shown after install, start the session \"default\" and scan its QR code in WhatsApp on your phone (Settings → Linked devices → Link a device)."
+storage:
+  - id: sessions
+    composeVolume: sessions
+    purpose: "The linked WhatsApp session (keys and settings): lose it and the phone must be linked again"
+    retention: retain
+  - id: media
+    composeVolume: media
+    purpose: "Files from received messages that WAHA downloads"
+    retention: retain
+secrets:
+  - id: api-key
+    bytes: 32
+    encoding: hex
+    retention: retain
+    showOnce: WAHA API key (X-Api-Key header)
+    bindings:
+      - {service: api, environment: WAHA_API_KEY}
+  - id: admin-password
+    bytes: 32
+    encoding: hex
+    retention: retain
+    showOnce: WAHA password (user admin, dashboard and Swagger)
+    bindings:
+      - {service: api, environment: WAHA_DASHBOARD_PASSWORD}
+      - {service: api, environment: WHATSAPP_SWAGGER_PASSWORD}
+configuration:
+  # the address WAHA puts in file links it hands out (media in webhooks and API answers)
+  - {service: api, environment: WAHA_BASE_URL, endpoint: web, format: origin}
+presentation:
+  tagline: "WhatsApp for your automations, from your own machine"
+  sizeHint: "About 800 MB, plus received files"
+  category: automation
+  icon: icon.png
+  developer: "devlike.pro"
+  website: https://waha.devlike.pro
+  releaseNotes: "WAHA Core 2026.10.1 with the GOWS engine: one WhatsApp session (\"default\"). An unofficial API on top of WhatsApp Web; use a number you can afford to lose."

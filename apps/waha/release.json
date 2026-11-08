@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "waha",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "6128fc51daf76d15b7ddff771c26c5b72adf909373aa15c195c5f006a71545fb"
+    },
+    "compose.yaml": {
+      "sha256": "c58e7b311e2b0a3d24e69ce3bbb32258580d700ed80a4fe57441ad4cf445d1b0"
+    },
+    "README.md": {
+      "sha256": "3404e3cb267cb0cdb9461c21c4022aed3adee3b5835d92d25f350d9abfad4902"
+    }
+  },
+  "images": {
+    "api": {
+      "reference": "devlikeapro/waha@sha256:1f7faeb0227ad5edb5711f7058bfce807ea65e5f92234af0778e4db140f6eb46",
+      "repository": "devlikeapro/waha",
+      "tag": "gows-2026.10.1",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:21c768ca7692b65457b8aa2ddca69b353022ae09b05943cdef9e547324367eed",
+      "appVersion": "gows-2026.10.1",
+      "imageCreated": "2026-10-28T09:19:24Z",
+      "source": "https://hub.docker.com/r/devlikeapro/waha"
+    }
+  },
+  "qualification": {
+    "status": "pending",
+    "date": "2026-11-08",
+    "notes": [
+      "Digest of api resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; devlikeapro/waha:gows-2026.10.1); image config: ExposedPorts 3000/tcp, Volumes none, User root."
+    ]
+  },
+  "assets": {
+    "icon.png": {
+      "sha256": "4cb438c0c1a09e4e0ad1bcac1aa7736a52a4e1350c022abdfb0a7c0c278c1915"
+    }
+  }
+}
