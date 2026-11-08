@@ -561,6 +561,10 @@
       "revision": "2",
       "dir": "vert"
     },
+    "waha": {
+      "revision": "1",
+      "dir": "waha"
+    },
     "wallos": {
       "revision": "7",
       "dir": "wallos"

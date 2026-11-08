@@ -1,0 +1,18 @@
+services:
+  api:
+    # WAHA Core with the GOWS engine (Go, no browser inside): the free tier, one WhatsApp session named "default".
+    # The `latest` tag is the WEBJS engine (a full Chromium); the tag prefix picks the engine, so it stays "gows-".
+    image: devlikeapro/waha@sha256:1f7faeb0227ad5edb5711f7058bfce807ea65e5f92234af0778e4db140f6eb46 # tag: gows-2026.10.1
+    environment:
+      WHATSAPP_DEFAULT_ENGINE: "GOWS"
+      # one login for both the dashboard (/dashboard) and Swagger (/); the password is the generated secret
+      WAHA_DASHBOARD_USERNAME: "admin"
+      WHATSAPP_SWAGGER_USERNAME: "admin"
+      # the pairing QR code belongs on the dashboard, not in the container log
+      WAHA_PRINT_QR: "False"
+    volumes:
+      - {type: volume, source: sessions, target: /app/.sessions}
+      - {type: volume, source: media, target: /app/.media}
+volumes:
+  media: {}
+  sessions: {}
