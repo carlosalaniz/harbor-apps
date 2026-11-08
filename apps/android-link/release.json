@@ -2,28 +2,28 @@
   "schemaVersion": 1,
   "package": {
     "id": "android-link",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "33c9d1f02a44410136fbb43876e08fa386e1f78e067cfc63ba1b16cac968fd7c"
+      "sha256": "4c80bbedb463a5f578b18c3567b11a7fd8d9fbb3d3b817f16091c41301e2bdbf"
     },
     "compose.yaml": {
-      "sha256": "eb756327210d01535d377ed73f082bc81c574e83d5b4d8c4352edfcbab0e7b4c"
+      "sha256": "47a818a26005413a86f0eebd047d5a2bf77b920c5edb6ab2217e642b58941829"
     },
     "README.md": {
-      "sha256": "6e1ff8a4904afad011260d3af72a5d14ed4eb9602f418bc1ecdd449959e4e970"
+      "sha256": "bf0ddc1edb57b2c341916525e1ec0b82218157e3f9620ea0a39e2f1b0ed2ffa5"
     }
   },
   "images": {
     "link": {
-      "reference": "ghcr.io/carlosalaniz/android-link@sha256:b25cbd90d6de386b5ef09a89c85ed987a78dc1240bbdfa5ab6a41df4417e39f9",
+      "reference": "ghcr.io/carlosalaniz/android-link@sha256:7e07ad2aed6eb2f3ff77d451ab30b293367473ff0467084127fdb5d3b8d40cc8",
       "repository": "ghcr.io/carlosalaniz/android-link",
-      "tag": "0.2.0",
+      "tag": "0.2.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:c560ec6a4f9a1c4d8342ecae9e9f8d95834bf44997029110f794ae33bd1bf8c6",
-      "appVersion": "0.2.0",
-      "imageCreated": "2026-11-08T07:58:54Z",
+      "platformDigest": "sha256:e691777ef9b4544d97863460b015a0e21011c549ab558872f75f2229e3858bc3",
+      "appVersion": "0.2.1",
+      "imageCreated": "2026-11-08T18:03:35Z",
       "source": "https://ghcr.io/carlosalaniz/android-link"
     }
   },
@@ -35,11 +35,11 @@
     "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "link": "0.2.0"
+      "link": "0.2.1"
     },
     "notes": [
-      "Digest of link resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/android-link:0.2.0); image config: ExposedPorts 8000/tcp,8001/tcp, Volumes none, User node.",
-      "Smoke run 2026-11-08T16:04:08.493Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 2 healthy after 7 s, still healthy 60 s later."
+      "Digest of link resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/android-link:0.2.1); image config: ExposedPorts 8000/tcp,8001/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-08T18:18:29.665Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.2.0) healthy after 7 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 3 healthy after 4 s, still healthy 60 s later."
     ]
   },
   "assets": {

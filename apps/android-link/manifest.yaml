@@ -5,8 +5,8 @@ metadata:
   name: Android Link
   description: "Your Android phones in the browser: find one on this machine's network and pair it with its code, then see and use its screen with a real keyboard and mouse, open a shell, and run automations like linking WhatsApp to a computer. Nothing to install on the phone."
 release:
-  revision: "2"
-  version: 0.2.0
+  revision: "3"
+  version: 0.2.1
   # 0.41.1 is the first gate that serves an app whose health path answers before any account (decision 194)
   minHarbor: "0.41.1"
 deployment:
@@ -32,13 +32,18 @@ health:
   deadlineSeconds: 180
 ui:
   primaryEndpoint: web
+# the container cannot see the machine's network: this tells it the machine's addresses, so it looks for phones there
+hooks:
+  afterStart:
+    service: link
+    command: [sh, -c, 'printf %s "$HARBOR_ADDRESSES" > /data/host-addresses']
 setup:
   endpoint: web
-  instructions: "Open Android Link and type its password (shown after install; the app's drawer shows it again under Login). On the phone, turn on Developer options and Wireless debugging and tap \"Pair device with pairing code\": the phone shows up in Android Link under Add a phone; type its code and press Pair."
+  instructions: "Open Android Link and type its password (shown after install; the app's drawer shows it again under Login). On the phone, turn on Developer options and Wireless debugging and tap \"Pair device with pairing code\": the phone shows up in Android Link under Add a phone; type its code and press Pair. If it asks for the phone port, that is the number after the colon under \"IP address & Port\" on the Wireless debugging screen."
 settings:
   - id: discovery-subnets
     label: "Home network range"
-    help: "Where Android Link looks for phones, e.g. 192.168.1.0/24 (several: separated by spaces). Empty: the network of whoever opens the app. Needed only when phones do not show up under Add a phone."
+    help: "Where Android Link looks for phones, e.g. 192.168.1.0/24 (several: separated by spaces). Empty: the network this machine is on. Needed only when phones do not show up under Add a phone."
     type: string
     default: ""
     maxLength: 200
@@ -58,4 +63,4 @@ presentation:
   developer: "Carlos Alaniz (phone screen: scrcpy by Genymobile)"
   website: https://github.com/carlosalaniz/android-link
   source: https://github.com/carlosalaniz/android-link
-  releaseNotes: "0.2.0: a new app on one address. Phones on the network show up by themselves (pair with the code alone) and reconnect after a restart. The screen runs on scrcpy 5 with a hardware keyboard and mouse (your own, an on-screen keyboard, a touchpad), which apps that ignore injected input accept. A shell with history on each phone. Automations: scripts you write in TypeScript, run safely on the server; the first links WhatsApp to a computer with its code. An API for programs and AI agents (Swagger at /api/docs, /api/discovery). The old ws-scrcpy screens page is gone from this app."
+  releaseNotes: "0.2.1: finds phones on this machine's network from inside Harbor (0.2.0 searched only its own container network and could not hear phones). Pairing may ask for the phone port shown on the Wireless debugging screen. 0.2.0: a new app on one address. Phones on the network show up by themselves (pair with the code alone) and reconnect after a restart. The screen runs on scrcpy 5 with a hardware keyboard and mouse (your own, an on-screen keyboard, a touchpad), which apps that ignore injected input accept. A shell with history on each phone. Automations: scripts you write in TypeScript, run safely on the server; the first links WhatsApp to a computer with its code. An API for programs and AI agents (Swagger at /api/docs, /api/discovery). The old ws-scrcpy screens page is gone from this app."
