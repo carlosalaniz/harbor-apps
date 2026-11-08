@@ -201,6 +201,10 @@
       "revision": "8",
       "dir": "homarr"
     },
+    "home-assistant": {
+      "revision": "1",
+      "dir": "home-assistant"
+    },
     "homebox": {
       "revision": "3",
       "dir": "homebox"

@@ -1,0 +1,157 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: home-assistant
+  name: "Home Assistant"
+  description: "Open-source home automation: control lights, sensors, heating and thousands of devices from one dashboard, with automations that run locally."
+release:
+  revision: "1"
+  version: 2026.11.0
+  # endpoint `login: never` (decision 194)
+  minHarbor: "0.41.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    app: application
+endpoints:
+  web:
+    service: app
+    containerPort: 8123
+    scheme: http
+    exposure: direct
+    # works on plain http; Assist's microphone in the browser and some cards need a secure address
+    browserContext: secure
+    # Home Assistant has its own login (with two-factor), and the companion apps for phones and watches call this
+    # same address with their own tokens, which a Harbor login page in front would block.
+    login: never
+health:
+  endpoint: web
+  # served without a login (HA's landing page reads it to see Core is up); /api/ needs a token
+  path: /manifest.json
+  expectedStatus: [200]
+  timeoutSeconds: 10
+  deadlineSeconds: 600
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Open Home Assistant right away and create the owner account: whoever finishes onboarding first owns it. Then set your home's location and add devices under Settings → Devices & services (add them by IP address: discovery does not reach this app)."
+storage:
+  - id: config
+    composeVolume: config
+    purpose: "Home Assistant's configuration, history database, its own backups and everything you set up"
+    retention: retain
+# Home Assistant answers any request that carries X-Forwarded-For with HTTP 400 unless its trusted proxies list the
+# peer it came from, and Harbor's proxies (the secure LAN relay, tailscale serve, Caddy for domains, your own proxy)
+# all send that header. Current releases keep those settings in Home Assistant's own store (/config/.storage/http,
+# changed in its UI); YAML `http:` is imported once as a 5-minute trial an admin must confirm, so it cannot be used.
+# After every start, publish and unpublish this hook adds HARBOR_PROXIES to the store's confirmed (`stable`)
+# config and turns use_x_forwarded_for on. Addresses the operator added stay; the ones Harbor added before are
+# remembered in /config/.harbor-proxies.json and replaced. A store of another version than this image writes is
+# left alone. Home Assistant writes that store only when it boots and when its UI changes it, so editing it while
+# it runs is safe; when something changed, the hook restarts Home Assistant through s6 (SIGHUP = its own restart,
+# exit code 100, which the image's finish script hands back to s6), waits until it answers, and reads the store
+# back. On a fresh install that is one restart right after the first readiness check.
+hooks:
+  afterStart:
+    service: app
+    timeoutSeconds: 300
+    command:
+      - sh
+      - -c
+      - |
+        PATH="/command:$PATH"
+        svc=/run/service/home-assistant
+        trust() {
+        python3 - "$1" <<'PY'
+        import ipaddress, json, os, sys, tempfile
+        mode = sys.argv[1]
+        STORE = "/config/.storage/http"
+        MINE = "/config/.harbor-proxies.json"
+        try:
+            from homeassistant.components.http.config import STORAGE_VERSION
+        except Exception as e:
+            print("could not read Home Assistant's http store version (" + type(e).__name__ + ")")
+            sys.exit(1)
+        harbor = []
+        for p in os.environ.get("HARBOR_PROXIES", "").split():
+            try:
+                n = str(ipaddress.ip_network(p))
+            except ValueError:
+                print("ignoring " + p + ": not an IP address or network")
+                continue
+            if n not in harbor:
+                harbor.append(n)
+        if not harbor:
+            print("Harbor passed no proxy addresses; Home Assistant's settings left as they are")
+            sys.exit(1)
+        try:
+            with open(STORE, encoding="utf-8") as f:
+                raw = json.load(f)
+        except FileNotFoundError:
+            print("no " + STORE + " yet; Home Assistant writes it when it starts")
+            sys.exit(1)
+        if raw.get("version") != STORAGE_VERSION or not isinstance(raw.get("data", {}).get("stable"), dict):
+            print("Home Assistant's http store is version " + str(raw.get("version")) + ", this image writes " + str(STORAGE_VERSION) + "; left alone")
+            sys.exit(1)
+        stable = raw["data"]["stable"]
+        have = list(stable.get("trusted_proxies") or [])
+        if mode == "check":
+            ok = stable.get("use_x_forwarded_for") is True and all(n in have for n in harbor)
+            print("Home Assistant trusts " + " ".join(have) if ok else "Home Assistant's store lost Harbor's proxies: " + " ".join(have))
+            sys.exit(0 if ok else 1)
+        try:
+            with open(MINE, encoding="utf-8") as f:
+                before = json.load(f)
+        except (FileNotFoundError, ValueError):
+            before = []
+        want = [n for n in have if n not in before and n not in harbor] + harbor
+        def write(path, text, mode_bits):
+            fd, tmp = tempfile.mkstemp(dir=os.path.dirname(path), prefix=".harbor-")
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                f.write(text)
+            os.chmod(tmp, mode_bits)
+            os.replace(tmp, path)
+        changed = stable.get("use_x_forwarded_for") is not True or want != have
+        if changed:
+            stable["use_x_forwarded_for"] = True
+            stable["trusted_proxies"] = want
+            st = os.stat(STORE)
+            write(STORE, json.dumps(raw, indent=2) + "\n", st.st_mode & 0o7777)
+            print("Home Assistant now trusts forwarded headers from " + " ".join(want))
+        if before != harbor:
+            write(MINE, json.dumps(harbor) + "\n", 0o644)
+        sys.exit(3 if changed else 0)
+        PY
+        }
+        trust apply
+        rc=$?
+        if [ "$rc" = 0 ]; then echo "Home Assistant already trusts Harbor's proxies"; exit 0; fi
+        [ "$rc" = 3 ] || exit 1
+        [ -d "$svc" ] || { echo "no Home Assistant service at $svc; restart the app in Harbor to apply the change"; exit 1; }
+        old=$(s6-svstat -o pid "$svc")
+        echo "restarting Home Assistant once to apply it"
+        s6-svc -h "$svc" || exit 1
+        i=0
+        while [ "$i" -lt 240 ]; do
+          sleep 1
+          i=$((i+1))
+          pid=$(s6-svstat -o pid "$svc" 2>/dev/null)
+          if [ -z "$pid" ] || [ "$pid" = "$old" ] || [ "$pid" = "-1" ]; then continue; fi
+          if python3 -c 'import sys, urllib.request; sys.exit(0 if urllib.request.urlopen("http://127.0.0.1:8123/manifest.json", timeout=5).status == 200 else 1)' 2>/dev/null; then
+            echo "Home Assistant is back after ${i}s"
+            trust check
+            exit $?
+          fi
+        done
+        echo "Home Assistant did not answer within 240s of its restart"
+        exit 1
+presentation:
+  tagline: "Your smart home, run from your own machine"
+  sizeHint: "About 2 GB, plus your history database"
+  category: home
+  icon: icon.svg
+  developer: "Open Home Foundation"
+  website: https://www.home-assistant.io
+  releaseNotes: "Home Assistant 2026.11.0, the Container installation (no add-ons). Devices are added by address: no automatic discovery, USB sticks or Bluetooth adapters on Harbor."

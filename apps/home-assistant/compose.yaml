@@ -1,0 +1,11 @@
+services:
+  app:
+    # The image's ENTRYPOINT is /init (s6-overlay), which runs Home Assistant as the supervised service
+    # /run/service/home-assistant: its Restart button exits with code 100 and s6 starts it again. The image skips
+    # s6 whenever a command is given, so this package sets none; Harbor's proxy settings are written by the
+    # manifest's after-start hook instead.
+    image: ghcr.io/home-assistant/home-assistant@sha256:c6c1ca9931036bf3a2c4cc088d8db25dfea3b33935a5ecc83c40349462e2f69e # tag: 2026.11.0
+    volumes:
+      - {type: volume, source: config, target: /config}
+volumes:
+  config: {}

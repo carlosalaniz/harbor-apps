@@ -34,6 +34,9 @@
     },
     "kavita": {
       "note": "compose.yaml passes [-c, script] to the image ENTRYPOINT [/bin/bash], which then execs /entrypoint.sh, to write appsettings.Production.json (KnownProxies). Before merging a move, check the release Dockerfile still has ENTRYPOINT /bin/bash and /entrypoint.sh; otherwise the script is silently skipped and EPUB pictures break on the secure LAN address, while the smoke still passes."
+    },
+    "home-assistant": {
+      "note": "The after-start hook depends on the image layout and on Home Assistant's HTTP settings store: /run/service/home-assistant (s6, /command on the PATH), SIGHUP = restart with exit code 100 (finish script hands it back to s6), homeassistant.components.http.config.STORAGE_VERSION, and /config/.storage/http with data.stable.trusted_proxies / use_x_forwarded_for. A store version it does not know is left alone and the hook fails with a message, so after a move read the [after-start hook] event: the smoke test still passes (Harbor's health check skips the proxies), but the secure LAN address, Tailscale and domains would answer 400."
     }
   }
 }
