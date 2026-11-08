@@ -28,10 +28,18 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-11-08",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.7.0",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "app": "2026.11.0"
+    },
     "notes": [
-      "Digest of app resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghcr.io/home-assistant/home-assistant:2026.11.0); image config: ExposedPorts none, Volumes none, User root."
+      "Digest of app resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghcr.io/home-assistant/home-assistant:2026.11.0); image config: ExposedPorts none, Volumes none, User root.",
+      "Smoke run 2026-11-08T06:23:35.855Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 7 s, still healthy 60 s later."
     ]
   },
   "assets": {
