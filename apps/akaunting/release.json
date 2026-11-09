@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "akaunting",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "f2f81a229557c2c021ae5a0d268c65663762340ced455352a3792f762a04572f"
+      "sha256": "6386e694be990f5379301c19b441dc65bebfb330813f0b05966c58f4118a2d67"
     },
     "compose.yaml": {
-      "sha256": "1d8e1f86f555e4e2fb02bd6917e727f06e0d07ed12748c1b3a58cc1e8648daf9"
+      "sha256": "d6060996d99f429ea7df69a6a634ca9200d35ac85769c497c3a292505488d508"
     },
     "README.md": {
       "sha256": "f4f2fe4ef922c1e31fe057ff9387cad7a2bc60ad42783169eda6488d2e78dd0d"
@@ -17,41 +17,41 @@
   },
   "images": {
     "app": {
-      "reference": "akaunting/akaunting@sha256:50940112be48a229a2f567dc50ace9886fe5b14e1fe33f0232e704d0fb96f29f",
+      "reference": "akaunting/akaunting@sha256:af69b0343db9b9f7979e15c4be3d50ee502e38edb71190953db7b280d10d0edb",
       "repository": "akaunting/akaunting",
-      "tag": "3.1.21",
+      "tag": "3.3.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:97e04c82b5929e32e3590f199f51b66c11707ce270e018a45997fd5716a0e31d",
-      "appVersion": "3.1.21",
-      "imageCreated": "2026-03-19T10:22:19Z",
+      "platformDigest": "sha256:8f1e098196db563a6a17602a31ea902da7aabc436553e99b863053e36fe50d5e",
+      "appVersion": "3.3.0",
+      "imageCreated": "2026-11-07T11:43:07Z",
       "source": "https://hub.docker.com/r/akaunting/akaunting"
     },
     "db": {
-      "reference": "mariadb@sha256:6422478cb8e159f080fb1d8ccf65101e26fe51385787fde7d16c3b165a331f15",
+      "reference": "mariadb@sha256:c4124d1afa875e47f2892edf26b482fa54f796e2f342d3717a04ca091a22a9bd",
       "repository": "mariadb",
       "tag": "11.8.9",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:93fc3fe333b6cdfb061425869c2c3a5bb2851c0c74dbebc2c940f024e7482d76",
+      "platformDigest": "sha256:8a4a99eff981d95c3ab12d019b82fe59725fb7761f1f9a5f155bc3f025528f4f",
       "appVersion": "11.8.9",
-      "imageCreated": "2026-10-02T01:31:10Z",
+      "imageCreated": "2026-10-26T23:24:57Z",
       "source": "https://hub.docker.com/_/mariadb"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
-    "node": "v24.21.0",
+    "date": "2026-11-09",
+    "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "3.1.21",
+      "app": "3.3.0",
       "db": "11.8.9"
     },
     "notes": [
-      "Digest of app resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; akaunting/akaunting:3.1.21); image config: ExposedPorts 80/tcp, Volumes none, User root.",
-      "Digest of db resolved 2026-10-14 via registry API (scripts/catalog-pin.mjs; mariadb:11.8.9); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
-      "Smoke run 2026-10-23T19:58:48.233Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (3.1.21) healthy after 20 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 23 s, still healthy 60 s later; fresh install of revision 4 healthy after 20 s, still healthy 60 s later."
+      "Digest of app resolved 2026-11-09 via registry API (scripts/catalog-pin.mjs; akaunting/akaunting:3.3.0); image config: ExposedPorts 80/tcp, Volumes none, User root.",
+      "Digest of db resolved 2026-11-09 via registry API (scripts/catalog-pin.mjs; mariadb:11.8.9); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
+      "Smoke run 2026-11-09T14:10:26.494Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (3.1.21) healthy after 22 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 27 s, still healthy 60 s later; fresh install of revision 5 healthy after 20 s, still healthy 60 s later."
     ]
   },
   "assets": {
