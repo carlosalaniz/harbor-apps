@@ -16,9 +16,9 @@ code and an event monitor; Swagger documents every endpoint and lets you try the
 
 - Runs WAHA Core with the GOWS engine (no browser inside) on 127.0.0.1, with the session and received files in
   retained volumes.
-- Generates the API key and the admin password and shows both once after install. Keep the API key: it goes in the
-  `X-Api-Key` header of every API call. The password (user `admin`) opens the dashboard and Swagger; you can see it
-  again on the app's page under **Saved passwords**, after typing your Harbor password.
+- Generates the API key and the admin password and shows both after install. The API key goes in the `X-Api-Key`
+  header of every API call, the password (user `admin`) opens the dashboard and Swagger. You can see both again on
+  the app's **Settings** tab under **Saved passwords**, after typing your Harbor password.
 - Tells WAHA its main address (`WAHA_BASE_URL`), so file links in webhooks and API answers point at this app.
 - Keeps Harbor's app login off for this app: its clients send only the API key, which a Harbor login page would block.
 

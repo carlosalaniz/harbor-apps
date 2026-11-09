@@ -51,6 +51,8 @@ secrets:
     encoding: hex
     retention: retain
     showOnce: WAHA API key (X-Api-Key header)
+    # viewable on the app page too: the dashboard asks for it on every new browser (decision 199)
+    revealable: true
     bindings:
       - {service: api, environment: WAHA_API_KEY}
   - id: admin-password
