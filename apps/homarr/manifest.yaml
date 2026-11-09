@@ -5,8 +5,8 @@ metadata:
   name: Homarr
   description: A modern and easy to use dashboard. 80+ integrations. 20K+ icons built in. Authentication out of the box. No YAML, drag and drop configuration.
 release:
-  revision: "9"
-  version: "2.11.1"
+  revision: "10"
+  version: "2.12.0"
 deployment:
   compose: compose.yaml
   multiInstance: true
