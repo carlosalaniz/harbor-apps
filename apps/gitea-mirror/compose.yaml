@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/raylabshq/gitea-mirror@sha256:26b32b936aa6b2a3316fa1a02e486b62ff5c262505ab15c285c603a553da71e9 # tag: v3.51.2
+    image: ghcr.io/raylabshq/gitea-mirror@sha256:00e8c4d67fc1c403dfa2eeb03e5d9454d6ab69dc710ec3caeacaaa848a12ddac # tag: v3.51.5
     environment:
       BETTER_AUTH_TRUSTED_ORIGINS: "*"
       NODE_ENV: production
