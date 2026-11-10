@@ -5,8 +5,8 @@ metadata:
   name: Snort
   description: Fast Nostr UI
 release:
-  revision: "2"
-  version: 0.5.3
+  revision: "3"
+  version: "0.5.4"
 deployment:
   compose: compose.yaml
   multiInstance: true

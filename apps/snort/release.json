@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "snort",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "47b30afb8dc720fd14f1ad995460f6fb09769974e6c614c998dc3afad244f97a"
+      "sha256": "fb45939661f129a0509650cfdae5583ae2fcb4430a7d69348e4cfb7cb91886e9"
     },
     "compose.yaml": {
-      "sha256": "913ea39080813e6af1323d0f307d195e51618e02eb7762c727462bd7116145a5"
+      "sha256": "76df728e28fd957937f76ce2d5582ebdcc9d57024a18faad0aa175ecf07d88d8"
     },
     "README.md": {
       "sha256": "44c160b8ab433e30e31203d89d2c5ff75769741b2b20a72ca2f20aa9956ff9e4"
@@ -17,31 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "voidic/snort@sha256:410778efd4d74f001bb20e91e9f752bda8bb2e5d5f796a2020b253be8b9ca099",
+      "reference": "voidic/snort@sha256:9ea5f2d60108984cb56992c7842950e02a3b31d610a6cb79ca9c43b46cbc1057",
       "repository": "voidic/snort",
-      "tag": "v0.5.3",
+      "tag": "v0.5.4",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:1dbdcc598dda5e0ebd499ab078b3804f3d10905556376289da8f0d17fe9369fa",
-      "appVersion": "0.5.3",
-      "imageCreated": "2026-04-08T17:12:58Z",
+      "platformDigest": "sha256:3c87fc06facf93146069d24650796a0250c1cbc8bbeced7bb6bd07f4aedc5d3a",
+      "appVersion": "0.5.4",
+      "imageCreated": "2026-10-29T16:49:27Z",
       "source": "https://hub.docker.com/r/voidic/snort"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-11-10",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "0.5.3"
+      "web": "0.5.4"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package snort (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; voidic/snort@sha256:410778efd4d74f001bb20e91e9f752bda8bb2e5d5f796a2020b253be8b9ca099); image config: ExposedPorts 8080/tcp, Volumes none, User 101.",
-      "Live catalog run catalog-2026-10-12T18-21-42-harbor-q10: passed (healthy after 27s; page title \"Snort - Nostr\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-11-10 via registry API (scripts/catalog-pin.mjs; voidic/snort:v0.5.4); image config: ExposedPorts 8080/tcp, Volumes none, User 101.",
+      "Smoke run 2026-11-10T13:43:32.662Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.5.3) healthy after 1 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
