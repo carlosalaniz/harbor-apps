@@ -1,6 +1,6 @@
 services:
   db:
-    image: mariadb@sha256:5dfb3093333fa0ea53194ddef0a2bfa21d3b1e1353bd228b22610cd6fc0c04da # tag: 11.4.5
+    image: mariadb@sha256:c4124d1afa875e47f2892edf26b482fa54f796e2f342d3717a04ca091a22a9bd # tag: 11.8.9
     environment:
       MYSQL_ROOT_PASSWORD: tyooe
       MYSQL_DATABASE: pastefy
@@ -14,7 +14,7 @@ services:
     volumes:
       - {type: volume, source: db, target: "/var/lib/mysql"}
   app:
-    image: interaapps/pastefy@sha256:353ce246ccf24ab1dec42e3c387744b47925065c207699f0bf1ce8e560619ca9 # tag: 7.1.6
+    image: interaapps/pastefy@sha256:d2abe24232aa54023c472b033fe50cc8db0df8769bbe8099575d2bdaeed3ecb0 # tag: 7.2.6
     environment:
       HTTP_SERVER_CORS: "*"
       DATABASE_DRIVER: mysql

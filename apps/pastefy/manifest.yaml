@@ -5,8 +5,8 @@ metadata:
   name: Pastefy
   description: Pastefy is an feature-rich Open Source self-hostable Pastebin.
 release:
-  revision: "3"
-  version: 7.1.6-patch.1
+  revision: "4"
+  version: "7.2.6-patch.1"
 deployment:
   compose: compose.yaml
   multiInstance: true

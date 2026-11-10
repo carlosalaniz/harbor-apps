@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "pastefy",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "e3a7afb43d44ed468df8fe936c147ac73cbacb8c3ce86f2c03a98c77917f13ab"
+      "sha256": "1e01165a7d90d4951109a614a37a680b481a8bbd95a4d662339d9fb168e7807b"
     },
     "compose.yaml": {
-      "sha256": "d2cf9a790e5e5d157e7c5891d93b79a286c6a0e9ab860005888954b6f3c86b30"
+      "sha256": "173425e29c91b3852b64db6b8c770e531cb73c90cf6dffcc854e133b6bb0a5f8"
     },
     "README.md": {
       "sha256": "e04d76fcc6354938af1ed9bf4628f80da5b088009376077064068fe1b384d194"
@@ -17,39 +17,41 @@
   },
   "images": {
     "db": {
-      "reference": "mariadb@sha256:5dfb3093333fa0ea53194ddef0a2bfa21d3b1e1353bd228b22610cd6fc0c04da",
+      "reference": "mariadb@sha256:c4124d1afa875e47f2892edf26b482fa54f796e2f342d3717a04ca091a22a9bd",
       "repository": "mariadb",
-      "tag": "11.4.5",
+      "tag": "11.8.9",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:8f0b045968f437f4a8dabd5f66fbe81472ebb0f2473e567819485427654a8e05",
-      "appVersion": "11.4.5",
-      "imageCreated": "2025-02-05T21:06:18Z",
+      "platformDigest": "sha256:8a4a99eff981d95c3ab12d019b82fe59725fb7761f1f9a5f155bc3f025528f4f",
+      "appVersion": "11.8.9",
+      "imageCreated": "2026-10-26T23:24:57Z",
       "source": "https://hub.docker.com/_/mariadb"
     },
     "app": {
-      "reference": "interaapps/pastefy@sha256:353ce246ccf24ab1dec42e3c387744b47925065c207699f0bf1ce8e560619ca9",
+      "reference": "interaapps/pastefy@sha256:d2abe24232aa54023c472b033fe50cc8db0df8769bbe8099575d2bdaeed3ecb0",
       "repository": "interaapps/pastefy",
-      "tag": "7.1.6",
+      "tag": "7.2.6",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:8a3bc26f5e5b638b8dfefb76e77e3da39b13c144f1a4f0469e778e05c9104f66",
-      "appVersion": "7.1.6",
-      "imageCreated": "2026-03-01T22:41:28Z",
+      "platformDigest": "sha256:5b3bcd922341e57e43b3b0b4f2ddd2a4073d694effcb232affc4e5002bcf1a5d",
+      "appVersion": "7.2.6",
+      "imageCreated": "2026-06-01T21:21:37Z",
       "source": "https://hub.docker.com/r/interaapps/pastefy"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
-    "node": "v24.21.0",
+    "date": "2026-11-10",
+    "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "db": "11.4.5",
-      "app": "7.1.6"
+      "db": "11.8.9",
+      "app": "7.2.6"
     },
     "notes": [
-      "Smoke run 2026-10-23T20:06:34.938Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (7.1.6-patch.1) healthy after 13 s (app restarted 1 time(s) before that), still healthy 60 s later; updated to revision 3 without a rollback, healthy after 11 s, still healthy 60 s later; fresh install of revision 3 healthy after 9 s, still healthy 60 s later."
+      "Digest of db resolved 2026-11-10 via registry API (scripts/catalog-pin.mjs; mariadb:11.8.9); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
+      "Digest of app resolved 2026-11-10 via registry API (scripts/catalog-pin.mjs; interaapps/pastefy:7.2.6); image config: ExposedPorts 1337/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-10T13:43:40.439Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (7.1.6-patch.1) healthy after 14 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 10 s, still healthy 60 s later; fresh install of revision 4 healthy after 9 s, still healthy 60 s later."
     ]
   },
   "assets": {
