@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "mstream",
-    "revision": "6"
+    "revision": "7"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "92c06541cb6e136a1f8a6ed614099dcce8efad7b6601ed3e8b063f6fb83d9465"
+      "sha256": "ea50ee50a4f9cb69754e0e8ef9aba4f9dd9e7500ef977c4fc684487310e3da75"
     },
     "compose.yaml": {
-      "sha256": "eb92f69ebccf0403228b9a5818bbf896424cc2a40fa2d3ce1b9e5f6857b59500"
+      "sha256": "4ec46f4258b45b764b8cf20ead0d4b58000e3f0c0e2293817ff2193acd433562"
     },
     "README.md": {
       "sha256": "4cffa0ef442fd86524b5401761ad61ae73c1bff444e1e87573c1b6042f7ffc78"
@@ -17,29 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "linuxserver/mstream@sha256:b0c9a8d5e2d29bd4a238696a468d7ef3e30d916f9203d0f8d8a37f88d1bcbed8",
+      "reference": "linuxserver/mstream@sha256:5d83debb1105c495c0e16f06e0b6592b65b441553ab6d2ed44806845cbc5a628",
       "repository": "linuxserver/mstream",
-      "tag": "6.32.3",
+      "tag": "6.33.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:baa315822d96d3688c8ea93d64c597bfc607616756eb7b91b7685df70f7b06f2",
-      "appVersion": "6.32.3",
-      "imageCreated": "2026-11-02T18:58:36Z",
+      "platformDigest": "sha256:de75ea3759b85b7c304f576b5fae65dfc10118ef8b51522537a9041065524e9c",
+      "appVersion": "6.33.1",
+      "imageCreated": "2026-11-08T06:49:43Z",
       "source": "https://hub.docker.com/r/linuxserver/mstream"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-05",
-    "node": "v24.22.1",
+    "date": "2026-11-10",
+    "node": "v24.22.2",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.7.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "6.32.3"
+      "server": "6.33.1"
     },
     "notes": [
-      "Digest of server resolved 2026-11-05 via registry API (scripts/catalog-pin.mjs; linuxserver/mstream:6.32.3); image config: ExposedPorts 3000/tcp, Volumes /config, User root.",
-      "Smoke run 2026-11-05T13:21:00.986Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (6.32.2) healthy after 4 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 7 s, still healthy 60 s later; fresh install of revision 6 healthy after 3 s, still healthy 60 s later."
+      "Digest of server resolved 2026-11-10 via registry API (scripts/catalog-pin.mjs; linuxserver/mstream:6.33.1); image config: ExposedPorts 3000/tcp, Volumes /config, User root.",
+      "Smoke run 2026-11-10T13:37:28.301Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (6.32.3) healthy after 3 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 7 s, still healthy 60 s later; fresh install of revision 7 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {
