@@ -2,28 +2,28 @@
   "schemaVersion": 1,
   "package": {
     "id": "kt-stores",
-    "revision": "1"
+    "revision": "2"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "338a32168061c6e3c9b7390bc0ce4d94ce5536aade29ac18568c08b2f49149bc"
+      "sha256": "81a2af3f22dcfee14639b5f8aeb43e34ed20304254cde2a4e4984c40982141ff"
     },
     "compose.yaml": {
-      "sha256": "613f303ada5ef78f1118f467e2512fba39ea43f5ab348734d22eb6cf521721fa"
+      "sha256": "9784e9293366bd88c33670f47dfbd42c9049da98126ff95c0062971c932fb66f"
     },
     "README.md": {
-      "sha256": "19616577b3ad5306b8309d8a2c58194a1299399c39be4fe9bb68180823be25e5"
+      "sha256": "c00886429e84cfb5dbe309e49c6e413a887ee275b97450bb03af7fd19b6d83cb"
     }
   },
   "images": {
     "kt": {
-      "reference": "ghcr.io/carlosalaniz/kt-stores@sha256:26c92d4e462b69fe03f1ff17f5c4d84729e11ae7db11ef44ae57f7482c34c944",
+      "reference": "ghcr.io/carlosalaniz/kt-stores@sha256:24913b4c751d3dd2dd3cf3d4359ab1c67d094d737924f9cf2080cba7b2c52979",
       "repository": "ghcr.io/carlosalaniz/kt-stores",
-      "tag": "0.1.0",
+      "tag": "0.1.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:c673fab95cc4dc42980b5d36c1fe811f1ac0ec09c04499ed5275d6adeb7d0e6e",
-      "appVersion": "0.1.0",
-      "imageCreated": "2026-11-09T10:48:25Z",
+      "platformDigest": "sha256:e09b5fc2159427689970d0e47778785e243edbc2f694c6bff8bc16afeb4a84cd",
+      "appVersion": "0.1.1",
+      "imageCreated": "2026-11-11T04:38:23Z",
       "source": "https://ghcr.io/carlosalaniz/kt-stores"
     },
     "qdrant": {
@@ -41,7 +41,7 @@
     "status": "pending",
     "date": "2026-11-11",
     "notes": [
-      "Digest of kt resolved 2026-11-11 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/kt-stores:0.1.0); image config: ExposedPorts 8001/tcp,8002/tcp, Volumes none, User node.",
+      "Digest of kt resolved 2026-11-11 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/kt-stores:0.1.1); image config: ExposedPorts 8001/tcp,8002/tcp, Volumes none, User node.",
       "Digest of qdrant resolved 2026-11-11 via registry API (scripts/catalog-pin.mjs; qdrant/qdrant:v1.20.0); image config: ExposedPorts 6333/tcp,6334/tcp, Volumes none, User 0:0."
     ]
   },

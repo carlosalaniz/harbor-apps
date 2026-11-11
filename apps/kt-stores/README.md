@@ -13,6 +13,8 @@ and tags, so an agent picks the right one without searching everything.
   an automatic change.
 - **View your files in the browser:** PDFs, Markdown, Word previews, and the exact text agents read.
 - **Search one store, or ask all of them** and see which stores the LLM picks and why.
+- **Chat with any OpenRouter model** about your stores. It uses the same tools agents get, so you can compare how well
+  models find answers, with each answer's tool calls, time and cost.
 - **Deleted items stay in the Trash for 30 days,** including ones deleted by agents.
 
 ## Getting started
