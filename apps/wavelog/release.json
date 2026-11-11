@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "wavelog",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "f4bc4e05a595cf98e29c08f50845e9a0e84176313541e910574562fdf83c4336"
+      "sha256": "9c7bf1802973a8b83a828d9488f880426af64c10a553374bd032e0a3cc57ddf9"
     },
     "compose.yaml": {
-      "sha256": "ee1f9b01aa399946b920d9800c7d2277ae435b9b90e9f0611b747f8c1eff4c23"
+      "sha256": "de375e7b0ee96aa987ecfac9fd4b88e51f8fe0a6482e0cc5ed7485b781c992a9"
     },
     "README.md": {
       "sha256": "0c81a2538d34ed081ccfda80dc29f42a59e31af03d7e35232429e0bae8eacbe1"
@@ -17,39 +17,41 @@
   },
   "images": {
     "app": {
-      "reference": "ghcr.io/wavelog/wavelog@sha256:6d02c84188a6d4a87c641cc13b2c69de971ae3d3dc6657b9d15617230dc8cac0",
+      "reference": "ghcr.io/wavelog/wavelog@sha256:e371b599572bbd50b019acf8bf54009df7042bbd8f238d905a540d6e956b2c25",
       "repository": "ghcr.io/wavelog/wavelog",
-      "tag": "3.2.4",
+      "tag": "3.2.5",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:16cb900a18fb46ddfdc9d60c5ab5006f326dc17593985bf3e93fdec6de70aba4",
-      "appVersion": "3.2.4",
-      "imageCreated": "2026-10-21T19:06:55Z",
+      "platformDigest": "sha256:f1e3b5bf735bc44e9bfca62318db0c8f5a23d7b4193d9c3dda935e4ee94430dc",
+      "appVersion": "3.2.5",
+      "imageCreated": "2026-11-07T08:29:43Z",
       "source": "https://ghcr.io/wavelog/wavelog"
     },
     "wavelog-db": {
-      "reference": "mariadb@sha256:250e1609e93c0e6aecf64bfbab2d84d5e89d2481540fe77447ff6c855c3b1873",
+      "reference": "mariadb@sha256:c4124d1afa875e47f2892edf26b482fa54f796e2f342d3717a04ca091a22a9bd",
       "repository": "mariadb",
-      "tag": "11.4",
+      "tag": "11.8",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:33a6653ab666774f48818120045f9367a81cd4c54c027412fe294a7d1274e2dc",
-      "appVersion": "11.4",
-      "imageCreated": "2026-10-17T00:32:13Z",
+      "platformDigest": "sha256:8a4a99eff981d95c3ab12d019b82fe59725fb7761f1f9a5f155bc3f025528f4f",
+      "appVersion": "11.8",
+      "imageCreated": "2026-10-26T23:24:57Z",
       "source": "https://hub.docker.com/_/mariadb"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
-    "node": "v24.21.0",
+    "date": "2026-11-11",
+    "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "3.2.4",
-      "wavelog-db": "11.4"
+      "app": "3.2.5",
+      "wavelog-db": "11.8"
     },
     "notes": [
-      "Smoke run 2026-10-23T19:18:53.124Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (3.2.4) healthy after 2 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 4 healthy after 2 s, still healthy 60 s later."
+      "Digest of app resolved 2026-11-11 via registry API (scripts/catalog-pin.mjs; ghcr.io/wavelog/wavelog:3.2.5); image config: ExposedPorts 80/tcp, Volumes none, User root.",
+      "Digest of wavelog-db resolved 2026-11-11 via registry API (scripts/catalog-pin.mjs; mariadb:11.8); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
+      "Smoke run 2026-11-11T12:54:41.016Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (3.2.4) healthy after 2 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 6 s, still healthy 60 s later; fresh install of revision 5 healthy after 2 s, still healthy 60 s later."
     ]
   },
   "assets": {
