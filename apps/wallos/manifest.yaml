@@ -5,8 +5,8 @@ metadata:
   name: Wallos
   description: "Wallos: Open-source, self-hostable personal subscription tracker. Visualize your recurring expenses, manage your budget, and save money."
 release:
-  revision: "7"
-  version: "5.10.4"
+  revision: "8"
+  version: "5.11.1"
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml
