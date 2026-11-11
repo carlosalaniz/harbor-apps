@@ -1,0 +1,86 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: kt-stores
+  name: KT Stores
+  description: "Separate knowledge stores any AI agent can discover and search through MCP. Drop in your documents, and KT Stores indexes them in the background, describes each store, and lets agents pick the right one."
+release:
+  revision: "1"
+  version: 0.1.0
+  # 0.41.1 is the first gate that serves an app whose health path answers before any account (decision 194)
+  minHarbor: "0.41.1"
+deployment:
+  compose: compose.yaml
+  multiInstance: false
+  services:
+    kt: application
+    qdrant: infrastructure
+endpoints:
+  web:
+    service: kt
+    containerPort: 8001
+    scheme: http
+    exposure: direct
+    browserContext: ordinary
+    # stores, files and settings with no login of their own: Harbor's login is always in front (decision 194)
+    login: required
+  # agents cannot use a password page: this endpoint is never gated, and the app checks bearer tokens itself. It serves
+  # only /mcp, signed file links and /health.
+  mcp:
+    service: kt
+    containerPort: 8002
+    scheme: http
+    exposure: direct
+    browserContext: ordinary
+    kind: api
+health:
+  endpoint: web
+  path: /api/health
+  expectedStatus: [200]
+  timeoutSeconds: 10
+  deadlineSeconds: 180
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Open KT Stores and type its password (shown after install). In Settings, add an OpenRouter API key, then make a store and drop your documents in. To connect an AI agent, use this app's MCP address followed by /mcp, with the header Authorization: Bearer and one of the two MCP tokens shown after install."
+secrets:
+  - id: app-secret
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: kt, environment: KT_SECRET}
+  - id: mcp-full-token
+    bytes: 32
+    encoding: hex
+    retention: retain
+    showOnce: "MCP full-access token (agents can do everything you can)"
+    bindings:
+      - {service: kt, environment: KT_MCP_FULL_TOKEN}
+  - id: mcp-read-token
+    bytes: 32
+    encoding: hex
+    retention: retain
+    showOnce: "MCP read-only token (agents can list, search and read)"
+    bindings:
+      - {service: kt, environment: KT_MCP_READ_TOKEN}
+storage:
+  - id: data
+    composeVolume: data
+    purpose: "Your stores and their original files, the source of truth, plus settings and job state"
+    retention: retain
+    external: {hint: "Documents add up over time; a folder on a big disk is a good idea, for example /mnt/knowledge.", required: false, readOnly: false}
+  - id: qdrant
+    composeVolume: qdrant
+    purpose: "Search index (KT Stores can rebuild it from your files, at OpenRouter's embedding rates)"
+    retention: retain
+presentation:
+  tagline: "Knowledge stores for your AI agents"
+  sizeHint: "About 1 GB, plus your files"
+  category: ai
+  icon: icon.svg
+  developer: "Carlos Alaniz"
+  website: https://github.com/carlosalaniz/kt-stores
+  source: https://github.com/carlosalaniz/kt-stores
+  releaseNotes: "0.1.0: the first version. Stores of written documents (Markdown, text, HTML, Word, PDF with text), indexed in the background with OpenRouter and searched by agents through MCP."

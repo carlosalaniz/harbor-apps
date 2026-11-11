@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "kt-stores",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "338a32168061c6e3c9b7390bc0ce4d94ce5536aade29ac18568c08b2f49149bc"
+    },
+    "compose.yaml": {
+      "sha256": "613f303ada5ef78f1118f467e2512fba39ea43f5ab348734d22eb6cf521721fa"
+    },
+    "README.md": {
+      "sha256": "19616577b3ad5306b8309d8a2c58194a1299399c39be4fe9bb68180823be25e5"
+    }
+  },
+  "images": {
+    "kt": {
+      "reference": "ghcr.io/carlosalaniz/kt-stores@sha256:26c92d4e462b69fe03f1ff17f5c4d84729e11ae7db11ef44ae57f7482c34c944",
+      "repository": "ghcr.io/carlosalaniz/kt-stores",
+      "tag": "0.1.0",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:c673fab95cc4dc42980b5d36c1fe811f1ac0ec09c04499ed5275d6adeb7d0e6e",
+      "appVersion": "0.1.0",
+      "imageCreated": "2026-11-09T10:48:25Z",
+      "source": "https://ghcr.io/carlosalaniz/kt-stores"
+    },
+    "qdrant": {
+      "reference": "qdrant/qdrant@sha256:9bfc89f9914fc14876a88c05270685921a55b8877b254a98bcc1cc2f0a424cd2",
+      "repository": "qdrant/qdrant",
+      "tag": "v1.20.0",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:2d1b0bfd0a961275481ea09400fc98008216ae54e1b52ed7d24520d63050c644",
+      "appVersion": "1.20.0",
+      "imageCreated": "2026-10-21T19:12:49Z",
+      "source": "https://hub.docker.com/r/qdrant/qdrant"
+    }
+  },
+  "qualification": {
+    "status": "pending",
+    "date": "2026-11-11",
+    "notes": [
+      "Digest of kt resolved 2026-11-11 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/kt-stores:0.1.0); image config: ExposedPorts 8001/tcp,8002/tcp, Volumes none, User node.",
+      "Digest of qdrant resolved 2026-11-11 via registry API (scripts/catalog-pin.mjs; qdrant/qdrant:v1.20.0); image config: ExposedPorts 6333/tcp,6334/tcp, Volumes none, User 0:0."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "bb5735b9ae65d95732e29fa646d88a3edf97f5a7bfab8bc843a000be7bbeb811"
+    }
+  }
+}
