@@ -1,0 +1,26 @@
+# Knowledge stores that agents discover and search through MCP (KT Stores, https://github.com/carlosalaniz/kt-stores).
+#
+# kt      One image, two processes: the API and web app on 8001 (no login of its own: the endpoint declares
+#         `login: required`) and MCP on 8002 (its own bearer tokens), plus the background worker. Original files, the
+#         database and settings live on the data volume.
+# qdrant  The vector index, reachable only on the app's own network. It can be rebuilt from the files.
+services:
+  kt:
+    image: ghcr.io/carlosalaniz/kt-stores@sha256:26c92d4e462b69fe03f1ff17f5c4d84729e11ae7db11ef44ae57f7482c34c944 # tag: 0.1.0
+    environment:
+      KT_DATA: /data
+      KT_QDRANT_URL: http://qdrant:6333
+    volumes:
+      - {type: volume, source: data, target: /data}
+    # the app copes with Qdrant still starting: indexing waits for it
+    depends_on:
+      qdrant: {condition: service_started}
+  qdrant:
+    image: qdrant/qdrant@sha256:9bfc89f9914fc14876a88c05270685921a55b8877b254a98bcc1cc2f0a424cd2 # tag: v1.20.0
+    environment:
+      QDRANT__TELEMETRY_DISABLED: "true"
+    volumes:
+      - {type: volume, source: qdrant, target: /qdrant/storage}
+volumes:
+  data: {}
+  qdrant: {}

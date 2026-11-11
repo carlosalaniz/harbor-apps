@@ -265,6 +265,10 @@
       "revision": "2",
       "dir": "kiwix"
     },
+    "kt-stores": {
+      "revision": "1",
+      "dir": "kt-stores"
+    },
     "langflow": {
       "revision": "7",
       "dir": "langflow"
