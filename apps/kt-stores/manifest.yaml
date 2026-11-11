@@ -5,8 +5,8 @@ metadata:
   name: KT Stores
   description: "Separate knowledge stores any AI agent can discover and search through MCP. Drop in your documents, and KT Stores indexes them in the background, describes each store, and lets agents pick the right one."
 release:
-  revision: "2"
-  version: 0.1.1
+  revision: "3"
+  version: 0.2.1
   # 0.41.1 is the first gate that serves an app whose health path answers before any account (decision 194)
   minHarbor: "0.41.1"
 deployment:
@@ -43,7 +43,7 @@ ui:
   primaryEndpoint: web
 setup:
   endpoint: web
-  instructions: "Open KT Stores and type its password (shown after install). In Settings, add an OpenRouter API key, then make a store and drop your documents in. To connect an AI agent, use this app's MCP address followed by /mcp, with the header Authorization: Bearer and one of the two MCP tokens shown after install."
+  instructions: "Open KT Stores and type its password (shown after install). In Settings, add an OpenRouter API key, then make a store and drop your documents in. To connect an AI agent, use this app's MCP address followed by /mcp, with the header Authorization: Bearer and one of the two MCP tokens. Both are in KT Stores' Settings, under Connect an agent, where you can copy a ready-made config or regenerate either token."
 secrets:
   - id: app-secret
     bytes: 32
@@ -55,14 +55,14 @@ secrets:
     bytes: 32
     encoding: hex
     retention: retain
-    showOnce: "MCP full-access token (agents can do everything you can)"
+    showOnce: "MCP full-access token (also in KT Stores' Settings)"
     bindings:
       - {service: kt, environment: KT_MCP_FULL_TOKEN}
   - id: mcp-read-token
     bytes: 32
     encoding: hex
     retention: retain
-    showOnce: "MCP read-only token (agents can list, search and read)"
+    showOnce: "MCP read-only token (also in KT Stores' Settings)"
     bindings:
       - {service: kt, environment: KT_MCP_READ_TOKEN}
 storage:
@@ -77,10 +77,10 @@ storage:
     retention: retain
 presentation:
   tagline: "Knowledge stores for your AI agents"
-  sizeHint: "About 1 GB, plus your files"
+  sizeHint: "About 2 GB, plus your files"
   category: ai
   icon: icon.svg
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/kt-stores
   source: https://github.com/carlosalaniz/kt-stores
-  releaseNotes: "0.1.1: a Chat page to ask any OpenRouter model about your stores, using the same tools agents get, with each answer's tool calls, time and cost. Models are now picked from OpenRouter's list with their prices, and changing a store's model shows what re-embedding costs."
+  releaseNotes: "0.2.1: documents are read by their structure. PDFs keep headings, paragraphs and tables, scanned or garbled pages can be read with OCR (off by default, about $2 per 1,000 pages), and chunks follow sections instead of pages. EPUB books and Safari web archives are read too, and chat answers render tables. Agent tokens can now be shown, copied and regenerated in Settings. After updating, the Stores page offers to read older files again and shows what it costs."
