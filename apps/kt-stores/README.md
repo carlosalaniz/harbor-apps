@@ -6,8 +6,11 @@ and tags, so an agent picks the right one without searching everything.
 
 - **Stores are folders of your files.** The files are the source of truth, and the search index can always be rebuilt
   from them.
-- **Drop in files or whole folders.** Markdown, text, HTML, Word and PDFs with a text layer are indexed in the
-  background. Anything else is kept and waits until KT Stores can read it.
+- **Drop in files or whole folders.** Markdown, text, HTML, Word, EPUB books, Safari web archives and PDFs are indexed
+  in the background. Anything else is kept and waits until KT Stores can read it.
+- **Documents are read by their structure.** PDFs keep their headings, paragraphs and tables, and search follows each
+  document's sections. Scanned or garbled PDF pages can be read with OCR, which is off until you turn it on in
+  Settings (Mistral OCR through OpenRouter, about $2 per 1,000 pages; Settings shows how many pages are waiting).
 - **Follow the progress** across every store in Activity. Indexing continues with the page closed, and after a restart.
 - **Descriptions and tags are written for you.** A store that already has them gets a suggestion to review, and never
   an automatic change.
@@ -23,13 +26,14 @@ and tags, so an agent picks the right one without searching everything.
 2. In **Settings**, add an [OpenRouter](https://openrouter.ai/keys) API key.
 3. Make a store and drop your documents in.
 
-The text of your files is sent to OpenRouter for embedding and classification. Files whose names suggest secrets are
-skipped unless you choose **Index anyway**.
+The text of your files is sent to OpenRouter for embedding and classification, and scanned PDF pages to Mistral OCR
+when OCR is on. Files whose names suggest secrets are skipped unless you choose **Index anyway**.
 
 ## Connect an agent
 
-Harbor shows two MCP tokens once, right after install: **full access** can do everything you can, and **read-only** can
-list, search and read. Add this to any MCP client, using this app's MCP address from Harbor:
+There are two MCP tokens: **full access** can do everything you can, and **read-only** can list, search and read. Both
+are in KT Stores' **Settings**, under **Connect an agent**, where you can show, copy or regenerate either one, and copy a
+ready-made config. Add this to any MCP client, using this app's MCP address from Harbor:
 
 ```json
 {
