@@ -6,7 +6,7 @@
 # qdrant  The vector index, reachable only on the app's own network. It can be rebuilt from the files.
 services:
   kt:
-    image: ghcr.io/carlosalaniz/kt-stores@sha256:26c92d4e462b69fe03f1ff17f5c4d84729e11ae7db11ef44ae57f7482c34c944 # tag: 0.1.0
+    image: ghcr.io/carlosalaniz/kt-stores@sha256:24913b4c751d3dd2dd3cf3d4359ab1c67d094d737924f9cf2080cba7b2c52979 # tag: 0.1.1
     environment:
       KT_DATA: /data
       KT_QDRANT_URL: http://qdrant:6333

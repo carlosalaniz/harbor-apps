@@ -5,8 +5,8 @@ metadata:
   name: KT Stores
   description: "Separate knowledge stores any AI agent can discover and search through MCP. Drop in your documents, and KT Stores indexes them in the background, describes each store, and lets agents pick the right one."
 release:
-  revision: "1"
-  version: 0.1.0
+  revision: "2"
+  version: 0.1.1
   # 0.41.1 is the first gate that serves an app whose health path answers before any account (decision 194)
   minHarbor: "0.41.1"
 deployment:
@@ -83,4 +83,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/kt-stores
   source: https://github.com/carlosalaniz/kt-stores
-  releaseNotes: "0.1.0: the first version. Stores of written documents (Markdown, text, HTML, Word, PDF with text), indexed in the background with OpenRouter and searched by agents through MCP."
+  releaseNotes: "0.1.1: a Chat page to ask any OpenRouter model about your stores, using the same tools agents get, with each answer's tool calls, time and cost. Models are now picked from OpenRouter's list with their prices, and changing a store's model shows what re-embedding costs."
