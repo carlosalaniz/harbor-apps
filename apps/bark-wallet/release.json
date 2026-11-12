@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "bark-wallet",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "10b9169590e9f9b6f7326211615f98dd4da392942e60d6c9695a8b43104efcc0"
+      "sha256": "1e84075d1a83a0f6bce06c7a9cd6068b48d99453c2eccca81454de580b01b164"
     },
     "compose.yaml": {
-      "sha256": "6b3bb73022286ce91315df674f4cfc9cd014b26181a163f8cbe7072391590db2"
+      "sha256": "5d856f2da46ca5d100c425e0b818d085038a2e34c3415945f0dacdc43fe63818"
     },
     "README.md": {
       "sha256": "53e6c0c0f5f5e7ea22f3f8269bae4f982d1aa99785834128ec43982c576efe18"
@@ -17,59 +17,53 @@
   },
   "images": {
     "web": {
-      "reference": "secondark/bark-web@sha256:c7ee6f6f92bc0e67d98dc0336ec85d4a3ac96e323cd8fb758175747532e1bcae",
+      "reference": "secondark/bark-web@sha256:2b572c4509a0f81e2c2640ead2e3160c5a569af6dc6ae959bd93a78eaf4db97d",
       "repository": "secondark/bark-web",
-      "tag": "0.8.0",
+      "tag": "0.10.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:e75b8b1f47bd0bdc83d383d153f1f3f0886b5723e0244a79da741d05752566a2",
-      "appVersion": "0.8.0",
-      "imageCreated": "2026-08-26T01:39:21Z",
+      "platformDigest": "sha256:9435b0a761bff8f801861452a40ae5712b206654de599ecd111e68be19cd2ec2",
+      "appVersion": "0.10.0",
+      "imageCreated": "2026-10-23T17:14:28Z",
       "source": "https://hub.docker.com/r/secondark/bark-web"
     },
     "api": {
-      "reference": "secondark/bark-web-api@sha256:2ccf75c99873e99182d61f64cd2d9ff03fb376812bbc9a9e43abd10d9afc38ab",
+      "reference": "secondark/bark-web-api@sha256:b3cf82827cd98512b9a6407f060652f0141262ed9cc07dd9c26864b1ee6c6e0b",
       "repository": "secondark/bark-web-api",
-      "tag": "0.8.0",
+      "tag": "0.10.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:08b11e10f779396724a8bf5ca204c7006f7aa27ad7529c074897840021b23e96",
-      "appVersion": "0.8.0",
-      "imageCreated": "2026-08-26T01:40:16Z",
+      "platformDigest": "sha256:22e99680baa7c21c0b5b5c857319a30779ea63b65b02f88c456105081015002c",
+      "appVersion": "0.10.0",
+      "imageCreated": "2026-10-23T17:15:12Z",
       "source": "https://hub.docker.com/r/secondark/bark-web-api"
     },
     "barkd": {
-      "reference": "secondark/bark@sha256:30a91f2c31a16ec7d1a4d7744989ff2113fd003febb75aedfe2449db9133e671",
+      "reference": "secondark/bark@sha256:461620508b3105a417bbe2369bc16ed486561e7218f41046bb6169c432fe357c",
       "repository": "secondark/bark",
-      "tag": "0.6.2",
+      "tag": "0.8.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:260d0995116f7f7462ad0e5da52ddf716166afbd58f7c3ffd14dcf620738b33c",
-      "appVersion": "0.6.2",
-      "imageCreated": "2026-08-25T15:44:07Z",
+      "platformDigest": "sha256:f73c0e69b774983551fed8369f7003b29433e8ff9d86ce4b1dfa57f05e2a61d0",
+      "appVersion": "0.8.1",
+      "imageCreated": "2026-11-05T23:21:11Z",
       "source": "https://hub.docker.com/r/secondark/bark"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-11-12",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "0.8.0",
-      "api": "0.8.0",
-      "barkd": "0.6.2"
+      "web": "0.10.0",
+      "api": "0.10.0",
+      "barkd": "0.8.1"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package bark-wallet (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: stop_grace_period 1m dropped (Docker's default applies)",
-      "service api: stop_grace_period 1m dropped (Docker's default applies)",
-      "service barkd: user 0:0 dropped (named volumes keep the image's ownership)",
-      "service barkd: stop_grace_period 1m dropped (Docker's default applies)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; secondark/bark-web@sha256:c7ee6f6f92bc0e67d98dc0336ec85d4a3ac96e323cd8fb758175747532e1bcae); image config: ExposedPorts 8080/tcp, Volumes none, User 101.",
-      "Digest of api resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; secondark/bark-web-api@sha256:2ccf75c99873e99182d61f64cd2d9ff03fb376812bbc9a9e43abd10d9afc38ab); image config: ExposedPorts 4001/tcp, Volumes none, User node.",
-      "Digest of barkd resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; secondark/bark@sha256:30a91f2c31a16ec7d1a4d7744989ff2113fd003febb75aedfe2449db9133e671); image config: ExposedPorts none, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-41-harbor-q03: passed (healthy after 47s; page title \"Bark Wallet\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-11-12 via registry API (scripts/catalog-pin.mjs; secondark/bark-web:0.10.0); image config: ExposedPorts 8080/tcp, Volumes none, User 101.",
+      "Digest of api resolved 2026-11-12 via registry API (scripts/catalog-pin.mjs; secondark/bark-web-api:0.10.0); image config: ExposedPorts 4001/tcp, Volumes none, User node.",
+      "Digest of barkd resolved 2026-11-12 via registry API (scripts/catalog-pin.mjs; secondark/bark:0.8.1); image config: ExposedPorts none, Volumes none, User root.",
+      "Smoke run 2026-11-12T14:02:04.243Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.8.0-patch.1) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 17 s, still healthy 60 s later; fresh install of revision 3 healthy after 2 s, still healthy 60 s later."
     ]
   },
   "assets": {
