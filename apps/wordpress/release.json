@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "wordpress",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "a736e47f80c8abafeff44cc7f9a11748aaa8419ac2c83eaced11ad77d6d88ca5"
+      "sha256": "5fb5435f119a7be325c832635fd0cd747f802a9e3106b6bf71295580a8c5f255"
     },
     "compose.yaml": {
-      "sha256": "d64b1c427a2f6456e65c202484903213468405b8a20a3c6f97ea88664418423e"
+      "sha256": "b0374bcb6357ed6588aabbf0c4bc5560aadc7ef1afc876dad550ff3a3590984e"
     },
     "README.md": {
       "sha256": "e4b0ef1235b9863816f8599fd6bd32d0f22e9042cd8a213b6da7e8dca04b960c"
@@ -17,39 +17,41 @@
   },
   "images": {
     "app": {
-      "reference": "wordpress@sha256:f3e6835fa7d4a5b786615c24b67ec70816e06ebd517d31276bef423e49dfd126",
+      "reference": "wordpress@sha256:8901759bfbb7ebc567dbc44a244c0d96d720d0a67c17bc4f42ec355ddba2e863",
       "repository": "wordpress",
       "tag": "7.1.3",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:806680ba62232c4c300fb9dcc9f89d08e9e8c2bfc59837a1f58716f8648306d5",
+      "platformDigest": "sha256:6d874926493844718057742ab60fd24966f9cbcebf141552349ef018d6b3c3a1",
       "appVersion": "7.1.3",
-      "imageCreated": "2026-10-21T16:29:48Z",
+      "imageCreated": "2026-10-28T02:21:16Z",
       "source": "https://hub.docker.com/_/wordpress"
     },
     "db": {
-      "reference": "mariadb@sha256:2d50fe0f77dac919396091e527e5e148a9de690e58f32875f113bef6506a17f5",
+      "reference": "mariadb@sha256:24e76fcec8c003a0362d0dd53f4806e7e79458d7fdeaf47437760e19496f5a9c",
       "repository": "mariadb",
-      "tag": "11.5.2",
+      "tag": "11.8.8",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:6683de3c6fc21fb7edcd4d3abcfc591329faeec3fc933fbc4260a2db7a60fed5",
-      "appVersion": "11.5.2",
-      "imageCreated": "2024-11-14T22:30:36Z",
+      "platformDigest": "sha256:e564bcaefb87c3d2b8b09b539ea791d34f4b62c05e2e7cb03f5d6388bdc54f2c",
+      "appVersion": "11.8.8",
+      "imageCreated": "2026-08-18T19:24:20Z",
       "source": "https://hub.docker.com/_/mariadb"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
-    "node": "v24.21.0",
+    "date": "2026-11-12",
+    "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "app": "7.1.3",
-      "db": "11.5.2"
+      "db": "11.8.8"
     },
     "notes": [
-      "Smoke run 2026-10-23T19:20:15.311Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (7.1.3) healthy after 8 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 7 s, still healthy 60 s later; fresh install of revision 3 healthy after 6 s, still healthy 60 s later."
+      "Digest of app resolved 2026-11-12 via registry API (scripts/catalog-pin.mjs; wordpress:7.1.3); image config: ExposedPorts 80/tcp, Volumes /var/www/html, User root.",
+      "Digest of db resolved 2026-11-12 via registry API (scripts/catalog-pin.mjs; mariadb:11.8.8); image config: ExposedPorts 3306/tcp, Volumes /var/lib/mysql, User root.",
+      "Smoke run 2026-11-12T14:00:02.752Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (7.1.3) healthy after 6 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 8 s, still healthy 60 s later; fresh install of revision 4 healthy after 6 s, still healthy 60 s later."
     ]
   },
   "assets": {
