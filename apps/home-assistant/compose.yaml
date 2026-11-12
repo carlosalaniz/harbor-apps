@@ -4,7 +4,7 @@ services:
     # /run/service/home-assistant: its Restart button exits with code 100 and s6 starts it again. The image skips
     # s6 whenever a command is given, so this package sets none; Harbor's proxy settings are written by the
     # manifest's after-start hook instead.
-    image: ghcr.io/home-assistant/home-assistant@sha256:c6c1ca9931036bf3a2c4cc088d8db25dfea3b33935a5ecc83c40349462e2f69e # tag: 2026.11.0
+    image: ghcr.io/home-assistant/home-assistant@sha256:6785d1eca68747a524c156faae1b139ed415c07357386ae6fe17291986e59e82 # tag: 2026.11.1
     volumes:
       - {type: volume, source: config, target: /config}
 volumes:

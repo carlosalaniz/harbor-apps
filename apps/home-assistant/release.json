@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "home-assistant",
-    "revision": "1"
+    "revision": "2"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "bb4b275c1b4ee6dbae2cbdc3289ee4404025d94f7ee07ba178914fdf37a7f2c1"
+      "sha256": "645414c666d43affa860e633b74e1eed6498e3922d6aadd92173380af9485041"
     },
     "compose.yaml": {
-      "sha256": "f0b87aa27600c847ef1f322955ea919e367b37bf6bcdf318a57979c46e9f14c0"
+      "sha256": "a58d439af5f88141ba5e097c4ac3073be3224cb67702930302acfa9e6702b1ee"
     },
     "README.md": {
       "sha256": "17c23204bd58d2528229a46c4cba3d0bd70a8a77e75919608538369a7a6e4f99"
@@ -17,29 +17,29 @@
   },
   "images": {
     "app": {
-      "reference": "ghcr.io/home-assistant/home-assistant@sha256:c6c1ca9931036bf3a2c4cc088d8db25dfea3b33935a5ecc83c40349462e2f69e",
+      "reference": "ghcr.io/home-assistant/home-assistant@sha256:6785d1eca68747a524c156faae1b139ed415c07357386ae6fe17291986e59e82",
       "repository": "ghcr.io/home-assistant/home-assistant",
-      "tag": "2026.11.0",
+      "tag": "2026.11.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:078222f9ea47cf47b172a301c2c45a1d2344b9d666827729b71fc3f7d7a57592",
-      "appVersion": "2026.11.0",
-      "imageCreated": "2026-11-04T17:38:58Z",
+      "platformDigest": "sha256:1e25a28cb9ee48dbcd33b65cbdcf2919d01991fe11f71cdae0a09c9fc3017ebb",
+      "appVersion": "2026.11.1",
+      "imageCreated": "2026-11-09T18:59:01Z",
       "source": "https://ghcr.io/home-assistant/home-assistant"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-08",
+    "date": "2026-11-12",
     "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.0",
+    "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "2026.11.0"
+      "app": "2026.11.1"
     },
     "notes": [
-      "Digest of app resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghcr.io/home-assistant/home-assistant:2026.11.0); image config: ExposedPorts none, Volumes none, User root.",
-      "Smoke run 2026-11-08T06:23:35.855Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 7 s, still healthy 60 s later."
+      "Digest of app resolved 2026-11-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/home-assistant/home-assistant:2026.11.1); image config: ExposedPorts none, Volumes none, User root.",
+      "Smoke run 2026-11-12T13:55:56.385Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (2026.11.0) healthy after 7 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 12 s, still healthy 60 s later; fresh install of revision 2 healthy after 7 s, still healthy 60 s later."
     ]
   },
   "assets": {
