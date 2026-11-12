@@ -11,7 +11,7 @@ services:
     healthcheck:
       disable: true
   redis:
-    image: redis@sha256:b43d2dcbbdb1f9e1582e3a0f37e53bf79038522ccffb56a25858969d7a9b6c11 # tag: 8.0.2
+    image: redis@sha256:1f88291b4c57bdf249f02eb085a8669889b2d2954e91d4de5118a5da6b78dd53 # tag: 8.10.3
     volumes:
       - {type: volume, source: redis, target: "/data"}
 volumes:

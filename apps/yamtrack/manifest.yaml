@@ -5,7 +5,7 @@ metadata:
   name: Yamtrack
   description: A self hosted media tracker.
 release:
-  revision: "2"
+  revision: "3"
   version: 0.26.3-patch.1
   minHarbor: 0.28.4
 deployment:

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "yamtrack",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "90a5166ebe6a01abe28df740a563f272d365911b1ea0df4f064efcf1b4d17f02"
+      "sha256": "f2bb4f3b30e9e25dc603d6da19daabd569edc2e07c095ff636fa8854982fbf62"
     },
     "compose.yaml": {
-      "sha256": "2a4cfc36b6ee5aeb29d237aa34be0d23437c1eb02c9ac17347ecc0d9eb9bea86"
+      "sha256": "d21078571f61a4fbc08afc8ee8f9945ef3daf1f05cc3a2dbe3366e9e6e4ab719"
     },
     "README.md": {
       "sha256": "9756323142d141408ef1f7a20704e43f4032a57b14529527cc4c2425a4230f55"
@@ -27,36 +27,31 @@
       "source": "https://ghcr.io/fuzzygrim/yamtrack"
     },
     "redis": {
-      "reference": "redis@sha256:b43d2dcbbdb1f9e1582e3a0f37e53bf79038522ccffb56a25858969d7a9b6c11",
+      "reference": "redis@sha256:1f88291b4c57bdf249f02eb085a8669889b2d2954e91d4de5118a5da6b78dd53",
       "repository": "redis",
-      "tag": "8.0.2",
+      "tag": "8.10.3",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:07c689dad77c543eee9c4e98563c021a7b531d0f87d982aa109414492b5483e1",
-      "appVersion": "8.0.2",
-      "imageCreated": "2025-05-29T16:02:07Z",
+      "platformDigest": "sha256:e2728231060693472a8efb488dd139a8142a01bd0612ae70429bf5b5be924be1",
+      "appVersion": "8.10.3",
+      "imageCreated": "2026-11-05T07:36:42Z",
       "source": "https://hub.docker.com/_/redis"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-11-12",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "web": "0.26.3",
-      "redis": "8.0.2"
+      "redis": "8.10.3"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package yamtrack (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: security_opt no-new-privileges dropped",
-      "service redis: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service web: the image's own healthcheck switched off (nothing waits for it; Umbrel never acts on it)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/fuzzygrim/yamtrack@sha256:78497b454b2b52d3b1062f6fd238351d714cff0895db4369e49ace36f4622e75); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
-      "Digest of redis resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; redis@sha256:b43d2dcbbdb1f9e1582e3a0f37e53bf79038522ccffb56a25858969d7a9b6c11); image config: ExposedPorts 6379/tcp, Volumes /data, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-22-harbor-q13: passed (healthy after 124s; page title \"Login - Yamtrack\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-11-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/fuzzygrim/yamtrack:0.26.3); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
+      "Digest of redis resolved 2026-11-12 via registry API (scripts/catalog-pin.mjs; redis:8.10.3); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-12T14:02:44.875Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.26.3-patch.1) healthy after 24 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 16 s, still healthy 60 s later; fresh install of revision 3 healthy after 24 s, still healthy 60 s later."
     ]
   },
   "assets": {
