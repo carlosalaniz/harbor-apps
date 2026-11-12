@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/ulsklyc/yuvomi@sha256:b1c126285d762698021b840116e17097339132b5d333df52522e983229c529c4 # tag: 2.76.0
+    image: ghcr.io/ulsklyc/yuvomi@sha256:e3325a89876d40e8a9accf9e3fdf7de728603e5944a5da2250b52d477bc98bf8 # tag: 2.87.0
     environment:
       NODE_ENV: production
       PORT: "3000"

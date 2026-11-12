@@ -5,8 +5,8 @@ metadata:
   name: Yuvomi
   description: Self-hosted family planner - tasks, calendars, shopping, meals, budget. Your data, your server.
 release:
-  revision: "2"
-  version: 2.76.0
+  revision: "3"
+  version: "2.87.0"
 deployment:
   compose: compose.yaml
   multiInstance: true
