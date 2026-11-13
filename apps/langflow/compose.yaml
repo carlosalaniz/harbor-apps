@@ -1,6 +1,6 @@
 services:
   app:
-    image: langflowai/langflow@sha256:9f5220634256d243756d9a59a7210f3e71010eb2dfb20841ccbaae56a22a4267 # tag: 1.13.1
+    image: langflowai/langflow@sha256:4cfba8c49c4dba081964f9096bc8b9169f99f7c720000a9563a2fd1296a35e9f # tag: 1.13.2
     environment:
       LANGFLOW_CONFIG_DIR: /app/langflow
       HOME: /app/langflow
@@ -13,7 +13,7 @@ services:
     volumes:
       - {type: volume, source: app, target: "/app/langflow"}
   db:
-    image: postgres@sha256:933463a6c8eba2b9f5cd414138738cd8d5519cd2c471214c222652f547a66a32 # tag: 16.15-trixie
+    image: postgres@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657 # tag: 16.15-trixie
     environment:
       POSTGRES_USER: langflow
       POSTGRES_PASSWORD: langflow
