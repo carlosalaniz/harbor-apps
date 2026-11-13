@@ -82,7 +82,7 @@
       "dir": "chatpad-ai"
     },
     "comfyui": {
-      "revision": "4",
+      "revision": "5",
       "dir": "comfyui"
     },
     "convertx": {
