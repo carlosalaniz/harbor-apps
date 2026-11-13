@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "khoj",
-    "revision": "1"
+    "revision": "2"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "27c559cd2d21eaf1a523d4d9475b3ae22cee1520d79b10aff36e0205e198d562"
+      "sha256": "01ef955d2dabbfc9ec5d76c35edb0ef776a3a5efe598c4cc1d6cb0a963f1e790"
     },
     "compose.yaml": {
-      "sha256": "fd5e2f39a9176cd0c5e60f42cb69c9ee6c34aa7cf1b27dbe2d43bf143a3ba40c"
+      "sha256": "87edf0294a4c199676e0c1e762b65dc5b6579c306fedb3f34cf120d1b1aa2e41"
     },
     "README.md": {
       "sha256": "61ca26cb2843b6df9096a5a6cebd90f8cf237b85b53504031407cf865c30a99c"
@@ -17,13 +17,13 @@
   },
   "images": {
     "proxy": {
-      "reference": "caddy@sha256:e70b164da81ef698b3ad19af799ea6086ce6d9e48ed4079eb9fe26f6fbf14ee5",
+      "reference": "caddy@sha256:003a97808e781aa9f7e75cc2f43d34d461099031faf5e20faefb9f61126836f0",
       "repository": "caddy",
-      "tag": "2.11.7-alpine",
+      "tag": "2.11.9-alpine",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:04913b1da43339a40ad1ea87827d70a576ac5aa6cf674c6e24fdca675887533a",
-      "appVersion": "2.11.7-alpine",
-      "imageCreated": "2026-10-21T21:32:33Z",
+      "platformDigest": "sha256:fc9cbc100585871d18d4e451cca7021785c90a7006087427ae5ceb3e4efe6424",
+      "appVersion": "2.11.9-alpine",
+      "imageCreated": "2026-11-05T19:37:08Z",
       "source": "https://hub.docker.com/_/caddy"
     },
     "server": {
@@ -37,13 +37,13 @@
       "source": "https://ghcr.io/khoj-ai/khoj"
     },
     "db": {
-      "reference": "pgvector/pgvector@sha256:88164492558c9773a1e17a8305abaca7863e05b3d8bbcdb792774890a2047e06",
+      "reference": "pgvector/pgvector@sha256:e0b617fffc06dd37323ee99873c7a8683f19f1dce34633670262b0113ce32638",
       "repository": "pgvector/pgvector",
       "tag": "0.8.7-pg15",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:3a780571a333f6b7a3142bc7bfdd48bc9536f664e0ff74f48499d0a5d50e39ea",
+      "platformDigest": "sha256:bbba5bcbcd2ccb8d8a577a3db2d7de9af71d8a6bbdddbc3d9d8a3723d290f078",
       "appVersion": "0.8.7-pg15",
-      "imageCreated": "2026-10-31T09:59:39Z",
+      "imageCreated": "2026-11-12T23:07:03Z",
       "source": "https://hub.docker.com/r/pgvector/pgvector"
     },
     "sandbox": {
@@ -69,25 +69,25 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-01",
-    "node": "v24.22.1",
+    "date": "2026-11-13",
+    "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "proxy": "2.11.7-alpine",
+      "proxy": "2.11.9-alpine",
       "server": "2.0.0-beta.28",
       "db": "0.8.7-pg15",
       "sandbox": "latest",
       "search": "2026.10.30-ffa88e3ba"
     },
     "notes": [
-      "Digest of proxy resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; caddy:2.11.7-alpine); image config: ExposedPorts 2019/tcp,443/tcp,443/udp,80/tcp, Volumes none, User root.",
-      "Digest of server resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; ghcr.io/khoj-ai/khoj:2.0.0-beta.28); image config: ExposedPorts 42110/tcp, Volumes none, User root.",
-      "Digest of db resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; pgvector/pgvector:0.8.7-pg15); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of sandbox resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; ghcr.io/khoj-ai/terrarium:latest); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
-      "Digest of search resolved 2026-11-01 via registry API (scripts/catalog-pin.mjs; searxng/searxng:2026.10.30-ffa88e3ba); image config: ExposedPorts 8080/tcp, Volumes /etc/searxng,/var/cache/searxng, User root.",
-      "Smoke run 2026-11-01T02:01:28.509Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 28 s, still healthy 60 s later."
+      "Digest of proxy resolved 2026-11-13 via registry API (scripts/catalog-pin.mjs; caddy:2.11.9-alpine); image config: ExposedPorts 2019/tcp,443/tcp,443/udp,80/tcp, Volumes none, User root.",
+      "Digest of server resolved 2026-11-13 via registry API (scripts/catalog-pin.mjs; ghcr.io/khoj-ai/khoj:2.0.0-beta.28); image config: ExposedPorts 42110/tcp, Volumes none, User root.",
+      "Digest of db resolved 2026-11-13 via registry API (scripts/catalog-pin.mjs; pgvector/pgvector:0.8.7-pg15); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of sandbox resolved 2026-11-13 via registry API (scripts/catalog-pin.mjs; ghcr.io/khoj-ai/terrarium:latest); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
+      "Digest of search resolved 2026-11-13 via registry API (scripts/catalog-pin.mjs; searxng/searxng:2026.10.30-ffa88e3ba); image config: ExposedPorts 8080/tcp, Volumes /etc/searxng,/var/cache/searxng, User root.",
+      "Smoke run 2026-11-13T13:22:32.893Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (2.0.0-beta.28) healthy after 30 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 40 s, still healthy 60 s later; fresh install of revision 2 healthy after 30 s, still healthy 60 s later."
     ]
   },
   "assets": {

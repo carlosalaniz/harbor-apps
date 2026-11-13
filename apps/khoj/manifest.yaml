@@ -5,8 +5,8 @@ metadata:
   name: Khoj
   description: "Your AI second brain: chat with your notes and documents, search the web, run code and schedule research, with local models through Ollama or an API provider."
 release:
-  revision: "1"
-  version: 2.0.0-beta.28
+  revision: "2"
+  version: "2.11.9"
   minHarbor: "0.30.0"
 deployment:
   compose: compose.yaml
