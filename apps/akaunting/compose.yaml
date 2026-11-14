@@ -1,6 +1,6 @@
 services:
   app:
-    image: akaunting/akaunting@sha256:af69b0343db9b9f7979e15c4be3d50ee502e38edb71190953db7b280d10d0edb # tag: 3.3.0
+    image: akaunting/akaunting@sha256:988567e0cd1be314a2dad48b336883b0d5017702ea206feba39c2dac6357ad6f # tag: 3.3.1
     environment:
       AKAUNTING_SETUP: "true"
       LOCALE: en-US
@@ -17,7 +17,7 @@ services:
       db:
         condition: service_started
   db:
-    image: mariadb@sha256:c4124d1afa875e47f2892edf26b482fa54f796e2f342d3717a04ca091a22a9bd # tag: 11.8.9
+    image: mariadb@sha256:d36f18d65a0459510b8b0f643b226a6d299e3206486e2b64ff20754a6d291707 # tag: 11.8.9
     environment:
       MYSQL_DATABASE: akaunting
       MYSQL_USER: admin
