@@ -5,8 +5,8 @@ metadata:
   name: Ghost
   description: Independent technology for modern publishing, memberships, subscriptions and newsletters.
 release:
-  revision: "7"
-  version: "6.75.0"
+  revision: "8"
+  version: "6.77.0"
 deployment:
   compose: compose.yaml
   multiInstance: true

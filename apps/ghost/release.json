@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "ghost",
-    "revision": "7"
+    "revision": "8"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "8b93de8225e7d2678c1aabed839b1f4a162264bf0e5810b0b65997fbcc365845"
+      "sha256": "0509b4995e30eeb2bbb4d018bbf9dafae52a980ab454ce236c650e5ac8994e0b"
     },
     "compose.yaml": {
-      "sha256": "2cf7e36c30ca77d58f93717a66d34c4161460e06a15bf5f7c7eab708a36e5c87"
+      "sha256": "9c36273e2d7e1877e1f950b5fedbd6d8d5d3ccae608bc87adef097b5cadf0819"
     },
     "README.md": {
       "sha256": "d23ede1554017f92cea18cc3dd83fb00f3a356d84bbfb20d52c7c408a3ac7e6a"
@@ -17,13 +17,13 @@
   },
   "images": {
     "web": {
-      "reference": "ghost@sha256:6303736accca40f3057b30b7c7230a66be2e263402f5cac7cda4466915a5b9bd",
+      "reference": "ghost@sha256:2e3ca97643ea2a8cde6d0c97fae15ff39bfb60714f5abaab3f65263a2ed7c2a7",
       "repository": "ghost",
-      "tag": "6.75.0",
+      "tag": "6.77.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:249c5d5b3969426645682574d748c12447e48c81193e0c010930c24f7d62dab0",
-      "appVersion": "6.75.0",
-      "imageCreated": "2026-11-05T08:50:25Z",
+      "platformDigest": "sha256:3bf9c34dc760c4b5afb47017c57485adaffd9a9a02d7fa806df2309984366f2b",
+      "appVersion": "6.77.0",
+      "imageCreated": "2026-11-11T22:55:33Z",
       "source": "https://hub.docker.com/_/ghost"
     },
     "db": {
@@ -39,19 +39,19 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-08",
+    "date": "2026-11-14",
     "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.0",
+    "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "6.75.0",
+      "web": "6.77.0",
       "db": "8.4.13"
     },
     "notes": [
-      "Digest of web resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghost:6.75.0); image config: ExposedPorts 2368/tcp, Volumes /var/lib/ghost/content, User root.",
-      "Digest of db resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; mysql:8.4.13); image config: ExposedPorts 3306/tcp,33060/tcp, Volumes /var/lib/mysql, User root.",
-      "Smoke run 2026-11-08T12:14:00.611Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (6.74.0) healthy after 19 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 12 s, still healthy 60 s later; fresh install of revision 7 healthy after 19 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-14 via registry API (scripts/catalog-pin.mjs; ghost:6.77.0); image config: ExposedPorts 2368/tcp, Volumes /var/lib/ghost/content, User root.",
+      "Digest of db resolved 2026-11-14 via registry API (scripts/catalog-pin.mjs; mysql:8.4.13); image config: ExposedPorts 3306/tcp,33060/tcp, Volumes /var/lib/mysql, User root.",
+      "Smoke run 2026-11-14T12:31:26.604Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 7 (6.75.0) healthy after 21 s, still healthy 60 s later; updated to revision 8 without a rollback, healthy after 13 s, still healthy 60 s later; fresh install of revision 8 healthy after 22 s, still healthy 60 s later."
     ]
   },
   "assets": {
