@@ -182,7 +182,7 @@
       "dir": "ghostfolio"
     },
     "gitea-mirror": {
-      "revision": "13",
+      "revision": "14",
       "dir": "gitea-mirror"
     },
     "grafana": {
