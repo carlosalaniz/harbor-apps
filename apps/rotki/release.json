@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "rotki",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "29ecd7e0e709caf7d7cffa57a7a27452717c4e684c278d3cd184011874ea58f9"
+      "sha256": "958b10d25364c8bc43947a734ca75f78368392501c04550c56ee1f991ef760c0"
     },
     "compose.yaml": {
-      "sha256": "145bb6771b9fc214d947100c9f5098130ab2919ed89753e2a79e48fcec87f694"
+      "sha256": "ef8ca30d1017e7dfa6643cb677a9da6623a8babdef194e71bc20216b02dda7ff"
     },
     "README.md": {
       "sha256": "29dbdca17e84a9ba4ff3467ebc4e4cfe28ebf22229280f72d227982afea8b5c9"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "rotki/rotki@sha256:b9dba08f80c7676b7975eb0b1a78769fd6ac10e626fb435dfd40a7e2885dad02",
+      "reference": "rotki/rotki@sha256:4f07e8114b4450665b64a964ffa106dfb3c36a50e3664c93b8aafe1c1e1a0735",
       "repository": "rotki/rotki",
-      "tag": "v1.44.2",
+      "tag": "v1.44.3",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:d4918498a9eb840f2b18991226ac44a1bb1d8c3c22acb87000c17996d816515e",
-      "appVersion": "1.44.2",
-      "imageCreated": "2026-10-22T13:01:35Z",
+      "platformDigest": "sha256:7c7e32e8e79679e9cab7f44e20220be9a1c7adc7c399f002ac073e6bde33f7de",
+      "appVersion": "1.44.3",
+      "imageCreated": "2026-11-11T14:09:13Z",
       "source": "https://hub.docker.com/r/rotki/rotki"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-24",
-    "node": "v24.21.0",
+    "date": "2026-11-14",
+    "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.44.2"
+      "web": "1.44.3"
     },
     "notes": [
-      "Digest of web resolved 2026-10-24 via registry API (scripts/catalog-pin.mjs; rotki/rotki:v1.44.2); image config: ExposedPorts 80/tcp, Volumes /config,/data,/logs, User 0.",
-      "Smoke run 2026-10-24T05:42:29.296Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.44.1) healthy after 5 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 6 s, still healthy 60 s later; fresh install of revision 3 healthy after 5 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-14 via registry API (scripts/catalog-pin.mjs; rotki/rotki:v1.44.3); image config: ExposedPorts 80/tcp, Volumes /config,/data,/logs, User 0.",
+      "Smoke run 2026-11-14T12:27:07.979Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.44.2) healthy after 6 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 6 s, still healthy 60 s later; fresh install of revision 4 healthy after 5 s, still healthy 60 s later."
     ]
   },
   "assets": {

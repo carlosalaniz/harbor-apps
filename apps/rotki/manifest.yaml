@@ -5,8 +5,8 @@ metadata:
   name: rotki
   description: A portfolio tracking, analytics, accounting and management application that protects your privacy
 release:
-  revision: "3"
-  version: "1.44.2"
+  revision: "4"
+  version: "1.44.3"
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml
