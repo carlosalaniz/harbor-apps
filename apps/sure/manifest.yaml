@@ -1,0 +1,83 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: sure
+  name: "Sure"
+  description: "Your whole financial life in one private place: bank and investment accounts, transactions, budgets and net worth. The community-maintained successor of Maybe Finance."
+release:
+  revision: "1"
+  # presentation.source is accepted from Harbor 0.30.0 on
+  minHarbor: "0.30.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    web: application
+    worker: application
+    db: infrastructure
+    redis: infrastructure
+endpoints:
+  web:
+    service: web
+    containerPort: 3000
+    scheme: http
+    exposure: direct
+    browserContext: secure
+health:
+  endpoint: web
+  # Rails' own health check: 200 once the app has booted, before any account exists
+  path: /up
+  expectedStatus: [200]
+  timeoutSeconds: 10
+  # The first start creates the database (rails db:prepare) before the server listens
+  deadlineSeconds: 600
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Open Sure and press Create your account (email and password): the first account is the administrator. Then close sign-ups under Settings, Self-Hosting, Onboarding (Closed or Invite-only), so nobody else who reaches the page can create an account."
+storage:
+  - id: db-data
+    composeVolume: db-data
+    purpose: "PostgreSQL database (accounts, transactions, budgets, settings)"
+    retention: retain
+  - id: app-storage
+    composeVolume: app-storage
+    purpose: "Uploaded files: imports, attachments, profile pictures (web and worker)"
+    retention: retain
+  - id: redis-data
+    composeVolume: redis-data
+    purpose: "Sidekiq job queue (imports and syncs waiting to run)"
+    retention: retain
+secrets:
+  - id: database-password
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: db, environment: POSTGRES_PASSWORD}
+      - {service: web, environment: POSTGRES_PASSWORD}
+      - {service: worker, environment: POSTGRES_PASSWORD}
+  # Signs sessions and derives the keys that encrypt stored credentials: it must never change
+  # 32 bytes = 64 hex characters, as long as Rails' own generated keys need
+  - id: secret-key-base
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - {service: web, environment: SECRET_KEY_BASE}
+      - {service: worker, environment: SECRET_KEY_BASE}
+configuration:
+  # Links in emails, and the passkey domain (passkeys only work on this address over HTTPS)
+  - {service: web, environment: APP_DOMAIN, endpoint: web, format: host}
+  - {service: worker, environment: APP_DOMAIN, endpoint: web, format: host}
+  - {service: web, environment: WEBAUTHN_ALLOWED_ORIGINS, endpoint: web, format: origin}
+presentation:
+  tagline: "Personal finance and net worth, privately"
+  sizeHint: "About 2.5 GB"
+  category: finance
+  icon: icon.png
+  developer: "Sure contributors (we-promise)"
+  website: https://sure.am
+  source: https://github.com/we-promise/sure
+  releaseNotes: "Sure 0.7.6-hotfix.1 with PostgreSQL 16 and Redis 8 (Sidekiq queue). Sure's usage reporting to PostHog is off."
