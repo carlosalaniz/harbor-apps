@@ -5,8 +5,8 @@ metadata:
   name: KT Stores
   description: "Separate knowledge stores any AI agent can discover and search through MCP. Drop in your documents, and KT Stores indexes them in the background, describes each store, and lets agents pick the right one."
 release:
-  revision: "3"
-  version: 0.2.1
+  revision: "4"
+  version: 0.2.2
   # 0.41.1 is the first gate that serves an app whose health path answers before any account (decision 194)
   minHarbor: "0.41.1"
 deployment:
@@ -83,4 +83,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/kt-stores
   source: https://github.com/carlosalaniz/kt-stores
-  releaseNotes: "0.2.1: documents are read by their structure. PDFs keep headings, paragraphs and tables, scanned or garbled pages can be read with OCR (off by default, about $2 per 1,000 pages), and chunks follow sections instead of pages. EPUB books and Safari web archives are read too, and chat answers render tables. Agent tokens can now be shown, copied and regenerated in Settings. After updating, the Stores page offers to read older files again and shows what it costs."
+  releaseNotes: "0.2.2: Settings can test the MCP connection from your browser, with the token you picked for the config, and says what to fix when it fails: the wrong port, an untrusted certificate, or a refused token."
