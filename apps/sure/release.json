@@ -58,13 +58,24 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-11-14",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.7.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "db": "16.15",
+      "redis": "8.10.3-alpine",
+      "web": "0.7.6-hotfix.1",
+      "worker": "0.7.6-hotfix.1"
+    },
     "notes": [
       "Digest of db resolved 2026-11-14 via registry API (scripts/catalog-pin.mjs; postgres:16.15); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
       "Digest of redis resolved 2026-11-14 via registry API (scripts/catalog-pin.mjs; redis:8.10.3-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
       "Digest of web resolved 2026-11-14 via registry API (scripts/catalog-pin.mjs; ghcr.io/we-promise/sure:0.7.6-hotfix.1); image config: ExposedPorts 3000/tcp, Volumes none, User 1000:1000.",
-      "Digest of worker resolved 2026-11-14 via registry API (scripts/catalog-pin.mjs; ghcr.io/we-promise/sure:0.7.6-hotfix.1); image config: ExposedPorts 3000/tcp, Volumes none, User 1000:1000."
+      "Digest of worker resolved 2026-11-14 via registry API (scripts/catalog-pin.mjs; ghcr.io/we-promise/sure:0.7.6-hotfix.1); image config: ExposedPorts 3000/tcp, Volumes none, User 1000:1000.",
+      "Smoke run 2026-11-14T15:42:57.853Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 16 s, still healthy 60 s later."
     ]
   },
   "assets": {
