@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "blinko",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "b50087897cee6c009257cc9561458505f3ac700d9fc90c500df951a4f1b293ed"
+      "sha256": "b80dbea39993b424574641d70c5d723c67903f57eb3a1096c7812bd24807fb0c"
     },
     "compose.yaml": {
-      "sha256": "dda0b198efe20f7442d20e42dfd764d425c0945391f53b476349f5de34d0faea"
+      "sha256": "57a86ef54a9ef9322ed8bd7b0999b054a1f3effdeba5a194fa54bbc18ba5eaea"
     },
     "README.md": {
       "sha256": "c0578c64cb5918e875ae358497befc9c2c652a6a49ef4cdd7406d45660e04e86"
@@ -17,13 +17,13 @@
   },
   "images": {
     "db": {
-      "reference": "postgres@sha256:ff87138949ad9a46f32ff23bd6852b52ce024a13dffe9b4087be98292cdd3b4f",
+      "reference": "postgres@sha256:0d938e975177bef9f1f61f3f9dbcf2e0aa0a139568f66d3415ed8892eb97f6ac",
       "repository": "postgres",
-      "tag": "17.11",
+      "tag": "17.12",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:996e9dc583ba9f0265a2c75547a9c95fb22c251e394749cab205a0a00e1856a1",
-      "appVersion": "17.11",
-      "imageCreated": "2026-11-05T07:30:45Z",
+      "platformDigest": "sha256:6f7593c161689b6b02c78668b314af7da8811b592c5519108c57a49d0b6ad788",
+      "appVersion": "17.12",
+      "imageCreated": "2026-11-12T20:55:34Z",
       "source": "https://hub.docker.com/_/postgres"
     },
     "app": {
@@ -39,19 +39,19 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-07",
+    "date": "2026-11-15",
     "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.0",
+    "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "db": "17.11",
+      "db": "17.12",
       "app": "1.8.9"
     },
     "notes": [
-      "Digest of db resolved 2026-11-07 via registry API (scripts/catalog-pin.mjs; postgres:17.11); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of app resolved 2026-11-07 via registry API (scripts/catalog-pin.mjs; blinkospace/blinko:1.8.9); image config: ExposedPorts 1111/tcp, Volumes none, User root.",
-      "Smoke run 2026-11-07T11:52:43.669Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.8.8-patch.1) healthy after 16 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 14 s, still healthy 60 s later; fresh install of revision 4 healthy after 16 s, still healthy 60 s later."
+      "Digest of db resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; postgres:17.12); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of app resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; blinkospace/blinko:1.8.9); image config: ExposedPorts 1111/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-15T12:52:57.506Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (1.8.9-patch.1) healthy after 16 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 16 s, still healthy 60 s later; fresh install of revision 5 healthy after 16 s, still healthy 60 s later."
     ]
   },
   "assets": {
