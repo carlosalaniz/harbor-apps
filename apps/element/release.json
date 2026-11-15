@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "element",
-    "revision": "6"
+    "revision": "7"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "d66b8f73d0900e8f53956af617cd3896818844aac8f2c47f8839ba7f3acd0976"
+      "sha256": "8fea6034eecc09779e31eea04b93f1abcea23d8792ff2d9906f27d920c6cdb09"
     },
     "compose.yaml": {
-      "sha256": "90a7ec57fea82a2845e39f56c6f49090cda6572039f9d93630b6e992e05d552a"
+      "sha256": "5726fe83e85b3a335d6ec9b783ecf445d5c0580de8925c6d5c89661e5a7e2dca"
     },
     "README.md": {
       "sha256": "ca82cf2e8d7c018eb49d7c3b8788734b47f9acaccdd0668e5fb368145768e1b3"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "vectorim/element-web@sha256:88258ceafe3223f5ace9abaf68d3e30361540c7799be81b497b0aa3229ef38bd",
+      "reference": "vectorim/element-web@sha256:406b48b80153818284a235fa3600b2a5b5b6b0aa0e4ef4896b36d8d3461352f3",
       "repository": "vectorim/element-web",
-      "tag": "v1.12.34",
+      "tag": "v1.12.35",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:e906aa6f08b702405464034a8dce33fa2c5ce55def4f71b1887d2df10336bbbd",
-      "appVersion": "1.12.34",
-      "imageCreated": "2026-11-11T10:45:02Z",
+      "platformDigest": "sha256:63889e896e1d9d17d45ac44fcb27a1a37c18d6f4415a636e191026753df51a59",
+      "appVersion": "1.12.35",
+      "imageCreated": "2026-11-12T17:20:16Z",
       "source": "https://hub.docker.com/r/vectorim/element-web"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-13",
+    "date": "2026-11-15",
     "node": "v24.22.2",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.12.34"
+      "web": "1.12.35"
     },
     "notes": [
-      "Digest of web resolved 2026-11-13 via registry API (scripts/catalog-pin.mjs; vectorim/element-web:v1.12.34); image config: ExposedPorts 8080/tcp, Volumes none, User nginx.",
-      "Smoke run 2026-11-13T13:19:43.614Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (1.12.33) healthy after 1 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 6 healthy after 1 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; vectorim/element-web:v1.12.35); image config: ExposedPorts 8080/tcp, Volumes none, User nginx.",
+      "Smoke run 2026-11-15T12:51:30.823Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (1.12.34) healthy after 2 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 7 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
