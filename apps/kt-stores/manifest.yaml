@@ -5,8 +5,8 @@ metadata:
   name: KT Stores
   description: "Separate knowledge stores any AI agent can discover and search through MCP. Drop in your documents, and KT Stores indexes them in the background, describes each store, and lets agents pick the right one."
 release:
-  revision: "5"
-  version: 0.2.2
+  revision: "6"
+  version: 0.2.3
   # 0.41.1 is the first gate that serves an app whose health path answers before any account (decision 194)
   minHarbor: "0.41.1"
 deployment:
@@ -41,6 +41,9 @@ health:
   deadlineSeconds: 180
 ui:
   primaryEndpoint: web
+# Settings shows agents this address and builds their config from it
+configuration:
+  - {service: kt, environment: KT_MCP_URL, endpoint: mcp, format: origin}
 setup:
   endpoint: web
   instructions: "Open KT Stores and type its password (shown after install). In Settings, add an OpenRouter API key, then make a store and drop your documents in. To connect an AI agent, use this app's MCP address followed by /mcp, with the header Authorization: Bearer and one of the two MCP tokens. Both are in KT Stores' Settings, under Connect an agent, where you can copy a ready-made config or regenerate either token."
@@ -83,4 +86,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/kt-stores
   source: https://github.com/carlosalaniz/kt-stores
-  releaseNotes: "0.2.2: Settings can test the MCP connection from your browser, with the token you picked for the config, and says what to fix when it fails: the wrong port, an untrusted certificate, or a refused token."
+  releaseNotes: "0.2.3: Settings now knows this app's MCP address, so the agent config it copies points at the right port, and it writes the config for OpenCode as well as Claude Code. 0.2.2 added a button that tests the MCP connection from your browser."
