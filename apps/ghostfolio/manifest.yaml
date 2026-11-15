@@ -5,7 +5,7 @@ metadata:
   name: "Ghostfolio"
   description: "Track your stocks, ETFs and crypto in one private dashboard: net worth, allocation, performance and dividends, with free market prices from Yahoo Finance and CoinGecko."
 release:
-  revision: "7"
+  revision: "8"
   # presentation.source is accepted from Harbor 0.30.0 on
   minHarbor: "0.30.0"
 deployment:

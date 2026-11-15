@@ -1,7 +1,7 @@
 services:
   db:
     # PostgreSQL 15, the version upstream's own compose file runs
-    image: postgres@sha256:aae6554de426ae1990f1a939ff183a0299146cf7142a6f4c379c3357af9cc2d8 # tag: 15.19-alpine
+    image: postgres@sha256:5cb339462bde5e6b617acedf6c2a3008f3aadc44a3c0507dd22226ee1279aee8 # tag: 15.20-alpine
     environment:
       POSTGRES_DB: "ghostfolio"
       POSTGRES_USER: "ghostfolio"
@@ -15,7 +15,7 @@ services:
       - {type: volume, source: db-data, target: /var/lib/postgresql/data}
   redis:
     # Cache and job queues only: nothing in it is real data, so it never persists
-    image: redis@sha256:71885d8cc6e42f2bc0aa2eb853bfc4be200b5108a46ac50e117ae1df0531fb80 # tag: 8.10.3-alpine
+    image: redis@sha256:7958cfbb9d152f87dadfbc89f1b0b15938f0b81ff8982feb327476f4911935c3 # tag: 8.10.3-alpine
     command: [redis-server, --save, "", --appendonly, "no"]
     healthcheck:
       test: [CMD, redis-cli, ping]

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "ghostfolio",
-    "revision": "7"
+    "revision": "8"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "e33b0b30938109fa73ceebe91e3c67880a5fbedec622736350cc463332c33e96"
+      "sha256": "c274ed0af06c79f869fe2c3c00b048d2640dd133c657d41e060f7af94e1b6169"
     },
     "compose.yaml": {
-      "sha256": "ec5317e4fb7026c295faf46c514660a8c2f02aeb1ab524844f0bb6347b6d4cc9"
+      "sha256": "517062813fe401297d6452b20c030f72bed93bfff5091613fcd87fb1fee25cdb"
     },
     "README.md": {
       "sha256": "a05027ee4e6d6e419e88a4520106ff3ab792251f1081626a9956489147449d85"
@@ -17,17 +17,17 @@
   },
   "images": {
     "db": {
-      "reference": "postgres@sha256:aae6554de426ae1990f1a939ff183a0299146cf7142a6f4c379c3357af9cc2d8",
+      "reference": "postgres@sha256:5cb339462bde5e6b617acedf6c2a3008f3aadc44a3c0507dd22226ee1279aee8",
       "repository": "postgres",
-      "tag": "15.19-alpine",
+      "tag": "15.20-alpine",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:d3ab4e7f0ca6e34e8135c95defd881673f7edddfacf63231eeb89caf6db2c1c9",
-      "appVersion": "15.19-alpine",
-      "imageCreated": "2026-11-05T19:10:13Z",
+      "platformDigest": "sha256:675e329d71b3d00534e50356ad068fa95d7bdd9c68f498f17a016ae19990d85e",
+      "appVersion": "15.20-alpine",
+      "imageCreated": "2026-11-12T21:01:03Z",
       "source": "https://hub.docker.com/_/postgres"
     },
     "redis": {
-      "reference": "redis@sha256:71885d8cc6e42f2bc0aa2eb853bfc4be200b5108a46ac50e117ae1df0531fb80",
+      "reference": "redis@sha256:7958cfbb9d152f87dadfbc89f1b0b15938f0b81ff8982feb327476f4911935c3",
       "repository": "redis",
       "tag": "8.10.3-alpine",
       "platform": "linux/amd64",
@@ -49,21 +49,21 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-10",
+    "date": "2026-11-15",
     "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.0",
+    "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "db": "15.19-alpine",
+      "db": "15.20-alpine",
       "redis": "8.10.3-alpine",
       "web": "3.99.0"
     },
     "notes": [
-      "Digest of db resolved 2026-11-10 via registry API (scripts/catalog-pin.mjs; postgres:15.19-alpine); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of redis resolved 2026-11-10 via registry API (scripts/catalog-pin.mjs; redis:8.10.3-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
-      "Digest of web resolved 2026-11-10 via registry API (scripts/catalog-pin.mjs; ghostfolio/ghostfolio:3.99.0); image config: ExposedPorts 3333/tcp, Volumes none, User node.",
-      "Smoke run 2026-11-10T13:39:20.976Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (3.98.0) healthy after 13 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 14 s, still healthy 60 s later; fresh install of revision 7 healthy after 15 s, still healthy 60 s later."
+      "Digest of db resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; postgres:15.20-alpine); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of redis resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; redis:8.10.3-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Digest of web resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; ghostfolio/ghostfolio:3.99.0); image config: ExposedPorts 3333/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-15T12:58:27.867Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 7 (3.99.0) healthy after 15 s, still healthy 60 s later; updated to revision 8 without a rollback, healthy after 11 s, still healthy 60 s later; fresh install of revision 8 healthy after 11 s, still healthy 60 s later."
     ]
   },
   "assets": {
