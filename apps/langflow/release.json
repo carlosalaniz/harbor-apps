@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "langflow",
-    "revision": "8"
+    "revision": "9"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "788f6aef7eb3fefca838d2487f2fd3cb07ecdf2e4e146ad9efbf3b11a67853ae"
+      "sha256": "1e73607935079fe34cf54cfd15634b78b1a2c083ec588808ab2f07cfbbb2579d"
     },
     "compose.yaml": {
-      "sha256": "291722888e3be8c4409e3288f08ed661331c07ab655678bec9e8d99ec8c93aba"
+      "sha256": "e6ae378f9e2908fdd5a2aa1e7b688720075bd1282601201717325f2d00f15522"
     },
     "README.md": {
       "sha256": "1e3834cb647655023f7f385126d308f6ff625c4e2e0c6bd7e82a94ea00db8834"
@@ -27,31 +27,31 @@
       "source": "https://hub.docker.com/r/langflowai/langflow"
     },
     "db": {
-      "reference": "postgres@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657",
+      "reference": "postgres@sha256:dd2bf3ce2dc83a81674cf7f217fcfd8a5009a4b325dda5b843bfee82a06cff6f",
       "repository": "postgres",
-      "tag": "16.15-trixie",
+      "tag": "16.16-trixie",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:43f9275df91e012c3da3d86bea5d7bb5e67a473296cc906c5f9e80b8176b1a37",
-      "appVersion": "16.15-trixie",
-      "imageCreated": "2026-11-05T07:30:24Z",
+      "platformDigest": "sha256:2d5c77ae9b0e0944ffb92f8d8fc2fa2edb215cb0976da8bac34df917af417e87",
+      "appVersion": "16.16-trixie",
+      "imageCreated": "2026-11-12T20:57:15Z",
       "source": "https://hub.docker.com/_/postgres"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-13",
+    "date": "2026-11-15",
     "node": "v24.22.2",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "app": "1.13.2",
-      "db": "16.15-trixie"
+      "db": "16.16-trixie"
     },
     "notes": [
-      "Digest of app resolved 2026-11-13 via registry API (scripts/catalog-pin.mjs; langflowai/langflow:1.13.2); image config: ExposedPorts 8080/tcp, Volumes none, User user.",
-      "Digest of db resolved 2026-11-13 via registry API (scripts/catalog-pin.mjs; postgres:16.15-trixie); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Smoke run 2026-11-13T13:23:13.933Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 7 (1.13.1) healthy after 30 s, still healthy 60 s later; updated to revision 8 without a rollback, healthy after 32 s, still healthy 60 s later; fresh install of revision 8 healthy after 30 s, still healthy 60 s later."
+      "Digest of app resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; langflowai/langflow:1.13.2); image config: ExposedPorts 8080/tcp, Volumes none, User user.",
+      "Digest of db resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; postgres:16.16-trixie); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Smoke run 2026-11-15T13:00:14.639Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 8 (1.13.2) healthy after 29 s, still healthy 60 s later; updated to revision 9 without a rollback, healthy after 30 s, still healthy 60 s later; fresh install of revision 9 healthy after 29 s, still healthy 60 s later."
     ]
   },
   "assets": {

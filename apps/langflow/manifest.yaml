@@ -5,7 +5,7 @@ metadata:
   name: Langflow
   description: Langflow is a powerful tool for building and deploying AI-powered agents and workflows.
 release:
-  revision: "8"
+  revision: "9"
   version: "1.13.2"
 deployment:
   compose: compose.yaml
