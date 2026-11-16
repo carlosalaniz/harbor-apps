@@ -5,8 +5,8 @@ metadata:
   name: Crossbar
   description: Your own browser, lent to your agents over MCP, with you in the loop for logins, captchas and anything with consequences.
 release:
-  revision: "1"
-  version: "0.1.0"
+  revision: "2"
+  version: "0.1.1"
   minHarbor: "0.46.0"
 deployment:
   compose: compose.yaml
