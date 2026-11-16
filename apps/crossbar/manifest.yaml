@@ -1,0 +1,103 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: crossbar
+  name: Crossbar
+  description: Your own browser, lent to your agents over MCP, with you in the loop for logins, captchas and anything with consequences.
+release:
+  revision: "1"
+  version: "0.1.0"
+  minHarbor: "0.46.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: false
+  services:
+    app: application
+    browser: infrastructure
+    proxy: infrastructure
+endpoints:
+  web:
+    service: app
+    containerPort: 8080
+    scheme: http
+    exposure: direct
+    # Takeover and the phone approval flow need a secure context (clipboard, installable app).
+    browserContext: secure
+health:
+  endpoint: web
+  path: /healthz
+  expectedStatus: [200]
+  timeoutSeconds: 5
+  deadlineSeconds: 300
+ui:
+  primaryEndpoint: web
+storage:
+  - id: app-data
+    composeVolume: app-data
+    purpose: Database, master key and activity log at /data (app). Back this up.
+    retention: retain
+  - id: profiles
+    composeVolume: profiles
+    purpose: Browser profiles with your logins at /profiles (browser)
+    retention: retain
+secrets:
+  - id: browser-secret
+    bytes: 32
+    encoding: hex
+    retention: retain
+    bindings:
+      - service: app
+        environment: CROSSBAR_BROWSER_SECRET
+      - service: browser
+        environment: CROSSBAR_BROWSER_SECRET
+configuration:
+  - service: app
+    environment: CROSSBAR_ORIGIN
+    endpoint: web
+    format: origin
+settings:
+  - id: time-zone
+    label: Your time zone
+    help: >-
+      IANA name, for example America/Chicago. Pages see this in the browser, so it should match your own
+      devices; a mismatch is one of the signals bot detection checks.
+    type: string
+    default: UTC
+    maxLength: 64
+    bindings:
+      - service: browser
+        environment: TZ
+  - id: language
+    label: Your language
+    help: Language tag, for example en-US or es-MX. Sets the browser's language and Accept-Language, as on your own devices.
+    type: string
+    default: en-US
+    maxLength: 35
+    bindings:
+      - service: browser
+        environment: CROSSBAR_LANG
+  - id: block-ips
+    label: Your home's public IP addresses
+    help: Comma-separated. Pages can't reach these through the browser (so they can't reach your router from outside).
+    type: string
+    default: ""
+    maxLength: 512
+    bindings:
+      - service: proxy
+        environment: CROSSBAR_BLOCK_IPS
+permissions:
+  # NET_ADMIN lets the browser container firewall itself so its only way out is the proxy,
+  # because Harbor packages can't declare an internal-only network. It drops the capability before
+  # starting Chromium.
+  # browser-sandbox (Harbor 0.45.0+, published in 0.46.0; Harbor decision 201) renders Docker's default seccomp
+  # profile plus clone/unshare/setns/chroot, the same as deploy/browser/seccomp.json, so Chromium's sandbox stays on.
+  browser: [net-admin, browser-sandbox]
+network:
+  internet: direct
+presentation:
+  icon: icon.svg
+  tagline: Lend your browser to your agents, with you in the loop
+  category: ai
+  developer: Carlos Alaniz
+  website: https://github.com/carlosalaniz/crossbar-browser
+  source: https://github.com/carlosalaniz/crossbar-browser
