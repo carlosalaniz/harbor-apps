@@ -186,7 +186,7 @@
       "dir": "ghostfolio"
     },
     "gitea-mirror": {
-      "revision": "14",
+      "revision": "15",
       "dir": "gitea-mirror"
     },
     "grafana": {
