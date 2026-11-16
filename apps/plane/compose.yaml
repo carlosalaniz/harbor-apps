@@ -156,7 +156,7 @@ services:
     depends_on:
       api: {condition: service_started}
   plane-db:
-    image: postgres@sha256:54e0dd8e8cddcdbb9156c2486eed5a43eccb7214d7c6828097d41ce049fb3984 # tag: 15.19-alpine
+    image: postgres@sha256:23799e521dee9265a8b388ecf3bc0f1eaa34b95be67f5a76af4f8f6adb44c720 # tag: 15.20-alpine
     command: [postgres, -c, max_connections=1000]
     environment:
       POSTGRES_USER: plane
