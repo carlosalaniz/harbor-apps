@@ -581,6 +581,10 @@
       "revision": "2",
       "dir": "waha"
     },
+    "waha-team": {
+      "revision": "1",
+      "dir": "waha-team"
+    },
     "wallos": {
       "revision": "8",
       "dir": "wallos"

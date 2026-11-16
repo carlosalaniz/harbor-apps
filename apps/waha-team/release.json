@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "waha-team",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "da53caf2857bd0a385952095c4784be8adb9be4f35a32cb8ade90e0957003ca9"
+    },
+    "compose.yaml": {
+      "sha256": "b59a2bd2b21a00dd4142cebef34e9a7275604e1f3cc6c94d4c2376550c6db9a0"
+    },
+    "README.md": {
+      "sha256": "71734b580aa73efca0ba390bf1d0f69478342671583aa4ca8c80fbc5792eba61"
+    }
+  },
+  "images": {
+    "app": {
+      "reference": "ghcr.io/carlosalaniz/waha-team@sha256:03434538578d938bc4be8bf9f6493db291472f4084db45841d86c76208e242b3",
+      "repository": "ghcr.io/carlosalaniz/waha-team",
+      "tag": "0.1.0",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:ee0d2a5302061756d9795c819410ef36c67147bdb146534eca6d1b4b73137873",
+      "appVersion": "0.1.0",
+      "imageCreated": "2026-11-16T22:32:46Z",
+      "source": "https://ghcr.io/carlosalaniz/waha-team"
+    }
+  },
+  "qualification": {
+    "status": "pending",
+    "date": "2026-11-16",
+    "notes": [
+      "Digest of app resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.1.0); image config: ExposedPorts 8080/tcp, Volumes none, User node."
+    ]
+  },
+  "assets": {
+    "icon.png": {
+      "sha256": "94939f28efeb93059fd6bb3fdc4f552d7f9a3b366c02efd913c64ea8161da64c"
+    }
+  }
+}
