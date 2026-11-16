@@ -39,7 +39,7 @@
     },
     "notes": [
       "Digest of server resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; linuxserver/qbittorrent:5.3.0); image config: ExposedPorts 6881/tcp,6881/udp,8080/tcp, Volumes /config, User root.",
-      "Smoke run 2026-11-16T03:35:32.453Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (5.2.4) healthy after 3 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 2 healthy after 3 s, still healthy 60 s later."
+      "Smoke run 2026-11-16T03:50:00.342Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (5.2.4) healthy after 4 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 2 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {
