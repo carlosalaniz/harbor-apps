@@ -1,0 +1,16 @@
+# WAHA Team (https://github.com/carlosalaniz/waha-team): one WhatsApp number shared by a team, every message signed with
+# its author's name. One Node process on port 8080: the JSON API, the web app, and the browsers' live socket. Its
+# database (SQLite) and copies of media files live on the data volume. It reaches WAHA (and Android Link) at the
+# addresses Harbor's links give it, or the ones an admin types in the app, and reads WAHA's events over WAHA's own
+# WebSocket: nothing has to reach WAHA Team except browsers.
+services:
+  app:
+    image: ghcr.io/carlosalaniz/waha-team@sha256:03434538578d938bc4be8bf9f6493db291472f4084db45841d86c76208e242b3 # tag: 0.1.0
+    environment:
+      DATA_DIR: /data
+      PORT: "8080"
+      WAHA_SESSION: default
+    volumes:
+      - {type: volume, source: data, target: /data}
+volumes:
+  data: {}

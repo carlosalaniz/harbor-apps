@@ -1,0 +1,117 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: waha-team
+  name: "WAHA Team"
+  description: "One WhatsApp number for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
+release:
+  revision: "1"
+  version: 0.1.0
+  # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
+  minHarbor: "0.43.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: true
+  services:
+    app: application
+endpoints:
+  web:
+    service: app
+    containerPort: 8080
+    scheme: http
+    exposure: direct
+    # push notifications (service worker) and recording voice notes (microphone) need a secure page
+    browserContext: secure
+    # WAHA Team has its own accounts (admins and agents): a Harbor login in front would ask everyone for the Harbor
+    # password too (decision 194)
+    login: never
+health:
+  endpoint: web
+  path: /api/health
+  expectedStatus: [200]
+  timeoutSeconds: 5
+  deadlineSeconds: 120
+ui:
+  primaryEndpoint: web
+setup:
+  endpoint: web
+  instructions: "Sign in as admin with the password shown after install. Open WhatsApp connection (the phone icon): with the WAHA app linked and its API key given at install, it shows WAHA's state; create the session if WAHA has none. Pick the Android Link phone that has WhatsApp and type the account's number: WAHA Team then links WhatsApp by itself (and again whenever WhatsApp unlinks it). Add your team under People."
+storage:
+  - id: data
+    composeVolume: data
+    purpose: "Accounts, chats and messages, claims, copies of media files, notification subscriptions"
+    retention: retain
+secrets:
+  - id: admin-password
+    bytes: 32
+    encoding: hex
+    retention: retain
+    showOnce: WAHA Team password (user admin)
+    # viewable again on the app page (Saved passwords), behind the Harbor password (decision 199)
+    revealable: true
+    bindings:
+      - {service: app, environment: ADMIN_PASSWORD}
+  - id: waha-api-key
+    source: operator
+    prompt: "API key of the WAHA app (its Settings → Saved passwords → WAHA API key). Leave empty to set WAHA's address and key later in WAHA Team."
+    optional: true
+    minLength: 8
+    maxLength: 256
+    retention: retain
+    bindings:
+      - {service: app, environment: WAHA_API_KEY}
+  - id: android-link-password
+    source: operator
+    prompt: "Only for an Android Link reached at its own address (with Harbor's login in front): its password. Leave empty with a Harbor link to Android Link."
+    optional: true
+    maxLength: 256
+    retention: retain
+    bindings:
+      - {service: app, environment: ANDROID_LINK_PASSWORD}
+# Both optional: WAHA Team can also be pointed at any WAHA or Android Link (another machine, a domain) on its WhatsApp
+# connection page. A link is private and needs no address; WAHA's events come over WAHA's WebSocket, which WAHA Team
+# opens, so nothing has to reach WAHA Team back over the link.
+links:
+  - id: waha
+    purpose: "WAHA, the WhatsApp connection WAHA Team sends and receives through"
+    provider:
+      packages: [waha]
+      endpoint: web
+    optional: true
+    bindings:
+      - {service: app, environment: WAHA_URL, format: url}
+  - id: android-link
+    purpose: "Android Link, to link WhatsApp again on the phone when it gets unlinked"
+    provider:
+      packages: [android-link]
+      endpoint: web
+    optional: true
+    bindings:
+      - {service: app, environment: ANDROID_LINK_URL, format: url}
+settings:
+  - id: phone-number
+    label: "WhatsApp number"
+    help: "The linked WhatsApp account's number with country code, digits only (e.g. 16072049711): for the pairing codes Android Link types. Can also be set in the app."
+    type: string
+    default: ""
+    maxLength: 20
+    bindings:
+      - {service: app, environment: PHONE_NUMBER}
+  - id: history-depth
+    label: "History to import (messages per chat)"
+    help: "How many earlier messages of each chat WAHA Team copies from WhatsApp after linking."
+    type: integer
+    default: 200
+    min: 0
+    max: 5000
+    bindings:
+      - {service: app, environment: HISTORY_DEPTH}
+presentation:
+  tagline: "One WhatsApp number, your whole team"
+  sizeHint: "About 250 MB, plus copies of media files"
+  category: productivity
+  icon: icon.png
+  developer: "Carlos Alaniz"
+  website: https://github.com/carlosalaniz/waha-team
+  source: https://github.com/carlosalaniz/waha-team
+  releaseNotes: "0.1.0: a shared WhatsApp inbox on WAHA. Own accounts, claims (All, Mine, Unclaimed, Groups), every message and caption signed \"— Name\", photos, videos, files and voice notes, edit and delete for everyone, Web Push notifications with who sent it and who has the chat, history import. Re-links WhatsApp by itself through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."

@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "package": {
     "id": "waha",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "b23e9779f071af15674996c335d17ec785847fa598f387904001c4ed9d8ce337"
+      "sha256": "3a53f90da76dd0b70bb117faacd4d50ed3ce043abb3033987dcda1ee66797555"
     },
     "compose.yaml": {
       "sha256": "c58e7b311e2b0a3d24e69ce3bbb32258580d700ed80a4fe57441ad4cf445d1b0"
     },
     "README.md": {
-      "sha256": "600d320f963148fa118cbb12c0889ecad13ab76213fb6db6d76cdb3f16cc9b83"
+      "sha256": "39e53b9ca740af3f496fb55a199d5006db7109d6efb04f5051601ad19defde0f"
     }
   },
   "images": {
@@ -28,18 +28,10 @@
     }
   },
   "qualification": {
-    "status": "passed",
-    "date": "2026-11-09",
-    "node": "v24.22.2",
-    "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.0",
-    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
-    "appVersions": {
-      "api": "gows-2026.10.1"
-    },
+    "status": "pending",
+    "date": "2026-11-16",
     "notes": [
-      "Digest of api resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; devlikeapro/waha:gows-2026.10.1); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Smoke run 2026-11-09T00:09:57.901Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (2026.10.1) healthy after 6 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 6 s, still healthy 60 s later; fresh install of revision 2 healthy after 5 s, still healthy 60 s later."
+      "Digest of api resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; devlikeapro/waha:gows-2026.10.1); image config: ExposedPorts 3000/tcp, Volumes none, User root."
     ]
   },
   "assets": {

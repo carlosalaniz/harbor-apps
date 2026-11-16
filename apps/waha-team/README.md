@@ -1,0 +1,69 @@
+# WAHA Team
+
+One WhatsApp number for the whole team. Everyone signs in with their own WAHA Team account, sees every chat, claims
+the ones they handle, and every message they send ends with their name, so the contact knows who wrote it:
+
+```
+Your order shipped today.
+
+— Ana
+```
+
+WAHA Team sends and receives through WAHA (the WAHA app on this machine, or any WAHA you point it at), and keeps
+WhatsApp linked by itself: when WhatsApp unlinks WAHA, WAHA Team asks WAHA for a pairing code and Android Link types
+it on the phone.
+
+- Source code: https://github.com/carlosalaniz/waha-team
+
+## What it does
+
+- **Accounts** for your team: admins (people, the WhatsApp connection) and agents (chats).
+- **Shared inbox with claims**: All, Mine, Unclaimed, Groups. A claim tells the others who handles a chat; it never
+  stops them from answering. Admins assign chats.
+- **Signed messages**: texts and captions end with "— Name". Voice notes, stickers and reactions cannot carry text, so
+  they go out unsigned (WAHA Team still shows who sent them). Messages typed on the phone show as **Phone**.
+- **Photos, videos, files and voice notes** (recorded in the browser), **edit** (first 15 minutes, the signature stays)
+  and **delete for everyone** (first 2 days).
+- **Push notifications** on every device, with the tab closed: "María López → Claimed by Ana" and the message. Each
+  person picks all chats, their chats and unclaimed ones, or only theirs, and can mute chats. On iPhone and iPad, add
+  WAHA Team to the Home Screen first (Share → Add to Home Screen).
+- **History**: copies earlier messages from WhatsApp after linking.
+
+## What Harbor does
+
+- Runs WAHA Team on 127.0.0.1 with its data in a retained volume, and generates the first admin's password (user
+  `admin`), shown after install and again on the app's **Settings** tab under **Saved passwords**.
+- Optional private links: to the **WAHA** app (WAHA's address) and to **Android Link** (for re-linking). Give WAHA's
+  API key at install (WAHA app → Settings → Saved passwords → WAHA API key), or later in WAHA Team.
+- Keeps Harbor's app login off: WAHA Team has its own accounts.
+
+## First run
+
+1. Sign in as `admin` with the password shown after install.
+2. Open **WhatsApp connection** (the phone icon). With the WAHA link and its key, it shows WAHA's state. If WAHA has no
+   session yet, press **Create the session in WAHA**.
+3. For automatic linking, pick the **phone with WhatsApp** (from Android Link) and type the **WhatsApp number**, then
+   **Save and reconnect**. WAHA Team links WhatsApp within a minute (or link by hand with the QR code shown there).
+4. Add your team under **People**, and turn on notifications on each device (the bell icon).
+
+To use a WAHA or Android Link elsewhere (another machine, a domain), type its address and key on the WhatsApp
+connection page instead of linking. An Android Link behind Harbor's login needs its password too.
+
+## Storage
+
+- `data`: accounts, chats and messages, claims, copies of media files, notification subscriptions (`/data`).
+- Managed volumes are retained on remove; Harbor never deletes them.
+
+## Limits
+
+- **WAHA is not an official WhatsApp API.** Numbers that send bulk or unsolicited messages get banned. Use a number you
+  can afford to lose.
+- **Tested versions**: this release was tested with WAHA 2026.10.1 (GOWS engine) and Android Link 0.2.1. With another
+  version, sending and re-linking wait until an admin accepts it on the WhatsApp connection page (it warns first).
+- WAHA Team shares WAHA with other apps but never deletes or reconfigures the session; it only starts it and requests
+  pairing codes. Messages other apps send through the same WAHA show as **API**.
+- Automatic re-linking needs the phone paired in Android Link, on, and unlocked without a PIN prompt; WhatsApp allows 4
+  linked devices (WAHA Team logs out its own old device if WhatsApp is full).
+- Push notifications go through the browsers' push services (Google, Mozilla, Apple), end-to-end encrypted.
+
+Upstream: https://github.com/carlosalaniz/waha-team
