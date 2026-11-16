@@ -29,9 +29,10 @@
   },
   "qualification": {
     "status": "pending",
-    "date": "2026-10-23",
+    "date": "2026-11-16",
     "notes": [
-      "Revision 3: the optional comfyui link (decision 182, live-checked on harbor-old 2026-10-14 against 0.12.0) on top of main's Open WebUI v0.12.3; images unchanged from main. The smoke test cannot set up links, so this stays pending until a linked install is checked."
+      "Revision 3: the optional comfyui link (decision 182, live-checked on harbor-old 2026-10-14 against 0.12.0) on top of main's Open WebUI v0.12.3; images unchanged from main. The smoke test cannot set up links, so this stays pending until a linked install is checked.",
+      "Revision 3 hand check (harbor-apps #24), 2026-11-16, Docker Desktop 29.2.1 arm64, not Harbor's engine: the link as Harbor renders it (Open WebUI and Ollama 0.40.16 on one network, OLLAMA_BASE_URL=http://ollama:11434, this package's environment). Update: v0.12.3 first start + admin sign-up, then this digest on the same data: healthy after ~21 s, /ollama/config keeps http://ollama:11434, /api/models lists the Ollama model (smollm2:135m, owned_by ollama), /api/chat/completions answers through it. Fresh install of this digest: healthy after ~99 s, sign-up, the same model list and chat. The same digest passed the smoke test as open-webui revision 7 (2026-10-31). Stays pending: the smoke test cannot set up a link."
     ]
   },
   "assets": {

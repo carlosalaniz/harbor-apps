@@ -30,7 +30,7 @@
       "dir": "baikal"
     },
     "bark-wallet": {
-      "revision": "2",
+      "revision": "3",
       "dir": "bark-wallet"
     },
     "bazarr": {
@@ -362,7 +362,7 @@
       "dir": "notediscovery"
     },
     "ntfy": {
-      "revision": "1",
+      "revision": "2",
       "dir": "ntfy"
     },
     "nutstash-wallet": {
@@ -446,7 +446,7 @@
       "dir": "pyload-ng"
     },
     "qbittorrent": {
-      "revision": "1",
+      "revision": "2",
       "dir": "qbittorrent"
     },
     "remmina": {
@@ -610,7 +610,7 @@
       "dir": "wireguard"
     },
     "wizarr": {
-      "revision": "2",
+      "revision": "3",
       "dir": "wizarr"
     },
     "wordpress": {
