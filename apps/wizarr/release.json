@@ -39,7 +39,7 @@
     },
     "notes": [
       "Digest of app resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/wizarrrr/wizarr:v2026.10.1); image config: ExposedPorts 5690/tcp, Volumes none, User root.",
-      "Smoke run 2026-11-16T03:34:07.419Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2026.9.1-patch.1) healthy after 8 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 22 s, still healthy 60 s later; fresh install of revision 3 healthy after 7 s, still healthy 60 s later."
+      "Smoke run 2026-11-16T03:49:46.880Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2026.9.1-patch.1) healthy after 7 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 22 s, still healthy 60 s later; fresh install of revision 3 healthy after 7 s, still healthy 60 s later."
     ]
   },
   "assets": {
