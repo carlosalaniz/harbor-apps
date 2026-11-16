@@ -30,7 +30,7 @@
       "note": "Karakeep names the Meilisearch version it supports in its own docker/docker-compose.yml; move it by hand when that file does. The package sets MEILI_EXPERIMENTAL_DUMPLESS_UPGRADE: a newer Meilisearch upgrades the index in place and an older one can no longer open it, so a rolled-back update leaves Meilisearch unable to start until its volume is emptied and Karakeep reindexes. Chrome majors arrive as pull requests: the smoke run only checks that DevTools answers."
     },
     "qbittorrent": {
-      "note": "The after-start hook depends on the linuxserver layout (/run/service/svc-qbittorrent, /config/qBittorrent/qBittorrent.conf, python3, curl) and on WebUI\\HostHeaderValidation and WebUI\\Password_PBKDF2. It checks its own result and stops qBittorrent when it fails, so a move that breaks it fails the smoke test; read the [Harbor after-start hook] line in the container log first."
+      "note": "The after-start hook depends on the linuxserver layout (/run/service/svc-qbittorrent, /config/qBittorrent/qBittorrent.conf, python3, curl) and on the WebUI keys HostHeaderValidation and Password_PBKDF2: qBittorrent 5.3 keeps them in a [WebUI] section, older versions as WebUI\\... under [Preferences]; the hook writes to [WebUI] when the file has one. A new layout fails the smoke test (5.3.0 did, harbor-apps #40). It checks its own result and stops qBittorrent when it fails, so a move that breaks it fails the smoke test; read the [Harbor after-start hook] line in the container log first."
     },
     "romm": {
       "match": {

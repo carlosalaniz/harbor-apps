@@ -1,6 +1,6 @@
 services:
   app:
-    image: binwiederhier/ntfy@sha256:8563a39da2f5a47360618b2ab9200239c76b37f4145f6d627d9ab4368abd23f0 # tag: v2.30.0
+    image: binwiederhier/ntfy@sha256:1875ddcf815c8a3c981d6d78c67a93452d0abba79b1ab9520b1f5f5238902bd7 # tag: v2.37.2
     # The image's entrypoint is `ntfy`; `serve` starts the server on port 80. Everything is configured
     # through NTFY_* variables, so no server.yml is needed.
     command: [serve]
