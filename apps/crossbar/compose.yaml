@@ -1,0 +1,26 @@
+services:
+  app:
+    image: ghcr.io/carlosalaniz/crossbar-app@sha256:080f84ee342de6f1cea1640c2eb5582bc5fc808c15667763acb3917a0d96476e # tag: 0.1.0
+    environment:
+      CROSSBAR_BROWSER_URL: http://browser:9300
+      CROSSBAR_DATA: /data
+    volumes:
+      - {type: volume, source: app-data, target: /data}
+    depends_on:
+      browser:
+        condition: service_started
+  browser:
+    image: ghcr.io/carlosalaniz/crossbar-browser@sha256:4612cb0c85d36613d6c6e2e3f4cf8ccdc6baf0eee724e256f406487b7d625ce1 # tag: 0.1.0
+    environment:
+      CROSSBAR_PROXY: http://proxy:3128
+      CROSSBAR_PROFILES: /profiles
+    volumes:
+      - {type: volume, source: profiles, target: /profiles}
+    depends_on:
+      proxy:
+        condition: service_started
+  proxy:
+    image: ghcr.io/carlosalaniz/crossbar-proxy@sha256:45b41e5d6142762283285abe065c838579a837b317d924a11498928c4de8da42 # tag: 0.1.0
+volumes:
+  app-data: {}
+  profiles: {}

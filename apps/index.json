@@ -89,6 +89,10 @@
       "revision": "2",
       "dir": "convertx"
     },
+    "crossbar": {
+      "revision": "1",
+      "dir": "crossbar"
+    },
     "databag": {
       "revision": "2",
       "dir": "databag"

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "crossbar",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "b5049fb9ce4a609a5712804b62a8761f4e426a22315ddb3dca791daa6368d821"
+    },
+    "compose.yaml": {
+      "sha256": "86a39262658f81d464532b751f4c138912a27c6882e0e094d7b317c3b74e23d8"
+    },
+    "README.md": {
+      "sha256": "1b7983ea30ee9871a46a8380aa9eeb95c263e80760f49ca3a11467ef4893ce17"
+    }
+  },
+  "images": {
+    "app": {
+      "reference": "ghcr.io/carlosalaniz/crossbar-app@sha256:080f84ee342de6f1cea1640c2eb5582bc5fc808c15667763acb3917a0d96476e",
+      "repository": "ghcr.io/carlosalaniz/crossbar-app",
+      "tag": "0.1.0",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:080f84ee342de6f1cea1640c2eb5582bc5fc808c15667763acb3917a0d96476e",
+      "appVersion": "0.1.0",
+      "imageCreated": "2026-11-16T01:15:46Z",
+      "source": "https://ghcr.io/carlosalaniz/crossbar-app"
+    },
+    "browser": {
+      "reference": "ghcr.io/carlosalaniz/crossbar-browser@sha256:4612cb0c85d36613d6c6e2e3f4cf8ccdc6baf0eee724e256f406487b7d625ce1",
+      "repository": "ghcr.io/carlosalaniz/crossbar-browser",
+      "tag": "0.1.0",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:4612cb0c85d36613d6c6e2e3f4cf8ccdc6baf0eee724e256f406487b7d625ce1",
+      "appVersion": "0.1.0",
+      "imageCreated": "2026-11-16T01:16:12Z",
+      "source": "https://ghcr.io/carlosalaniz/crossbar-browser"
+    },
+    "proxy": {
+      "reference": "ghcr.io/carlosalaniz/crossbar-proxy@sha256:45b41e5d6142762283285abe065c838579a837b317d924a11498928c4de8da42",
+      "repository": "ghcr.io/carlosalaniz/crossbar-proxy",
+      "tag": "0.1.0",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:45b41e5d6142762283285abe065c838579a837b317d924a11498928c4de8da42",
+      "appVersion": "0.1.0",
+      "imageCreated": "2026-11-16T01:15:52Z",
+      "source": "https://ghcr.io/carlosalaniz/crossbar-proxy"
+    }
+  },
+  "qualification": {
+    "status": "pending",
+    "date": "2026-11-16",
+    "notes": [
+      "Digest of app resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-app:0.1.0); image config: ExposedPorts 8080/tcp, Volumes /data, User node.",
+      "Digest of browser resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-browser:0.1.0); image config: ExposedPorts 9300/tcp, Volumes /profiles, User root.",
+      "Digest of proxy resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-proxy:0.1.0); image config: ExposedPorts 3128/tcp, Volumes none, User node."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "91db9bfbb75bf9da99b83aad2d888f6d72fcf5cb15c2a242ca48fabdefd3bf5c"
+    }
+  }
+}
