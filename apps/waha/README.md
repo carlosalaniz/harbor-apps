@@ -42,14 +42,19 @@ code and an event monitor; Swagger documents every endpoint and lets you try the
 
 For n8n, install the WAHA community node (`@devlikeapro/n8n-nodes-waha`) and give it this app's address and API key.
 
+For a team sharing this number, install **WAHA Team**: it links to this app, gives everyone their own account and signs
+each message with the sender's name. Any app on this machine can use WAHA through a Harbor link to this app, with the
+API key.
+
 ## Limits on Harbor
 
 - **WAHA is not an official WhatsApp API.** It drives WhatsApp Web, which WhatsApp's terms do not allow for
   automation. Numbers that send bulk or unsolicited messages get banned. Use a number you can afford to lose, and
   prefer replying over messaging people first.
-- **WAHA Core runs one session**, named `default`: one WhatsApp number per copy of the app (install the app again
-  for a second number). Several sessions, the media S3/database storage and some advanced features are in WAHA Plus,
-  a paid image this package does not use.
+- **Sessions**: these steps use one session, `default` (one WhatsApp number). Since WAHA 2026.6.1 everything that was
+  in WAHA Plus is in WAHA Core, several sessions included, so a second number can be another session in this app
+  (create it on the dashboard) instead of a second copy. Media are stored on the `media` volume; this package sets up
+  no S3 or database storage.
 - The GOWS engine supports most of WAHA's API; a few endpoints only work with the WEBJS (browser) engine, which this
   package does not run. Check the engine table at https://waha.devlike.pro/docs/how-to/engines/ before relying on one.
 - The phone must come online at least every two weeks, or WhatsApp unlinks the session.

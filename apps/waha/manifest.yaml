@@ -5,7 +5,7 @@ metadata:
   name: "WAHA"
   description: "WhatsApp HTTP API: link a WhatsApp number once, then send and receive messages from n8n, scripts and your own apps through a REST API and webhooks."
 release:
-  revision: "2"
+  revision: "3"
   version: 2026.10.1
   # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
   minHarbor: "0.43.0"
@@ -75,4 +75,4 @@ presentation:
   icon: icon.png
   developer: "devlike.pro"
   website: https://waha.devlike.pro
-  releaseNotes: "WAHA Core 2026.10.1 with the GOWS engine: one WhatsApp session (\"default\"). An unofficial API on top of WhatsApp Web; use a number you can afford to lose."
+  releaseNotes: "WAHA Core 2026.10.1 with the GOWS engine, set up with the session \"default\" (WAHA Core includes several sessions since 2026.6.1). Revision 3: the README no longer says several sessions need WAHA Plus, and points to WAHA Team. An unofficial API on top of WhatsApp Web; use a number you can afford to lose."
