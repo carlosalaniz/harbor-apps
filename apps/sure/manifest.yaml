@@ -5,7 +5,7 @@ metadata:
   name: "Sure"
   description: "Your whole financial life in one private place: bank and investment accounts, transactions, budgets and net worth. The community-maintained successor of Maybe Finance."
 release:
-  revision: "1"
+  revision: "2"
   # presentation.source is accepted from Harbor 0.30.0 on
   minHarbor: "0.30.0"
 deployment:
