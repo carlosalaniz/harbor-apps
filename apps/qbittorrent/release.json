@@ -28,11 +28,18 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-11-16",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.7.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "server": "5.3.0"
+    },
     "notes": [
-      "Automatic upstream update 2026-11-16 (pnpm catalog:upstream): server 5.2.4 -> 5.3.0. Not yet smoke-tested.",
-      "Digest of server resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; linuxserver/qbittorrent:5.3.0); image config: ExposedPorts 6881/tcp,6881/udp,8080/tcp, Volumes /config, User root."
+      "Digest of server resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; linuxserver/qbittorrent:5.3.0); image config: ExposedPorts 6881/tcp,6881/udp,8080/tcp, Volumes /config, User root.",
+      "Smoke run 2026-11-16T03:35:32.453Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (5.2.4) healthy after 3 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 2 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {
