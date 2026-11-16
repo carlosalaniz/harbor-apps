@@ -63,7 +63,7 @@
       "Digest of web resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; secondark/bark-web:0.11.0); image config: ExposedPorts 8080/tcp, Volumes none, User 101.",
       "Digest of api resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; secondark/bark-web-api:0.11.0); image config: ExposedPorts 4001/tcp, Volumes none, User node.",
       "Digest of barkd resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; secondark/bark:0.8.1); image config: ExposedPorts none, Volumes none, User root.",
-      "Smoke run 2026-11-16T03:36:59.250Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.8.0-patch.1) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 17 s, still healthy 60 s later; fresh install of revision 3 healthy after 2 s, still healthy 60 s later."
+      "Smoke run 2026-11-16T03:50:14.561Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.8.0-patch.1) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 17 s, still healthy 60 s later; fresh install of revision 3 healthy after 2 s, still healthy 60 s later."
     ]
   },
   "assets": {
