@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "crossbar",
-    "revision": "1"
+    "revision": "2"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "b5049fb9ce4a609a5712804b62a8761f4e426a22315ddb3dca791daa6368d821"
+      "sha256": "6953474e092d5f9305ca791dc078e648123dc627d11a1655312e17c29d3b8f70"
     },
     "compose.yaml": {
-      "sha256": "86a39262658f81d464532b751f4c138912a27c6882e0e094d7b317c3b74e23d8"
+      "sha256": "516c1b976716ae5f8a235d0c862eb538c978e560105b6a60d714f6198d0c45af"
     },
     "README.md": {
       "sha256": "1b7983ea30ee9871a46a8380aa9eeb95c263e80760f49ca3a11467ef4893ce17"
@@ -17,33 +17,33 @@
   },
   "images": {
     "app": {
-      "reference": "ghcr.io/carlosalaniz/crossbar-app@sha256:080f84ee342de6f1cea1640c2eb5582bc5fc808c15667763acb3917a0d96476e",
+      "reference": "ghcr.io/carlosalaniz/crossbar-app@sha256:f2d92c8429c6bceb27f9bdd16229603d437404d84f991f669f6216588018c8b7",
       "repository": "ghcr.io/carlosalaniz/crossbar-app",
-      "tag": "0.1.0",
+      "tag": "0.1.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:080f84ee342de6f1cea1640c2eb5582bc5fc808c15667763acb3917a0d96476e",
-      "appVersion": "0.1.0",
-      "imageCreated": "2026-11-16T01:15:46Z",
+      "platformDigest": "sha256:f2d92c8429c6bceb27f9bdd16229603d437404d84f991f669f6216588018c8b7",
+      "appVersion": "0.1.1",
+      "imageCreated": "2026-11-16T02:43:16Z",
       "source": "https://ghcr.io/carlosalaniz/crossbar-app"
     },
     "browser": {
-      "reference": "ghcr.io/carlosalaniz/crossbar-browser@sha256:4612cb0c85d36613d6c6e2e3f4cf8ccdc6baf0eee724e256f406487b7d625ce1",
+      "reference": "ghcr.io/carlosalaniz/crossbar-browser@sha256:0c237d76b32bb0e5c8807c03ecb4575c24befc4de3267487a08c570afc822bac",
       "repository": "ghcr.io/carlosalaniz/crossbar-browser",
-      "tag": "0.1.0",
+      "tag": "0.1.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:4612cb0c85d36613d6c6e2e3f4cf8ccdc6baf0eee724e256f406487b7d625ce1",
-      "appVersion": "0.1.0",
-      "imageCreated": "2026-11-16T01:16:12Z",
+      "platformDigest": "sha256:0c237d76b32bb0e5c8807c03ecb4575c24befc4de3267487a08c570afc822bac",
+      "appVersion": "0.1.1",
+      "imageCreated": "2026-11-16T02:43:34Z",
       "source": "https://ghcr.io/carlosalaniz/crossbar-browser"
     },
     "proxy": {
-      "reference": "ghcr.io/carlosalaniz/crossbar-proxy@sha256:45b41e5d6142762283285abe065c838579a837b317d924a11498928c4de8da42",
+      "reference": "ghcr.io/carlosalaniz/crossbar-proxy@sha256:894c243fa285c29f32057764e82335745880a39c5f799394669685ed21263efc",
       "repository": "ghcr.io/carlosalaniz/crossbar-proxy",
-      "tag": "0.1.0",
+      "tag": "0.1.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:45b41e5d6142762283285abe065c838579a837b317d924a11498928c4de8da42",
-      "appVersion": "0.1.0",
-      "imageCreated": "2026-11-16T01:15:52Z",
+      "platformDigest": "sha256:894c243fa285c29f32057764e82335745880a39c5f799394669685ed21263efc",
+      "appVersion": "0.1.1",
+      "imageCreated": "2026-11-16T02:43:18Z",
       "source": "https://ghcr.io/carlosalaniz/crossbar-proxy"
     }
   },
@@ -60,10 +60,10 @@
       "proxy": "0.1.0"
     },
     "notes": [
-      "Digest of app resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-app:0.1.0); image config: ExposedPorts 8080/tcp, Volumes /data, User node.",
-      "Digest of browser resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-browser:0.1.0); image config: ExposedPorts 9300/tcp, Volumes /profiles, User root.",
-      "Digest of proxy resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-proxy:0.1.0); image config: ExposedPorts 3128/tcp, Volumes none, User node.",
-      "Smoke run 2026-11-16T01:21:29.880Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 35 s, still healthy 60 s later."
+      "Smoke run 2026-11-16T01:21:29.880Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 35 s, still healthy 60 s later.",
+      "Digest of app resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-app:0.1.1); image config: ExposedPorts 8080/tcp, Volumes /data, User node.",
+      "Digest of browser resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-browser:0.1.1); image config: ExposedPorts 9300/tcp, Volumes /profiles, User root.",
+      "Digest of proxy resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-proxy:0.1.1); image config: ExposedPorts 3128/tcp, Volumes none, User node."
     ]
   },
   "assets": {
