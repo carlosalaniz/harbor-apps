@@ -48,12 +48,22 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-11-16",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.7.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "app": "0.1.0",
+      "browser": "0.1.0",
+      "proxy": "0.1.0"
+    },
     "notes": [
       "Digest of app resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-app:0.1.0); image config: ExposedPorts 8080/tcp, Volumes /data, User node.",
       "Digest of browser resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-browser:0.1.0); image config: ExposedPorts 9300/tcp, Volumes /profiles, User root.",
-      "Digest of proxy resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-proxy:0.1.0); image config: ExposedPorts 3128/tcp, Volumes none, User node."
+      "Digest of proxy resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-proxy:0.1.0); image config: ExposedPorts 3128/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-16T01:21:29.880Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 35 s, still healthy 60 s later."
     ]
   },
   "assets": {
