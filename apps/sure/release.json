@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "sure",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "5dad39ec64641ac4850c0cbebbe245f51794e0ec7049aa9a42e2c92fbf40a5b4"
+    },
+    "compose.yaml": {
+      "sha256": "03e604db58299b8bde74b0e29b775d67ccf6504f01c71172d23c41b2393a25c9"
+    },
+    "README.md": {
+      "sha256": "ede2cef5d65f945a10a7e1524edeb2bd9e7d570972cf0c486a1e6695c66ce4b1"
+    }
+  },
+  "images": {
+    "db": {
+      "reference": "postgres@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657",
+      "repository": "postgres",
+      "tag": "16.15",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:43f9275df91e012c3da3d86bea5d7bb5e67a473296cc906c5f9e80b8176b1a37",
+      "appVersion": "16.15",
+      "imageCreated": "2026-11-05T07:30:24Z",
+      "source": "https://hub.docker.com/_/postgres"
+    },
+    "redis": {
+      "reference": "redis@sha256:7958cfbb9d152f87dadfbc89f1b0b15938f0b81ff8982feb327476f4911935c3",
+      "repository": "redis",
+      "tag": "8.10.3-alpine",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:41ed50f5c0d9cf8b2151ad63df24ba96d018ccc84804d0688e9b9f1ed3d9f558",
+      "appVersion": "8.10.3-alpine",
+      "imageCreated": "2026-11-05T19:17:30Z",
+      "source": "https://hub.docker.com/_/redis"
+    },
+    "web": {
+      "reference": "ghcr.io/we-promise/sure@sha256:002cde609f3af4b69ba2564c2482f3996e1fe29092dd169962b9b6ed943fcb10",
+      "repository": "ghcr.io/we-promise/sure",
+      "tag": "0.7.6-hotfix.1",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:950209a9c52dec8d8ec5bcd6e46d39b65de07b9205d2877e6d5e1b94d851b220",
+      "appVersion": "0.7.6-hotfix.1",
+      "imageCreated": "2026-11-12T22:13:30Z",
+      "source": "https://ghcr.io/we-promise/sure"
+    },
+    "worker": {
+      "reference": "ghcr.io/we-promise/sure@sha256:002cde609f3af4b69ba2564c2482f3996e1fe29092dd169962b9b6ed943fcb10",
+      "repository": "ghcr.io/we-promise/sure",
+      "tag": "0.7.6-hotfix.1",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:950209a9c52dec8d8ec5bcd6e46d39b65de07b9205d2877e6d5e1b94d851b220",
+      "appVersion": "0.7.6-hotfix.1",
+      "imageCreated": "2026-11-12T22:13:30Z",
+      "source": "https://ghcr.io/we-promise/sure"
+    }
+  },
+  "qualification": {
+    "status": "passed",
+    "date": "2026-11-14",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.7.1",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "db": "16.15",
+      "redis": "8.10.3-alpine",
+      "web": "0.7.6-hotfix.1",
+      "worker": "0.7.6-hotfix.1"
+    },
+    "notes": [
+      "Digest of db resolved 2026-11-14 via registry API (scripts/catalog-pin.mjs; postgres:16.15); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of redis resolved 2026-11-14 via registry API (scripts/catalog-pin.mjs; redis:8.10.3-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Digest of web resolved 2026-11-14 via registry API (scripts/catalog-pin.mjs; ghcr.io/we-promise/sure:0.7.6-hotfix.1); image config: ExposedPorts 3000/tcp, Volumes none, User 1000:1000.",
+      "Digest of worker resolved 2026-11-14 via registry API (scripts/catalog-pin.mjs; ghcr.io/we-promise/sure:0.7.6-hotfix.1); image config: ExposedPorts 3000/tcp, Volumes none, User 1000:1000.",
+      "Smoke run 2026-11-14T15:42:57.853Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 16 s, still healthy 60 s later."
+    ]
+  },
+  "assets": {
+    "icon.png": {
+      "sha256": "484597a8d4bbbd6dbf0ab19efe105d4d5503877d4d0fe390a171502289aaedc2"
+    }
+  }
+}
