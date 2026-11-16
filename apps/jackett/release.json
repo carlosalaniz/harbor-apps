@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "jackett",
-    "revision": "21"
+    "revision": "22"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "6d19595a0aa95a9b891a8d2033a889fea5ac3211aed701c38152032b3d54896c"
+      "sha256": "a4e9e2a282e1737ab343404460565e08eb992a76dc261f426b77de2ab2277ef1"
     },
     "compose.yaml": {
-      "sha256": "b3eeef6040176591f242a463335509ea43b641d12f63c2eb22250387357f3a33"
+      "sha256": "f74fea8827d13318923e7ea2aa9ea7d25f571d42664c16dd1ee05bfecb8dc491"
     },
     "README.md": {
       "sha256": "c3a6e7420380727548782b025fb11392c9fd15617ebaf5c120e92af92ad8fb0f"
@@ -17,29 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "linuxserver/jackett@sha256:19802345fcc60a536802d29f36db073a77193fcd2f8fe3d067f604fc60a77352",
+      "reference": "linuxserver/jackett@sha256:31b58c6acfae963dbb334ffd1b721fbefebed498a3df872f058d1e5544f8b02d",
       "repository": "linuxserver/jackett",
-      "tag": "0.24.3055",
+      "tag": "0.24.3065",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:97cfc479a4f6fe54787651bb496e76cb40c5b139d70e36b5999b4e0fccdcf60e",
-      "appVersion": "0.24.3055",
-      "imageCreated": "2026-11-13T09:57:28Z",
+      "platformDigest": "sha256:5269aa16893a9e7fa7c009ca78a98eef6e83d703e9dd0354435c22b6fb8d68f4",
+      "appVersion": "0.24.3065",
+      "imageCreated": "2026-11-14T06:59:24Z",
       "source": "https://hub.docker.com/r/linuxserver/jackett"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-15",
+    "date": "2026-11-16",
     "node": "v24.22.2",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.7.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "0.24.3055"
+      "server": "0.24.3065"
     },
     "notes": [
-      "Digest of server resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; linuxserver/jackett:0.24.3055); image config: ExposedPorts 9117/tcp, Volumes /config, User root.",
-      "Smoke run 2026-11-15T12:59:31.001Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 20 (0.24.3042) healthy after 5 s, still healthy 60 s later; updated to revision 21 without a rollback, healthy after 9 s, still healthy 60 s later; fresh install of revision 21 healthy after 5 s, still healthy 60 s later."
+      "Digest of server resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; linuxserver/jackett:0.24.3065); image config: ExposedPorts 9117/tcp, Volumes /config, User root.",
+      "Smoke run 2026-11-16T13:49:43.842Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 21 (0.24.3055) healthy after 5 s, still healthy 60 s later; updated to revision 22 without a rollback, healthy after 8 s, still healthy 60 s later; fresh install of revision 22 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {

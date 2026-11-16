@@ -5,8 +5,8 @@ metadata:
   name: Jackett
   description: API Support for your favorite torrent trackers
 release:
-  revision: "21"
-  version: "0.24.3055"
+  revision: "22"
+  version: "0.24.3065"
 deployment:
   compose: compose.yaml
   multiInstance: true
