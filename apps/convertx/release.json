@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "convertx",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "6ea54ef355a916dcbb5b2353eb60625e42d65896f6ca3cb59c387b9bb30a811c"
+      "sha256": "f9f2e9b7b5c6165ab72c138b38fadf3521546933f7628792dcdb361a7553e1ce"
     },
     "compose.yaml": {
-      "sha256": "3d45273a92f25b4ce1322bc10e9b48a8d3c6645391af60b327434beed78a99ff"
+      "sha256": "1b24a488efea4e3cb0dc31e27de6ff9c6b799168273dc1faea111f0229d3820b"
     },
     "README.md": {
       "sha256": "9c21f66b9c2b8eb0cca247727ce3068ae9ff9dfd63ac8e16ac2079c1225178db"
@@ -17,33 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "c4illin/convertx@sha256:8590a21a16adb8514a8be55b74ad0112bf58ba772328a53f7b40528fcf8fa013",
+      "reference": "c4illin/convertx@sha256:6259e0c1e063120b1ddbc6937372a83be58182b2c9dc82264f58e100907b3e51",
       "repository": "c4illin/convertx",
-      "tag": "v0.19.0",
+      "tag": "v0.20.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:a64d03997fa2686608ed31121e090f21eb8e91dfd2eb06a6aba86480deabe8c1",
-      "appVersion": "0.19.0",
-      "imageCreated": "2026-09-26T00:28:50Z",
+      "platformDigest": "sha256:bba2e672eb9a42ac9d879a7758b946163f9eae00c3abd93155d0f597635970c2",
+      "appVersion": "0.20.0",
+      "imageCreated": "2026-10-28T22:28:32Z",
       "source": "https://hub.docker.com/r/c4illin/convertx"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-11-17",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "0.19.0"
+      "server": "0.20.0"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package convertx (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service server: stop_grace_period 1m dropped (Docker's default applies)",
-      "service server: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of server resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; c4illin/convertx@sha256:8590a21a16adb8514a8be55b74ad0112bf58ba772328a53f7b40528fcf8fa013); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-35-harbor-q09: passed (healthy after 109s; page title \"ConvertX | Setup\"; health 302)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of server resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; c4illin/convertx:v0.20.0); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-17T14:48:33.668Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.19.0) healthy after 3 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 16 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
