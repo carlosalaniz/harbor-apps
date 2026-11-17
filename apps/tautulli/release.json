@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "tautulli",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "cd4402606386ed6bb7005e2e5003f9383c9e2717649237f26f80daf9d8426b1d"
+      "sha256": "cfaa95e9e133f762a474126d3910175c2f7365d466685ec235b2d66da26c6042"
     },
     "compose.yaml": {
-      "sha256": "f644b2821b4245a1cf5a87e6a59af33bfa0a20686cdabbe5db6f434861cf34d9"
+      "sha256": "2adf2abaf2a8ca0ce9b39c101d4e477fd327db5c92c2037a02712f96ac85cb5b"
     },
     "README.md": {
       "sha256": "9da6cdc42c7b48c5efd8d658a8e6b358ff138754f4a04c99c31e7843e6d84332"
@@ -17,31 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "linuxserver/tautulli@sha256:9e7b476ef14ae44a043b446614b5354777605eb9cb2bdbb2dbd1f99df031ac17",
+      "reference": "linuxserver/tautulli@sha256:5e8f80cc18f03c606a3567c8a9b37d80812ed8017d2e2f8ff2e2a91b54a3aef1",
       "repository": "linuxserver/tautulli",
-      "tag": "2.18.2",
+      "tag": "2.19.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:813bdd97df090edfec72f4092b50198a62f0cf7143c7fe0858f8275fe468086c",
-      "appVersion": "2.18.2",
-      "imageCreated": "2026-09-28T22:11:50Z",
+      "platformDigest": "sha256:7183f2705ac34aa5c4eb603f2ec56decc39d7ef5817261d0d6bac5a9a51e17aa",
+      "appVersion": "2.19.1",
+      "imageCreated": "2026-11-10T23:40:02Z",
       "source": "https://hub.docker.com/r/linuxserver/tautulli"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-11-17",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "2.18.2"
+      "web": "2.19.1"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package tautulli (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; linuxserver/tautulli@sha256:9e7b476ef14ae44a043b446614b5354777605eb9cb2bdbb2dbd1f99df031ac17); image config: ExposedPorts 8181/tcp, Volumes /config, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-41-harbor-q03: passed (healthy after 43s; page title \"Tautulli - Welcome |\"; health 303)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; linuxserver/tautulli:2.19.1); image config: ExposedPorts 8181/tcp, Volumes /config, User root.",
+      "Smoke run 2026-11-17T14:39:45.746Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2.18.2) healthy after 7 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 9 s, still healthy 60 s later; fresh install of revision 3 healthy after 5 s, still healthy 60 s later."
     ]
   },
   "assets": {

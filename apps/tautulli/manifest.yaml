@@ -5,8 +5,8 @@ metadata:
   name: tautulli
   description: A Python based monitoring and tracking tool for Plex Media Server.
 release:
-  revision: "2"
-  version: 2.18.2
+  revision: "3"
+  version: "2.19.1"
 deployment:
   compose: compose.yaml
   multiInstance: true

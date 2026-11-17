@@ -526,7 +526,7 @@
       "dir": "syncthing"
     },
     "tautulli": {
-      "revision": "2",
+      "revision": "3",
       "dir": "tautulli"
     },
     "telegrapho": {
