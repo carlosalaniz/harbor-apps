@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "metube",
-    "revision": "11"
+    "revision": "12"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "43e422a3039b0d4b3f34ae95e5b79f1b5a6917014d0ed495426e7cfcc5782481"
+      "sha256": "2e9bc01aeea9a56768101792900a03f9c1fc22f62749b58fcd51a1b8339e03de"
     },
     "compose.yaml": {
-      "sha256": "2668c81706d492dcc79226a5db8df3812bb3566b66a2b85105a5269627ffed9f"
+      "sha256": "5ff0eed3f1b7738c9d614ef009412d51eca27dcfee1eff006954865f16da5681"
     },
     "README.md": {
       "sha256": "80a53bfa1a03186b84aa129feb178f30255b8050f15cb908507654e61bbab5e3"
@@ -17,29 +17,29 @@
   },
   "images": {
     "metube": {
-      "reference": "ghcr.io/alexta69/metube@sha256:6654866e76eab4228530dc5ed828ccfd702d1ee810feab2d629028272b399e14",
+      "reference": "ghcr.io/alexta69/metube@sha256:55ce41ab9a78069dc42bd808b20a96aeef4199560a02698a2205ea8a2bc4fef1",
       "repository": "ghcr.io/alexta69/metube",
-      "tag": "2026.11.10",
+      "tag": "2026.11.14",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:6b28bbbf8500359515c7a241843a777d050de4e93a3560cb36bae8b9cfe36385",
-      "appVersion": "2026.11.10",
-      "imageCreated": "2026-11-10T18:26:37Z",
+      "platformDigest": "sha256:1667a89f8670462abd380478a1b5c34844d4e229d3ba2266448cf8b6e40d62f7",
+      "appVersion": "2026.11.14",
+      "imageCreated": "2026-11-14T20:08:08Z",
       "source": "https://ghcr.io/alexta69/metube"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-13",
+    "date": "2026-11-17",
     "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "metube": "2026.11.10"
+      "metube": "2026.11.14"
     },
     "notes": [
-      "Digest of metube resolved 2026-11-13 via registry API (scripts/catalog-pin.mjs; ghcr.io/alexta69/metube:2026.11.10); image config: ExposedPorts 8081/tcp, Volumes /downloads, User root.",
-      "Smoke run 2026-11-13T13:26:02.539Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 10 (2026.11.06) healthy after 4 s, still healthy 60 s later; updated to revision 11 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 11 healthy after 4 s, still healthy 60 s later."
+      "Digest of metube resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; ghcr.io/alexta69/metube:2026.11.14); image config: ExposedPorts 8081/tcp, Volumes /downloads, User root.",
+      "Smoke run 2026-11-17T14:38:52.970Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 11 (2026.11.10) healthy after 7 s, still healthy 60 s later; updated to revision 12 without a rollback, healthy after 3 s, still healthy 60 s later; fresh install of revision 12 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {
