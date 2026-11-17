@@ -18,7 +18,8 @@ it on the phone.
 ## What it does
 
 - **Accounts** for your team: admins (people, the WhatsApp connection) and agents (chats).
-- **Shared inbox with claims**: All, Mine, Unclaimed, Groups. A claim tells the others who handles a chat; it never
+- **Shared inbox with claims**: All, Mine, Unclaimed, Team, Groups; sort by latest message or unanswered first (with
+  how long each chat has waited). A claim tells the others who handles a chat; it never
   stops them from answering. Admins assign chats.
 - **Signed messages**: texts and captions end with "— Name". Voice notes, stickers and reactions cannot carry text, so
   they go out unsigned (WAHA Team still shows who sent them). Messages typed on the phone show as **Phone**.
