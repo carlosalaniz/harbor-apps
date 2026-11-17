@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "ghostfolio",
-    "revision": "8"
+    "revision": "9"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "c274ed0af06c79f869fe2c3c00b048d2640dd133c657d41e060f7af94e1b6169"
+      "sha256": "e7d9f6ee790799654f9348e3e5ce05746c2126298375b2d225c31fb2b5aaa25a"
     },
     "compose.yaml": {
-      "sha256": "517062813fe401297d6452b20c030f72bed93bfff5091613fcd87fb1fee25cdb"
+      "sha256": "8fa8d22b8e0ccf15723ace14233a07a40cc5980128539c9c7823d1c2ea29f14e"
     },
     "README.md": {
       "sha256": "a05027ee4e6d6e419e88a4520106ff3ab792251f1081626a9956489147449d85"
@@ -17,7 +17,7 @@
   },
   "images": {
     "db": {
-      "reference": "postgres@sha256:5cb339462bde5e6b617acedf6c2a3008f3aadc44a3c0507dd22226ee1279aee8",
+      "reference": "postgres@sha256:23799e521dee9265a8b388ecf3bc0f1eaa34b95be67f5a76af4f8f6adb44c720",
       "repository": "postgres",
       "tag": "15.20-alpine",
       "platform": "linux/amd64",
@@ -37,33 +37,33 @@
       "source": "https://hub.docker.com/_/redis"
     },
     "web": {
-      "reference": "ghostfolio/ghostfolio@sha256:6aeba7b9df7a18bc4f39810444b1f18af012a7fe323cec20640b7c28661fc47c",
+      "reference": "ghostfolio/ghostfolio@sha256:1bc2ff4740410dd2c3bdde95738268f4c619cf4eeec491e3967bec18c95130b1",
       "repository": "ghostfolio/ghostfolio",
-      "tag": "3.99.0",
+      "tag": "3.100.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:f819cf193af22b14f673075b554de389d4ab693e7c630d866f8235b14ad3a25d",
-      "appVersion": "3.99.0",
-      "imageCreated": "2026-11-07T20:36:21Z",
+      "platformDigest": "sha256:f5ad4909a82e55580ba582c2f5f5abeef002a27e9b8303362631f756895c61b2",
+      "appVersion": "3.100.0",
+      "imageCreated": "2026-11-15T03:48:44Z",
       "source": "https://hub.docker.com/r/ghostfolio/ghostfolio"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-15",
+    "date": "2026-11-17",
     "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "db": "15.20-alpine",
       "redis": "8.10.3-alpine",
-      "web": "3.99.0"
+      "web": "3.100.0"
     },
     "notes": [
-      "Digest of db resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; postgres:15.20-alpine); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of redis resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; redis:8.10.3-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
-      "Digest of web resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; ghostfolio/ghostfolio:3.99.0); image config: ExposedPorts 3333/tcp, Volumes none, User node.",
-      "Smoke run 2026-11-15T12:58:27.867Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 7 (3.99.0) healthy after 15 s, still healthy 60 s later; updated to revision 8 without a rollback, healthy after 11 s, still healthy 60 s later; fresh install of revision 8 healthy after 11 s, still healthy 60 s later."
+      "Digest of db resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; postgres:15.20-alpine); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of redis resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; redis:8.10.3-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Digest of web resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; ghostfolio/ghostfolio:3.100.0); image config: ExposedPorts 3333/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-17T14:39:55.888Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 8 (3.99.0) healthy after 15 s, still healthy 60 s later; updated to revision 9 without a rollback, healthy after 11 s, still healthy 60 s later; fresh install of revision 9 healthy after 11 s, still healthy 60 s later."
     ]
   },
   "assets": {
