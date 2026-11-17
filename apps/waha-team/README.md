@@ -28,6 +28,14 @@ it on the phone.
   person picks all chats, their chats and unclaimed ones, or only theirs, and can mute chats. On iPhone and iPad, add
   WAHA Team to the Home Screen first (Share → Add to Home Screen).
 - **History**: copies earlier messages from WhatsApp after linking.
+- **Pinned chats for the whole team** (separate from the phone's pins), and a **Team** filter that narrows to one
+  teammate's chats.
+- **Contacts**: the team's address book. Names replace raw numbers everywhere; names WhatsApp already has are offered as
+  suggestions. They're kept in WAHA Team, not on the phone.
+- **Saved replies**: type `/` in the message box for price lists, delivery times or payment details, with
+  `{first_name}` filled in and one or several files attached.
+- **Version and Update**: the About card shows WAHA Team's and WAHA's versions, and an Update button appears when a new
+  version is installed, since installed web apps can keep an old page.
 
 ## What Harbor does
 
