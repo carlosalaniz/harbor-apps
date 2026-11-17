@@ -6,40 +6,32 @@
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "63f2782d72b923f4cd6ead54295e4d48e1c44c1236f59d98ab41806855a363b1"
+      "sha256": "c18ecf5e54c5475c27272bfc4cc2a96c66600ab00dd8323d864d9ea65e59c5f9"
     },
     "compose.yaml": {
-      "sha256": "b3cd39e0b5472dd1c60de134901146472844ba8ad6f9eff5902507217054f025"
+      "sha256": "2149c7d0d66bd0540dcaf615ea465cb16d1f9c333109525cd1a35faf6ff64337"
     },
     "README.md": {
-      "sha256": "64157b91a3ce8b46cffc21d826ee6899c93738fdede1ea242e1b6465c599c6d4"
+      "sha256": "85143af68bfe52488d6a4043e8386c284782e157f6ce1f75544cc6c881958eb1"
     }
   },
   "images": {
     "app": {
-      "reference": "ghcr.io/carlosalaniz/waha-team@sha256:10213218d3175fac6284c04aa29f2746220ddda161c0da70c98085b4893d7b8f",
+      "reference": "ghcr.io/carlosalaniz/waha-team@sha256:30eb03d338d96695752085eedd432206ab93030667ca867df5e423adba746c11",
       "repository": "ghcr.io/carlosalaniz/waha-team",
-      "tag": "0.1.1",
+      "tag": "0.1.2",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:f0ad335953202b13e238db4a037f59c3ea056b68df0327e38598b83c17b712b8",
-      "appVersion": "0.1.1",
-      "imageCreated": "2026-11-17T01:51:14Z",
+      "platformDigest": "sha256:22f0efdf4dc69a33c2e7e63c00fffde1763a60b69c29b3e4a1ddf4a1538d12a2",
+      "appVersion": "0.1.2",
+      "imageCreated": "2026-11-17T02:56:36Z",
       "source": "https://ghcr.io/carlosalaniz/waha-team"
     }
   },
   "qualification": {
-    "status": "passed",
+    "status": "pending",
     "date": "2026-11-17",
-    "node": "v24.22.2",
-    "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.1",
-    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
-    "appVersions": {
-      "app": "0.1.1"
-    },
     "notes": [
-      "Digest of app resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.1.1); image config: ExposedPorts 8080/tcp, Volumes none, User node.",
-      "Smoke run 2026-11-17T01:55:38.093Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (0.1.0) healthy after 2 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 2 healthy after 1 s, still healthy 60 s later."
+      "Digest of app resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.1.2); image config: ExposedPorts 8080/tcp, Volumes none, User node."
     ]
   },
   "assets": {

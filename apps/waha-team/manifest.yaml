@@ -6,7 +6,7 @@ metadata:
   description: "One WhatsApp number for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
 release:
   revision: "2"
-  version: 0.1.1
+  version: 0.1.2
   # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
   minHarbor: "0.43.0"
 deployment:
@@ -35,7 +35,7 @@ ui:
   primaryEndpoint: web
 setup:
   endpoint: web
-  instructions: "Sign in as admin with the password shown after install. Open WhatsApp connection (the phone icon): with the WAHA app linked and its API key given at install, it shows WAHA's state; create the session if WAHA has none. Pick the Android Link phone that has WhatsApp and type the account's number: WAHA Team then links WhatsApp by itself (and again whenever WhatsApp unlinks it). Add your team under People."
+  instructions: "Sign in as admin with the password shown after install. Open WhatsApp connection (the phone icon): with the WAHA app linked and its API key given at install, it lists WAHA's sessions: use one, or create one. Pick the Android Link phone that has WhatsApp, type the account's number and press Link with the phone now (or link by hand with the QR code): once linked, WAHA Team links it again by itself whenever WhatsApp unlinks it. Add your team under People."
 storage:
   - id: data
     composeVolume: data
@@ -125,4 +125,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/waha-team
   source: https://github.com/carlosalaniz/waha-team
-  releaseNotes: "0.1.1: locked out? Type a new admin password on the app page (Values you provided, admin-reset-password) and WAHA Team applies it at its next start. 0.1.0: a shared WhatsApp inbox on WAHA. Own accounts, claims (All, Mine, Unclaimed, Groups), every message and caption signed \"— Name\", photos, videos, files and voice notes, edit and delete for everyone, Web Push notifications with who sent it and who has the chat, history import. Re-links WhatsApp by itself through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."
+  releaseNotes: "0.1.2: pick (or create) the WAHA session to follow on the WhatsApp connection page; WAHA Team now follows its state: it re-links only a session it has seen linked, never starts a stopped one, and waits up to 3 minutes after the phone accepts a code instead of asking for a new one. 0.1.1: locked out? Type a new admin password on the app page (Values you provided, admin-reset-password) and WAHA Team applies it at its next start. 0.1.0: a shared WhatsApp inbox on WAHA. Own accounts, claims (All, Mine, Unclaimed, Groups), every message and caption signed \"— Name\", photos, videos, files and voice notes, edit and delete for everyone, Web Push notifications with who sent it and who has the chat, history import. Re-links WhatsApp by itself through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."

@@ -49,10 +49,12 @@ it on the phone.
 ## First run
 
 1. Sign in as `admin` with the password shown after install.
-2. Open **WhatsApp connection** (the phone icon). With the WAHA link and its key, it shows WAHA's state. If WAHA has no
-   session yet, press **Create the session in WAHA**.
-3. For automatic linking, pick the **phone with WhatsApp** (from Android Link) and type the **WhatsApp number**, then
-   **Save and reconnect**. WAHA Team links WhatsApp within a minute (or link by hand with the QR code shown there).
+2. Open **WhatsApp connection** (the phone icon). With the WAHA link and its key, the **Session** card lists WAHA's
+   sessions: **Use this one**, or type a name and **Create and use it**. WAHA Team follows that session; other apps can
+   use the others.
+3. Pick the **phone with WhatsApp** (from Android Link), type the **WhatsApp number**, **Save and reconnect**, then
+   **Link with the phone now** (or link by hand with the QR code shown there). From then on, if WhatsApp unlinks the
+   session, WAHA Team links it again by itself.
 4. Add your team under **People**, and turn on notifications on each device (the bell icon).
 
 To use a WAHA or Android Link elsewhere (another machine, a domain), type its address and key on the WhatsApp
@@ -69,8 +71,9 @@ connection page instead of linking. An Android Link behind Harbor's login needs 
   can afford to lose.
 - **Tested versions**: this release was tested with WAHA 2026.10.1 (GOWS engine) and Android Link 0.2.1. With another
   version, sending and re-linking wait until an admin accepts it on the WhatsApp connection page (it warns first).
-- WAHA Team shares WAHA with other apps but never deletes or reconfigures the session; it only starts it and requests
-  pairing codes. Messages other apps send through the same WAHA show as **API**.
+- WAHA Team shares WAHA with other apps but never deletes or reconfigures a session. It re-links only a session it has
+  seen linked, never starts a stopped one, restarts a failed one at most every 5 minutes, and never asks for a new
+  pairing code while a link is finishing. Messages other apps send through the same WAHA show as **API**.
 - Automatic re-linking needs the phone paired in Android Link, on, and unlocked without a PIN prompt; WhatsApp allows 4
   linked devices (WAHA Team logs out its own old device if WhatsApp is full).
 - Push notifications go through the browsers' push services (Google, Mozilla, Apple), end-to-end encrypted.
