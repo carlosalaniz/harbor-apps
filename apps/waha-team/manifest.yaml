@@ -5,8 +5,8 @@ metadata:
   name: "WAHA Team"
   description: "One WhatsApp number for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
 release:
-  revision: "2"
-  version: 0.1.3
+  revision: "3"
+  version: 0.1.4
   # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
   minHarbor: "0.43.0"
 deployment:
@@ -125,4 +125,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/waha-team
   source: https://github.com/carlosalaniz/waha-team
-  releaseNotes: "0.1.3: pick (or create) the WAHA session to follow; WAHA Team follows its state: it re-links only a session it has seen linked, never starts a stopped one, and WhatsApp's own answer to WAHA (PairSuccess) decides whether a link happened, so it never asks for a new code while a link is finishing. Locked out? Set admin-reset-password on the app page. 0.1.0: a shared WhatsApp inbox on WAHA: own accounts, claims, every message signed \"— Name\", media and voice notes, edit and delete, Web Push notifications, history import, re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."
+  releaseNotes: "0.1.4: respects WhatsApp's reach-out restriction on new numbers (no sending or re-linking from WAHA Team while it lasts, then one re-link) and asks before a first message to someone who never wrote. 0.1.3: pick (or create) the WAHA session to follow; WAHA Team follows its state: it re-links only a session it has seen linked, never starts a stopped one, and WhatsApp's own answer to WAHA (PairSuccess) decides whether a link happened, so it never asks for a new code while a link is finishing. Locked out? Set admin-reset-password on the app page. 0.1.0: a shared WhatsApp inbox on WAHA: own accounts, claims, every message signed \"— Name\", media and voice notes, edit and delete, Web Push notifications, history import, re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."
