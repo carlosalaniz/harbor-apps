@@ -67,6 +67,10 @@ connection page instead of linking. An Android Link behind Harbor's login needs 
 
 ## Limits
 
+- **New numbers get restricted for messaging people first.** When a linked device (WAHA) sends to someone who never
+  wrote to the number, WhatsApp can put the account under a "reach-out" restriction for hours and remove the linked
+  device. WAHA Team shows the restriction and its end time, pauses sending and re-linking until it ends (the phone keeps
+  working), and asks before a first message to a new contact.
 - **WAHA is not an official WhatsApp API.** Numbers that send bulk or unsolicited messages get banned. Use a number you
   can afford to lose.
 - **Tested versions**: this release was tested with WAHA 2026.10.1 (GOWS engine) and Android Link 0.2.1. With another
