@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "btctracker",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "7e9bb99c7cbb1ff03040b911f67481b1f1e45c4f1c0fd681f3e9b5e8bb4e9312"
+      "sha256": "d453c677dc06b7112b701d67cd2a5986c71c4cbd5e6e00d0b2ad37ccdb644587"
     },
     "compose.yaml": {
-      "sha256": "6b13318576d60500421a6e628416af89c297cc29e7cbd7e5b46bc7537b559fe3"
+      "sha256": "bafdc833485a9242a7045248d69f32b6b4e8df7d3ddc2032e7544ec49f56e6c2"
     },
     "README.md": {
       "sha256": "5ab65d2adb8da4f67347fb53b008ee01ce93e0ee105a6eaaffc53bc3a6a75488"
@@ -17,32 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "thewilqq/btc-tracker@sha256:0c7beea5e0791cc39c9294f0a62faa24aa2ef42ed04571b63977c0afe085321b",
+      "reference": "thewilqq/btc-tracker@sha256:f7780ebf7e5586efebc324d4532aa768208d9f4e79b9cd048a030be8c4929df5",
       "repository": "thewilqq/btc-tracker",
-      "tag": "v0.7.0",
+      "tag": "v0.8.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:14f19f3662e8bc72b4620b37722e13758be86555cef1b056830fc547f3191096",
-      "appVersion": "0.7.0",
-      "imageCreated": "2026-03-08T18:23:03Z",
+      "platformDigest": "sha256:58bc5c92636b0b3c496713b6b8f3392afd855fe579d9236a9d402c10c4b6b629",
+      "appVersion": "0.8.0",
+      "imageCreated": "2026-10-09T16:13:23Z",
       "source": "https://hub.docker.com/r/thewilqq/btc-tracker"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-11-17",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "0.7.0"
+      "web": "0.8.0"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package btctracker (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; thewilqq/btc-tracker@sha256:0c7beea5e0791cc39c9294f0a62faa24aa2ef42ed04571b63977c0afe085321b); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-41-harbor-q03: passed (healthy after 55s; page title \"BTC Tracker\"; health 307)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of web resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; thewilqq/btc-tracker:v0.8.0); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-17T14:45:17.180Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.7.0-patch.1) healthy after 9 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 7 s, still healthy 60 s later; fresh install of revision 3 healthy after 5 s, still healthy 60 s later."
     ]
   },
   "assets": {
