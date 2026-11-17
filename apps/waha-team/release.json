@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "waha-team",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "d19c8764131de303b6c89ea51f45f519a467604c0eca7633c226e3f208e09efd"
+      "sha256": "8b0b751b58cde4a08427b7d89ae3dd3c84852d5d61b744b583dfa964223096ea"
     },
     "compose.yaml": {
-      "sha256": "2093cb750faa614787c207a5f38c4c7533c3f9e406abd0dbc806c130e2737b5d"
+      "sha256": "3962f384cb2681a85b787dd5b80645bd1e226007d5b1d87284b93636529151d2"
     },
     "README.md": {
       "sha256": "27909d01cc9c9c392a1d752a50244656288e1217e2c65ffde734d503fd318f56"
@@ -17,13 +17,13 @@
   },
   "images": {
     "app": {
-      "reference": "ghcr.io/carlosalaniz/waha-team@sha256:bc0b4b450833f5e8ebb9a96c72724c5e4496a29a383f0175062b62aa684a98b7",
+      "reference": "ghcr.io/carlosalaniz/waha-team@sha256:cb8e470f36b3f92539d3720fa08547b5f916bc7c96dce4c3e088d1aa3011c8eb",
       "repository": "ghcr.io/carlosalaniz/waha-team",
-      "tag": "0.1.4",
+      "tag": "0.1.6",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:deb90a0baef2808d1238420ce2c9137b99cb9a6e70f1dff66c348c36b3780f18",
-      "appVersion": "0.1.4",
-      "imageCreated": "2026-11-17T04:57:52Z",
+      "platformDigest": "sha256:8f909f261892b834840310a9e61ee4fcdfac00b57bdbeebb8d41d255cd1ffb0f",
+      "appVersion": "0.1.6",
+      "imageCreated": "2026-11-17T05:34:00Z",
       "source": "https://ghcr.io/carlosalaniz/waha-team"
     }
   },
@@ -31,7 +31,7 @@
     "status": "pending",
     "date": "2026-11-17",
     "notes": [
-      "Digest of app resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.1.4); image config: ExposedPorts 8080/tcp, Volumes none, User node."
+      "Digest of app resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.1.6); image config: ExposedPorts 8080/tcp, Volumes none, User node."
     ]
   },
   "assets": {
