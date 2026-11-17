@@ -37,6 +37,15 @@ it on the phone.
   API key at install (WAHA app → Settings → Saved passwords → WAHA API key), or later in WAHA Team.
 - Keeps Harbor's app login off: WAHA Team has its own accounts.
 
+## Locked out
+
+- The first admin's password stays on the app's **Settings** tab under **Saved passwords** (it is the one Harbor
+  generated; if someone changed it in WAHA Team since, it is out of date).
+- To set a new one: on the app page, **Values you provided**, the `admin-reset-password` value → **Change…** (or
+  `harbor configure <app> --secret admin-reset-password=-`), type any password of 8 characters or more. WAHA Team
+  restarts, gives the user `admin` that password, enables it and makes it an admin again. Each new value is applied
+  once; change the password in WAHA Team afterwards if you like.
+
 ## First run
 
 1. Sign in as `admin` with the password shown after install.

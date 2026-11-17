@@ -5,8 +5,8 @@ metadata:
   name: "WAHA Team"
   description: "One WhatsApp number for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
 release:
-  revision: "1"
-  version: 0.1.0
+  revision: "2"
+  version: 0.1.1
   # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
   minHarbor: "0.43.0"
 deployment:
@@ -51,6 +51,17 @@ secrets:
     revealable: true
     bindings:
       - {service: app, environment: ADMIN_PASSWORD}
+  # Locked out: the operator types a new password for "admin" on the app page (Values you provided → Change…) and
+  # WAHA Team applies it at its next start, once per new value. Stored like a password, never shown back.
+  - id: admin-reset-password
+    source: operator
+    prompt: "Only if you are locked out: a new password for the user admin (at least 8 characters). WAHA Team sets it, re-enables admin and signs it out everywhere at its next start. Leave empty at install."
+    optional: true
+    minLength: 8
+    maxLength: 256
+    retention: retain
+    bindings:
+      - {service: app, environment: ADMIN_RESET_PASSWORD}
   - id: waha-api-key
     source: operator
     prompt: "API key of the WAHA app (its Settings → Saved passwords → WAHA API key). Leave empty to set WAHA's address and key later in WAHA Team."
@@ -114,4 +125,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/waha-team
   source: https://github.com/carlosalaniz/waha-team
-  releaseNotes: "0.1.0: a shared WhatsApp inbox on WAHA. Own accounts, claims (All, Mine, Unclaimed, Groups), every message and caption signed \"— Name\", photos, videos, files and voice notes, edit and delete for everyone, Web Push notifications with who sent it and who has the chat, history import. Re-links WhatsApp by itself through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."
+  releaseNotes: "0.1.1: locked out? Type a new admin password on the app page (Values you provided, admin-reset-password) and WAHA Team applies it at its next start. 0.1.0: a shared WhatsApp inbox on WAHA. Own accounts, claims (All, Mine, Unclaimed, Groups), every message and caption signed \"— Name\", photos, videos, files and voice notes, edit and delete for everyone, Web Push notifications with who sent it and who has the chat, history import. Re-links WhatsApp by itself through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."
