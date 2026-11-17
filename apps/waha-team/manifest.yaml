@@ -5,8 +5,8 @@ metadata:
   name: "WAHA Team"
   description: "One WhatsApp number for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
 release:
-  revision: "6"
-  version: 0.1.8
+  revision: "7"
+  version: 0.1.9
   # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
   minHarbor: "0.43.0"
 deployment:
@@ -125,4 +125,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/waha-team
   source: https://github.com/carlosalaniz/waha-team
-  releaseNotes: "0.1.8: team pins, a Team filter by person, contacts (with names from WhatsApp as suggestions), saved replies with / shortcuts and files, and the app version with an Update button. 0.1.7: notifications like WhatsApp's (the contact's name, the chat's unread messages, photo previews, Mark as read and Claim buttons; a click opens the installed app). 0.1.6: admins set any password. 0.1.5: Save without reconnecting. 0.1.4: respects WhatsApp's reach-out restriction on new numbers and asks before a first message to a stranger. 0.1.3: pick the WAHA session to follow; WAHA Team follows its state and WhatsApp's own PairSuccess decides whether a link happened. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages, media, Web Push and re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."
+  releaseNotes: "0.1.9: long-press (or right-click) a chat to pin it for the team, claim it or mark it read. 0.1.8: team pins, a Team filter by person, contacts (with names from WhatsApp as suggestions), saved replies with / shortcuts and files, and the app version with an Update button. 0.1.7: notifications like WhatsApp's (the contact's name, the chat's unread messages, photo previews, Mark as read and Claim buttons; a click opens the installed app). 0.1.6: admins set any password. 0.1.5: Save without reconnecting. 0.1.4: respects WhatsApp's reach-out restriction on new numbers and asks before a first message to a stranger. 0.1.3: pick the WAHA session to follow; WAHA Team follows its state and WhatsApp's own PairSuccess decides whether a link happened. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages, media, Web Push and re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."

@@ -2,28 +2,28 @@
   "schemaVersion": 1,
   "package": {
     "id": "waha-team",
-    "revision": "6"
+    "revision": "7"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "785ab7695bd3f7833d8db546cdffd018586c766d161ee5bad05aa74df97efcd8"
+      "sha256": "e6738776e6888327b1233d382ea4b0bd2b9a1d017b0e44c8f72242a50b3fe393"
     },
     "compose.yaml": {
-      "sha256": "4ac57254e4186c2fb7fa350cee06653ee473f8a7462a07dd383d1e770b10daf0"
+      "sha256": "73017e076db32e3c064a00ea8548ae2cb368d9e8e1f9dc7186a33231c467d3d8"
     },
     "README.md": {
-      "sha256": "b65397c7bdac190fef3f16c2c0b7deca00928ea81a2a235e3f80fa9681727e8f"
+      "sha256": "074955fe1066bdf731cd25781f969cbb9c747be6b2ff6749c30683ba38cce589"
     }
   },
   "images": {
     "app": {
-      "reference": "ghcr.io/carlosalaniz/waha-team@sha256:22eadc9761d82c972eabeb10ecea420ac4105b8f2684d7a95c14289e797131d9",
+      "reference": "ghcr.io/carlosalaniz/waha-team@sha256:c3bb380efe72043acec39e63499842a692236cecba5aa86365211d8e7111665c",
       "repository": "ghcr.io/carlosalaniz/waha-team",
-      "tag": "0.1.8",
+      "tag": "0.1.9",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:eeb3fd1d574283ca155f00fe450a9f74a6f7ae71653828e1a2fe213ca6f10d71",
-      "appVersion": "0.1.8",
-      "imageCreated": "2026-11-17T06:04:35Z",
+      "platformDigest": "sha256:d2859f1c2f41801ec924fe52b918345241056a119ef7831325e20bc8c67b4770",
+      "appVersion": "0.1.9",
+      "imageCreated": "2026-11-17T20:16:44Z",
       "source": "https://ghcr.io/carlosalaniz/waha-team"
     }
   },
@@ -32,14 +32,14 @@
     "date": "2026-11-17",
     "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "0.1.8"
+      "app": "0.1.9"
     },
     "notes": [
-      "Digest of app resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.1.8); image config: ExposedPorts 8080/tcp, Volumes none, User node.",
-      "Smoke run 2026-11-17T06:08:10.395Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (0.1.7) healthy after 2 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 6 healthy after 1 s, still healthy 60 s later."
+      "Digest of app resolved 2026-11-17 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.1.9); image config: ExposedPorts 8080/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-17T20:20:15.619Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (0.1.8) healthy after 2 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 7 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
