@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "package": {
     "id": "waha-team",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "64e94e9676a250802534ae4b3d35188cc4eef51a96a14bdea8749a56eaf76821"
+      "sha256": "7e02b16f6fa21cc25c78c10560856615234c0991668715b63fdc5e657e199f1a"
     },
     "compose.yaml": {
       "sha256": "f9de4f29cea4bd02a873afcc482c856a1aa620f6fcb3fdb2fbf28b696e411ae4"
