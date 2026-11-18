@@ -29,6 +29,11 @@ it on the phone.
   person picks all chats, their chats and unclaimed ones, or only theirs, and can mute chats. On iPhone and iPad, add
   WAHA Team to the Home Screen first (Share → Add to Home Screen).
 - **History**: copies earlier messages from WhatsApp after linking.
+- **Several WhatsApp numbers**: add numbers on the WhatsApp connection page (each one is a WAHA session, labelled and
+  coloured), switch between them at the top of the inbox, and choose who can use each number. Notifications say which
+  number they're about.
+- **Archive** chats from the long-press menu or chat info; they're archived on the phone too, and come back when the
+  contact writes again.
 - **Pinned chats for the whole team** (separate from the phone's pins): long-press a chat (or right-click it) and
   choose Pin for the team. A **Team** filter narrows the list to one teammate's chats.
 - **Contacts**: the team's address book. Names replace raw numbers everywhere; names WhatsApp already has are offered as

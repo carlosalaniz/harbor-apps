@@ -3,10 +3,10 @@ kind: Application
 metadata:
   id: waha-team
   name: "WAHA Team"
-  description: "One WhatsApp number for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
+  description: "WhatsApp numbers for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
 release:
-  revision: "8"
-  version: 0.1.10
+  revision: "9"
+  version: 0.2.0
   # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
   minHarbor: "0.43.0"
 deployment:
@@ -125,4 +125,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/waha-team
   source: https://github.com/carlosalaniz/waha-team
-  releaseNotes: "0.1.10: sort chats by Latest or Unanswered first (waiting chats on top, with how long they have waited). 0.1.9: long-press or right-click a chat to pin, claim or mark read. 0.1.8: team pins, a Team filter by person, contacts, saved replies with / shortcuts, and the version with an Update button. 0.1.7: WhatsApp-style notifications. 0.1.4: respects WhatsApp's reach-out restriction on new numbers. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages, media, Web Push and re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."
+  releaseNotes: "0.2.0: several WhatsApp numbers in one WAHA Team (each a WAHA session with its own label, colour and link), switch per number in the inbox, per-number access for people, and archive (also on the phone). 0.1.10: sort by Latest or Unanswered first. 0.1.9: long-press a chat to pin, claim or mark read. 0.1.8: team pins, a Team filter, contacts, saved replies with / shortcuts, version and Update. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages, media, Web Push and re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."
