@@ -166,7 +166,7 @@
       "dir": "foldergram"
     },
     "forgejo": {
-      "revision": "3",
+      "revision": "4",
       "dir": "forgejo"
     },
     "fossflow": {
