@@ -31,6 +31,9 @@ it on the phone.
 - **History**: copies earlier messages from WhatsApp after linking.
 - **Replies**: swipe a message right (or Reply in its menu) to answer it as a WhatsApp reply; replies show the
   message they quote.
+- **Typing**: see when customers type or record, and they see when your team does; teammates see each other
+  typing in a chat. While someone has WAHA Team open the number shows as online (the phone gets no notifications
+  meanwhile, as with WhatsApp Web); "Show typing" on the WhatsApp page turns it off.
 - **Voice to text**: every voice note (customers' and the team's) is transcribed one at a time and the text shows
   under the player. Admins pick the engine on the AI features page: Whisper on this server (Small or Large v3 Turbo,
   downloaded once into the app's data; audio never leaves the server) or OpenRouter with their own API key.
