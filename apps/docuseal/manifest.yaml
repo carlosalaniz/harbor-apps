@@ -5,8 +5,8 @@ metadata:
   name: DocuSeal
   description: Open source DocuSign alternative. Create, fill, and sign digital documents ✍️
 release:
-  revision: "8"
-  version: "3.3.6"
+  revision: "9"
+  version: "3.3.7"
 deployment:
   compose: compose.yaml
   multiInstance: true

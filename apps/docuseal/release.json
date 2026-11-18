@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "docuseal",
-    "revision": "8"
+    "revision": "9"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "1275303b3b1759fc76664d97b810859535a26c58fc0e33d4c97eafb1cf53afaa"
+      "sha256": "b1f43380ea32a78d084dba7a6f513a815004b77d41a75217ca18d2340cc42e65"
     },
     "compose.yaml": {
-      "sha256": "c26f92a990b2a9bbd9a7e166a51e0fa6945814c0346e32593043c1a4b2fdacbc"
+      "sha256": "43377bbaf42a914fae8dd0ae682442786836892a0b073acb9defb1a53eef0d98"
     },
     "README.md": {
       "sha256": "76b59fad36b1e941f4ef438f71c1c1f460a4b281af6491185876b0803ded6d7e"
@@ -17,13 +17,13 @@
   },
   "images": {
     "server": {
-      "reference": "docuseal/docuseal@sha256:df78e750ec0df42c121225875714487998048c9c80f412c1d5a0b9290887ba5c",
+      "reference": "docuseal/docuseal@sha256:d2e998dd1fbf9c462a1749df38e4b93f03f8bc552865aad6350d01511d450a65",
       "repository": "docuseal/docuseal",
-      "tag": "3.3.6",
+      "tag": "3.3.7",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:53c409768522d0fddc3a7ca6f6cbc02f78e1fbe0ed5803bde323e9ccb9717c59",
-      "appVersion": "3.3.6",
-      "imageCreated": "2026-11-09T14:24:56Z",
+      "platformDigest": "sha256:d5f4d0c5bed4ffe727fefc6b25817e78e408b6d55bc4a4c80af136214418b481",
+      "appVersion": "3.3.7",
+      "imageCreated": "2026-11-16T10:55:19Z",
       "source": "https://hub.docker.com/r/docuseal/docuseal"
     },
     "db": {
@@ -39,19 +39,19 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-15",
+    "date": "2026-11-18",
     "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "3.3.6",
+      "server": "3.3.7",
       "db": "17.12"
     },
     "notes": [
-      "Digest of server resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; docuseal/docuseal:3.3.6); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Digest of db resolved 2026-11-15 via registry API (scripts/catalog-pin.mjs; postgres:17.12); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Smoke run 2026-11-15T12:57:42.478Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 7 (3.3.6) healthy after 4 s, still healthy 60 s later; updated to revision 8 without a rollback, healthy after 19 s, still healthy 60 s later; fresh install of revision 8 healthy after 3 s, still healthy 60 s later."
+      "Digest of server resolved 2026-11-18 via registry API (scripts/catalog-pin.mjs; docuseal/docuseal:3.3.7); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Digest of db resolved 2026-11-18 via registry API (scripts/catalog-pin.mjs; postgres:17.12); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Smoke run 2026-11-18T14:15:35.551Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 8 (3.3.6) healthy after 4 s, still healthy 60 s later; updated to revision 9 without a rollback, healthy after 19 s, still healthy 60 s later; fresh install of revision 9 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {
