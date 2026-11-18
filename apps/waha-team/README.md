@@ -31,7 +31,8 @@ it on the phone.
 - **History**: copies earlier messages from WhatsApp after linking.
 - **Several WhatsApp numbers**: add numbers on the WhatsApp connection page (each one is a WAHA session, labelled and
   coloured), switch between them at the top of the inbox, and choose who can use each number. Notifications say which
-  number they're about.
+  number they're about; each person can turn a number's notifications off. Each number uses its own WAHA session, and
+  every conversation shows which number it's on.
 - **Profile pictures** of contacts and groups, and group conversations like WhatsApp's: each person's name in their
   own colour, with their picture beside a run of their messages.
 - **Archive** chats from the long-press menu or chat info; they're archived on the phone too, and come back when the
