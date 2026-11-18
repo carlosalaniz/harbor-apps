@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "homebox",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "aebdd81a143e29261e3dcc91a7973ae1932504f299c1a5781262cfec6d5b23ca"
+      "sha256": "ecf3507944802598eee4b65992f61cd5911140a41f5c40a6517e0b02c374fd39"
     },
     "compose.yaml": {
-      "sha256": "7ed9c6265ed5d285e668eaa0129af354d3fbdb56262ba2a538379a59488699af"
+      "sha256": "da5a972773f49b7a3e71ddff12a05a900cd3e75e789e4e85a15a4286f87ec946"
     },
     "README.md": {
       "sha256": "5d71d91962f89e2cce55e2067c2c561cdecc3f5ac6c38b87868f369eba98297a"
@@ -17,34 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/sysadminsmedia/homebox@sha256:b1ad7e3c63f732a5f6daa466e8116be4f545b3b120383a64dcb62beb00a660cc",
+      "reference": "ghcr.io/sysadminsmedia/homebox@sha256:9d0b64776c694f018c0ca06faf52105a33ca376024f46bb58e6ab0e2b728bb61",
       "repository": "ghcr.io/sysadminsmedia/homebox",
-      "tag": "0.26.2",
+      "tag": "0.27.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:835c1075b94a33529714e9ae724f8b4dae9b6f323d469f6413ecdca03971bf7a",
-      "appVersion": "0.26.2",
-      "imageCreated": "2026-06-14T02:01:16Z",
+      "platformDigest": "sha256:1cd73f053e07828478922e9bca4b38ed819da8beac067459bd7da085a1296469",
+      "appVersion": "0.27.1",
+      "imageCreated": "2026-10-23T18:31:37Z",
       "source": "https://ghcr.io/sysadminsmedia/homebox"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-11-18",
+    "node": "v24.22.2",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "0.26.2"
+      "web": "0.27.1"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package homebox (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service web: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "service web: the image's own healthcheck switched off (nothing waits for it; Umbrel never acts on it)",
-      "Digest of web resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/sysadminsmedia/homebox@sha256:b1ad7e3c63f732a5f6daa466e8116be4f545b3b120383a64dcb62beb00a660cc); image config: ExposedPorts 7745/tcp, Volumes /data, User root.",
-      "Live catalog run catalog-2026-10-12T18-22-00-harbor-q14: passed (healthy after 24s; page title \"HomeBox | Organize and Tag Your Stuff\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1.",
-      "Revision 3 adds screenshots only (shot-1.jpg, shot-2.jpg, shot-3.jpg, presentation.gallery); compose.yaml is byte-identical to the qualified revision 2."
+      "Digest of web resolved 2026-11-18 via registry API (scripts/catalog-pin.mjs; ghcr.io/sysadminsmedia/homebox:0.27.1); image config: ExposedPorts 7745/tcp, Volumes /data, User root.",
+      "Smoke run 2026-11-18T14:22:24.333Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (0.26.2-patch.1) healthy after 2 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 4 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {

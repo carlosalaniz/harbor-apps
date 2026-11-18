@@ -5,8 +5,8 @@ metadata:
   name: HomeBox
   description: A continuation of HomeBox the inventory and organization system built for the Home User
 release:
-  revision: "3"
-  version: 0.26.2-patch.1
+  revision: "4"
+  version: "0.27.1-patch.1"
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml
