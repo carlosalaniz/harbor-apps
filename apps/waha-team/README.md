@@ -29,6 +29,8 @@ it on the phone.
   person picks all chats, their chats and unclaimed ones, or only theirs, and can mute chats. On iPhone and iPad, add
   WAHA Team to the Home Screen first (Share → Add to Home Screen).
 - **History**: copies earlier messages from WhatsApp after linking.
+- **Replies**: swipe a message right (or Reply in its menu) to answer it as a WhatsApp reply; replies show the
+  message they quote.
 - **Voice to text**: every voice note (customers' and the team's) is transcribed one at a time and the text shows
   under the player. Admins pick the engine on the AI features page: Whisper on this server (Small or Large v3 Turbo,
   downloaded once into the app's data; audio never leaves the server) or OpenRouter with their own API key.
