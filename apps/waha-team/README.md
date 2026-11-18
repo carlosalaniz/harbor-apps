@@ -32,6 +32,8 @@ it on the phone.
 - **Several WhatsApp numbers**: add numbers on the WhatsApp connection page (each one is a WAHA session, labelled and
   coloured), switch between them at the top of the inbox, and choose who can use each number. Notifications say which
   number they're about.
+- **Profile pictures** of contacts and groups, and group conversations like WhatsApp's: each person's name in their
+  own colour, with their picture beside a run of their messages.
 - **Archive** chats from the long-press menu or chat info; they're archived on the phone too, and come back when the
   contact writes again.
 - **Pinned chats for the whole team** (separate from the phone's pins): long-press a chat (or right-click it) and
