@@ -23,6 +23,7 @@ it on the phone.
   stops them from answering. Admins assign chats.
 - **Signed messages**: texts and captions end with "— Name". Voice notes, stickers and reactions cannot carry text, so
   they go out unsigned (WAHA Team still shows who sent them). Messages typed on the phone show as **Phone**.
+  "Sign messages" on the WhatsApp page turns the signature off for one number.
 - **Photos, videos, files and voice notes** (recorded in the browser), **edit** (first 15 minutes, the signature stays)
   and **delete for everyone** (first 2 days).
 - **Push notifications** on every device, with the tab closed: "María López → Claimed by Ana" and the message. Each
