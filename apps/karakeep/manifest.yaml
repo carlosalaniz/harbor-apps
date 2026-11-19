@@ -5,7 +5,7 @@ metadata:
   name: "Karakeep"
   description: "Save links, notes, images and PDFs in one place. Karakeep keeps a copy of every page, makes it all searchable and can tag it for you with a local AI model."
 release:
-  revision: "1"
+  revision: "2"
   minHarbor: "0.30.0"
 deployment:
   compose: compose.yaml
@@ -82,4 +82,4 @@ presentation:
   developer: "Karakeep contributors"
   website: https://karakeep.app
   source: https://github.com/karakeep-app/karakeep
-  releaseNotes: "Karakeep 0.33.2 with its headless Chrome 154.0.8037.57-r1 for page copies and Meilisearch v1.41.0 for search. AI tagging is optional, through the Ollama app."
+  releaseNotes: "Karakeep 0.35.0 with its headless Chrome 157.0.8103.78-r1 for page copies and Meilisearch v1.41.0 for search. AI tagging is optional, through the Ollama app."

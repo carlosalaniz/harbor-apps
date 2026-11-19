@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "karakeep",
-    "revision": "1"
+    "revision": "2"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "caf05624b5498cab3475bd153eae8fba4e83ad53522a985e3ee80f01d64c89b5"
+      "sha256": "a6bced20b273465d55165751ccfcf5c81fbb79b1b1f07d0967a3f156dba10bac"
     },
     "compose.yaml": {
-      "sha256": "8664414dd6871b2538206e12dd2dcb6142e07c647e82c59b211e270651af1219"
+      "sha256": "f1dd0a34e2df4dd6662a808ee108a1a906ada98878f32f6fa5764e9203dc501d"
     },
     "README.md": {
       "sha256": "6f17022ff4961595da2757f4a58c27c8e00ed840cc7be29eea26efdd267b32bb"
@@ -27,43 +27,43 @@
       "source": "https://hub.docker.com/r/getmeili/meilisearch"
     },
     "chrome": {
-      "reference": "ghcr.io/karakeep-app/karakeep-chrome@sha256:c51a8c8e6c3c1040a50fa0ecfd0b2fc298401b4229262636552458151f6f18fa",
+      "reference": "ghcr.io/karakeep-app/karakeep-chrome@sha256:00fb4fa9c37aa74c58e74d0bdd16c4e3b81dddb5f264917c879f9579c3b3ad95",
       "repository": "ghcr.io/karakeep-app/karakeep-chrome",
-      "tag": "154.0.8037.57-r1",
+      "tag": "157.0.8103.78-r1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:ee540547a695708e35e20da8e5032e2f9760499e2f91283b265f6f132f81d503",
-      "appVersion": "154.0.8037.57-r1",
-      "imageCreated": "2026-10-11T19:31:38Z",
+      "platformDigest": "sha256:9dff4af677073a26a1230db6f88a680c53be0e30ebb6d58ec01a898ba3835faf",
+      "appVersion": "157.0.8103.78-r1",
+      "imageCreated": "2026-11-15T18:52:38Z",
       "source": "https://ghcr.io/karakeep-app/karakeep-chrome"
     },
     "web": {
-      "reference": "ghcr.io/karakeep-app/karakeep@sha256:b069e4307dec06ea06d16989c6861c30a1ff208568be44ed5fb5d422cd3e950c",
+      "reference": "ghcr.io/karakeep-app/karakeep@sha256:6f7d32ef296ddf1fc7c67ff56b8a201b7006a6a47b92b202afee1338841b353d",
       "repository": "ghcr.io/karakeep-app/karakeep",
-      "tag": "0.33.2",
+      "tag": "0.35.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:3d57623bf031f32a0597a3ebe0cd869bff6ba181c02ebc90fac492458bcfd4a4",
-      "appVersion": "0.33.2",
-      "imageCreated": "2026-08-11T13:34:04Z",
+      "platformDigest": "sha256:119ffa75c677a23945e5535a0808844f10b77d5afe12b37293bee8edc2eaa5a7",
+      "appVersion": "0.35.0",
+      "imageCreated": "2026-11-15T15:31:20Z",
       "source": "https://ghcr.io/karakeep-app/karakeep"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
-    "node": "v24.21.0",
+    "date": "2026-11-19",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "meilisearch": "1.41.0",
-      "chrome": "154.0.8037.57-r1",
-      "web": "0.33.2"
+      "chrome": "157.0.8103.78-r1",
+      "web": "0.35.0"
     },
     "notes": [
-      "Digest of meilisearch resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; getmeili/meilisearch:v1.41.0); image config: ExposedPorts 7700/tcp, Volumes none, User root.",
-      "Digest of chrome resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; ghcr.io/karakeep-app/karakeep-chrome:154.0.8037.57-r1); image config: ExposedPorts 9222/tcp, Volumes none, User 65534:65534.",
-      "Digest of web resolved 2026-10-13 via registry API (scripts/catalog-pin.mjs; ghcr.io/karakeep-app/karakeep:0.33.2); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Smoke run 2026-10-23T19:27:15.337Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 17 s, still healthy 60 s later."
+      "Digest of meilisearch resolved 2026-11-19 via registry API (scripts/catalog-pin.mjs; getmeili/meilisearch:v1.41.0); image config: ExposedPorts 7700/tcp, Volumes none, User root.",
+      "Digest of chrome resolved 2026-11-19 via registry API (scripts/catalog-pin.mjs; ghcr.io/karakeep-app/karakeep-chrome:157.0.8103.78-r1); image config: ExposedPorts 9222/tcp, Volumes none, User 65534:65534.",
+      "Digest of web resolved 2026-11-19 via registry API (scripts/catalog-pin.mjs; ghcr.io/karakeep-app/karakeep:0.35.0); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-19T14:44:03.448Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (0.33.2) healthy after 19 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 20 s, still healthy 60 s later; fresh install of revision 2 healthy after 17 s, still healthy 60 s later."
     ]
   },
   "assets": {

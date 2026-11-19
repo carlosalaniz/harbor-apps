@@ -24,7 +24,7 @@ services:
     # background traffic to Google (component and list updates, sync, Domain Reliability reports). A launcher
     # such as Playwright adds them itself, but Karakeep attaches to this browser instead of launching one.
     # Nothing is kept between restarts (the profile lives in /tmp).
-    image: ghcr.io/karakeep-app/karakeep-chrome@sha256:c51a8c8e6c3c1040a50fa0ecfd0b2fc298401b4229262636552458151f6f18fa # tag: 154.0.8037.57-r1
+    image: ghcr.io/karakeep-app/karakeep-chrome@sha256:00fb4fa9c37aa74c58e74d0bdd16c4e3b81dddb5f264917c879f9579c3b3ad95 # tag: 157.0.8103.78-r1
     command:
       - --disable-gpu
       - --disable-dev-shm-usage
@@ -46,7 +46,7 @@ services:
   web:
     # The all-in-one image: s6 runs the database migration, then the web app and the background workers
     # (crawler, search indexing, AI tagging, feeds).
-    image: ghcr.io/karakeep-app/karakeep@sha256:b069e4307dec06ea06d16989c6861c30a1ff208568be44ed5fb5d422cd3e950c # tag: 0.33.2
+    image: ghcr.io/karakeep-app/karakeep@sha256:6f7d32ef296ddf1fc7c67ff56b8a201b7006a6a47b92b202afee1338841b353d # tag: 0.35.0
     environment:
       DATA_DIR: "/data"
       MEILI_ADDR: "http://meilisearch:7700"
