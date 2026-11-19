@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "docmost",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "4293e5619dac44c0c935d549b18c7de45362d8eefdb0f01eb8c5748b8c56de45"
+      "sha256": "026a9fc98b108e25e4784c72fc0f4ec0ba019ca1bbb8863a6f7f39c1276b63aa"
     },
     "compose.yaml": {
-      "sha256": "58eb9d48f95ee46b23491b15fb1a2f79e5841733cc35a9e246da2efadd464289"
+      "sha256": "d51c8ddfcc403590b62a07d7514dd1a0d49c887ee547529177dd5b3692dbf9f1"
     },
     "README.md": {
       "sha256": "835e5588d5159c573eff9e6d1b8b3d43b39aad81fe5ddc90da2d3cc3832b355b"
@@ -17,53 +17,53 @@
   },
   "images": {
     "web": {
-      "reference": "docmost/docmost@sha256:b56947fcfd08aab8fae12a377e1792784786adbf8b96e4281f14ef4fc072685a",
+      "reference": "docmost/docmost@sha256:40c454d74ffdd9ecb15833e4d96f3a630d59aad862a1869381ae6ee086454419",
       "repository": "docmost/docmost",
-      "tag": "0.96.0",
+      "tag": "0.97.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:17946a58951d8fd31a1b12db03f0d9fff362432c0778e5e19b4c78909b0000d4",
-      "appVersion": "0.96.0",
-      "imageCreated": "2026-09-08T15:49:25Z",
+      "platformDigest": "sha256:a54abf44e6927355f58e4995461d7daf97250d4d390acff48dea16bb04579d56",
+      "appVersion": "0.97.0",
+      "imageCreated": "2026-10-25T13:47:04Z",
       "source": "https://hub.docker.com/r/docmost/docmost"
     },
     "db": {
-      "reference": "postgres@sha256:2d2b8998d31037bf721cfdf764d76ba74171b4fab3431b7f72c27c56ddbdf9e3",
+      "reference": "postgres@sha256:ff87138949ad9a46f32ff23bd6852b52ce024a13dffe9b4087be98292cdd3b4f",
       "repository": "postgres",
       "tag": "17.11",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:3cec7eb015ba8adb28139fa5c83b8489cdf0e666e53dfdf20f598ae0cc8739e3",
+      "platformDigest": "sha256:996e9dc583ba9f0265a2c75547a9c95fb22c251e394749cab205a0a00e1856a1",
       "appVersion": "17.11",
-      "imageCreated": "2026-10-06T01:33:02Z",
+      "imageCreated": "2026-11-05T07:30:45Z",
       "source": "https://hub.docker.com/_/postgres"
     },
     "redis": {
-      "reference": "redis@sha256:2c2dff791878316e3b083188be0d578423b24813cdda5de0e80ea4f7b3e6bfd6",
+      "reference": "redis@sha256:1f88291b4c57bdf249f02eb085a8669889b2d2954e91d4de5118a5da6b78dd53",
       "repository": "redis",
-      "tag": "8.10.2",
+      "tag": "8.10.3",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:6e9101032a2126aeeb4b1e862ac77d2fcf26b831ae37e5ff2e69169f82ddd411",
-      "appVersion": "8.10.2",
-      "imageCreated": "2026-10-06T01:39:38Z",
+      "platformDigest": "sha256:e2728231060693472a8efb488dd139a8142a01bd0612ae70429bf5b5be924be1",
+      "appVersion": "8.10.3",
+      "imageCreated": "2026-11-05T07:36:42Z",
       "source": "https://hub.docker.com/_/redis"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-16",
-    "node": "v24.21.0",
+    "date": "2026-11-19",
+    "node": "v24.22.2",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "0.96.0",
+      "web": "0.97.0",
       "db": "17.11",
-      "redis": "8.10.2"
+      "redis": "8.10.3"
     },
     "notes": [
-      "Digest of web resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; docmost/docmost:0.96.0); image config: ExposedPorts 3000/tcp, Volumes /app/data/storage, User node.",
-      "Digest of db resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; postgres:17.11); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of redis resolved 2026-10-16 via registry API (scripts/catalog-pin.mjs; redis:8.10.2); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
-      "Smoke run 2026-10-16T05:42:57.898Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (0.96.0-patch.1) healthy after 8 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 8 s, still healthy 60 s later; fresh install of revision 4 healthy after 8 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-19 via registry API (scripts/catalog-pin.mjs; docmost/docmost:0.97.0); image config: ExposedPorts 3000/tcp, Volumes /app/data/storage, User node.",
+      "Digest of db resolved 2026-11-19 via registry API (scripts/catalog-pin.mjs; postgres:17.11); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of redis resolved 2026-11-19 via registry API (scripts/catalog-pin.mjs; redis:8.10.3); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-19T14:43:11.499Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (0.96.0-patch.1) healthy after 10 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 6 s, still healthy 60 s later; fresh install of revision 5 healthy after 5 s, still healthy 60 s later."
     ]
   },
   "assets": {
