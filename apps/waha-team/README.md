@@ -28,6 +28,10 @@ it on the phone.
 - **Labels**: WhatsApp Business labels in step with the phone, or WAHA Team's own on a regular number.
 - **Business hours and automatic replies** per number (away and greeting messages), off until an admin turns them on.
 - **Response times** for admins: typical first response per person and who is waiting now.
+- **Snooze** with reminders, **auto-assign** to people on shift, **AI** summaries, suggested replies and translation
+  (OpenRouter, only when asked).
+- **Polls, locations, contact cards**, forwarding, starred messages, search inside a chat.
+- **Per number**: the WhatsApp profile, posting a status, and a wa.me link with a QR code.
 - **Read receipts on your terms**: opening a chat in WAHA Team doesn't mark it read on the phone (no blue ticks for
   the customer). "Mark read" in the chat, its menu or the notification does, and so does replying.
 - **Photos, videos, files and voice notes** (recorded in the browser), **edit** (first 15 minutes, the signature stays)
