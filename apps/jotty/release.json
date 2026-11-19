@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "jotty",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "8db7c6f7fc917eb9d1764f87c7e98868067c5f79cf4b73ea1436921882aeed61"
+      "sha256": "df4695ed1bd16815ea0cddb646bbf6a6a28a60be93dbf007108e7217a0a447b1"
     },
     "compose.yaml": {
-      "sha256": "812f2f44e9b83bdd9558dc355d6e74eeac7fda3d244cb38025971c7b3afdd945"
+      "sha256": "676a6256665a7f6af2c23a4a60bd91a80d56030325920b75d2d8a9933fa06b6d"
     },
     "README.md": {
       "sha256": "c914ebca662fc3044c34c2d47661ea1ba20c9fcded4591363766ae46c5a9ebdb"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/fccview/jotty@sha256:5295d8a85aada46519ed6a1822d5989a373583f42017a346e8a62b44d75af71a",
+      "reference": "ghcr.io/fccview/jotty@sha256:4face8fd1049d1ec3813f3da949d69fb68703f0f8421902a7a2de8ba3f1d61a6",
       "repository": "ghcr.io/fccview/jotty",
-      "tag": "1.29.2",
+      "tag": "1.30.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:cd98b26a4f2bfde5e45a0960b4e9a71f9050aea20e0c5bf4cad8a7c4ed4ac073",
-      "appVersion": "1.29.2",
-      "imageCreated": "2026-10-25T14:01:54Z",
+      "platformDigest": "sha256:f415ba761077934a32f7112303c2a5b9f7d8e9ddd189a49c60940219acfce5ef",
+      "appVersion": "1.30.0",
+      "imageCreated": "2026-11-17T09:10:58Z",
       "source": "https://ghcr.io/fccview/jotty"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-28",
-    "node": "v24.22.1",
+    "date": "2026-11-19",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.29.2"
+      "web": "1.30.0"
     },
     "notes": [
-      "Digest of web resolved 2026-10-28 via registry API (scripts/catalog-pin.mjs; ghcr.io/fccview/jotty:1.29.2); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Smoke run 2026-10-28T05:35:32.567Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.28.0) healthy after 3 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 18 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-19 via registry API (scripts/catalog-pin.mjs; ghcr.io/fccview/jotty:1.30.0); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-19T14:41:46.830Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.29.2) healthy after 4 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 19 s, still healthy 60 s later; fresh install of revision 4 healthy after 4 s, still healthy 60 s later."
     ]
   },
   "assets": {
