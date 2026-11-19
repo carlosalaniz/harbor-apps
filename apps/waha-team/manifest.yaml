@@ -5,8 +5,8 @@ metadata:
   name: "WAHA Team"
   description: "WhatsApp numbers for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
 release:
-  revision: "19"
-  version: 0.3.8
+  revision: "20"
+  version: 0.3.9
   # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
   minHarbor: "0.43.0"
 deployment:
@@ -125,4 +125,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/waha-team
   source: https://github.com/carlosalaniz/waha-team
-  releaseNotes: "0.3.8: new logo. 0.3.7: Sign messages, per number (WhatsApp page): off sends texts and captions without the — name line. 0.3.6: typing both ways (customers and teammates), with Show typing per number. 0.3.5: Sync chats and history matches the phone's archive; PDF preview and viewer; long file names shortened. 0.3.4: one person, one chat: ids with a device (5218…:23) or an @lid merge into the number's chat, contacts too. 0.3.2: a number typed by hand and the id WhatsApp uses for it (e.g. Mexican 52 vs 521) are one chat; existing split chats are joined. 0.3.0: voice to text. Every voice note is transcribed in a queue, by Whisper on this server (model downloaded on first use) or by OpenRouter, and the text shows under the player. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages, media, Web Push and re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."
+  releaseNotes: "0.3.9: opening a chat no longer marks it read on the phone; Mark as read (or replying) does. 0.3.8: new logo. 0.3.7: Sign messages, per number (WhatsApp page): off sends texts and captions without the — name line. 0.3.6: typing both ways (customers and teammates), with Show typing per number. 0.3.5: Sync chats and history matches the phone's archive; PDF preview and viewer; long file names shortened. 0.3.4: one person, one chat: ids with a device (5218…:23) or an @lid merge into the number's chat, contacts too. 0.3.0: voice to text. Every voice note is transcribed in a queue, by Whisper on this server (model downloaded on first use) or by OpenRouter, and the text shows under the player. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages, media, Web Push and re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."

@@ -24,6 +24,8 @@ it on the phone.
 - **Signed messages**: texts and captions end with "— Name". Voice notes, stickers and reactions cannot carry text, so
   they go out unsigned (WAHA Team still shows who sent them). Messages typed on the phone show as **Phone**.
   "Sign messages" on the WhatsApp page turns the signature off for one number.
+- **Read receipts on your terms**: opening a chat in WAHA Team doesn't mark it read on the phone (no blue ticks for
+  the customer). "Mark read" in the chat, its menu or the notification does, and so does replying.
 - **Photos, videos, files and voice notes** (recorded in the browser), **edit** (first 15 minutes, the signature stays)
   and **delete for everyone** (first 2 days).
 - **Push notifications** on every device, with the tab closed: "María López → Claimed by Ana" and the message. Each
