@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "yuvomi",
-    "revision": "5"
+    "revision": "6"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "dab1c4f36851da30260c8860291e4a0ff3959bf3ec591bad9e8098d046985c7c"
+      "sha256": "bd0ffcc8f7f9f93fdcd956e39d69ccfb5392ccc7618f0a7d77795f8d6993bd85"
     },
     "compose.yaml": {
-      "sha256": "78fc6c04aa2aaab42f07d2df023f879b902e9f330ad528cb73744da8d638a84d"
+      "sha256": "bdb8b42b49131f9a7f6290bd7e59827247d84f60880d0701c77d94afe15a9b54"
     },
     "README.md": {
       "sha256": "dfa5ea9c6c5f2d41643f04d1c259c16bb4df5d7b77a8654f8837fef0cb2dcb2b"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/ulsklyc/yuvomi@sha256:c4be6513acba202f03102ea607db527835ca8832395b17e7c077badcba603019",
+      "reference": "ghcr.io/ulsklyc/yuvomi@sha256:59992c2dd5db14be779aae35487a35ea8ef8dad4943d4c9fa50d3e6522c5e3a4",
       "repository": "ghcr.io/ulsklyc/yuvomi",
-      "tag": "2.91.0",
+      "tag": "2.91.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:21e3533a241f6ba3995db8fbb8ea65aa88c0e52b0c36f87ad507d202403baaf0",
-      "appVersion": "2.91.0",
-      "imageCreated": "2026-11-15T18:13:24Z",
+      "platformDigest": "sha256:117ffdaa25f3ff2041f414db2691e7be591800147a0f1279b6adb4d0b60bb2ef",
+      "appVersion": "2.91.1",
+      "imageCreated": "2026-11-17T07:24:59Z",
       "source": "https://ghcr.io/ulsklyc/yuvomi"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-18",
+    "date": "2026-11-19",
     "node": "v24.22.2",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "2.91.0"
+      "web": "2.91.1"
     },
     "notes": [
-      "Digest of web resolved 2026-11-18 via registry API (scripts/catalog-pin.mjs; ghcr.io/ulsklyc/yuvomi:2.91.0); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Smoke run 2026-11-18T14:20:16.688Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (2.90.0) healthy after 3 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 5 healthy after 3 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-19 via registry API (scripts/catalog-pin.mjs; ghcr.io/ulsklyc/yuvomi:2.91.1); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-19T14:34:45.364Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (2.91.0) healthy after 6 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 6 healthy after 5 s, still healthy 60 s later."
     ]
   },
   "assets": {
