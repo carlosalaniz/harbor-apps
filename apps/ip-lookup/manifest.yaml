@@ -1,0 +1,78 @@
+apiVersion: harbor/v1alpha1
+kind: Application
+metadata:
+  id: ip-lookup
+  name: "IP Lookup"
+  description: "Ask online services about an address that tried to reach your public apps: who runs it, where it is, and whether others reported it for abuse. Adds Ask online to Settings → Allowed addresses. It only goes online through your VPN."
+release:
+  revision: "1"
+  version: "0.1.0"
+  # network.requireVpn and provides.ipLookup (decisions 208–209)
+  minHarbor: "0.48.0"
+deployment:
+  compose: compose.yaml
+  multiInstance: false
+  services:
+    app: application
+endpoints:
+  web:
+    service: app
+    containerPort: 8080
+    scheme: http
+    exposure: direct
+    browserContext: ordinary
+health:
+  endpoint: web
+  # answers without the internet (no service is asked)
+  path: /healthz
+  expectedStatus: [200]
+  timeoutSeconds: 5
+  deadlineSeconds: 60
+ui:
+  primaryEndpoint: web
+# The services see the address you ask about; the VPN keeps them from seeing yours.
+network:
+  requireVpn: true
+provides:
+  ipLookup:
+    endpoint: web
+    path: /v1/lookup
+secrets:
+  - id: abuseipdb-key
+    source: operator
+    prompt: "AbuseIPDB API key, for abuse scores and reports (free account at abuseipdb.com, Account → API). Leave empty to skip AbuseIPDB."
+    optional: true
+    retention: retain
+    bindings:
+      - {service: app, environment: ABUSEIPDB_KEY}
+  - id: ipinfo-token
+    source: operator
+    prompt: "ipinfo access token (free account at ipinfo.io). Optional: without one ipinfo still answers, with a lower daily limit."
+    optional: true
+    retention: retain
+    bindings:
+      - {service: app, environment: IPINFO_TOKEN}
+settings:
+  - id: use-ipinfo
+    label: Ask ipinfo
+    help: "Location, network and hosting/VPN/Tor flags. Works without a token, with a lower daily limit."
+    type: boolean
+    default: true
+    bindings:
+      - {service: app, environment: LOOKUP_IPINFO}
+  - id: use-abuseipdb
+    label: Ask AbuseIPDB
+    help: "Abuse score and how often others reported the address. Needs the AbuseIPDB key (Values you provided)."
+    type: boolean
+    default: true
+    bindings:
+      - {service: app, environment: LOOKUP_ABUSEIPDB}
+presentation:
+  tagline: "Who is behind an address, through your VPN"
+  sizeHint: "About 60 MB, no data kept"
+  category: security
+  icon: icon.svg
+  developer: "Harbor"
+  website: https://github.com/carlosalaniz/harbor/tree/main/images/ip-lookup
+  source: https://github.com/carlosalaniz/harbor/tree/main/images/ip-lookup
+  releaseNotes: "First release: ipinfo and AbuseIPDB, answers combined and kept for 24 hours. Needs Harbor 0.48.0 and a VPN in Settings → VPN."
