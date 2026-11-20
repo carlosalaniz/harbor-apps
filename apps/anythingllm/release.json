@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "anythingllm",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "bce36a423a4e332a4de500a6063c373a8f9f186187bbcca3a61197fea693c9d0"
+      "sha256": "b8c029ed657b4328cd53096e74f9f416580823b0f0bd0c593056f31c3a3f96c8"
     },
     "compose.yaml": {
-      "sha256": "343861c9f3dd432ab84010cf7315e1bf9a5d6bf552c283fa628bbd632a9ae205"
+      "sha256": "15fa65fc912764d85d4543b6e7ac4f05dc94f2b85ca701b30bc3f32d15080a4f"
     },
     "README.md": {
       "sha256": "1a6176eadd737902332c8a47de445f0dfd2f19dabca13eb31e8c0c6ee4dad89d"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "mintplexlabs/anythingllm@sha256:daf5a6ae9d363ed578e7d41e2d0668c7eaa604bd90b0ff27435f893b0906833e",
+      "reference": "mintplexlabs/anythingllm@sha256:3e2b7bc8eb0f73a130fc575f1372bd4e7189e399a63c037497fc183c141fc0ae",
       "repository": "mintplexlabs/anythingllm",
-      "tag": "1.19.0",
+      "tag": "1.20.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:2e58e2ec9bd07742db3712c055c4113746f07b0d6596921104a782c1ce48a264",
-      "appVersion": "1.19.0",
-      "imageCreated": "2026-10-23T23:19:42Z",
+      "platformDigest": "sha256:0647b4ff4d7909f3fd2be167731fe201c9554c2d072162677a5670a818ca0fab",
+      "appVersion": "1.20.0",
+      "imageCreated": "2026-11-17T17:40:22Z",
       "source": "https://hub.docker.com/r/mintplexlabs/anythingllm"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-28",
-    "node": "v24.21.0",
+    "date": "2026-11-20",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.19.0"
+      "web": "1.20.0"
     },
     "notes": [
-      "Digest of web resolved 2026-10-28 via registry API (scripts/catalog-pin.mjs; mintplexlabs/anythingllm:1.19.0); image config: ExposedPorts none, Volumes none, User anythingllm.",
-      "Smoke run 2026-10-28T05:35:34.032Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.18.0) healthy after 7 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 21 s, still healthy 60 s later; fresh install of revision 4 healthy after 6 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-20 via registry API (scripts/catalog-pin.mjs; mintplexlabs/anythingllm:1.20.0); image config: ExposedPorts none, Volumes none, User anythingllm.",
+      "Smoke run 2026-11-20T14:13:40.076Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (1.19.0) healthy after 6 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 21 s, still healthy 60 s later; fresh install of revision 5 healthy after 6 s, still healthy 60 s later."
     ]
   },
   "assets": {
