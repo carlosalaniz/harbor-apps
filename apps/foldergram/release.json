@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "foldergram",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "c3414d6125bdedce9050c438322a844816718d4286e37661b6f35007c32c3b1b"
+      "sha256": "28b3f56d6203bdce7603ea8195ae40827b3694590dcdf52b0110ab447951c782"
     },
     "compose.yaml": {
-      "sha256": "5de80d5cd84184fc4353be37a4eed95d3688660bb11636974a7120712fceb3e8"
+      "sha256": "efef8ca79a39de39d29f659664849e4f9f62e34a31f55c1a0fbe02ce8cffb1b8"
     },
     "README.md": {
       "sha256": "e152b0150232f8c5a1cbca39ed2697bb30108f2ba19d765d12a7a1f93a8025ee"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/foldergram/foldergram@sha256:c6098c97deb1e49d96fe7678459ccb533d13f697a2cbf8a734f02794d85d4fbb",
+      "reference": "ghcr.io/foldergram/foldergram@sha256:518452f5aacebccb6ad67165233b048304811351f198b969932f2be3de5b9dac",
       "repository": "ghcr.io/foldergram/foldergram",
-      "tag": "1.3.1",
+      "tag": "1.3.2",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:66e8f3df05f90285fe11ef7d354a841ecd486ebf2dae24b624f4b8d57fc41001",
-      "appVersion": "1.3.1",
-      "imageCreated": "2026-11-03T17:37:36Z",
+      "platformDigest": "sha256:9b55be9ab4da8e0bcd9694842e79468fa26dfde8a0a023c71104820b2dbc8832",
+      "appVersion": "1.3.2",
+      "imageCreated": "2026-11-18T11:28:04Z",
       "source": "https://ghcr.io/foldergram/foldergram"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-06",
-    "node": "v24.22.2",
+    "date": "2026-11-20",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.0",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.3.1"
+      "web": "1.3.2"
     },
     "notes": [
-      "Digest of web resolved 2026-11-06 via registry API (scripts/catalog-pin.mjs; ghcr.io/foldergram/foldergram:1.3.1); image config: ExposedPorts 4141/tcp, Volumes none, User root.",
-      "Smoke run 2026-11-06T13:06:44.573Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.3.0-patch.1) healthy after 4 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 3 s, still healthy 60 s later; fresh install of revision 4 healthy after 3 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-20 via registry API (scripts/catalog-pin.mjs; ghcr.io/foldergram/foldergram:1.3.2); image config: ExposedPorts 4141/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-20T14:13:01.446Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (1.3.1-patch.1) healthy after 5 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 5 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {
