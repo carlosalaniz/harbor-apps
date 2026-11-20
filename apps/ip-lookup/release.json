@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "ip-lookup",
+    "revision": "1"
+  },
+  "files": {
+    "manifest.yaml": {
+      "sha256": "c092303ca777b3d630b843dc2542b4d95183be31169ae28ebaddd40d57a97bda"
+    },
+    "compose.yaml": {
+      "sha256": "fdc8f24d536cc4df7b6aa3a94ddce96b588105328fc39a7f85327b246cc46907"
+    },
+    "README.md": {
+      "sha256": "deef9d4c48e80214c84f25a7e0a166b42bf879270ce80da70b1d73b89e6b4975"
+    }
+  },
+  "images": {
+    "app": {
+      "reference": "ghcr.io/carlosalaniz/harbor-ip-lookup@sha256:b94e4489019f0edc3c984d2dd74a6d3914118e01da04a4142cf66cce892261e0",
+      "repository": "ghcr.io/carlosalaniz/harbor-ip-lookup",
+      "tag": "0.1.0",
+      "platform": "linux/amd64",
+      "platformDigest": "sha256:c5f55256e782d530f19632a31fc03093a3b614d71972aa33014a3c601930d1c8",
+      "appVersion": "0.1.0",
+      "imageCreated": "2026-11-20T22:06:57Z",
+      "source": "https://ghcr.io/carlosalaniz/harbor-ip-lookup"
+    }
+  },
+  "qualification": {
+    "status": "passed",
+    "date": "2026-11-20",
+    "node": "v24.22.3",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.8.0",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "app": "0.1.0"
+    },
+    "notes": [
+      "Digest of app resolved 2026-11-20 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/harbor-ip-lookup:0.1.0); image config: ExposedPorts 8080/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-20T22:31:46.569Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): fresh install of revision 1 healthy after 3 s, still healthy 60 s later."
+    ]
+  },
+  "assets": {
+    "icon.svg": {
+      "sha256": "3d3eabd955791c4afdeaf951942de2446cc2a0a2359d67ee61789be58fd89662"
+    }
+  }
+}

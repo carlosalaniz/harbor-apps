@@ -1,0 +1,7 @@
+services:
+  app:
+    image: ghcr.io/carlosalaniz/harbor-ip-lookup@sha256:b94e4489019f0edc3c984d2dd74a6d3914118e01da04a4142cf66cce892261e0 # tag: 0.1.0
+    # IPINFO_TOKEN / ABUSEIPDB_KEY come from the values the operator types (manifest secrets);
+    # LOOKUP_IPINFO / LOOKUP_ABUSEIPDB from its settings.
+    environment:
+      PORT: "8080"
