@@ -28,10 +28,18 @@
     }
   },
   "qualification": {
-    "status": "pending",
+    "status": "passed",
     "date": "2026-11-20",
+    "node": "v24.22.3",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.8.0",
+    "hostOs": "Ubuntu 24.04.5 LTS x86_64",
+    "appVersions": {
+      "app": "0.5.8"
+    },
     "notes": [
-      "Digest of app resolved 2026-11-20 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.5.8); image config: ExposedPorts 8080/tcp, Volumes none, User node."
+      "Digest of app resolved 2026-11-20 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.5.8); image config: ExposedPorts 8080/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-20T22:58:15.079Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 29 (0.5.7) healthy after 5 s, still healthy 60 s later; updated to revision 30 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 30 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
