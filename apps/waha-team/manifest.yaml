@@ -5,8 +5,8 @@ metadata:
   name: "WAHA Team"
   description: "WhatsApp numbers for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
 release:
-  revision: "27"
-  version: 0.5.5
+  revision: "28"
+  version: 0.5.6
   # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
   minHarbor: "0.43.0"
 deployment:
@@ -125,4 +125,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/waha-team
   source: https://github.com/carlosalaniz/waha-team
-  releaseNotes: "0.5.5: New chat opens its own number box; the chat list menu stays on screen; label chats from the list; admins can delete a chat (here and on the phone); Starred joins the filters. 0.5.4: one + button in the composer and / commands. 0.5.3: reactions at your finger; ⋯ for the rest. 0.5.2: popups close when they lose focus, one at a time. 0.5.0: snooze, auto-assign, AI summaries/replies/translation, polls, locations, contact cards, forwarding, stars, search in a chat, WhatsApp profile and statuses. 0.4.0: team notes with @mentions, labels (synced with WhatsApp Business), business hours, response times. 0.3.0: voice to text. 0.1.0: a shared WhatsApp inbox on WAHA: accounts, claims, signed messages, media, Web Push, re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1."
+  releaseNotes: "0.5.6: teammates' messages on the left, yours on the right; /note text posts a note, with @mentions; filter pills on one line. 0.5.5: New chat opens its own number box; the chat list menu stays on screen; label chats from the list; admins can delete a chat (here and on the phone); Starred joins the filters. 0.5.4: one + button in the composer and / commands. 0.5.0: snooze, auto-assign, AI summaries/replies/translation, polls, locations, contact cards, forwarding, stars, search in a chat, WhatsApp profile and statuses. 0.4.0: team notes with @mentions, labels (synced with WhatsApp Business), business hours, response times. 0.3.0: voice to text. 0.1.0: a shared WhatsApp inbox on WAHA: accounts, claims, signed messages, media, Web Push, re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1."
