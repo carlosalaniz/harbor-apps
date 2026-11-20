@@ -5,8 +5,8 @@ metadata:
   name: "WAHA Team"
   description: "WhatsApp numbers for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
 release:
-  revision: "24"
-  version: 0.5.2
+  revision: "25"
+  version: 0.5.3
   # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
   minHarbor: "0.43.0"
 deployment:
@@ -125,4 +125,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/waha-team
   source: https://github.com/carlosalaniz/waha-team
-  releaseNotes: "0.5.2: long press a message for its menu; every menu and popup stays on screen, closes when it loses focus, and only one is open at a time. 0.5.0: snooze with reminders; auto-assign to people on shift; AI summary, suggested replies and translation; polls, locations, contact cards, forwarding, starred messages, search in a chat; WhatsApp profile, posting statuses, wa.me link and QR code. 0.4.0: notes for the team with @mentions; labels (in step with WhatsApp Business on the phone); business hours with away and greeting messages; response times per person. 0.3.9: opening a chat no longer marks it read on the phone; Mark as read (or replying) does. 0.3.0: voice to text, by Whisper on this server or by OpenRouter. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages, media, Web Push and re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."
+  releaseNotes: "0.5.3: hold a message for reactions at your finger; ⋯ opens the other options (a sheet from the bottom on phones). 0.5.2: every menu and popup closes when it loses focus, one at a time. 0.5.0: snooze with reminders; auto-assign to people on shift; AI summary, suggested replies and translation; polls, locations, contact cards, forwarding, starred messages, search in a chat; WhatsApp profile, posting statuses, wa.me link and QR code. 0.4.0: notes for the team with @mentions; labels (in step with WhatsApp Business on the phone); business hours with away and greeting messages; response times per person. 0.3.9: opening a chat no longer marks it read on the phone; Mark as read (or replying) does. 0.3.0: voice to text, by Whisper on this server or by OpenRouter. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages, media, Web Push and re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1; other versions wait for an admin's OK."
