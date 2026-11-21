@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "comfyui",
-    "revision": "5"
+    "revision": "6"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "d33fae231b9f73d0d7b9636ba214cba8badc78c546ff33fe4a8b5c22c3203637"
+      "sha256": "a24e6b98cd69780656fbc5fad59571f809de6ffe597a59adf9f3ad4d8c250851"
     },
     "compose.yaml": {
-      "sha256": "0233795d6de0206bc727797d1f40a18e2d10d79a7ec2cbd600ceb9836fabca6c"
+      "sha256": "e0a37c41702f46ea777ed655c169f4f69aace4cf02995773c085fcb33e212503"
     },
     "README.md": {
       "sha256": "c3afef518e12584f725a9264d12cec0a6f1dcc8dc48f9adec4e11e08a957a593"
@@ -17,29 +17,29 @@
   },
   "images": {
     "comfyui": {
-      "reference": "yanwk/comfyui-boot@sha256:ad3e5eb6b791a93a5f62d5ce8007ee02fb1ecfbab9b758d4da0f6e95809f5a9d",
+      "reference": "yanwk/comfyui-boot@sha256:1ebd87fc7a22c0edc53e54620d4f93915a09bbb3ac99df466ac3a086d058a412",
       "repository": "yanwk/comfyui-boot",
-      "tag": "cu130-slim-v2-20261111",
+      "tag": "cu130-slim-v2-20261119",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:61d776ed2a643b8bf993e9ba41b2ac04a3db7a79ba3fde993520b0ac313cef75",
-      "appVersion": "cu130-slim-v2-20261111",
-      "imageCreated": "2026-11-11T04:02:17Z",
+      "platformDigest": "sha256:ad454c12f55ea7e99fd212be532d3407846e9277393fe49c3aa9bfe1f5206576",
+      "appVersion": "cu130-slim-v2-20261119",
+      "imageCreated": "2026-11-19T05:24:11Z",
       "source": "https://hub.docker.com/r/yanwk/comfyui-boot"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-13",
-    "node": "v24.22.2",
+    "date": "2026-11-21",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "comfyui": "cu130-slim-v2-20261111"
+      "comfyui": "cu130-slim-v2-20261119"
     },
     "notes": [
-      "Digest of comfyui resolved 2026-11-13 via registry API (scripts/catalog-pin.mjs; yanwk/comfyui-boot:cu130-slim-v2-20261111); image config: ExposedPorts 8188/tcp, Volumes none, User root.",
-      "Smoke run 2026-11-13T13:18:38.278Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (cu130-slim-v2-20261104) healthy after 21 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 29 s, still healthy 60 s later; fresh install of revision 5 healthy after 22 s, still healthy 60 s later."
+      "Digest of comfyui resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; yanwk/comfyui-boot:cu130-slim-v2-20261119); image config: ExposedPorts 8188/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-21T13:37:37.277Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (cu130-slim-v2-20261111) healthy after 23 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 26 s, still healthy 60 s later; fresh install of revision 6 healthy after 19 s, still healthy 60 s later."
     ]
   },
   "assets": {

@@ -1,6 +1,6 @@
 services:
   comfyui:
-    image: yanwk/comfyui-boot@sha256:ad3e5eb6b791a93a5f62d5ce8007ee02fb1ecfbab9b758d4da0f6e95809f5a9d # tag: cu130-slim-v2-20261111
+    image: yanwk/comfyui-boot@sha256:1ebd87fc7a22c0edc53e54620d4f93915a09bbb3ac99df466ac3a086d058a412 # tag: cu130-slim-v2-20261119
     # The image's own start script copies the ComfyUI bundled in the image into /root/ComfyUI and starts it with
     # ComfyUI-Manager. /root/ComfyUI itself is not a volume, so an update brings the new ComfyUI; only its folders
     # below are kept. ComfyUI stops at start when CUDA has no card, so without one (no NVIDIA card, its container
