@@ -5,7 +5,7 @@ metadata:
   name: Plane
   description: Open-source project management for tasks, sprints, docs and triage, an alternative to Jira, Linear and Asana.
 release:
-  revision: "5"
+  revision: "6"
   version: "1.4.3"
   minHarbor: "0.30.0"
 deployment:

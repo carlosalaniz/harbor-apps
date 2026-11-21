@@ -156,7 +156,7 @@ services:
     depends_on:
       api: {condition: service_started}
   plane-db:
-    image: postgres@sha256:23799e521dee9265a8b388ecf3bc0f1eaa34b95be67f5a76af4f8f6adb44c720 # tag: 15.20-alpine
+    image: postgres@sha256:e18480a22d6e48f4d816a6696769b1ec09ac73a824c5649e49c7d8b684913f3d # tag: 15.20-alpine
     command: [postgres, -c, max_connections=1000]
     environment:
       POSTGRES_USER: plane
@@ -171,7 +171,7 @@ services:
       retries: 30
   # A cache only: nothing kept across restarts (Plane's queue is RabbitMQ, sessions live in Postgres).
   plane-redis:
-    image: valkey/valkey@sha256:f8c1a646f4b31ae4dc3980ff06723a20b533ea1123b9796d450d78ed53ad6d3e # tag: 7.2.15-alpine
+    image: valkey/valkey@sha256:3056ae42eccb4cf4ef5e5a403a68f6dbd8038774456086c152961bb79a467c6d # tag: 7.2.16-alpine
     command: [valkey-server, --save, "", --appendonly, "no"]
   plane-mq:
     image: rabbitmq@sha256:606d8c0d6b3c18d1da9afc53bc7cdb2a8d5486df91b5a9830e9e07626c9ae281 # tag: 3.13.7-management-alpine

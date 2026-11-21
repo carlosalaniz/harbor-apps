@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "plane",
-    "revision": "5"
+    "revision": "6"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "24bda3a8930b55e803a0e7c3479e2035d30f584e50606fa484b9f8c62892840c"
+      "sha256": "76dea26ac7064f2974c7a3c30496996897df9f74fd5c251ae3619c6b21585d8c"
     },
     "compose.yaml": {
-      "sha256": "98e6e0e02ac520729c21ebeafa33e6773ac8374d8f9e330cb0e6e4cf9775a31c"
+      "sha256": "a6cf3a3cc27581ca7761404971ce529dbc2bc20775131c15c990420ec9b74972"
     },
     "README.md": {
       "sha256": "eda148b000d0c5d3f69de367312a6ce1435542d9c94be6ddbcc7faffb484db5c"
@@ -97,23 +97,23 @@
       "source": "https://hub.docker.com/r/makeplane/plane-backend"
     },
     "plane-db": {
-      "reference": "postgres@sha256:23799e521dee9265a8b388ecf3bc0f1eaa34b95be67f5a76af4f8f6adb44c720",
+      "reference": "postgres@sha256:e18480a22d6e48f4d816a6696769b1ec09ac73a824c5649e49c7d8b684913f3d",
       "repository": "postgres",
       "tag": "15.20-alpine",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:675e329d71b3d00534e50356ad068fa95d7bdd9c68f498f17a016ae19990d85e",
+      "platformDigest": "sha256:36dd0a523ce9ab5d4be69d79c116bbfe3af83ed1f708233d491d2884ca7d8a02",
       "appVersion": "15.20-alpine",
-      "imageCreated": "2026-11-12T21:01:03Z",
+      "imageCreated": "2026-11-18T21:33:45Z",
       "source": "https://hub.docker.com/_/postgres"
     },
     "plane-redis": {
-      "reference": "valkey/valkey@sha256:f8c1a646f4b31ae4dc3980ff06723a20b533ea1123b9796d450d78ed53ad6d3e",
+      "reference": "valkey/valkey@sha256:3056ae42eccb4cf4ef5e5a403a68f6dbd8038774456086c152961bb79a467c6d",
       "repository": "valkey/valkey",
-      "tag": "7.2.15-alpine",
+      "tag": "7.2.16-alpine",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:a4d999bf67c51f2b4adef2667f2704ae8a7ada37e6e1eddd594044d8a2aac93f",
-      "appVersion": "7.2.15-alpine",
-      "imageCreated": "2026-10-26T23:37:23Z",
+      "platformDigest": "sha256:7d7b5d759cc276a93f896fc5ce90da3ea79b00a2124361d4e88accf5daa83f29",
+      "appVersion": "7.2.16-alpine",
+      "imageCreated": "2026-11-18T19:54:06Z",
       "source": "https://hub.docker.com/r/valkey/valkey"
     },
     "plane-mq": {
@@ -139,10 +139,10 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-16",
-    "node": "v24.22.2",
+    "date": "2026-11-21",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "proxy": "1.4.3",
@@ -154,24 +154,24 @@
       "worker": "1.4.3",
       "beat-worker": "1.4.3",
       "plane-db": "15.20-alpine",
-      "plane-redis": "7.2.15-alpine",
+      "plane-redis": "7.2.16-alpine",
       "plane-mq": "3.13.7-management-alpine",
       "plane-minio": "RELEASE.2026-08-04T00-00-00Z"
     },
     "notes": [
-      "Digest of proxy resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; makeplane/plane-proxy:v1.4.3); image config: ExposedPorts 2019/tcp,443/tcp,443/udp,80/tcp, Volumes none, User root.",
-      "Digest of web resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; makeplane/plane-frontend:v1.4.3); image config: ExposedPorts 3000/tcp,80/tcp, Volumes none, User root.",
-      "Digest of space resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; makeplane/plane-space:v1.4.3); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Digest of admin resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; makeplane/plane-admin:v1.4.3); image config: ExposedPorts 3000/tcp,80/tcp, Volumes none, User root.",
-      "Digest of live resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; makeplane/plane-live:v1.4.3); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Digest of api resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; makeplane/plane-backend:v1.4.3); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
-      "Digest of worker resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; makeplane/plane-backend:v1.4.3); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
-      "Digest of beat-worker resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; makeplane/plane-backend:v1.4.3); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
-      "Digest of plane-db resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; postgres:15.20-alpine); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of plane-redis resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; valkey/valkey:7.2.15-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
-      "Digest of plane-mq resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; rabbitmq:3.13.7-management-alpine); image config: ExposedPorts 15671/tcp,15672/tcp,15691/tcp,15692/tcp,25672/tcp,4369/tcp,5671/tcp,5672/tcp, Volumes /var/lib/rabbitmq, User root.",
-      "Digest of plane-minio resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; pgsty/minio:RELEASE.2026-08-04T00-00-00Z); image config: ExposedPorts 9000/tcp, Volumes /data, User root.",
-      "Smoke run 2026-11-16T13:56:09.138Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (1.4.3) healthy after 13 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 53 s, still healthy 60 s later; fresh install of revision 5 healthy after 13 s, still healthy 60 s later."
+      "Digest of proxy resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; makeplane/plane-proxy:v1.4.3); image config: ExposedPorts 2019/tcp,443/tcp,443/udp,80/tcp, Volumes none, User root.",
+      "Digest of web resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; makeplane/plane-frontend:v1.4.3); image config: ExposedPorts 3000/tcp,80/tcp, Volumes none, User root.",
+      "Digest of space resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; makeplane/plane-space:v1.4.3); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Digest of admin resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; makeplane/plane-admin:v1.4.3); image config: ExposedPorts 3000/tcp,80/tcp, Volumes none, User root.",
+      "Digest of live resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; makeplane/plane-live:v1.4.3); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Digest of api resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; makeplane/plane-backend:v1.4.3); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
+      "Digest of worker resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; makeplane/plane-backend:v1.4.3); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
+      "Digest of beat-worker resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; makeplane/plane-backend:v1.4.3); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
+      "Digest of plane-db resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; postgres:15.20-alpine); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of plane-redis resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; valkey/valkey:7.2.16-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Digest of plane-mq resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; rabbitmq:3.13.7-management-alpine); image config: ExposedPorts 15671/tcp,15672/tcp,15691/tcp,15692/tcp,25672/tcp,4369/tcp,5671/tcp,5672/tcp, Volumes /var/lib/rabbitmq, User root.",
+      "Digest of plane-minio resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; pgsty/minio:RELEASE.2026-08-04T00-00-00Z); image config: ExposedPorts 9000/tcp, Volumes /data, User root.",
+      "Smoke run 2026-11-21T13:43:23.701Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (1.4.3) healthy after 18 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 53 s, still healthy 60 s later; fresh install of revision 6 healthy after 13 s, still healthy 60 s later."
     ]
   },
   "assets": {
