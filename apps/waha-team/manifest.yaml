@@ -5,8 +5,8 @@ metadata:
   name: "WAHA Team"
   description: "WhatsApp numbers for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
 release:
-  revision: "30"
-  version: 0.5.8
+  revision: "31"
+  version: 0.5.9
   # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
   minHarbor: "0.43.0"
 deployment:
@@ -125,4 +125,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/waha-team
   source: https://github.com/carlosalaniz/waha-team
-  releaseNotes: "0.5.8: no more missing messages (paging kept every message in a busy second; the open chat catches up after a dropped connection). 0.5.7: in a group, a sender's picture or name opens a private chat with them. 0.5.6: teammates' messages on the left, yours on the right; /note text posts a note, with @mentions; filter pills on one line. 0.5.5: New chat opens its own number box; the chat list menu stays on screen; label chats from the list; admins can delete a chat (here and on the phone); Starred joins the filters. 0.5.0: snooze, auto-assign, AI summaries/replies/translation, polls, locations, contact cards, forwarding, stars, search in a chat, WhatsApp profile and statuses. 0.4.0: team notes with @mentions, labels (synced with WhatsApp Business), business hours, response times. 0.3.0: voice to text. 0.1.0: a shared WhatsApp inbox on WAHA: accounts, claims, signed messages, media, Web Push, re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1."
+  releaseNotes: "0.5.9: one Numbers and AI page, each number in four tabs (Overview shows the one fix it needs; Replies and routing; Profile; Connection); pickers you can type into; AI models listed from your OpenRouter key, checked before it is saved. 0.5.8: no more missing messages after paging or a dropped connection. 0.5.7: a group sender's picture or name opens a private chat. 0.5.6: teammates on the left; /note posts a note with @mentions. 0.5.5: New chat box; label and delete chats from the list; Starred filter. 0.5.0: snooze, auto-assign, AI summaries/replies/translation, polls, locations, contact cards, forwarding, stars, search, WhatsApp profile and statuses. 0.4.0: notes, labels, business hours, response times. 0.3.0: voice to text. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages, Web Push and re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1."
