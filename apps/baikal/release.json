@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "baikal",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "ca02b648f526cc837d1d2d2670d2522c08fbbbc91fb7eda7d542e1ccf70bbddb"
+      "sha256": "5f07f77cf348c08275b041a20f2e3a23ab4af14986f3b83605246723f71f062e"
     },
     "compose.yaml": {
-      "sha256": "87afd45e1f23c01b94e7994baf3cec6912526bfcbf740813d2c455dc577b1d3a"
+      "sha256": "8062153cab3d6c93cf2ca57d31559926a5f80b93a1fde31794569ac19da522f6"
     },
     "README.md": {
       "sha256": "f0c02a74d89e9bb9ef06d1dc52580e22e7a19846c52bb1446d58b16b37a770f9"
@@ -17,28 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/aalmenar/baikal@sha256:329ade88f83e2017e37715b4f649f51ddee0c0425d6940b8c2542ce04a0873dd",
+      "reference": "ghcr.io/aalmenar/baikal@sha256:6bc151b961379c77acbb2ec5b35bd80f9d5abdc8d538f79ccf8f6e0f44e4b959",
       "repository": "ghcr.io/aalmenar/baikal",
-      "tag": "0.13.0-r2-nginx",
+      "tag": "0.13.0-r3-nginx",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:3b03a1556126bb8d0983a4e5b35d6fd1ac00d46f4162eb27b43bfc87cc7a325b",
-      "appVersion": "0.13.0-r2-nginx",
-      "imageCreated": "2026-10-23T15:44:18Z",
+      "platformDigest": "sha256:4358384dee73ae092a45b53571151000fa5c47ba7180a6746170c3e989773f4f",
+      "appVersion": "0.13.0-r3-nginx",
+      "imageCreated": "2026-11-19T09:05:28Z",
       "source": "https://ghcr.io/aalmenar/baikal"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
-    "node": "v24.21.0",
+    "date": "2026-11-21",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "0.13.0-r2-nginx"
+      "web": "0.13.0-r3-nginx"
     },
     "notes": [
-      "Smoke run 2026-10-23T20:00:22.006Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.11.1) healthy after 4 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; ghcr.io/aalmenar/baikal:0.13.0-r3-nginx); image config: ExposedPorts 80/tcp, Volumes /var/www/baikal/Specific,/var/www/baikal/config, User root.",
+      "Smoke run 2026-11-21T13:35:19.715Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (0.13.0) healthy after 4 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 4 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
