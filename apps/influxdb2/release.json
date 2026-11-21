@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "influxdb2",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "633c9c85847a8ca876c84b0826576976e259cde85192a21ab5f6b5384876424f"
+      "sha256": "bbf56c65554bfcf0fd3b112d00e360af973e3eb59fb6fa72c070c6651a6fb165"
     },
     "compose.yaml": {
-      "sha256": "68cde68ca49955c69be412b1e1d362ff61437f1854680e8cbd1bbd5accac411e"
+      "sha256": "301027e1e71c8ef5cc9681ccdc0a5a2824ff70682188b4445f10a0e2d2d9a5c9"
     },
     "README.md": {
       "sha256": "3fc774f197fe9a241a55e69cdffbf2637247f1cb85aa81756437bfb414dce688"
@@ -17,32 +17,29 @@
   },
   "images": {
     "app": {
-      "reference": "influxdb@sha256:1cb8fa92ff9d13518d8198dae872b7ea523757a03c655d12a67175b1ab7a72f0",
+      "reference": "influxdb@sha256:6df3d6c5b8530ed149ecdd66086d251f40295330aa0620ae0bfdbbf3ddab4fdc",
       "repository": "influxdb",
-      "tag": "2.9.1-alpine",
+      "tag": "2.10.1-alpine",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:99e216544ab6f8f8d4180d06bcc8deb61a676971c63e31faae24fc169945c4d0",
-      "appVersion": "2.9.1-alpine",
-      "imageCreated": "2026-05-11T23:06:27Z",
+      "platformDigest": "sha256:5fcd642b12df57820b7788e6e7c799bebd2dbbefa06cd13f7abbe85fb3a29fff",
+      "appVersion": "2.10.1-alpine",
+      "imageCreated": "2026-11-18T21:13:36Z",
       "source": "https://hub.docker.com/_/influxdb"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-12",
-    "node": "v24.12.0",
-    "dockerEngine": "29.9.0",
-    "dockerCompose": "5.6.0",
+    "date": "2026-11-21",
+    "node": "v24.22.3",
+    "dockerEngine": "28.0.4",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "2.9.1-alpine"
+      "app": "2.10.1-alpine"
     },
     "notes": [
-      "Drafted by scripts/umbrel-import.mjs from the Umbrel package influxdb2 (umbrel-apps 8c0026e); not yet run on a real Harbor host.",
-      "service app: user 1000:1000 dropped (named volumes keep the image's ownership)",
-      "Digest of app resolved 2026-10-12 via registry API (scripts/catalog-pin.mjs; influxdb@sha256:1cb8fa92ff9d13518d8198dae872b7ea523757a03c655d12a67175b1ab7a72f0); image config: ExposedPorts 8086/tcp, Volumes /etc/influxdb2,/var/lib/influxdb2, User root.",
-      "Live catalog run catalog-2026-10-12T18-21-55-harbor-q15: passed (healthy after 36s; page title \"InfluxDB\"; health 200)",
-      "Revision 2 adds the app icon only (icon.png, presentation.icon); compose.yaml is byte-identical to the qualified revision 1."
+      "Digest of app resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; influxdb:2.10.1-alpine); image config: ExposedPorts 8086/tcp, Volumes /etc/influxdb2,/var/lib/influxdb2, User root.",
+      "Smoke run 2026-11-21T13:44:08.317Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2.9.1-patch.1) healthy after 1 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {

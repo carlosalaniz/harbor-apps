@@ -5,8 +5,8 @@ metadata:
   name: InfluxDB 2
   description: Scalable datastore for metrics, events, and real-time analytics
 release:
-  revision: "2"
-  version: 2.9.1-patch.1
+  revision: "3"
+  version: "2.10.1-patch.1"
 deployment:
   compose: compose.yaml
   multiInstance: true

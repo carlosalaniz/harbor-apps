@@ -234,7 +234,7 @@
       "dir": "influxdb"
     },
     "influxdb2": {
-      "revision": "2",
+      "revision": "3",
       "dir": "influxdb2"
     },
     "invio": {

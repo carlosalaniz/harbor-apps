@@ -1,6 +1,6 @@
 services:
   app:
-    image: influxdb@sha256:1cb8fa92ff9d13518d8198dae872b7ea523757a03c655d12a67175b1ab7a72f0 # tag: 2.9.1-alpine
+    image: influxdb@sha256:6df3d6c5b8530ed149ecdd66086d251f40295330aa0620ae0bfdbbf3ddab4fdc # tag: 2.10.1-alpine
     volumes:
       - {type: volume, source: data, target: "/var/lib/influxdb2"}
       - {type: volume, source: config, target: "/etc/influxdb2"}
