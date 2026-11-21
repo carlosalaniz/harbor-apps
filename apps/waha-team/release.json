@@ -35,11 +35,11 @@
     "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "0.5.9"
+      "app": "0.6.0"
     },
     "notes": [
-      "Smoke run 2026-11-21T14:50:10.699Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 30 (0.5.8) healthy after 6 s, still healthy 60 s later; updated to revision 31 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 31 healthy after 1 s, still healthy 60 s later.",
-      "Digest of app resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.6.0); image config: ExposedPorts 8080/tcp, Volumes none, User node."
+      "Digest of app resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.6.0); image config: ExposedPorts 8080/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-21T17:41:50.431Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 31 (0.5.9) healthy after 3 s, still healthy 60 s later; updated to revision 32 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 32 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
