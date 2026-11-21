@@ -5,7 +5,7 @@
 # WebSocket: nothing has to reach WAHA Team except browsers.
 services:
   app:
-    image: ghcr.io/carlosalaniz/waha-team@sha256:1d78f830520dce7743ac7d819a4fa5842196bafdcbec3684fd1b1a6763b958fb # tag: 0.5.9
+    image: ghcr.io/carlosalaniz/waha-team@sha256:dfa61845458306bb38eaba4c858dd369e3412232990f4b8950b8e34819a078f7 # tag: 0.6.0
     environment:
       DATA_DIR: /data
       PORT: "8080"
