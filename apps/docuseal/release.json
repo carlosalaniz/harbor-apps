@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "docuseal",
-    "revision": "9"
+    "revision": "10"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "b1f43380ea32a78d084dba7a6f513a815004b77d41a75217ca18d2340cc42e65"
+      "sha256": "0640b6e5a3c42db2c1e6811ff0fd54e1ec06c030d6495649829b0862ef96f9ab"
     },
     "compose.yaml": {
-      "sha256": "43377bbaf42a914fae8dd0ae682442786836892a0b073acb9defb1a53eef0d98"
+      "sha256": "d5ccef4b573a815babb957e8b5cd8c72deedf741b3a40e26ed2017a1997a6207"
     },
     "README.md": {
       "sha256": "76b59fad36b1e941f4ef438f71c1c1f460a4b281af6491185876b0803ded6d7e"
@@ -17,41 +17,41 @@
   },
   "images": {
     "server": {
-      "reference": "docuseal/docuseal@sha256:d2e998dd1fbf9c462a1749df38e4b93f03f8bc552865aad6350d01511d450a65",
+      "reference": "docuseal/docuseal@sha256:d67335c0cb3142818a39878ab67a0d0af2a653220e2203b042796dd1321a4a9c",
       "repository": "docuseal/docuseal",
-      "tag": "3.3.7",
+      "tag": "3.3.8",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:d5f4d0c5bed4ffe727fefc6b25817e78e408b6d55bc4a4c80af136214418b481",
-      "appVersion": "3.3.7",
-      "imageCreated": "2026-11-16T10:55:19Z",
+      "platformDigest": "sha256:bf2f657107f129baf3f975255b337d1a400208bdfa162c8c5010995c67f8d34e",
+      "appVersion": "3.3.8",
+      "imageCreated": "2026-11-19T10:29:07Z",
       "source": "https://hub.docker.com/r/docuseal/docuseal"
     },
     "db": {
-      "reference": "postgres@sha256:0d938e975177bef9f1f61f3f9dbcf2e0aa0a139568f66d3415ed8892eb97f6ac",
+      "reference": "postgres@sha256:b60e90042aa6b8dbecd58e224b3e36114dbf8ad754465264c2476ad58a86e45c",
       "repository": "postgres",
       "tag": "17.12",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:6f7593c161689b6b02c78668b314af7da8811b592c5519108c57a49d0b6ad788",
+      "platformDigest": "sha256:9d4105e2fcb1308961d4ee01f0ebc14fdd0497b11243982a4a0935fdb1a8f8dc",
       "appVersion": "17.12",
-      "imageCreated": "2026-11-12T20:55:34Z",
+      "imageCreated": "2026-11-18T21:29:02Z",
       "source": "https://hub.docker.com/_/postgres"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-18",
-    "node": "v24.22.2",
+    "date": "2026-11-21",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "3.3.7",
+      "server": "3.3.8",
       "db": "17.12"
     },
     "notes": [
-      "Digest of server resolved 2026-11-18 via registry API (scripts/catalog-pin.mjs; docuseal/docuseal:3.3.7); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Digest of db resolved 2026-11-18 via registry API (scripts/catalog-pin.mjs; postgres:17.12); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Smoke run 2026-11-18T14:15:35.551Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 8 (3.3.6) healthy after 4 s, still healthy 60 s later; updated to revision 9 without a rollback, healthy after 19 s, still healthy 60 s later; fresh install of revision 9 healthy after 3 s, still healthy 60 s later."
+      "Digest of server resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; docuseal/docuseal:3.3.8); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Digest of db resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; postgres:17.12); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Smoke run 2026-11-21T13:35:37.816Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 9 (3.3.7) healthy after 6 s, still healthy 60 s later; updated to revision 10 without a rollback, healthy after 19 s, still healthy 60 s later; fresh install of revision 10 healthy after 6 s, still healthy 60 s later."
     ]
   },
   "assets": {
