@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/aalmenar/baikal@sha256:6bc151b961379c77acbb2ec5b35bd80f9d5abdc8d538f79ccf8f6e0f44e4b959 # tag: 0.13.0-r3-nginx
+    image: ghcr.io/aalmenar/baikal@sha256:a059a19e532d4cee63435cced5f084837b0732f802456151013d417ea1683498 # tag: 0.13.0-r4-nginx
     volumes:
       - {type: volume, source: config, target: "/var/www/baikal/config"}
       - {type: volume, source: specific, target: "/var/www/baikal/Specific"}
