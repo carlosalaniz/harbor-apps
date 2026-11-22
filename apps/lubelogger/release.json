@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "lubelogger",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "caf83823c0acbf935d910770b80eeea226ecad3cd5f00a3120e4f4e449508c41"
+      "sha256": "22c0702cb6911c68186c488709f0916cc3353e44bcf539895ea45a18e678f1d1"
     },
     "compose.yaml": {
-      "sha256": "7fb9e7145f88f66c95748b67e1e368e5829d45d6dfa7be1895f69f6817b38128"
+      "sha256": "0ebf419dba0c5be108bb18ed084dfdb4866c487889fd460e618113cc42024e00"
     },
     "README.md": {
       "sha256": "38b9f1fd34a5b620c5017d44f5cc871990e63c03f9ffb6e1c4a332b1eb022a4e"
@@ -17,29 +17,29 @@
   },
   "images": {
     "app": {
-      "reference": "ghcr.io/hargata/lubelogger@sha256:483a9d7582c4e6258615fd822b3de4193b4fcc4230d0a92432c6d407faf75af2",
+      "reference": "ghcr.io/hargata/lubelogger@sha256:cdfd841eea84b652cca5401dc7edfca9f400970ab472025246f92323b2ce36e1",
       "repository": "ghcr.io/hargata/lubelogger",
-      "tag": "v1.7.4",
+      "tag": "v1.7.5",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:93a3b1785553cd39401fe339f24782cb0da5792c552b8818c61bb752132e5c0a",
-      "appVersion": "1.7.4",
-      "imageCreated": "2026-10-14T17:27:07Z",
+      "platformDigest": "sha256:ea8b87371cc0fa8bb8faac257b460f655f3887ef894f3edbd6382f1dbdfdbd76",
+      "appVersion": "1.7.5",
+      "imageCreated": "2026-11-19T20:59:42Z",
       "source": "https://ghcr.io/hargata/lubelogger"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-17",
-    "node": "v24.21.0",
+    "date": "2026-11-22",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.0",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "1.7.4"
+      "app": "1.7.5"
     },
     "notes": [
-      "Digest of app resolved 2026-10-17 via registry API (scripts/catalog-pin.mjs; ghcr.io/hargata/lubelogger:v1.7.4); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
-      "Smoke run 2026-10-17T05:33:37.239Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (1.7.3-patch.1) healthy after 2 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 3 healthy after 2 s, still healthy 60 s later."
+      "Digest of app resolved 2026-11-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/hargata/lubelogger:v1.7.5); image config: ExposedPorts 8080/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-22T13:35:09.668Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.7.4-patch.1) healthy after 4 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 4 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
