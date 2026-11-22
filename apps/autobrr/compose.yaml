@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/autobrr/autobrr@sha256:72bb5fe5e8c73f85660f92502d9015b21b07156495f039b55864633b9f8b7a89 # tag: v1.90.0
+    image: ghcr.io/autobrr/autobrr@sha256:c8ad1fe513d852bf00a0c751530ba205ba74196d68b0ece41a4e7d2138a80185 # tag: v1.91.0
     volumes:
       - {type: volume, source: data, target: "/config"}
 volumes:
