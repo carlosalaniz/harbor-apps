@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "kt-stores",
-    "revision": "7"
+    "revision": "8"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "b57ce64f24f9017c680b6c5a013da7dffef05f5c078dd4632aeaf2c22047ef24"
+      "sha256": "e5915927f1b7db586a9df53756c570acb6aff2e256029654059159516da3a23d"
     },
     "compose.yaml": {
-      "sha256": "9fe3be9f05c9074e098e2289b37c595ca0b1094ee86d6261e22b59462ece3666"
+      "sha256": "78b8535cfea2240d5345927df6b37037b307a82b5594fb643031a50bf6903c6f"
     },
     "README.md": {
       "sha256": "2136b7f1c0679175d973379ecdc05e1cc0e18dd031ac590e072d121817005d31"
@@ -17,13 +17,13 @@
   },
   "images": {
     "kt": {
-      "reference": "ghcr.io/carlosalaniz/kt-stores@sha256:6d3569385d5dd9b520b5404565d1fd33ceecc8efbf0c43065448d832c6044e7c",
+      "reference": "ghcr.io/carlosalaniz/kt-stores@sha256:6fb2efe95a63778535f72577c70341d18f7d13595228fb2bd8420ceee6602b22",
       "repository": "ghcr.io/carlosalaniz/kt-stores",
-      "tag": "0.2.3",
+      "tag": "0.2.4",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:2222bf7ac31efd976649fe96297fe29992e4a4a827dd3d7e5193ac786356f363",
-      "appVersion": "0.2.3",
-      "imageCreated": "2026-11-14T20:57:39Z",
+      "platformDigest": "sha256:824fb2d5847e92e3fdc43380f803814bba5e74d90574ab7b6adedca8a9feebf2",
+      "appVersion": "0.2.4",
+      "imageCreated": "2026-11-22T20:16:24Z",
       "source": "https://ghcr.io/carlosalaniz/kt-stores"
     },
     "qdrant": {
@@ -39,19 +39,19 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-18",
-    "node": "v24.22.2",
+    "date": "2026-11-22",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "kt": "0.2.3",
+      "kt": "0.2.4",
       "qdrant": "1.20.2"
     },
     "notes": [
-      "Digest of kt resolved 2026-11-18 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/kt-stores:0.2.3); image config: ExposedPorts 8001/tcp,8002/tcp, Volumes none, User node.",
-      "Digest of qdrant resolved 2026-11-18 via registry API (scripts/catalog-pin.mjs; qdrant/qdrant:v1.20.2); image config: ExposedPorts 6333/tcp,6334/tcp, Volumes none, User 0:0.",
-      "Smoke run 2026-11-18T14:16:04.352Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (0.2.3) healthy after 7 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 7 healthy after 4 s, still healthy 60 s later."
+      "Digest of kt resolved 2026-11-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/kt-stores:0.2.4); image config: ExposedPorts 8001/tcp,8002/tcp, Volumes none, User node.",
+      "Digest of qdrant resolved 2026-11-22 via registry API (scripts/catalog-pin.mjs; qdrant/qdrant:v1.20.2); image config: ExposedPorts 6333/tcp,6334/tcp, Volumes none, User 0:0.",
+      "Smoke run 2026-11-22T20:24:00.134Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 7 (0.2.3) healthy after 6 s, still healthy 60 s later; updated to revision 8 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 8 healthy after 4 s, still healthy 60 s later."
     ]
   },
   "assets": {
