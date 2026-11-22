@@ -5,8 +5,8 @@ metadata:
   name: Crossbar
   description: Your own browser, lent to your agents over MCP, with you in the loop for logins, captchas and anything with consequences.
 release:
-  revision: "4"
-  version: "0.1.3"
+  revision: "5"
+  version: "0.1.4"
   minHarbor: "0.46.0"
 deployment:
   compose: compose.yaml
@@ -105,7 +105,10 @@ permissions:
   # starting Chromium.
   # browser-sandbox (Harbor 0.45.0+, published in 0.46.0; Harbor decision 201) renders Docker's default seccomp
   # profile plus clone/unshare/setns/chroot, the same as deploy/browser/seccomp.json, so Chromium's sandbox stays on.
-  browser: [net-admin, browser-sandbox]
+  # gpu (Harbor 0.34.0+, decision 179): the machine's graphics card when it has one (an Intel/AMD render node).
+  # Chromium renders WebGL on it through Vulkan instead of software, which bot detection reads as a VM.
+  # Without a card Harbor passes nothing and the browser runs as before.
+  browser: [net-admin, browser-sandbox, gpu]
 network:
   internet: direct
 presentation:
