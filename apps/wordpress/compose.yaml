@@ -1,6 +1,6 @@
 services:
   app:
-    image: wordpress@sha256:8b64037bb2a3bdc41bebccb165f20ad5e4c786b684ae4a2bd5981f98aa1eb107 # tag: 7.1.4
+    image: wordpress@sha256:2e5145737f46b8fd53f333a05eb3a4f21321c90e20475b7827082dd5f75b62b0 # tag: 7.1.5
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: wordpress
@@ -12,7 +12,7 @@ services:
       db:
         condition: service_started
   db:
-    image: mariadb@sha256:d36f18d65a0459510b8b0f643b226a6d299e3206486e2b64ff20754a6d291707 # tag: 11.8.9
+    image: mariadb@sha256:e1d5495f445654134f226f55a41ce0da227116f6f27f283101f405c794d841fc # tag: 11.8.9
     environment:
       MYSQL_ROOT_PASSWORD: umbrelwordpressroot
       MYSQL_DATABASE: wordpress
