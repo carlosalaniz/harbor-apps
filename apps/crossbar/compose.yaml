@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/carlosalaniz/crossbar-app@sha256:9046899388f2161e50368f9818d7df353a973a462be1e8922eb5ff39ff7a2ea9 # tag: 0.1.4
+    image: ghcr.io/carlosalaniz/crossbar-app@sha256:456b9f463df405a5351b888318e30634f1aa3d48ef67f4b4b87b8d2a53270a59 # tag: 0.1.5
     environment:
       CROSSBAR_BROWSER_URL: http://browser:9300
       CROSSBAR_DATA: /data
@@ -11,7 +11,7 @@ services:
       browser:
         condition: service_started
   browser:
-    image: ghcr.io/carlosalaniz/crossbar-browser@sha256:903227667db654341d7854571bbdf40b8f0c562c9d97ec38f7d11a73d3935060 # tag: 0.1.4
+    image: ghcr.io/carlosalaniz/crossbar-browser@sha256:ee4be49ad70cef06d9c57a1a3902c76a3e9fd35080e3277e2723a6bf7cfeac7b # tag: 0.1.5
     environment:
       CROSSBAR_PROXY: http://proxy:3128
       CROSSBAR_PROFILES: /profiles
@@ -21,7 +21,7 @@ services:
       proxy:
         condition: service_started
   proxy:
-    image: ghcr.io/carlosalaniz/crossbar-proxy@sha256:93e011148cef28bc714099b337d78a09633ca1e27d0cc5f2a1f683513a226ea9 # tag: 0.1.4
+    image: ghcr.io/carlosalaniz/crossbar-proxy@sha256:ddf8607c14203687b88ff617b4a78b09872689969a002eb523add051b5143713 # tag: 0.1.5
 volumes:
   app-data: {}
   profiles: {}
