@@ -5,8 +5,8 @@ metadata:
   name: KT Stores
   description: "Separate knowledge stores any AI agent can discover and search through MCP. Drop in your documents, and KT Stores indexes them in the background, describes each store, and lets agents pick the right one."
 release:
-  revision: "7"
-  version: 0.2.3
+  revision: "8"
+  version: 0.2.4
   # 0.41.1 is the first gate that serves an app whose health path answers before any account (decision 194)
   minHarbor: "0.41.1"
 deployment:
@@ -86,4 +86,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/kt-stores
   source: https://github.com/carlosalaniz/kt-stores
-  releaseNotes: "0.2.3: Settings now knows this app's MCP address, so the agent config it copies points at the right port, and it writes the config for OpenCode as well as Claude Code. 0.2.2 added a button that tests the MCP connection from your browser."
+  releaseNotes: "0.2.4: Faster indexing. Several files are read and embedded at once, a long file sends several requests in parallel, and many small files share requests. Nothing is embedded twice, so it costs the same. 0.2.3 gave Settings this app's MCP address."
