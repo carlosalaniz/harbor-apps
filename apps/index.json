@@ -90,7 +90,7 @@
       "dir": "convertx"
     },
     "crossbar": {
-      "revision": "4",
+      "revision": "5",
       "dir": "crossbar"
     },
     "databag": {

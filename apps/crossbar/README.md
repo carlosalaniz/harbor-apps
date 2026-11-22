@@ -21,12 +21,15 @@ phone for anything a person should decide.
 **First start.** Sign in as `admin` with password `admin`, then change the password in Settings before you open
 the app to anyone else.
 
-**What Harbor asks you to allow.** Both permissions are for the browser container:
+**What Harbor asks you to allow.** All three permissions are for the browser container:
 
 - **Change network settings (NET_ADMIN).** The browser locks itself down so its only way out is Crossbar's proxy,
   then drops the permission before Chromium starts.
 - **Run a web browser's own sandbox.** Keeps Chromium's sandbox on, which isolates each website's process. Docker's
   default protection stays in place apart from four calls the sandbox needs.
+- **Use this machine's graphics card.** Chromium draws web pages' 3D graphics (WebGL) on your Intel or AMD graphics
+  instead of in software, as on a desktop: websites' bot detection reads software drawing as a virtual machine.
+  Without a card nothing changes.
 
 **Options.**
 
