@@ -34,6 +34,10 @@ the app to anyone else.
   one of the things bot detection looks for.
 - **Your home's public IP addresses**: pages can't reach them through the browser (so they can't reach your router
   from outside).
+- **Profile**: **Default** unless you choose otherwise. **Nino** (for the Nino assistant) starts every public site at
+  "can act as you" and lets plain writes such as bookings through without asking. Your LAN stays blocked, payments,
+  deletions and messages still ask, and your own site and category choices win. The Sites page and Settings say when
+  it is on.
 
 **Data.** Two storage areas, both kept when you remove the app:
 

@@ -5,8 +5,8 @@ metadata:
   name: Crossbar
   description: Your own browser, lent to your agents over MCP, with you in the loop for logins, captchas and anything with consequences.
 release:
-  revision: "3"
-  version: "0.1.2"
+  revision: "4"
+  version: "0.1.3"
   minHarbor: "0.46.0"
 deployment:
   compose: compose.yaml
@@ -85,6 +85,20 @@ settings:
     bindings:
       - service: proxy
         environment: CROSSBAR_BLOCK_IPS
+  - id: profile
+    label: Profile
+    help: >-
+      Nino starts every public site at "can act as you" and lets plain writes like bookings through without asking.
+      Your LAN stays blocked, payments, deletions and messages still ask, and your own choices win. Default keeps
+      Crossbar's usual rules.
+    type: choice
+    default: default
+    choices:
+      - {value: default, label: Default}
+      - {value: nino, label: Nino}
+    bindings:
+      - service: app
+        environment: CROSSBAR_PROFILE
 permissions:
   # NET_ADMIN lets the browser container firewall itself so its only way out is the proxy,
   # because Harbor packages can't declare an internal-only network. It drops the capability before
