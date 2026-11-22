@@ -238,7 +238,7 @@
       "dir": "influxdb2"
     },
     "invio": {
-      "revision": "6",
+      "revision": "7",
       "dir": "invio"
     },
     "ip-lookup": {

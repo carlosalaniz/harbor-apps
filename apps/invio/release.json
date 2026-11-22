@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "invio",
-    "revision": "6"
+    "revision": "7"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "b1bf6aa4fecc28590f11cd437a020397d7263b8d0fdbfb8a68b33c55dd4b66cd"
+      "sha256": "69ffe3d7575630d4b158ef6797d65a5ba427f942396954ff5ac9e6abe8d78a3f"
     },
     "compose.yaml": {
-      "sha256": "0ad3d6b5fa2d84d0669ca23fe93460dac8ed06897bbece7e3a4e638a97fe503a"
+      "sha256": "6ca8256a6f06acbd814abf034021192c7869740f0f86bd8228faf3c7a04ddfe9"
     },
     "README.md": {
       "sha256": "7e421446aa09af2af5eba950db88c3ac65eb9c4f56f658910b75e8ffde9b1413"
@@ -17,41 +17,41 @@
   },
   "images": {
     "backend": {
-      "reference": "ghcr.io/kittendevv/invio-backend@sha256:7d3a3bbae9b682038f1ab3453b019a5a3893d0a4e7fd1934854442dac1a09651",
+      "reference": "ghcr.io/kittendevv/invio-backend@sha256:723f780c2704739d5ab8ee5fd67444619854b8de0cb4b4513dbbb19a840af793",
       "repository": "ghcr.io/kittendevv/invio-backend",
-      "tag": "v2.4.1",
+      "tag": "v2.5.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:e9b905d88f99235539f73a1a80f4517bd6cb65d3c361e992684b915808e75594",
-      "appVersion": "2.4.1",
-      "imageCreated": "2026-11-05T12:47:59Z",
+      "platformDigest": "sha256:9b37a4f97e531fcd71f74206771d9e0856bb7acfddf038c975fa2ed942dbf894",
+      "appVersion": "2.5.0",
+      "imageCreated": "2026-11-20T10:54:57Z",
       "source": "https://ghcr.io/kittendevv/invio-backend"
     },
     "frontend": {
-      "reference": "ghcr.io/kittendevv/invio-frontend@sha256:22244b93397802e19326f8d36f9b0a864e1dd7b253648f6274d5287c783b37e4",
+      "reference": "ghcr.io/kittendevv/invio-frontend@sha256:400e8ddc16f84e0ede35e2097b58c7171492aeda56edb769abaebf0406fabef7",
       "repository": "ghcr.io/kittendevv/invio-frontend",
-      "tag": "v2.4.1",
+      "tag": "v2.5.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:51ca1872c28c57a032bc63caaa430c067ed37c65a8b622ca41ffa23808868bb7",
-      "appVersion": "2.4.1",
-      "imageCreated": "2026-11-05T12:47:40Z",
+      "platformDigest": "sha256:8ad09dac1164f39e61f16e631f3f61c7dd95db2a6708819ce88c867564224219",
+      "appVersion": "2.5.0",
+      "imageCreated": "2026-11-20T10:56:53Z",
       "source": "https://ghcr.io/kittendevv/invio-frontend"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-08",
-    "node": "v24.22.2",
+    "date": "2026-11-22",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.0",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "backend": "2.4.1",
-      "frontend": "2.4.1"
+      "backend": "2.5.0",
+      "frontend": "2.5.0"
     },
     "notes": [
-      "Digest of backend resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghcr.io/kittendevv/invio-backend:v2.4.1); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
-      "Digest of frontend resolved 2026-11-08 via registry API (scripts/catalog-pin.mjs; ghcr.io/kittendevv/invio-frontend:v2.4.1); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
-      "Smoke run 2026-11-08T12:06:32.052Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (2.4.0-patch.1) healthy after 4 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 6 healthy after 4 s, still healthy 60 s later."
+      "Digest of backend resolved 2026-11-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/kittendevv/invio-backend:v2.5.0); image config: ExposedPorts 3000/tcp, Volumes none, User root.",
+      "Digest of frontend resolved 2026-11-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/kittendevv/invio-frontend:v2.5.0); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-22T13:37:45.161Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 6 (2.4.1-patch.1) healthy after 8 s, still healthy 60 s later; updated to revision 7 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 7 healthy after 5 s, still healthy 60 s later."
     ]
   },
   "assets": {
