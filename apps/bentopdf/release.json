@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "bentopdf",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "142728f17673d8302ae9a2b317fefd9be020ad54e298d50a11b2a737da8e7edc"
+      "sha256": "f92bda0489954932ff80317d53c8866b3651df34eeb2a89fa75bfbb8d12079c8"
     },
     "compose.yaml": {
-      "sha256": "16f715ad0506b8b0bc8c9a363a594d6eac215fe479851920d2e2b7eab1bcfeee"
+      "sha256": "3676418a2a596a1161dc000c07f1d64c8a568b0fa55c0cc4246273317e608917"
     },
     "README.md": {
       "sha256": "05598a69f4eeb010d2ede042084ed2b8a38866ce680ce4284a59fb847f4a518d"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/alam00000/bentopdf-simple@sha256:3bbab98791694b77bc70ab03bf1b2ea89e568a75ef172c27d95cbdbdf810038f",
+      "reference": "ghcr.io/alam00000/bentopdf-simple@sha256:f96da8c4a347880b891d66aa2ebfa6b63f76277dafcfcdfa40c8e6b92c59ef44",
       "repository": "ghcr.io/alam00000/bentopdf-simple",
-      "tag": "v2.8.11",
+      "tag": "v2.8.12",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:67b4a283f5ab4ab61ff25ac06a20c6d6af1e27b99a397f2378b65da8ec1efe8d",
-      "appVersion": "2.8.11",
-      "imageCreated": "2026-10-31T11:26:57Z",
+      "platformDigest": "sha256:ebea1678d2cdd500af57987f802d442931b46a73b12af788d1831f6204b8a477",
+      "appVersion": "2.8.12",
+      "imageCreated": "2026-11-19T17:41:59Z",
       "source": "https://ghcr.io/alam00000/bentopdf-simple"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-02",
-    "node": "v24.22.1",
+    "date": "2026-11-22",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "2.8.11"
+      "web": "2.8.12"
     },
     "notes": [
-      "Digest of web resolved 2026-11-02 via registry API (scripts/catalog-pin.mjs; ghcr.io/alam00000/bentopdf-simple:v2.8.11); image config: ExposedPorts 8080/tcp, Volumes none, User nginx.",
-      "Smoke run 2026-11-02T13:40:15.922Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (2.8.10) healthy after 1 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 3 healthy after 1 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/alam00000/bentopdf-simple:v2.8.12); image config: ExposedPorts 8080/tcp, Volumes none, User nginx.",
+      "Smoke run 2026-11-22T13:30:33.623Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (2.8.11) healthy after 3 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 4 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
