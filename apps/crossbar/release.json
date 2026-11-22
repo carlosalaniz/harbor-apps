@@ -55,15 +55,15 @@
     "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "0.1.3",
-      "browser": "0.1.3",
-      "proxy": "0.1.3"
+      "app": "0.1.4",
+      "browser": "0.1.4",
+      "proxy": "0.1.4"
     },
     "notes": [
-      "Smoke run 2026-11-22T01:13:29.328Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (0.1.2) healthy after 32 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 47 s, still healthy 60 s later; fresh install of revision 4 healthy after 32 s, still healthy 60 s later.",
       "Digest of app resolved 2026-11-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-app:0.1.4); image config: ExposedPorts 8080/tcp, Volumes /data, User node.",
       "Digest of browser resolved 2026-11-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-browser:0.1.4); image config: ExposedPorts 9300/tcp, Volumes /profiles, User root.",
-      "Digest of proxy resolved 2026-11-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-proxy:0.1.4); image config: ExposedPorts 3128/tcp, Volumes none, User node."
+      "Digest of proxy resolved 2026-11-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/crossbar-proxy:0.1.4); image config: ExposedPorts 3128/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-22T04:36:48.631Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (0.1.3) healthy after 32 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 47 s, still healthy 60 s later; fresh install of revision 5 healthy after 31 s, still healthy 60 s later."
     ]
   },
   "assets": {
