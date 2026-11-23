@@ -5,7 +5,7 @@ metadata:
   name: "Sure"
   description: "Your whole financial life in one private place: bank and investment accounts, transactions, budgets and net worth. The community-maintained successor of Maybe Finance."
 release:
-  revision: "2"
+  revision: "3"
   # presentation.source is accepted from Harbor 0.30.0 on
   minHarbor: "0.30.0"
 deployment:
@@ -80,4 +80,4 @@ presentation:
   developer: "Sure contributors (we-promise)"
   website: https://sure.am
   source: https://github.com/we-promise/sure
-  releaseNotes: "Sure 0.7.6-hotfix.1 with PostgreSQL 16 and Redis 8 (Sidekiq queue). Sure's usage reporting to PostHog is off."
+  releaseNotes: "Sure 0.7.6-hotfix.2 with PostgreSQL 16 and Redis 8 (Sidekiq queue). Sure's usage reporting to PostHog is off."

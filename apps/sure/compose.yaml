@@ -1,7 +1,7 @@
 services:
   db:
     # PostgreSQL 16, the major upstream's own compose file runs
-    image: postgres@sha256:dd2bf3ce2dc83a81674cf7f217fcfd8a5009a4b325dda5b843bfee82a06cff6f # tag: 16.16
+    image: postgres@sha256:3950ad7c3148ca2175ef1b6c36c9efbf78957ae8fbe8b3a5d7c35af50500382f # tag: 16.16
     environment:
       POSTGRES_DB: "sure_production"
       POSTGRES_USER: "sure"
@@ -26,7 +26,7 @@ services:
       - {type: volume, source: redis-data, target: /data}
   web:
     # The image's entrypoint runs `rails db:prepare` (create or migrate) before the server listens on 3000
-    image: ghcr.io/we-promise/sure@sha256:002cde609f3af4b69ba2564c2482f3996e1fe29092dd169962b9b6ed943fcb10 # tag: 0.7.6-hotfix.1
+    image: ghcr.io/we-promise/sure@sha256:08f4fb26cedd0e5743792178ee744c1ea8b3ccd8cd9da1941ffc3ba7ef16ae6c # tag: 0.7.6-hotfix.2
     environment:
       SELF_HOSTED: "true"
       DB_HOST: "db"
@@ -49,7 +49,7 @@ services:
       - {type: volume, source: app-storage, target: /rails/storage}
   worker:
     # Same image, Sidekiq: account syncs, imports, market data, scheduled jobs
-    image: ghcr.io/we-promise/sure@sha256:002cde609f3af4b69ba2564c2482f3996e1fe29092dd169962b9b6ed943fcb10 # tag: 0.7.6-hotfix.1
+    image: ghcr.io/we-promise/sure@sha256:08f4fb26cedd0e5743792178ee744c1ea8b3ccd8cd9da1941ffc3ba7ef16ae6c # tag: 0.7.6-hotfix.2
     command: [bundle, exec, sidekiq]
     # The same environment as web
     environment:
