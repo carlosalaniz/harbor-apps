@@ -5,8 +5,8 @@ metadata:
   name: autobrr
   description: Modern, easy to use download automation for torrents and usenet.
 release:
-  revision: "5"
-  version: "1.91.0"
+  revision: "6"
+  version: "1.91.1"
 deployment:
   compose: compose.yaml
   multiInstance: true
