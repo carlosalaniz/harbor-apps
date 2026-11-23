@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "wallos",
-    "revision": "9"
+    "revision": "10"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "acb576fe0a45ad0ac53ce305c1cd47ee6407b0c413a449a565d662be045bfd65"
+      "sha256": "792be35f98a80e554d61c3ec8db1ffdce0b0f5936d2fc9f72cfd659d75d6c02d"
     },
     "compose.yaml": {
-      "sha256": "3e5bb5cf5164e5b8538894c5acf336814d74b03aac3dec107ae2bd85f007694b"
+      "sha256": "54c07130c9e2406ea506b892e2d6c3e74079a70a1be4f2b3966d2f2865c2fe7e"
     },
     "README.md": {
       "sha256": "2c33e972b683e27ae266c92e2bd297984fd1a50069f79b49c42fba581c852fa3"
@@ -17,29 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "bellamy/wallos@sha256:de82c41215a761d33a38a3672526b3ce47d0fe7acb84f5c2a4cb2342c710cf4c",
+      "reference": "bellamy/wallos@sha256:84c3b218e144a1292b2be6ad2f0b9d620277e860d307c3cfa5aff3ee629aae17",
       "repository": "bellamy/wallos",
-      "tag": "5.11.2",
+      "tag": "5.11.3",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:0e9bad2b10801089eeffc129f2cf9ac5229745b29eadf0c8000d33792f9049a5",
-      "appVersion": "5.11.2",
-      "imageCreated": "2026-11-18T17:43:21Z",
+      "platformDigest": "sha256:71c7467ef07f55e3f62668201dbddd502f2d5023ae23bf9c9cc431dcca44f488",
+      "appVersion": "5.11.3",
+      "imageCreated": "2026-11-20T21:03:35Z",
       "source": "https://hub.docker.com/r/bellamy/wallos"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-21",
+    "date": "2026-11-23",
     "node": "v24.22.3",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "5.11.2"
+      "server": "5.11.3"
     },
     "notes": [
-      "Digest of server resolved 2026-11-21 via registry API (scripts/catalog-pin.mjs; bellamy/wallos:5.11.2); image config: ExposedPorts 80/tcp,9000/tcp, Volumes none, User root.",
-      "Smoke run 2026-11-21T13:44:16.527Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 8 (5.11.1) healthy after 2 s, still healthy 60 s later; updated to revision 9 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 9 healthy after 1 s, still healthy 60 s later."
+      "Digest of server resolved 2026-11-23 via registry API (scripts/catalog-pin.mjs; bellamy/wallos:5.11.3); image config: ExposedPorts 80/tcp,9000/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-23T16:10:04.349Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 9 (5.11.2) healthy after 2 s, still healthy 60 s later; updated to revision 10 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 10 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
