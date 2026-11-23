@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "homarr",
-    "revision": "11"
+    "revision": "12"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "c9784889b997a909ee86b9eca82c9365780c9d6a1a9d747b1be43f63e862d32c"
+      "sha256": "38eb788abafc2ef5501c8ee4b11411213e582e65acac116c4a4567247df2ec83"
     },
     "compose.yaml": {
-      "sha256": "0bd83cd9ffcbd28eb1ffe41d67f952469f1e3f239df8414971c18700e1c4c2f3"
+      "sha256": "da75d91c418f5357b514119e205da74a35882bdc85d94c4f7065299e7cc2a8d8"
     },
     "README.md": {
       "sha256": "3b8d070732dee2a502fcf57bc852b538ee568380371da4de5f32787ab3a830c9"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "ghcr.io/homarr-labs/homarr@sha256:7b3ab85bad2656be6c940b9d26117254edb6d998aeb5b66dfdc795f2e737802a",
+      "reference": "ghcr.io/homarr-labs/homarr@sha256:742940b00ed13e8649ddfd81532ad8f4140ad413ed0591f464ff6e4f7ff3c276",
       "repository": "ghcr.io/homarr-labs/homarr",
-      "tag": "v2.13.1",
+      "tag": "v2.14.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:60ad998c7263338eb39fddc727a095ea38f86b21b1155d3fa2be504f03b2b838",
-      "appVersion": "2.13.1",
-      "imageCreated": "2026-11-14T10:43:45Z",
+      "platformDigest": "sha256:e6e4793e4e8c9b8cf737b0f0624d178ba19eee2c506301636e80fd07b299338e",
+      "appVersion": "2.14.0",
+      "imageCreated": "2026-11-20T17:50:35Z",
       "source": "https://ghcr.io/homarr-labs/homarr"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-16",
-    "node": "v24.22.2",
+    "date": "2026-11-23",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "2.13.1"
+      "web": "2.14.0"
     },
     "notes": [
-      "Digest of web resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; ghcr.io/homarr-labs/homarr:v2.13.1); image config: ExposedPorts 7575/tcp, Volumes /appdata, User root.",
-      "Smoke run 2026-11-16T13:48:10.432Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 10 (2.12.0) healthy after 9 s, still healthy 60 s later; updated to revision 11 without a rollback, healthy after 7 s, still healthy 60 s later; fresh install of revision 11 healthy after 9 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-23 via registry API (scripts/catalog-pin.mjs; ghcr.io/homarr-labs/homarr:v2.14.0); image config: ExposedPorts 7575/tcp, Volumes /appdata, User root.",
+      "Smoke run 2026-11-23T16:18:21.481Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 11 (2.13.1) healthy after 11 s, still healthy 60 s later; updated to revision 12 without a rollback, healthy after 6 s, still healthy 60 s later; fresh install of revision 12 healthy after 9 s, still healthy 60 s later."
     ]
   },
   "assets": {
