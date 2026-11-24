@@ -5,8 +5,8 @@ metadata:
   name: Stirling PDF
   description: "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere"
 release:
-  revision: "7"
-  version: "3.3.0"
+  revision: "8"
+  version: "3.5.0"
   minHarbor: 0.28.4
 deployment:
   compose: compose.yaml
