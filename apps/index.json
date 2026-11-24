@@ -374,7 +374,7 @@
       "dir": "nutstash-wallet"
     },
     "ollama": {
-      "revision": "8",
+      "revision": "9",
       "dir": "ollama"
     },
     "omnitools": {
