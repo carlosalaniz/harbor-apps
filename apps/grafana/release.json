@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "grafana",
-    "revision": "5"
+    "revision": "6"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "09a6f28a56aeff3991c8f59b8717dcde2eddbd065ccf107908658ef1da400fa3"
+      "sha256": "9791adce390a195c0d6097b34cdbbb91d29fbb93b86ad437a2aa1927a2df2de5"
     },
     "compose.yaml": {
-      "sha256": "bddf7126eba0ffc89fd99cea9f8f7ef67fc5e121a007e4354c15ebadd8c1a4e3"
+      "sha256": "c2a06c10189275e62e9d78ba81ffce569043cc079b3f2eb0888024c208223d8d"
     },
     "README.md": {
       "sha256": "d013aeb8c11920963ffb904cbb759fa0a66c367e374fe53351aac8a3309dfc7d"
@@ -17,29 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "grafana/grafana@sha256:0615ec4fbd4072004b7d86b46ded63013a74b7d6eb1119273dd89e8fa25c13cf",
+      "reference": "grafana/grafana@sha256:81556409ba48b2b922e0adb69a2511337d8ba7578f11962eefa6149a2d815101",
       "repository": "grafana/grafana",
-      "tag": "13.3.1",
+      "tag": "13.3.2",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:1c88285f1dd391a62232c010e6c224846e6a73bdc583b3365be2eba614b7919e",
-      "appVersion": "13.3.1",
-      "imageCreated": "2026-11-10T15:55:53Z",
+      "platformDigest": "sha256:1b8b4d34bde1e7c95dd639523a0dab6481f4d4e4b9727022c66f28cf3c708060",
+      "appVersion": "13.3.2",
+      "imageCreated": "2026-11-19T15:31:59Z",
       "source": "https://hub.docker.com/r/grafana/grafana"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-13",
-    "node": "v24.22.2",
+    "date": "2026-11-25",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "13.3.1"
+      "web": "13.3.2"
     },
     "notes": [
-      "Digest of web resolved 2026-11-13 via registry API (scripts/catalog-pin.mjs; grafana/grafana:13.3.1); image config: ExposedPorts 3000/tcp, Volumes none, User 472.",
-      "Smoke run 2026-11-13T13:16:04.739Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (13.3.0) healthy after 6 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 5 healthy after 5 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-25 via registry API (scripts/catalog-pin.mjs; grafana/grafana:13.3.2); image config: ExposedPorts 3000/tcp, Volumes none, User 472.",
+      "Smoke run 2026-11-25T15:48:26.150Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 5 (13.3.1) healthy after 7 s, still healthy 60 s later; updated to revision 6 without a rollback, healthy after 3 s, still healthy 60 s later; fresh install of revision 6 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {
