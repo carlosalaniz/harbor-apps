@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "freshrss",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "d6e71c17218d0da657c150d99bcdf7bd16011d2b119dc03be4162a1b2a947450"
+      "sha256": "5a23a8b81cdbc8f37b1f466e814b868fb41d80ab35d44f782d820591ecf96d0d"
     },
     "compose.yaml": {
-      "sha256": "082b7b4ef4ec181eadfa8f494b293e65b64d8d320b9bafe7ed177ddb2dbbb998"
+      "sha256": "eec4978543652ce72d4a3662f63880c5591979e3db8f26582f079070d9cf5d47"
     },
     "README.md": {
       "sha256": "b4d5c18b83fa4bf28918bdef1dbb07db754ebdea22c925b3aa36196128beb5fb"
@@ -17,28 +17,29 @@
   },
   "images": {
     "web": {
-      "reference": "freshrss/freshrss@sha256:af44385229541bee24aa9148d0ff8f3b40e095373c63a2c0f74e09a27d3c59df",
+      "reference": "freshrss/freshrss@sha256:31b0acfcb8e11600aa6ce697ff8d9d7ea620c85d766e5e764f487b433d20d066",
       "repository": "freshrss/freshrss",
-      "tag": "1.30.4",
+      "tag": "1.31.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:a003730e81c89abf86c3ca9c8b263c818804734b574469d59586234364f425b0",
-      "appVersion": "1.30.4",
-      "imageCreated": "2026-10-21T20:46:47Z",
+      "platformDigest": "sha256:0e96aa405358d6c85c4e99879693abdf21177f2898922fd4630b9a236715a241",
+      "appVersion": "1.31.0",
+      "imageCreated": "2026-11-23T08:27:54Z",
       "source": "https://hub.docker.com/r/freshrss/freshrss"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-10-23",
-    "node": "v24.21.0",
+    "date": "2026-11-25",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.6.1",
+    "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "web": "1.30.4"
+      "web": "1.31.0"
     },
     "notes": [
-      "Smoke run 2026-10-23T19:12:48.638Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (1.30.2) healthy after 2 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 4 healthy after 1 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-25 via registry API (scripts/catalog-pin.mjs; freshrss/freshrss:1.31.0); image config: ExposedPorts 80/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-25T15:55:38.556Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (1.30.4) healthy after 2 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 5 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
