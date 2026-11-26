@@ -5,8 +5,8 @@ metadata:
   name: "Home Assistant"
   description: "Open-source home automation: control lights, sensors, heating and thousands of devices from one dashboard, with automations that run locally."
 release:
-  revision: "3"
-  version: "2026.11.2"
+  revision: "4"
+  version: "2026.11.3"
   # endpoint `login: never` (decision 194)
   minHarbor: "0.41.0"
 deployment:
@@ -154,4 +154,4 @@ presentation:
   icon: icon.svg
   developer: "Open Home Foundation"
   website: https://www.home-assistant.io
-  releaseNotes: "Home Assistant 2026.11.2, the Container installation (no add-ons). Devices are added by address: no automatic discovery, USB sticks or Bluetooth adapters on Harbor."
+  releaseNotes: "Home Assistant 2026.11.3, the Container installation (no add-ons). Devices are added by address: no automatic discovery, USB sticks or Bluetooth adapters on Harbor."
