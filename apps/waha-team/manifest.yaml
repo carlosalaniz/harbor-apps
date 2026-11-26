@@ -5,8 +5,8 @@ metadata:
   name: "WAHA Team"
   description: "WhatsApp numbers for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
 release:
-  revision: "34"
-  version: 0.7.0
+  revision: "35"
+  version: 0.8.0
   # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
   minHarbor: "0.43.0"
 deployment:
@@ -125,4 +125,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/waha-team
   source: https://github.com/carlosalaniz/waha-team
-  releaseNotes: "0.7.0: plugins, turned on by an admin. The first, Leads, imports leads from a CSV and reaches out one at a time with a message built from their columns ({{name}}); whoever reaches out gets the chat, replies are tracked, and sends are paced per number. 0.6.1: Ask AI about any chat; answers are saved for the team. 0.6.0: @ tags a group member as a real WhatsApp mention, or a teammate by their alias (·2). 0.5.9: one Numbers and AI page. 0.5.8: no more missing messages. 0.5.5: New chat box; label and delete chats from the list. 0.5.0: snooze, auto-assign, AI summaries/replies/translation, polls, locations, contact cards, forwarding, stars, search, profile and statuses. 0.4.0: notes, labels, business hours, response times. 0.3.0: voice to text. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages, Web Push and re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1."
+  releaseNotes: "0.8.0: plugins can run their own code, in a sandbox. The new Sales Agent sorts each customer message, then answers it by itself, drafts a reply for whoever has the chat, or hands it to the team, with facts from your KT Stores and saved replies, and keeps a sale behind each chat: stage, score, objections, follow-ups, Won and Lost, Results. Admins give it an OpenRouter key and KT Stores on the Plugins page. 0.7.0: plugins; Leads imports a CSV and reaches out one at a time. 0.6.1: Ask AI about any chat. 0.6.0: @ mentions. 0.5.0: snooze, auto-assign, AI summaries/replies/translation, polls, locations, contact cards, forwarding, stars, search, profile and statuses. 0.4.0: notes, labels, business hours, response times. 0.3.0: voice to text. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages, Web Push and re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1."
