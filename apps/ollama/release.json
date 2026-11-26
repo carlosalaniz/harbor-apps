@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "ollama",
-    "revision": "9"
+    "revision": "10"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "1806814b07d5db5ac49010942f927e895f555d3b81dc6ab3610a46541aa6ab7c"
+      "sha256": "94ddd2d93b7cb85ae6f7eb471fc4a6026a7c2a1530aa4db79ff3497fb0b5a6c2"
     },
     "compose.yaml": {
-      "sha256": "5aa28f23e0f4be3e33ef7d1f89c384a6167a723fbe786c18fcaebf4d4433e066"
+      "sha256": "d1025a39d661e596663449ca292e3d3cc4195299ab43799f101ea1d0876e55f4"
     },
     "README.md": {
       "sha256": "b63c27547ec63e7b809eb1694f46868d87738c61040d407f2316f3d792caddac"
@@ -17,29 +17,29 @@
   },
   "images": {
     "ollama": {
-      "reference": "ollama/ollama@sha256:ccc42bcd3d5fcf7ab0d532b300382154e1a4da56fc666bdb313b78ebdd912754",
+      "reference": "ollama/ollama@sha256:1cabd20e1762a7a8444bf4a7110b346d923cd77ab6c97c984434140638c913ec",
       "repository": "ollama/ollama",
-      "tag": "0.40.17",
+      "tag": "0.40.18",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:5e5802d3c018ecdee7c7dff32a7e3b10ca9a2c4b3a461392cff97c313c2af0fc",
-      "appVersion": "0.40.17",
-      "imageCreated": "2026-11-21T03:25:05Z",
+      "platformDigest": "sha256:4e0d5daa6c5cd91e27011977031466844c5ea4ba2393b35e78068835edec040b",
+      "appVersion": "0.40.18",
+      "imageCreated": "2026-11-24T08:00:17Z",
       "source": "https://hub.docker.com/r/ollama/ollama"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-24",
+    "date": "2026-11-26",
     "node": "v24.22.3",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "ollama": "0.40.17"
+      "ollama": "0.40.18"
     },
     "notes": [
-      "Digest of ollama resolved 2026-11-24 via registry API (scripts/catalog-pin.mjs; ollama/ollama:0.40.17); image config: ExposedPorts 11434/tcp, Volumes none, User root.",
-      "Smoke run 2026-11-24T16:03:35.439Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 8 (0.40.16) healthy after 2 s, still healthy 60 s later; updated to revision 9 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 9 healthy after 1 s, still healthy 60 s later."
+      "Digest of ollama resolved 2026-11-26 via registry API (scripts/catalog-pin.mjs; ollama/ollama:0.40.18); image config: ExposedPorts 11434/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-26T15:39:23.243Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 9 (0.40.17) healthy after 2 s, still healthy 60 s later; updated to revision 10 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 10 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
