@@ -5,7 +5,7 @@ metadata:
   name: "ntfy"
   description: "Your own push-notification server. Scripts, servers and other apps send a message with one HTTP request, and it pops up on your phone (the ntfy app for Android and iOS) or in your browser."
 release:
-  revision: "4"
+  revision: "5"
   minHarbor: "0.30.0"
 deployment:
   compose: compose.yaml
@@ -85,4 +85,4 @@ presentation:
   developer: "Philipp C. Heckel and ntfy contributors"
   website: https://ntfy.sh
   source: https://github.com/binwiederhier/ntfy
-  releaseNotes: "ntfy v2.38.1. Harbor creates the admin login; sign-ups are off and every topic is private until you hand out a login or token. Nothing leaves this machine unless you turn on the ntfy.sh relay for instant iPhone notifications (at install, or later under Values you provided); the relay never sees the message text."
+  releaseNotes: "ntfy v2.38.2. Harbor creates the admin login; sign-ups are off and every topic is private until you hand out a login or token. Nothing leaves this machine unless you turn on the ntfy.sh relay for instant iPhone notifications (at install, or later under Values you provided); the relay never sees the message text."

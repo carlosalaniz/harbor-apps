@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "ntfy",
-    "revision": "4"
+    "revision": "5"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "20b5d1be981147bb83fc6037fea1acbce6fd4152a5e46d9fc7544b1b59d7a662"
+      "sha256": "7eb2ab5d1753d2038fa53e5a66ef9718008fcb0dcdadea12845b3cc47b92b280"
     },
     "compose.yaml": {
-      "sha256": "9b9ed2abf9a5374c9eb5f787f97227bf5d0d821981fe54cee11f73b4af621b8a"
+      "sha256": "ff5dbd3774ae614acf2e758749d4a0b997a186c7c83fe3ccd98ef50979ae28ef"
     },
     "README.md": {
       "sha256": "442349f47ee30c83fd0799c741b55c29a3e4095cd09b9ec15934c8cdc75dc7fc"
@@ -17,29 +17,29 @@
   },
   "images": {
     "app": {
-      "reference": "binwiederhier/ntfy@sha256:038da2be5e668fee6d36a62884eea48975e1b71c29a56964e5298c1b9165a573",
+      "reference": "binwiederhier/ntfy@sha256:ca35419d29a834824db2440fa9320897fbe40b026c5fc2360c76ed3501b5e716",
       "repository": "binwiederhier/ntfy",
-      "tag": "v2.38.1",
+      "tag": "v2.38.2",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:6ceb27333175e3ce7d021bb883658858f2b8b883db316a73d0755dfa0b306fc4",
-      "appVersion": "2.38.1",
-      "imageCreated": "2026-11-16T11:09:33Z",
+      "platformDigest": "sha256:cc40cb7437494639bbea89f13647c47765496dc8c579822b6239bca6cfd238ed",
+      "appVersion": "2.38.2",
+      "imageCreated": "2026-11-24T13:20:44Z",
       "source": "https://hub.docker.com/r/binwiederhier/ntfy"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-18",
-    "node": "v24.22.2",
+    "date": "2026-11-26",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
     "dockerCompose": "5.8.0",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "2.38.1"
+      "app": "2.38.2"
     },
     "notes": [
-      "Digest of app resolved 2026-11-18 via registry API (scripts/catalog-pin.mjs; binwiederhier/ntfy:v2.38.1); image config: ExposedPorts 80/tcp, Volumes none, User root.",
-      "Smoke run 2026-11-18T14:15:48.970Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (2.38.0) healthy after 2 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 4 healthy after 1 s, still healthy 60 s later."
+      "Digest of app resolved 2026-11-26 via registry API (scripts/catalog-pin.mjs; binwiederhier/ntfy:v2.38.2); image config: ExposedPorts 80/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-26T15:30:27.888Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 4 (2.38.1) healthy after 2 s, still healthy 60 s later; updated to revision 5 without a rollback, healthy after 2 s, still healthy 60 s later; fresh install of revision 5 healthy after 2 s, still healthy 60 s later."
     ]
   },
   "assets": {
