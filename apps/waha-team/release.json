@@ -29,17 +29,17 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-26",
+    "date": "2026-11-27",
     "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.8.0",
+    "dockerCompose": "5.8.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "app": "0.8.0"
+      "app": "0.9.1"
     },
     "notes": [
-      "Smoke run 2026-11-26T21:56:43.054Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 34 (0.7.0) healthy after 5 s, still healthy 60 s later; updated to revision 35 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 35 healthy after 1 s, still healthy 60 s later.",
-      "Digest of app resolved 2026-11-27 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.9.1); image config: ExposedPorts 8080/tcp, Volumes none, User node."
+      "Digest of app resolved 2026-11-27 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/waha-team:0.9.1); image config: ExposedPorts 8080/tcp, Volumes none, User node.",
+      "Smoke run 2026-11-27T20:41:09.391Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 35 (0.8.0) healthy after 2 s, still healthy 60 s later; updated to revision 36 without a rollback, healthy after 1 s, still healthy 60 s later; fresh install of revision 36 healthy after 1 s, still healthy 60 s later."
     ]
   },
   "assets": {
