@@ -39,10 +39,10 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-22",
+    "date": "2026-11-27",
     "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.8.0",
+    "dockerCompose": "5.8.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "kt": "0.2.4",
@@ -51,7 +51,7 @@
     "notes": [
       "Digest of kt resolved 2026-11-22 via registry API (scripts/catalog-pin.mjs; ghcr.io/carlosalaniz/kt-stores:0.2.4); image config: ExposedPorts 8001/tcp,8002/tcp, Volumes none, User node.",
       "Digest of qdrant resolved 2026-11-22 via registry API (scripts/catalog-pin.mjs; qdrant/qdrant:v1.20.2); image config: ExposedPorts 6333/tcp,6334/tcp, Volumes none, User 0:0.",
-      "Smoke run 2026-11-22T20:24:00.134Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 7 (0.2.3) healthy after 6 s, still healthy 60 s later; updated to revision 8 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 8 healthy after 4 s, still healthy 60 s later."
+      "Smoke run 2026-11-27T18:45:55.751Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 8 (0.2.4) healthy after 7 s, still healthy 60 s later; updated to revision 9 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 9 healthy after 4 s, still healthy 60 s later."
     ]
   },
   "assets": {
