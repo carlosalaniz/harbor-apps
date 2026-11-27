@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "yamtrack",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "f2bb4f3b30e9e25dc603d6da19daabd569edc2e07c095ff636fa8854982fbf62"
+      "sha256": "c8e6e8c0c52cb4265d612ad543a37091788bd1f7a37915ab7bb86d8859657a0c"
     },
     "compose.yaml": {
-      "sha256": "d21078571f61a4fbc08afc8ee8f9945ef3daf1f05cc3a2dbe3366e9e6e4ab719"
+      "sha256": "54d14c497aa6719bdeafd6c3c9cc633ad0636862a88f902d6c9c6a91128f1e12"
     },
     "README.md": {
       "sha256": "9756323142d141408ef1f7a20704e43f4032a57b14529527cc4c2425a4230f55"
@@ -27,31 +27,31 @@
       "source": "https://ghcr.io/fuzzygrim/yamtrack"
     },
     "redis": {
-      "reference": "redis@sha256:1f88291b4c57bdf249f02eb085a8669889b2d2954e91d4de5118a5da6b78dd53",
+      "reference": "redis@sha256:56a1737794e36c3ebe8a4544a8ab421af3ab1a6488fb2238aec228c404933fed",
       "repository": "redis",
-      "tag": "8.10.3",
+      "tag": "8.12.0",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:e2728231060693472a8efb488dd139a8142a01bd0612ae70429bf5b5be924be1",
-      "appVersion": "8.10.3",
-      "imageCreated": "2026-11-05T07:36:42Z",
+      "platformDigest": "sha256:29f0fcb48d8fe958e80767ca3f92d30aae798f940f257764620be3eec1b2fce5",
+      "appVersion": "8.12.0",
+      "imageCreated": "2026-11-24T04:38:24Z",
       "source": "https://hub.docker.com/_/redis"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-12",
-    "node": "v24.22.2",
+    "date": "2026-11-27",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.1",
+    "dockerCompose": "5.8.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "web": "0.26.3",
-      "redis": "8.10.3"
+      "redis": "8.12.0"
     },
     "notes": [
-      "Digest of web resolved 2026-11-12 via registry API (scripts/catalog-pin.mjs; ghcr.io/fuzzygrim/yamtrack:0.26.3); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
-      "Digest of redis resolved 2026-11-12 via registry API (scripts/catalog-pin.mjs; redis:8.10.3); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
-      "Smoke run 2026-11-12T14:02:44.875Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.26.3-patch.1) healthy after 24 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 16 s, still healthy 60 s later; fresh install of revision 3 healthy after 24 s, still healthy 60 s later."
+      "Digest of web resolved 2026-11-27 via registry API (scripts/catalog-pin.mjs; ghcr.io/fuzzygrim/yamtrack:0.26.3); image config: ExposedPorts 8000/tcp, Volumes none, User root.",
+      "Digest of redis resolved 2026-11-27 via registry API (scripts/catalog-pin.mjs; redis:8.12.0); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Smoke run 2026-11-27T15:22:13.530Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (0.26.3-patch.1) healthy after 20 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 14 s, still healthy 60 s later; fresh install of revision 4 healthy after 17 s, still healthy 60 s later."
     ]
   },
   "assets": {
