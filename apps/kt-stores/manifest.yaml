@@ -5,10 +5,11 @@ metadata:
   name: KT Stores
   description: "Separate knowledge stores any AI agent can discover and search through MCP. Drop in your documents, and KT Stores indexes them in the background, describes each store, and lets agents pick the right one."
 release:
-  revision: "8"
+  revision: "9"
   version: 0.2.4
-  # 0.41.1 is the first gate that serves an app whose health path answers before any account (decision 194)
-  minHarbor: "0.41.1"
+  # 0.47.0 is the first Harbor that accepts `cpus` in compose (decision 205); it already serves an app whose health
+  # path answers before any account (0.41.1, decision 194)
+  minHarbor: "0.47.0"
 deployment:
   compose: compose.yaml
   multiInstance: false
