@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "qbittorrent",
-    "revision": "2"
+    "revision": "3"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "eca8ea9a499bc2af7c5e22141a2b699e4583996466506b9b251c2cc10d37142e"
+      "sha256": "284959c9e907eb6ef975dcf3234c0e5a0c46bb06b3b707788cd3bf52ff61d4d9"
     },
     "compose.yaml": {
-      "sha256": "df94b8deff44b43d88042514a20a793f41438ef998111b98fe289b44d30aed44"
+      "sha256": "a2fd46bc5063e01fdbddbbadc98756bafecd1dc6d43742a44f6eb27d911a1755"
     },
     "README.md": {
       "sha256": "b2fbe0f50e4a881d4dd1d881f5b92a53cf043f6f5d4d967fe388db859efd4954"
@@ -17,29 +17,29 @@
   },
   "images": {
     "server": {
-      "reference": "linuxserver/qbittorrent@sha256:3d4c4545d51a690a0df15a2ff99038823a88a9822df8e794526447b9afbd7384",
+      "reference": "linuxserver/qbittorrent@sha256:1fa2f9692501f27ce51c4fffd771d63ec38f1163cb648941c324344b7c5a3915",
       "repository": "linuxserver/qbittorrent",
-      "tag": "5.3.0",
+      "tag": "5.3.1",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:c848051844a2e2c34e557cafe74f548fe46b3fa27560e3af95904c3a51284b2b",
-      "appVersion": "5.3.0",
-      "imageCreated": "2026-11-08T13:57:38Z",
+      "platformDigest": "sha256:5ef07bffd6eb6214a2cff5fef629fabb1660ba2e94cfb34226330cfa65e39fa1",
+      "appVersion": "5.3.1",
+      "imageCreated": "2026-11-24T16:31:39Z",
       "source": "https://hub.docker.com/r/linuxserver/qbittorrent"
     }
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-16",
-    "node": "v24.22.2",
+    "date": "2026-11-27",
+    "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.7.1",
+    "dockerCompose": "5.8.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
-      "server": "5.3.0"
+      "server": "5.3.1"
     },
     "notes": [
-      "Digest of server resolved 2026-11-16 via registry API (scripts/catalog-pin.mjs; linuxserver/qbittorrent:5.3.0); image config: ExposedPorts 6881/tcp,6881/udp,8080/tcp, Volumes /config, User root.",
-      "Smoke run 2026-11-16T03:50:00.342Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 1 (5.2.4) healthy after 4 s, still healthy 60 s later; updated to revision 2 without a rollback, healthy after 4 s, still healthy 60 s later; fresh install of revision 2 healthy after 3 s, still healthy 60 s later."
+      "Digest of server resolved 2026-11-27 via registry API (scripts/catalog-pin.mjs; linuxserver/qbittorrent:5.3.1); image config: ExposedPorts 6881/tcp,6881/udp,8080/tcp, Volumes /config, User root.",
+      "Smoke run 2026-11-27T15:16:01.452Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (5.3.0) healthy after 3 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 5 s, still healthy 60 s later; fresh install of revision 3 healthy after 3 s, still healthy 60 s later."
     ]
   },
   "assets": {

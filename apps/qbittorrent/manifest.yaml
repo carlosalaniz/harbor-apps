@@ -5,7 +5,7 @@ metadata:
   name: "qBittorrent"
   description: "A free, open-source BitTorrent client you run from the browser: add torrent files or magnet links, choose which files to fetch, set speed limits, search and follow RSS feeds. No ads."
 release:
-  revision: "2"
+  revision: "3"
   # ports (0.29.0), presentation.source (0.30.0), and 0.32.0's secure LAN relay: it drops a client's own
   # X-Forwarded-For and sends the real peer, which the hook below trusts for qBittorrent's login ban
   minHarbor: "0.32.0"
@@ -209,4 +209,4 @@ presentation:
   developer: "The qBittorrent project"
   website: https://www.qbittorrent.org
   source: https://github.com/qbittorrent/qBittorrent
-  releaseNotes: "qBittorrent 5.3.0 (linuxserver.io image). Harbor sets the WebUI login and makes the WebUI work on every Harbor address (LAN, secure LAN, Tailscale, your domains). Peers reach it on UDP 6881."
+  releaseNotes: "qBittorrent 5.3.1 (linuxserver.io image). Harbor sets the WebUI login and makes the WebUI work on every Harbor address (LAN, secure LAN, Tailscale, your domains). Peers reach it on UDP 6881."
