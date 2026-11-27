@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "kt-stores",
-    "revision": "8"
+    "revision": "9"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "e5915927f1b7db586a9df53756c570acb6aff2e256029654059159516da3a23d"
+      "sha256": "7ae898bd6d0af3e831a20d12f08d8aa7d072010ae0eb630def77929595998318"
     },
     "compose.yaml": {
-      "sha256": "78b8535cfea2240d5345927df6b37037b307a82b5594fb643031a50bf6903c6f"
+      "sha256": "cb2723acfa343ecd158dfd735a0250825eebb8dd6aeb5ae938b066cfe9cfb3e5"
     },
     "README.md": {
       "sha256": "2136b7f1c0679175d973379ecdc05e1cc0e18dd031ac590e072d121817005d31"

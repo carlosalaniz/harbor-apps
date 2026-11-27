@@ -2,7 +2,7 @@
 #
 # kt      One image, two processes: the API and web app on 8001 (no login of its own: the endpoint declares
 #         `login: required`) and MCP on 8002 (its own bearer tokens), plus the background worker. Original files, the
-#         database and settings live on the data volume.
+#         database and settings live on the data volume. Capped at 4 cores (`cpus`, Harbor 0.47.0).
 # qdrant  The vector index, reachable only on the app's own network. It can be rebuilt from the files.
 services:
   kt:
@@ -15,6 +15,9 @@ services:
     # the app copes with Qdrant still starting: indexing waits for it
     depends_on:
       qdrant: {condition: service_started}
+    # reading PDFs takes every core it can get (it held 18 of 20 cores while indexing a book): a hard cap keeps the
+    # rest of the machine responsive; the operator can change it on the app page or with `harbor limits`
+    cpus: 4
   qdrant:
     image: qdrant/qdrant@sha256:d277592721d2e3b73f9b797b53cf05e6a5bb2134f6d13fdbda4ca51782afbcac # tag: v1.20.2
     environment:
