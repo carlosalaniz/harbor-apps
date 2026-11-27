@@ -1,6 +1,6 @@
 services:
   web:
-    image: docmost/docmost@sha256:b56947fcfd08aab8fae12a377e1792784786adbf8b96e4281f14ef4fc072685a # tag: 0.96.0
+    image: docmost/docmost@sha256:c3bdc84767de0fc9431763523636ddfd783c35c25ef7d4a3c95c064628e78d7a # tag: 0.98.0
     environment:
       DATABASE_URL: postgresql://docmostuser:docmostpass@db:5432/docmost?sslmode=disable
       REDIS_URL: redis://redis:6379
@@ -13,7 +13,7 @@ services:
       redis:
         condition: service_started
   db:
-    image: postgres@sha256:2d2b8998d31037bf721cfdf764d76ba74171b4fab3431b7f72c27c56ddbdf9e3 # tag: 17.11
+    image: postgres@sha256:97fb53376be3e4fb1a8a61421daa69dcc3bf2fa39bda3259f5245f9a455af1a9 # tag: 17.12
     environment:
       POSTGRES_DB: docmost
       POSTGRES_USER: docmostuser
@@ -21,7 +21,7 @@ services:
     volumes:
       - {type: volume, source: db-data, target: "/var/lib/postgresql/data"}
   redis:
-    image: redis@sha256:2c2dff791878316e3b083188be0d578423b24813cdda5de0e80ea4f7b3e6bfd6 # tag: 8.10.2
+    image: redis@sha256:56a1737794e36c3ebe8a4544a8ab421af3ab1a6488fb2238aec228c404933fed # tag: 8.12.0
     volumes:
       - {type: volume, source: redis-data, target: "/data"}
 volumes:
