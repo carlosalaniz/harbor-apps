@@ -5,8 +5,8 @@ metadata:
   name: "WAHA Team"
   description: "WhatsApp numbers for the whole team: everyone signs in with their own account, claims chats, and every message they send ends with their name. Uses the WAHA app (or any WAHA) and keeps WhatsApp linked with Android Link."
 release:
-  revision: "35"
-  version: 0.8.0
+  revision: "36"
+  version: 0.9.1
   # endpoint `login: never` (decision 194), secret `revealable` (decision 199)
   minHarbor: "0.43.0"
 deployment:
@@ -125,4 +125,4 @@ presentation:
   developer: "Carlos Alaniz"
   website: https://github.com/carlosalaniz/waha-team
   source: https://github.com/carlosalaniz/waha-team
-  releaseNotes: "0.8.0: plugins can run their own code, in a sandbox. The new Sales Agent sorts each customer message, then answers it by itself, drafts a reply for whoever has the chat, or hands it to the team, with facts from your KT Stores and saved replies, and keeps a sale behind each chat: stage, score, objections, follow-ups, Won and Lost, Results. Admins give it an OpenRouter key and KT Stores on the Plugins page. 0.7.0: plugins; Leads imports a CSV and reaches out one at a time. 0.6.1: Ask AI about any chat. 0.6.0: @ mentions. 0.5.0: snooze, auto-assign, AI summaries/replies/translation, polls, locations, contact cards, forwarding, stars, search, profile and statuses. 0.4.0: notes, labels, business hours, response times. 0.3.0: voice to text. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages, Web Push and re-linking through Android Link. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1."
+  releaseNotes: "0.9.1: the Sales Agent sets itself up: on its Set up tab it reads the last 90 days of chats and proposes its settings (what the business sells, categories and modes, stages, scoring, loss reasons), past sales as deals, saved replies the team keeps typing and the questions nobody could answer; an admin applies what they want. Fixes: each number's KT Stores on the Plugins page; Set up holds up when a call fails. 0.8.0: plugins can run their own code, in a sandbox; the Sales Agent answers, drafts or hands off each customer message, with facts from KT Stores, and keeps a sale behind each chat. 0.7.0: plugins; Leads imports a CSV and reaches out one at a time. 0.6.1: Ask AI about any chat. 0.6.0: @ mentions. 0.5.0: snooze, auto-assign, AI, polls, stars, search. 0.4.0: notes, labels, business hours. 0.3.0: voice to text. 0.1.0: a shared WhatsApp inbox on WAHA with accounts, claims, signed messages and Web Push. Tested with WAHA 2026.10.1 (GOWS) and Android Link 0.2.1."
