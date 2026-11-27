@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "package": {
     "id": "sure",
-    "revision": "3"
+    "revision": "4"
   },
   "files": {
     "manifest.yaml": {
-      "sha256": "5e392044a15ef70b81a013c0854fdf03a561382f5e4a9522f0d9e409eca0c3ff"
+      "sha256": "e5155e0c7ad75d66c99b02a2bd460d0f7d0e70387d1d7af6e8265d7b50388b99"
     },
     "compose.yaml": {
-      "sha256": "e210da66497101347d958647d483bbff98a7a2055425c0b2b41a4977fe90ec02"
+      "sha256": "abe062a1b0dd4af0dbabdd35e71659ddd7171a5bbf35d33aa48e15081225577e"
     },
     "README.md": {
       "sha256": "ede2cef5d65f945a10a7e1524edeb2bd9e7d570972cf0c486a1e6695c66ce4b1"
@@ -17,23 +17,23 @@
   },
   "images": {
     "db": {
-      "reference": "postgres@sha256:3950ad7c3148ca2175ef1b6c36c9efbf78957ae8fbe8b3a5d7c35af50500382f",
+      "reference": "postgres@sha256:ce81150802644ddfac1db4da9e63be6f2a3818aa6ee98a7a28838aeea65dc37a",
       "repository": "postgres",
       "tag": "16.16",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:72d22ce26d04fe56a5384e9f6b026152d1cf05db602a7a3524a3ed337d5f5752",
+      "platformDigest": "sha256:e8a7960781a4aeb21928aa4565124f0e469bd27e0bcc4321d8b9102145312f84",
       "appVersion": "16.16",
-      "imageCreated": "2026-11-18T21:30:43Z",
+      "imageCreated": "2026-11-24T04:30:55Z",
       "source": "https://hub.docker.com/_/postgres"
     },
     "redis": {
-      "reference": "redis@sha256:7958cfbb9d152f87dadfbc89f1b0b15938f0b81ff8982feb327476f4911935c3",
+      "reference": "redis@sha256:5af80107c1eeecb484a2269b80a26d12bfa6521787da4663bd9f19f60a163483",
       "repository": "redis",
-      "tag": "8.10.3-alpine",
+      "tag": "8.12.0-alpine",
       "platform": "linux/amd64",
-      "platformDigest": "sha256:41ed50f5c0d9cf8b2151ad63df24ba96d018ccc84804d0688e9b9f1ed3d9f558",
-      "appVersion": "8.10.3-alpine",
-      "imageCreated": "2026-11-05T19:17:30Z",
+      "platformDigest": "sha256:bf33e63600ae8240c9f8b553c8fae427550dae17042bc24b06bbe06d3057c9bc",
+      "appVersion": "8.12.0-alpine",
+      "imageCreated": "2026-11-23T19:09:58Z",
       "source": "https://hub.docker.com/_/redis"
     },
     "web": {
@@ -59,23 +59,23 @@
   },
   "qualification": {
     "status": "passed",
-    "date": "2026-11-23",
+    "date": "2026-11-27",
     "node": "v24.22.3",
     "dockerEngine": "28.0.4",
-    "dockerCompose": "5.8.0",
+    "dockerCompose": "5.8.1",
     "hostOs": "Ubuntu 24.04.5 LTS x86_64",
     "appVersions": {
       "db": "16.16",
-      "redis": "8.10.3-alpine",
+      "redis": "8.12.0-alpine",
       "web": "0.7.6-hotfix.2",
       "worker": "0.7.6-hotfix.2"
     },
     "notes": [
-      "Digest of db resolved 2026-11-23 via registry API (scripts/catalog-pin.mjs; postgres:16.16); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
-      "Digest of redis resolved 2026-11-23 via registry API (scripts/catalog-pin.mjs; redis:8.10.3-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
-      "Digest of web resolved 2026-11-23 via registry API (scripts/catalog-pin.mjs; ghcr.io/we-promise/sure:0.7.6-hotfix.2); image config: ExposedPorts 3000/tcp, Volumes none, User 1000:1000.",
-      "Digest of worker resolved 2026-11-23 via registry API (scripts/catalog-pin.mjs; ghcr.io/we-promise/sure:0.7.6-hotfix.2); image config: ExposedPorts 3000/tcp, Volumes none, User 1000:1000.",
-      "Smoke run 2026-11-23T16:12:39.693Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 2 (0.7.6-hotfix.1) healthy after 18 s, still healthy 60 s later; updated to revision 3 without a rollback, healthy after 14 s, still healthy 60 s later; fresh install of revision 3 healthy after 13 s, still healthy 60 s later."
+      "Digest of db resolved 2026-11-27 via registry API (scripts/catalog-pin.mjs; postgres:16.16); image config: ExposedPorts 5432/tcp, Volumes /var/lib/postgresql/data, User root.",
+      "Digest of redis resolved 2026-11-27 via registry API (scripts/catalog-pin.mjs; redis:8.12.0-alpine); image config: ExposedPorts 6379/tcp, Volumes none, User root.",
+      "Digest of web resolved 2026-11-27 via registry API (scripts/catalog-pin.mjs; ghcr.io/we-promise/sure:0.7.6-hotfix.2); image config: ExposedPorts 3000/tcp, Volumes none, User 1000:1000.",
+      "Digest of worker resolved 2026-11-27 via registry API (scripts/catalog-pin.mjs; ghcr.io/we-promise/sure:0.7.6-hotfix.2); image config: ExposedPorts 3000/tcp, Volumes none, User 1000:1000.",
+      "Smoke run 2026-11-27T15:23:57.907Z (pnpm catalog:smoke, Harbor's engine on a real Docker host): installed revision 3 (0.7.6-hotfix.2) healthy after 14 s, still healthy 60 s later; updated to revision 4 without a rollback, healthy after 15 s, still healthy 60 s later; fresh install of revision 4 healthy after 15 s, still healthy 60 s later."
     ]
   },
   "assets": {

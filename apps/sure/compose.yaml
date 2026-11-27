@@ -1,7 +1,7 @@
 services:
   db:
     # PostgreSQL 16, the major upstream's own compose file runs
-    image: postgres@sha256:3950ad7c3148ca2175ef1b6c36c9efbf78957ae8fbe8b3a5d7c35af50500382f # tag: 16.16
+    image: postgres@sha256:ce81150802644ddfac1db4da9e63be6f2a3818aa6ee98a7a28838aeea65dc37a # tag: 16.16
     environment:
       POSTGRES_DB: "sure_production"
       POSTGRES_USER: "sure"
@@ -15,7 +15,7 @@ services:
       - {type: volume, source: db-data, target: /var/lib/postgresql/data}
   redis:
     # Sidekiq's job queue: kept on disk (append-only file) so queued imports and syncs survive a restart
-    image: redis@sha256:7958cfbb9d152f87dadfbc89f1b0b15938f0b81ff8982feb327476f4911935c3 # tag: 8.10.3-alpine
+    image: redis@sha256:5af80107c1eeecb484a2269b80a26d12bfa6521787da4663bd9f19f60a163483 # tag: 8.12.0-alpine
     command: [redis-server, --appendonly, "yes"]
     healthcheck:
       test: [CMD, redis-cli, ping]
